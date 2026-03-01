@@ -1,0 +1,40 @@
+/* ===== CSS CUSTOM PROPERTIES =====
+   These are like variables. Define them once here,
+   use them everywhere with var(--name).
+   If you want to tweak a color later, change it in ONE place. */
+:root {
+  --bg-primary: #0d0d0d;
+  --bg-secondary: #1a1a1a;
+  --bg-tertiary: #242424;
+  --text-primary: #e8e8e8;
+  --text-secondary: #999;
+  --border-color: #333;
+  --accent: #c62828;
+  --font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* ===== RESET =====
+   Browsers add default margin/padding to elements.
+   This removes it so you start from a clean slate.
+   box-sizing: border-box makes width/height include padding+border
+   (otherwise padding ADDS to the width, which is confusing). */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  /* This is key: the app fills the whole screen,
+     scrolling happens INSIDE panels, not on the page itself */
+  overflow: hidden;
+}
+
+/* The #app div fills the entire viewport */
+#app {
+  width: 100vw;   /* vw = viewport width (full browser width) */
+  height: 100vh;  /* vh = viewport height (full browser height) */
+}

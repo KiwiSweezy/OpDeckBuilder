@@ -1,0 +1,202 @@
+<script setup lang="ts">
+import { computed } from 'vue'
+import { useCardStore } from '../stores/cardStore'
+
+const cardStore = useCardStore()
+
+const colorOrder = ['red', 'blue', 'green', 'purple', 'black', 'yellow']
+
+// Group deck cards by exact ID, sorted by color then cost (descending)
+// Alt arts (e.g. st14-003 vs st14-003_p1) show as separate stacks.
+const groupedDeck = computed(() => {
+  const groups = new Map<string, { card: typeof cardStore.deck[0], count: number }>()
+  for (const card of cardStore.deck) {
+    const existing = groups.get(card.id)
+    if (existing) {
+      existing.count++
+    } else {
+      groups.set(card.id, { card, count: 1 })
+    }
+  }
+  return Array.from(groups.values()).sort((a, b) => {
+    // Sort by primary color first
+    const aColor = colorOrder.indexOf(a.card.color.split('/')[0])
+    const bColor = colorOrder.indexOf(b.card.color.split('/')[0])
+    if (aColor !== bColor) return aColor - bColor
+    // Then by cost descending
+    return b.card.cost - a.card.cost
+  })
+})
+
+const leader = computed(() => {
+  return cardStore.deck.find(c => c.type === 'leader') ?? null
+})
+
+const nonLeaderGroups = computed(() => {
+  return groupedDeck.value.filter(entry => entry.card.type !== 'leader')
+})
+</script>
+
+<template>
+  <div class="deck-display">
+    <div class="deck-display-header">
+      <span class="deck-count">{{ cardStore.deckSize }} / 51</span>
+    </div>
+
+    <div v-if="cardStore.deckSize === 0" class="deck-empty">
+      Click cards below to build your deck
+    </div>
+
+    <div v-else class="deck-cards">
+      <!-- Leader shown separately -->
+      <div
+        v-if="leader"
+        class="card-stack leader-card"
+        @mouseenter="cardStore.selectCard(leader)"
+        @contextmenu.prevent="$event.shiftKey ? cardStore.removeAllFromDeck(leader.id) : cardStore.removeFromDeck(leader.id)"
+      >
+        <div class="stack-wrapper">
+          <img :src="leader.images.small" :alt="leader.name" class="stack-img" />
+        </div>
+        <span class="card-label">Leader</span>
+      </div>
+
+      <!-- Non-leader cards: stacked copies -->
+      <div
+        v-for="entry in nonLeaderGroups"
+        :key="entry.card.id"
+        class="card-stack"
+        :style="{ width: `${195 + (entry.count - 1) * 15}px` }"
+        @click="cardStore.addToDeck(entry.card)"
+        @mouseenter="cardStore.selectCard(entry.card)"
+        @contextmenu.prevent="$event.shiftKey ? cardStore.removeAllFromDeck(entry.card.id) : cardStore.removeFromDeck(entry.card.id)"
+      >
+        <!--
+          Each copy is rendered as a stacked image.
+          CSS offsets them so they overlap like a fan.
+        -->
+        <div
+          class="stack-wrapper"
+          :style="{
+            height: `calc(100% + ${(entry.count - 1) * 18}px)`,
+            width: `calc(100% + ${(entry.count - 1) * 15}px)`
+          }"
+        >
+          <img
+            v-for="i in entry.count"
+            :key="i"
+            :src="entry.card.images.small"
+            :alt="entry.card.name"
+            class="stack-img"
+            :style="{ top: `${(i - 1) * 18}px`, left: `${(i - 1) * 15}px` }"
+          />
+        </div>
+        <span class="card-count-badge">x{{ entry.count }}</span>
+      </div>
+    </div>
+  </div>
+</template>
+
+<style scoped>
+.deck-display {
+  min-height: 80px;
+}
+
+.deck-display-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.deck-count {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.deck-empty {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 20px;
+}
+
+.deck-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px 14px;
+  align-items: flex-start;
+}
+
+/* Each card group is a stack container */
+.card-stack {
+  position: relative;
+  width: 195px;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.card-stack:hover {
+  transform: scale(1.05);
+}
+
+/* The wrapper holds all stacked copies with relative positioning */
+.stack-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.stack-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 195px;
+  display: block;
+  border-radius: 4px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* First image in a stack needs to be relative to establish flow */
+.stack-img:first-child {
+  position: relative;
+}
+
+.leader-card {
+  border: 2px solid var(--accent);
+  border-radius: 6px;
+  padding: 4px;
+  box-sizing: border-box;
+}
+
+.leader-card .stack-img {
+  width: 100%;
+}
+
+.card-label {
+  position: absolute;
+  bottom: 2px;
+  left: 2px;
+  right: 2px;
+  background: rgba(0, 0, 0, 0.7);
+  color: var(--accent);
+  font-size: 0.6rem;
+  text-align: center;
+  padding: 2px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 2px;
+}
+
+.card-count-badge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 3px;
+  z-index: 10;
+}
+</style>
