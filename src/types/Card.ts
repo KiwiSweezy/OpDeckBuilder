@@ -6,8 +6,8 @@ export interface Card {
   id: string
   name: string
   cost: number
-  type: 'leader' | 'character' | 'event'
-  rarity: 'l' | 'r' | 'uc' | 'c' | 'sr'
+  type: 'leader' | 'character' | 'event' | 'stage'
+  rarity: 'l' | 'r' | 'uc' | 'c' | 'sr' | 'tr' | 'sec' | 'sp card' | 'p'
   color: string               // e.g. "red", "red/green"
   trigger: boolean
   images: {

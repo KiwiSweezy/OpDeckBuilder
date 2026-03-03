@@ -1,0 +1,377 @@
+[
+  {
+    "id": "ST08-001",
+    "code": "ST08-001",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Monkey.D.Luffy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST08-001.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST08-001.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "5000",
+    "counter": "-",
+    "color": "Black",
+    "family": "Straw Hat Crew",
+    "ability": "[Your Turn] When a Character is K.O.'d, give up to 1 rested DON!! card to this Leader.",
+    "trigger": "",
+    "set": {
+      "name": "-Monkey D. Luffy-[ST-08]"
+    }
+  },
+  {
+    "id": "ST08-002",
+    "code": "ST08-002",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Uta",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST08-002.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST08-002.png"
+    },
+    "cost": "2",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "3000",
+    "counter": "-",
+    "color": "Black",
+    "family": "FILM",
+    "ability": "This Character cannot be K.O.'d in battle by Leaders.[Activate: Main] You may rest this Character: Give up to 1 of your opponent's Characters −2 cost during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-Monkey D. Luffy-[ST-08]"
+    }
+  },
+  {
+    "id": "ST08-003",
+    "code": "ST08-003",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Gaimon",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST08-003.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST08-003.png"
+    },
+    "cost": "2",
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": "4000",
+    "counter": "1000",
+    "color": "Black",
+    "family": "East Blue",
+    "ability": "-",
+    "trigger": "",
+    "set": {
+      "name": "-Monkey D. Luffy-[ST-08]"
+    }
+  },
+  {
+    "id": "ST08-004",
+    "code": "ST08-004",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Koby",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST08-004.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST08-004.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "1000",
+    "counter": "1000",
+    "color": "Black",
+    "family": "Navy",
+    "ability": "[Activate: Main] You may rest this Character: K.O. up to 1 of your opponent's Characters with a cost of 2 or less.",
+    "trigger": "",
+    "set": {
+      "name": "-Monkey D. Luffy-[ST-08]"
+    }
+  },
+  {
+    "id": "ST08-005",
+    "code": "ST08-005",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Shanks",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST08-005.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST08-005.png"
+    },
+    "cost": "9",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "10000",
+    "counter": "-",
+    "color": "Black",
+    "family": "Red-Haired Pirates",
+    "ability": "[On Play] You may trash 1 card from your hand: K.O. all Characters with a cost of 1 or less.",
+    "trigger": "",
+    "set": {
+      "name": "-Monkey D. Luffy-[ST-08]"
+    }
+  },
+  {
+    "id": "ST08-006",
+    "code": "ST08-006",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Shirahoshi",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST08-006.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST08-006.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": "0",
+    "counter": "1000",
+    "color": "Black",
+    "family": "Merfolk",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)[On Play] Give up to 1 of your opponent's Characters −4 cost during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-Monkey D. Luffy-[ST-08]"
+    }
+  },
+  {
+    "id": "ST08-007",
+    "code": "ST08-007",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Nefeltari Vivi",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST08-007.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST08-007.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "1000",
+    "counter": "1000",
+    "color": "Black",
+    "family": "Alabasta",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)",
+    "trigger": "[Trigger] Play this card.",
+    "set": {
+      "name": "-Monkey D. Luffy-[ST-08]"
+    }
+  },
+  {
+    "id": "ST08-008",
+    "code": "ST08-008",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Higuma",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST08-008.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST08-008.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "2000",
+    "counter": "1000",
+    "color": "Black",
+    "family": "Mountain Bandits",
+    "ability": "[On Play] Give up to 1 of your opponent's Characters −2 cost during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-Monkey D. Luffy-[ST-08]"
+    }
+  },
+  {
+    "id": "ST08-009",
+    "code": "ST08-009",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Makino",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST08-009.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST08-009.png"
+    },
+    "cost": "2",
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": "0",
+    "counter": "2000",
+    "color": "Black",
+    "family": "Windmill Village",
+    "ability": "[On Play] If there is a Character with a cost of 0, draw 1 card.",
+    "trigger": "",
+    "set": {
+      "name": "-Monkey D. Luffy-[ST-08]"
+    }
+  },
+  {
+    "id": "ST08-010",
+    "code": "ST08-010",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Monkey.D.Garp",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST08-010.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST08-010.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "7000",
+    "counter": "1000",
+    "color": "Black",
+    "family": "Navy",
+    "ability": "-",
+    "trigger": "",
+    "set": {
+      "name": "-Monkey D. Luffy-[ST-08]"
+    }
+  },
+  {
+    "id": "ST08-011",
+    "code": "ST08-011",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Monkey.D.Luffy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST08-011.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST08-011.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "5000",
+    "counter": "1000",
+    "color": "Black",
+    "family": "Straw Hat Crew",
+    "ability": "-",
+    "trigger": "",
+    "set": {
+      "name": "-Monkey D. Luffy-[ST-08]"
+    }
+  },
+  {
+    "id": "ST08-012",
+    "code": "ST08-012",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Laboon",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST08-012.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST08-012.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "6000",
+    "counter": "1000",
+    "color": "Black",
+    "family": "Animal",
+    "ability": "-",
+    "trigger": "",
+    "set": {
+      "name": "-Monkey D. Luffy-[ST-08]"
+    }
+  },
+  {
+    "id": "ST08-013",
+    "code": "ST08-013",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Mr.2.Bon.Kurei(Bentham)",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST08-013.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST08-013.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "6000",
+    "counter": "-",
+    "color": "Black",
+    "family": "Former Baroque Works",
+    "ability": "[DON!! x1] At the end of a battle in which this Character battles your opponent's Character, you may K.O. the opponent’s Character you battled with. If you do, K.O. this Character.",
+    "trigger": "",
+    "set": {
+      "name": "-Monkey D. Luffy-[ST-08]"
+    }
+  },
+  {
+    "id": "ST08-014",
+    "code": "ST08-014",
+    "rarity": "C",
+    "type": "EVENT",
+    "name": "Gum-Gum Bell",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST08-014.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST08-014.png"
+    },
+    "cost": "2",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Black",
+    "family": "Straw Hat Crew",
+    "ability": "[Main] You may add 1 card from the top of your Life cards to your hand: Give up to 1 of your opponent's Characters −7 cost during this turn.",
+    "trigger": "[Trigger] Add up to 1 black Character card with a cost of 2 or less from your trash to your hand.",
+    "set": {
+      "name": "-Monkey D. Luffy-[ST-08]"
+    }
+  },
+  {
+    "id": "ST08-015",
+    "code": "ST08-015",
+    "rarity": "C",
+    "type": "EVENT",
+    "name": "Gum-Gum Pistol",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST08-015.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST08-015.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Black",
+    "family": "Straw Hat Crew",
+    "ability": "[Main] K.O. up to 1 of your opponent's Characters with a cost of 2 or less.",
+    "trigger": "[Trigger] Draw 1 card.",
+    "set": {
+      "name": "-Monkey D. Luffy-[ST-08]"
+    }
+  }
+]

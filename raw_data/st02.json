@@ -1,0 +1,427 @@
+[
+  {
+    "id": "ST02-001",
+    "code": "ST02-001",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Eustass\"Captain\"Kid",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST02-001.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST02-001.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "5000",
+    "counter": "-",
+    "color": "Green",
+    "family": "Supernovas/Kid Pirates",
+    "ability": "[Activate: Main] [Once Per Turn]  ③ (You may rest the specified number of DON!! cards in your cost area.) You may trash 1 card from your hand: Set this Leader as active.",
+    "trigger": "",
+    "set": {
+      "name": "-Worst Generation-[ST-02]"
+    }
+  },
+  {
+    "id": "ST02-002",
+    "code": "ST02-002",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Vito",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST02-002.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST02-002.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Ranged",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type04.png"
+    },
+    "power": "5000",
+    "counter": "1000",
+    "color": "Green",
+    "family": "Firetank Pirates",
+    "ability": "-",
+    "trigger": "",
+    "set": {
+      "name": "-Worst Generation-[ST-02]"
+    }
+  },
+  {
+    "id": "ST02-003",
+    "code": "ST02-003",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Urouge",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST02-003.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST02-003.png"
+    },
+    "cost": "2",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "3000",
+    "counter": "1000",
+    "color": "Green",
+    "family": "Supernovas/Fallen Monk Pirates",
+    "ability": "[DON!! x1] If you have 3 or more Characters, this card gains +2000 power.",
+    "trigger": "",
+    "set": {
+      "name": "-Worst Generation-[ST-02]"
+    }
+  },
+  {
+    "id": "ST02-004",
+    "code": "ST02-004",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Capone\"Gang\"Bege",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST02-004.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST02-004.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "1000",
+    "counter": "-",
+    "color": "Green",
+    "family": "Supernovas/Firetank Pirates",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)",
+    "trigger": "",
+    "set": {
+      "name": "-Worst Generation-[ST-02]"
+    }
+  },
+  {
+    "id": "ST02-005",
+    "code": "ST02-005",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Killer",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST02-005.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST02-005.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "3000",
+    "counter": "1000",
+    "color": "Green",
+    "family": "Supernovas/Kid Pirates",
+    "ability": "[On Play] K.O. up to 1 of your opponent's rested Characters with a cost of 3 or less.",
+    "trigger": "[Trigger] Play this card.",
+    "set": {
+      "name": "-Worst Generation-[ST-02]"
+    }
+  },
+  {
+    "id": "ST02-006",
+    "code": "ST02-006",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Koby",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST02-006.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST02-006.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "6000",
+    "counter": "1000",
+    "color": "Green",
+    "family": "Navy",
+    "ability": "-",
+    "trigger": "",
+    "set": {
+      "name": "-Worst Generation-[ST-02]"
+    }
+  },
+  {
+    "id": "ST02-007",
+    "code": "ST02-007",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Jewelry Bonney",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST02-007.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST02-007.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "1000",
+    "counter": "1000",
+    "color": "Green",
+    "family": "Supernovas/Bonney Pirates",
+    "ability": "[Activate: Main] ➀ (You may rest the specified number of DON!! cards in your cost area.) You may rest this Character: Look at 5 cards from the top of your deck; reveal up to 1 {Supernovas} type card and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "",
+    "set": {
+      "name": "-Worst Generation-[ST-02]"
+    }
+  },
+  {
+    "id": "ST02-008",
+    "code": "ST02-008",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Scratchmen Apoo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST02-008.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST02-008.png"
+    },
+    "cost": "2",
+    "attribute": {
+      "name": "Ranged",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type04.png"
+    },
+    "power": "3000",
+    "counter": "2000",
+    "color": "Green",
+    "family": "Supernovas/On-Air Pirates",
+    "ability": "[DON!! x1] [When Attacking] Rest up to 1 of your opponent's DON!! cards.",
+    "trigger": "",
+    "set": {
+      "name": "-Worst Generation-[ST-02]"
+    }
+  },
+  {
+    "id": "ST02-009",
+    "code": "ST02-009",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Trafalgar Law",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST02-009.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST02-009.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "6000",
+    "counter": "1000",
+    "color": "Green",
+    "family": "Supernovas/Heart Pirates",
+    "ability": "[On Play] Set up to 1 of your {Supernovas} or {Heart Pirates} type rested Characters with a cost of 5 or less as active.",
+    "trigger": "",
+    "set": {
+      "name": "-Worst Generation-[ST-02]"
+    }
+  },
+  {
+    "id": "ST02-010",
+    "code": "ST02-010",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Basil Hawkins",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST02-010.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST02-010.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "6000",
+    "counter": "-",
+    "color": "Green",
+    "family": "Supernovas/Hawkins Pirates",
+    "ability": "[DON!! x1] [Once Per Turn] [Your Turn] If this Character battles your opponent's Character, set this card as active.",
+    "trigger": "",
+    "set": {
+      "name": "-Worst Generation-[ST-02]"
+    }
+  },
+  {
+    "id": "ST02-011",
+    "code": "ST02-011",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Heat",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST02-011.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST02-011.png"
+    },
+    "cost": "2",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "4000",
+    "counter": "1000",
+    "color": "Green",
+    "family": "Kid Pirates",
+    "ability": "-",
+    "trigger": "",
+    "set": {
+      "name": "-Worst Generation-[ST-02]"
+    }
+  },
+  {
+    "id": "ST02-012",
+    "code": "ST02-012",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Bepo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST02-012.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST02-012.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "3000",
+    "counter": "1000",
+    "color": "Green",
+    "family": "Minks/Heart Pirates",
+    "ability": "-",
+    "trigger": "",
+    "set": {
+      "name": "-Worst Generation-[ST-02]"
+    }
+  },
+  {
+    "id": "ST02-013",
+    "code": "ST02-013",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Eustass\"Captain\"Kid",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST02-013.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST02-013.png"
+    },
+    "cost": "7",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "7000",
+    "counter": "-",
+    "color": "Green",
+    "family": "Supernovas/Kid Pirates",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)[DON!! x1] [End of Your Turn] Set this Character as active.",
+    "trigger": "",
+    "set": {
+      "name": "-Worst Generation-[ST-02]"
+    }
+  },
+  {
+    "id": "ST02-014",
+    "code": "ST02-014",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "X.Drake",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST02-014.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST02-014.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "5000",
+    "counter": "1000",
+    "color": "Green",
+    "family": "Navy/Supernovas/Drake Pirates",
+    "ability": "[DON!! x1] [Your Turn] If this Character is rested, your {Supernovas} or {Navy} type Leaders and Characters gain +1000 power.",
+    "trigger": "",
+    "set": {
+      "name": "-Worst Generation-[ST-02]"
+    }
+  },
+  {
+    "id": "ST02-015",
+    "code": "ST02-015",
+    "rarity": "C",
+    "type": "EVENT",
+    "name": "Scalpel",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST02-015.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST02-015.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Green",
+    "family": "Supernovas/Heart Pirates",
+    "ability": "[Counter] Up to 1 of your Leader or Character cards gains +2000 power during this battle. Then, set up to 1 of your DON!! cards as active.",
+    "trigger": "[Trigger] Set up to 2 of your DON!! cards as active.",
+    "set": {
+      "name": "-Worst Generation-[ST-02]"
+    }
+  },
+  {
+    "id": "ST02-016",
+    "code": "ST02-016",
+    "rarity": "C",
+    "type": "EVENT",
+    "name": "Repel",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST02-016.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST02-016.png"
+    },
+    "cost": "2",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Green",
+    "family": "Supernovas/Kid Pirates",
+    "ability": "[Counter] Up to 1 of your Leader or Character cards gains +4000 power during this battle. Then, set up to 1 of your DON!! cards as active.",
+    "trigger": "",
+    "set": {
+      "name": "-Worst Generation-[ST-02]"
+    }
+  },
+  {
+    "id": "ST02-017",
+    "code": "ST02-017",
+    "rarity": "C",
+    "type": "EVENT",
+    "name": "Straw Sword",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST02-017.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST02-017.png"
+    },
+    "cost": "2",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Green",
+    "family": "Supernovas/Hawkins Pirates",
+    "ability": "[Main] Rest up to 1 of your opponent's Characters.",
+    "trigger": "[Trigger] Play up to 1 {Supernovas} type card with a cost of 2 or less from your hand.",
+    "set": {
+      "name": "-Worst Generation-[ST-02]"
+    }
+  }
+]

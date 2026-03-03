@@ -1,0 +1,4977 @@
+[
+  {
+    "id": "EB04-011",
+    "code": "EB04-011",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Scaled Neptunian",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-011.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-011.png"
+    },
+    "cost": "7",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "8000",
+    "counter": "1000",
+    "color": "Green",
+    "family": "Neptunian",
+    "ability": "[Rush: Character] (This card can attack Characters on the turn in which it is played.)[On Play] Draw a card for each of your {Neptunian} type Characters. Then, trash the same number of cards from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "EB04-012",
+    "code": "EB04-012",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Kikunojo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-012.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-012.png"
+    },
+    "cost": "7",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "8000",
+    "counter": "-",
+    "color": "Green",
+    "family": "Land of Wano/The Akazaya Nine",
+    "ability": "[Activate: Main] [Once Per Turn] If this Character was played on this turn, set your {Land of Wano} type Leader as active.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "EB04-012_p1",
+    "code": "EB04-012",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Kikunojo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-012_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-012_p1.png"
+    },
+    "cost": "7",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "8000",
+    "counter": "-",
+    "color": "Green",
+    "family": "Land of Wano/The Akazaya Nine",
+    "ability": "[Activate: Main] [Once Per Turn] If this Character was played on this turn, set your {Land of Wano} type Leader as active.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "EB04-013",
+    "code": "EB04-013",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Carrot",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-013.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-013.png"
+    },
+    "cost": "8",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "9000",
+    "counter": "-",
+    "color": "Green",
+    "family": "Minks",
+    "ability": "[On Play] If your Leader has the {Minks} type, set up to 2 of your {Minks} type Characters and your Leader as active.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "EB04-013_p1",
+    "code": "EB04-013",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Carrot",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-013_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-013_p1.png"
+    },
+    "cost": "8",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "9000",
+    "counter": "-",
+    "color": "Green",
+    "family": "Minks",
+    "ability": "[On Play] If your Leader has the {Minks} type, set up to 2 of your {Minks} type Characters and your Leader as active.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "EB04-014",
+    "code": "EB04-014",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Kozuki Sukiyaki",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-014.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-014.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Green",
+    "family": "Land of Wano/Kouzuki Clan",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)[Activate: Main] [Once Per Turn] Give up to 1 rested DON!! card to your {Land of Wano} type Leader.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "EB04-015",
+    "code": "EB04-015",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Jinbe",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-015.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-015.png"
+    },
+    "cost": "7",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "8000",
+    "counter": "-",
+    "color": "Green",
+    "family": "Fish-Man/Fish-Man Island/The Sun Pirates",
+    "ability": "[Blocker][On K.O.] You may rest 1 of your cards: If your Leader has the {Fish-Man} or {Merfolk} type, play up to 1 green Character card with a cost of 6 or less from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "EB04-016",
+    "code": "EB04-016",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Bird Neptunian",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-016.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-016.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "7000",
+    "counter": "-",
+    "color": "Green",
+    "family": "Neptunian",
+    "ability": "[Activate: Main] Set up to 1 of your DON!! cards as active. Then, you cannot set DON!! cards as active using Character effects during this turn.[When Attacking] If you have 3 or more {Neptunian} type Characters, rest up to 1 of your opponent's Characters with a cost of 8 or less.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "EB04-017",
+    "code": "EB04-017",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Mystoms",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-017.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-017.png"
+    },
+    "cost": "6",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "5000",
+    "counter": "1000",
+    "color": "Green",
+    "family": "Minks/Big Mom Pirates",
+    "ability": "[Your Turn] If you have 3 or more {Minks} type Characters, give all of your opponent's Characters −1 cost.[On Play] If your Leader has the {Minks} type, play up to 1 {Minks} type Character card with a cost of 5 or less from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "EB04-018",
+    "code": "EB04-018",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Megalo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-018.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-018.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": "4000",
+    "counter": "2000",
+    "color": "Green",
+    "family": "Animal/Fish-Man Island",
+    "ability": "[On Play] You may rest this Character: K.O. up to 1 of your opponent's rested Characters with 8000 power or less.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "EB04-018_p1",
+    "code": "EB04-018",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Megalo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-018_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-018_p1.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": "4000",
+    "counter": "2000",
+    "color": "Green",
+    "family": "Animal/Fish-Man Island",
+    "ability": "[On Play] You may rest this Character: K.O. up to 1 of your opponent's rested Characters with 8000 power or less.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "EB04-019",
+    "code": "EB04-019",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "Eleclaw",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-019.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-019.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Green",
+    "family": "Minks",
+    "ability": "[Main] You may rest 1 of your cards: If your Leader has the {Minks} type, give up to 1 of your opponent's Characters −3 cost during this turn.[Counter] Up to 1 of your {Minks} type Leader or Character cards gains +3000 power during this battle.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "EB04-020",
+    "code": "EB04-020",
+    "rarity": "C",
+    "type": "EVENT",
+    "name": "Shark Brick Fist",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-020.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-020.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Green",
+    "family": "Fish-Man/Fish-Man Island/The Sun Pirates",
+    "ability": "[Counter] Up to 1 of your {Fish-Man} type Leader or Character cards gains +3000 power during this battle. Then, set up to 1 of your {Fish-Man} type Characters as active.",
+    "trigger": "[Trigger] Rest up to 1 of your opponent's Characters with a cost of 4 or less.",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "EB04-021",
+    "code": "EB04-021",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Igaram",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-021.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-021.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": "4000",
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Alabasta",
+    "ability": "[On Play] If your Leader is [Nefeltari Vivi], draw 2 cards and trash 1 card from your hand.[Activate: Main] [Once Per Turn] You may trash 1 card from your hand: Give up to 1 rested DON!! card to your Leader or 1 of your Characters.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "EB04-022",
+    "code": "EB04-022",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Issho",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-022.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-022.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "7000",
+    "counter": "-",
+    "color": "Blue",
+    "family": "Dressrosa/Navy",
+    "ability": "[On Play] You may trash 2 cards from your hand: If your opponent has 6 or more cards in their hand, your opponent places 2 cards from their hand at the bottom of their deck in any order.[DON!! x1] [When Attacking] You may trash 1 card from your hand: Give up to 1 of your opponent's Characters −2000 power during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "EB04-022_p1",
+    "code": "EB04-022",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Issho",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-022_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-022_p1.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "7000",
+    "counter": "-",
+    "color": "Blue",
+    "family": "Dressrosa/Navy",
+    "ability": "[On Play] You may trash 2 cards from your hand: If your opponent has 6 or more cards in their hand, your opponent places 2 cards from their hand at the bottom of their deck in any order.[DON!! x1] [When Attacking] You may trash 1 card from your hand: Give up to 1 of your opponent's Characters −2000 power during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "EB04-023",
+    "code": "EB04-023",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Chaka & Pell",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-023.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-023.png"
+    },
+    "cost": "8",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "9000",
+    "counter": "-",
+    "color": "Blue",
+    "family": "Alabasta",
+    "ability": "[Double Attack] (This card deals 2 damage.)[On Play] You may give your active Leader −5000 power during this turn: Draw 2 cards.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "EB04-024",
+    "code": "EB04-024",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Terracotta",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-024.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-024.png"
+    },
+    "cost": "2",
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": "0",
+    "counter": "2000",
+    "color": "Blue",
+    "family": "Alabasta",
+    "ability": "[Activate: Main] You may rest this Character and trash 1 card from your hand: Up to 1 of your {Alabasta} type Characters gains [Unblockable] during this turn.(This card cannot be blocked.)",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "EB04-025",
+    "code": "EB04-025",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Nefeltari Vivi",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-025.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-025.png"
+    },
+    "cost": "7",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "4000",
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Alabasta",
+    "ability": "[On Play] Play up to 1 {Alabasta} type Character card with a cost of 8 or less other than [Nefeltari Vivi] from your hand. Then, your opponent places 1 card from their hand at the bottom of their deck.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "EB04-025_p1",
+    "code": "EB04-025",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Nefeltari Vivi",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-025_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-025_p1.png"
+    },
+    "cost": "7",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "4000",
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Alabasta",
+    "ability": "[On Play] Play up to 1 {Alabasta} type Character card with a cost of 8 or less other than [Nefeltari Vivi] from your hand. Then, your opponent places 1 card from their hand at the bottom of their deck.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "EB04-026",
+    "code": "EB04-026",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Bluegrass",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-026.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-026.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "6000",
+    "counter": "-",
+    "color": "Blue",
+    "family": "Egghead/Navy",
+    "ability": "[On Play] Place up to 1 of your opponent's Characters with a cost of 1 or less at the bottom of the owner's deck.[When Attacking] Draw 1 card and trash 1 card from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "EB04-027",
+    "code": "EB04-027",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Boa Hancock",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-027.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-027.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "7000",
+    "counter": "-",
+    "color": "Blue",
+    "family": "The Seven Warlords of the Sea/Kuja Pirates",
+    "ability": "[On Play] Draw 2 cards and trash 1 card from your hand.",
+    "trigger": "[Trigger] Play up to 1 Character card with 5000 power or less and a [Trigger] from your hand.",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "EB04-028",
+    "code": "EB04-028",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "Ice Time",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-028.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-028.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Blue",
+    "family": "Navy",
+    "ability": "[Main] You may trash 1 card from your hand: If your Leader has the {Navy} type, up to 2 of your opponent's Characters with 10000 power or less cannot attack until the end of your opponent's next End Phase.",
+    "trigger": "[Trigger] Return up to 1 Character with a cost of 5 or less to the owner's hand.",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "EB04-029",
+    "code": "EB04-029",
+    "rarity": "UC",
+    "type": "EVENT",
+    "name": "I Heard the Sound...of a Lady's Teardrops Falling",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-029.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-029.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Blue",
+    "family": "Punk Hazard/Straw Hat Crew",
+    "ability": "[Main] If your Leader is [Sanji], look at 3 cards from the top of your deck; reveal up to 1 [Sanji] or Event card and add it to your hand. Then, trash the rest.[Counter] You may trash 1 card from your hand: Up to 1 of your [Sanji] cards gains +4000 power during this battle.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "EB04-030",
+    "code": "EB04-030",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Kaido",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-030.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-030.png"
+    },
+    "cost": "7",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "9000",
+    "counter": "-",
+    "color": "Purple",
+    "family": "The Four Emperors/Animal Kingdom Pirates",
+    "ability": "If this Character would be K.O.'d, you may return 1 DON!! card from your field to your DON!! deck instead.[On Play] DON!! −2: If your Leader has the {Animal Kingdom Pirates} type, this Character gains [Rush] during this turn. Then, rest up to 1 of your opponent's Characters with a cost of 7 or less.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "EB04-031",
+    "code": "EB04-031",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "King",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-031.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-031.png"
+    },
+    "cost": "6",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "7000",
+    "counter": "-",
+    "color": "Purple",
+    "family": "Lunarian/Animal Kingdom Pirates",
+    "ability": "If this Character would be K.O.'d, you may return 1 DON!! card from your field to your DON!! deck instead.[Activate: Main] [Once Per Turn] If your Leader has the {Animal Kingdom Pirates} type and you have no other [King] Characters, add up to 1 DON!! card from your DON!! deck and set it as active, and add up to 1 additional DON!! card and rest it.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "EB04-031_p1",
+    "code": "EB04-031",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "King",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-031_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-031_p1.png"
+    },
+    "cost": "6",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "7000",
+    "counter": "-",
+    "color": "Purple",
+    "family": "Lunarian/Animal Kingdom Pirates",
+    "ability": "If this Character would be K.O.'d, you may return 1 DON!! card from your field to your DON!! deck instead.[Activate: Main] [Once Per Turn] If your Leader has the {Animal Kingdom Pirates} type and you have no other [King] Characters, add up to 1 DON!! card from your DON!! deck and set it as active, and add up to 1 additional DON!! card and rest it.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "EB04-032",
+    "code": "EB04-032",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Queen",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-032.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-032.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "1000",
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Animal Kingdom Pirates",
+    "ability": "[On Play] You may trash 1 {Animal Kingdom Pirates} type card from your hand: Draw 2 cards.[Activate: Main] [Once Per Turn] You may rest 2 of your DON!! cards: If your Leader has the {Animal Kingdom Pirates} type, add up to 1 DON!! card from your DON!! deck and rest it.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "EB04-033",
+    "code": "EB04-033",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Groggy Monsters",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-033.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-033.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "6000",
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Giant/Fish-Man/Foxy Pirates",
+    "ability": "[On Play] DON!! −1: If you have 3 or more {Foxy Pirates} type Characters, K.O. up to 1 of your opponent's Characters with 6000 base power or less.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "EB04-034",
+    "code": "EB04-034",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Charlotte Pudding",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-034.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-034.png"
+    },
+    "cost": "2",
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": "1000",
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Big Mom Pirates",
+    "ability": "[Blocker][On Your Opponent's Attack] [Once Per Turn] You may trash 1 card from your hand: If you have 4 or more Events in your trash, up to 1 of your Leader or Character cards gains +2000 power during this battle.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "EB04-035",
+    "code": "EB04-035",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Hitokiri Kamazo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-035.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-035.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "4000",
+    "counter": "1000",
+    "color": "Purple",
+    "family": "SMILE/Supernovas/Kid Pirates",
+    "ability": "[Blocker][Your Turn] [Once Per Turn] When a DON!! card on your field is returned to your DON!! deck, if your Leader has the {Kid Pirates} type, add up to 1 DON!! card from your DON!! deck and rest it.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "EB04-036",
+    "code": "EB04-036",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Foxy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-036.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-036.png"
+    },
+    "cost": "8",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "9000",
+    "counter": "-",
+    "color": "Purple",
+    "family": "Foxy Pirates",
+    "ability": "[On Play] DON!! −1: If your Leader has the {Foxy Pirates} type, draw 2 cards and trash 1 card from your hand. Then, rest up to 1 of your opponent's Characters with a cost of 9 or less.[Activate: Main] [Once Per Turn] Add up to 1 DON!! card from your DON!! deck and rest it.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "EB04-036_p1",
+    "code": "EB04-036",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Foxy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-036_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-036_p1.png"
+    },
+    "cost": "8",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "9000",
+    "counter": "-",
+    "color": "Purple",
+    "family": "Foxy Pirates",
+    "ability": "[On Play] DON!! −1: If your Leader has the {Foxy Pirates} type, draw 2 cards and trash 1 card from your hand. Then, rest up to 1 of your opponent's Characters with a cost of 9 or less.[Activate: Main] [Once Per Turn] Add up to 1 DON!! card from your DON!! deck and rest it.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "EB04-037",
+    "code": "EB04-037",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Porche",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-037.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-037.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": "2000",
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Foxy Pirates",
+    "ability": "[On Play] If your Leader has the {Foxy Pirates} type, look at 5 cards from the top of your deck; reveal up to 1 {Foxy Pirates} type card and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "EB04-038",
+    "code": "EB04-038",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Rosinante & Law",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-038.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-038.png"
+    },
+    "cost": "6",
+    "attribute": {
+      "name": "Special/Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type13.png"
+    },
+    "power": "8000",
+    "counter": "-",
+    "color": "Purple",
+    "family": "Navy/Donquixote Pirates",
+    "ability": "Under the rules of this game, also treat this card's name as [Trafalgar Law] and [Donquixote Rosinante].[Blocker][On Play] If the number of DON!! cards on your field is equal to or less than the number on your opponent's field, draw 1 card. Then, add up to 1 DON!! card from your DON!! deck and set it as active.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "EB04-038_p1",
+    "code": "EB04-038",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Rosinante & Law",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-038_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-038_p1.png"
+    },
+    "cost": "6",
+    "attribute": {
+      "name": "Special/Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type13.png"
+    },
+    "power": "8000",
+    "counter": "-",
+    "color": "Purple",
+    "family": "Navy/Donquixote Pirates",
+    "ability": "Under the rules of this game, also treat this card's name as [Trafalgar Law] and [Donquixote Rosinante].[Blocker][On Play] If the number of DON!! cards on your field is equal to or less than the number on your opponent's field, draw 1 card. Then, add up to 1 DON!! card from your DON!! deck and set it as active.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "EB04-039",
+    "code": "EB04-039",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Eustass\"Captain\"Kid",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-039.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-039.png"
+    },
+    "cost": "7",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "8000",
+    "counter": "-",
+    "color": "Purple",
+    "family": "Supernovas/Kid Pirates",
+    "ability": "[On Play] Add up to 1 DON!! card from your DON!! deck and set it as active.[Activate: Main] You may trash this Character: Play up to 1 {Kid Pirates} type Character card with a cost of 5 or less from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "EB04-040",
+    "code": "EB04-040",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "Flame Dragon Torch",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-040.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-040.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Purple",
+    "family": "The Four Emperors/Animal Kingdom Pirates",
+    "ability": "[Main] You may rest 6 of your DON!! cards: Up to 1 of your [Kaido] cards gains +3000 power during this turn. Then, rest up to 1 of your opponent's Characters.[Counter] DON!! −1: Your Leader gains +4000 power during this battle.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "EB04-041",
+    "code": "EB04-041",
+    "rarity": "C",
+    "type": "EVENT",
+    "name": "Stealth Black",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-041.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-041.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Purple",
+    "family": "Straw Hat Crew",
+    "ability": "[Main] If your Leader is [Sanji] and you have 4 or more DON!! cards on your field, play up to 1 [Sanji] with 6000 power or less from your hand or trash.",
+    "trigger": "[Trigger] Draw 2 cards and trash 1 card from your hand.",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP12-108_p2",
+    "code": "OP12-108",
+    "rarity": "TR",
+    "type": "CHARACTER",
+    "name": "Donquixote Rosinante",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-108_p2.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-108_p2.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "2000",
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Navy/Donquixote Pirates",
+    "ability": "[On Play] Look at 5 cards from the top of your deck; reveal up to 1 [Trafalgar Law] and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-001",
+    "code": "OP14-001",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Trafalgar Law",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-001.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-001.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "5000",
+    "counter": "-",
+    "color": "Red",
+    "family": "The Seven Warlords of the Sea/Supernovas/Heart Pirates",
+    "ability": "[Activate: Main] [Once Per Turn] Select 2 of your {Supernovas} or {Heart Pirates} type Characters. Swap the base power of the selected Characters with each other during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-001_p1",
+    "code": "OP14-001",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Trafalgar Law",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-001_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-001_p1.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "5000",
+    "counter": "-",
+    "color": "Red",
+    "family": "The Seven Warlords of the Sea/Supernovas/Heart Pirates",
+    "ability": "[Activate: Main] [Once Per Turn] Select 2 of your {Supernovas} or {Heart Pirates} type Characters. Swap the base power of the selected Characters with each other during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-002",
+    "code": "OP14-002",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Urouge",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-002.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-002.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "2000",
+    "counter": "1000",
+    "color": "Red",
+    "family": "Supernovas/Fallen Monk Pirates",
+    "ability": "[When Attacking] If this Character has 5000 power or more, draw 1 card and K.O. up to 1 of your opponent's Characters with 3000 base power or less.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-003",
+    "code": "OP14-003",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Capone\"Gang\"Bege",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-003.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-003.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Ranged",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type04.png"
+    },
+    "power": "2000",
+    "counter": "1000",
+    "color": "Red",
+    "family": "Supernovas/Firetank Pirates",
+    "ability": "This Character cannot be K.O.'d by effects of your opponent's Characters with 5000 base power or less.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-004",
+    "code": "OP14-004",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Cavendish",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-004.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-004.png"
+    },
+    "cost": "2",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "2000",
+    "counter": "1000",
+    "color": "Red",
+    "family": "Dressrosa/Supernovas/Beautiful Pirates",
+    "ability": "If this Character has 5000 power or more, this Character gains [Rush].(This card can attack on the turn in which it is played.)",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-005",
+    "code": "OP14-005",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Killer",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-005.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-005.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "1000",
+    "counter": "1000",
+    "color": "Red",
+    "family": "Supernovas/Kid Pirates",
+    "ability": "[Activate: Main] [Once Per Turn] Give up to 1 rested DON!! card to your Leader or 1 of your Characters.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-006",
+    "code": "OP14-006",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Shachi & Penguin",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-006.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-006.png"
+    },
+    "cost": "2",
+    "attribute": {
+      "name": "Ranged",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type04.png"
+    },
+    "power": "2000",
+    "counter": "1000",
+    "color": "Red",
+    "family": "Heart Pirates",
+    "ability": "[When Attacking] If this Character has 5000 power or more, give up to 1 of your opponent's Characters −2000 power during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-007",
+    "code": "OP14-007",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Jewelry Bonney",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-007.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-007.png"
+    },
+    "cost": "6",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "7000",
+    "counter": "2000",
+    "color": "Red",
+    "family": "Supernovas/Bonney Pirates",
+    "ability": "-",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-008",
+    "code": "OP14-008",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Scratchmen Apoo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-008.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-008.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "5000",
+    "counter": "1000",
+    "color": "Red",
+    "family": "Supernovas/On-Air Pirates",
+    "ability": "-",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-009",
+    "code": "OP14-009",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Trafalgar Law",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-009.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-009.png"
+    },
+    "cost": "9",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "10000",
+    "counter": "-",
+    "color": "Red",
+    "family": "The Seven Warlords of the Sea/Supernovas/Heart Pirates",
+    "ability": "[Rush][On Your Opponent's Attack] [Once Per Turn] You may trash 2 cards from your hand: Select your Leader and 1 Character. Swap the base power of the selected cards with each other during this battle.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-009_p1",
+    "code": "OP14-009",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Trafalgar Law",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-009_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-009_p1.png"
+    },
+    "cost": "9",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "10000",
+    "counter": "-",
+    "color": "Red",
+    "family": "The Seven Warlords of the Sea/Supernovas/Heart Pirates",
+    "ability": "[Rush][On Your Opponent's Attack] [Once Per Turn] You may trash 2 cards from your hand: Select your Leader and 1 Character. Swap the base power of the selected cards with each other during this battle.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-010",
+    "code": "OP14-010",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Basil Hawkins",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-010.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-010.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "2000",
+    "counter": "1000",
+    "color": "Red",
+    "family": "Supernovas/Hawkins Pirates",
+    "ability": "[On K.O.] Look at 5 cards from the top of your deck; play up to 1 {Supernovas} type Character card with 2000 power or less other than [Basil Hawkins]. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-011",
+    "code": "OP14-011",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Bartolomeo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-011.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-011.png"
+    },
+    "cost": "2",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "2000",
+    "counter": "2000",
+    "color": "Red",
+    "family": "Dressrosa/Supernovas/Barto Club",
+    "ability": "[DON!! x2] This Character gains [Blocker].(After your opponent declares an attack, you may rest this card to make it the new target of the attack.)",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-012",
+    "code": "OP14-012",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Bepo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-012.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-012.png"
+    },
+    "cost": "2",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "2000",
+    "counter": "1000",
+    "color": "Red",
+    "family": "Minks/Heart Pirates",
+    "ability": "[When Attacking] If this Character has 5000 power or more, give up to 2 rested DON!! cards to your Leader or 1 of your Characters.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-013",
+    "code": "OP14-013",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Monkey.D.Luffy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-013.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-013.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "0",
+    "counter": "1000",
+    "color": "Red",
+    "family": "Supernovas/Straw Hat Crew",
+    "ability": "[On Play] Look at 5 cards from the top of your deck; reveal up to 1 {Supernovas} type card other than [Monkey.D.Luffy] and add it to your hand. Then, place the rest at the bottom of your deck in any order.[When Attacking] Give up to 1 of your opponent's Characters −1000 power during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-013_p1",
+    "code": "OP14-013",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Monkey.D.Luffy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-013_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-013_p1.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "0",
+    "counter": "1000",
+    "color": "Red",
+    "family": "Supernovas/Straw Hat Crew",
+    "ability": "[On Play] Look at 5 cards from the top of your deck; reveal up to 1 {Supernovas} type card other than [Monkey.D.Luffy] and add it to your hand. Then, place the rest at the bottom of your deck in any order.[When Attacking] Give up to 1 of your opponent's Characters −1000 power during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-014",
+    "code": "OP14-014",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Eustass\"Captain\"Kid",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-014.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-014.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "5000",
+    "counter": "1000",
+    "color": "Red",
+    "family": "Supernovas/Kid Pirates",
+    "ability": "[Blocker][On Play] If your Leader has the {Supernovas} type, play up to 1 red Character card with 2000 power or less from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-015",
+    "code": "OP14-015",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Roronoa Zoro",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-015.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-015.png"
+    },
+    "cost": "7",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "8000",
+    "counter": "-",
+    "color": "Red",
+    "family": "Supernovas/Straw Hat Crew",
+    "ability": "[Rush] (This card can attack on the turn in which it is played.)[When Attacking] Give up to 1 of your opponent's Characters −1000 power during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-015_p1",
+    "code": "OP14-015",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Roronoa Zoro",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-015_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-015_p1.png"
+    },
+    "cost": "7",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "8000",
+    "counter": "-",
+    "color": "Red",
+    "family": "Supernovas/Straw Hat Crew",
+    "ability": "[Rush] (This card can attack on the turn in which it is played.)[When Attacking] Give up to 1 of your opponent's Characters −1000 power during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-016",
+    "code": "OP14-016",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "X.Drake",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-016.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-016.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "7000",
+    "counter": "-",
+    "color": "Red",
+    "family": "Supernovas/Navy/Drake Pirates",
+    "ability": "[Opponent's Turn] [Once Per Turn] If your {Supernovas} type Character would be removed from the field by your opponent's effect, you may give your Leader −2000 power during this turn instead.[DON!! x1] [When Attacking] Give up to 1 of your opponent's Characters −2000 power during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-017",
+    "code": "OP14-017",
+    "rarity": "C",
+    "type": "EVENT",
+    "name": "Chambres",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-017.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-017.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Red",
+    "family": "The Seven Warlords of the Sea/Supernovas/Heart Pirates",
+    "ability": "[Main] Select 2 of your opponent's Characters with 9000 base power or less. Swap the base power of the selected Characters with each other during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-018",
+    "code": "OP14-018",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "Time for the Counterattack",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-018.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-018.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Red",
+    "family": "The Seven Warlords of the Sea/Supernovas/Heart Pirates",
+    "ability": "[Counter] If there is a Character with 8000 power or more, up to 1 of your Leader or Character cards gains +4000 power during this battle.",
+    "trigger": "[Trigger] Play up to 1 red Character card with 2000 power or less from your hand.",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-019",
+    "code": "OP14-019",
+    "rarity": "UC",
+    "type": "EVENT",
+    "name": "I Have a Plan to Take Down One of the Four Emperors!!",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-019.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-019.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Red",
+    "family": "The Seven Warlords of the Sea/Supernovas/Heart Pirates",
+    "ability": "[Main] Look at 4 cards from the top of your deck; reveal up to 1 {Supernovas} or {Straw Hat Crew} type Character card and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "[Trigger] Draw 1 card.",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-020",
+    "code": "OP14-020",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Dracule Mihawk",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-020.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-020.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "5000",
+    "counter": "-",
+    "color": "Green",
+    "family": "The Seven Warlords of the Sea",
+    "ability": "If your opponent's Leader has the <Slash> attribute, this Leader gains +1000 power.[Activate: Main] [Once Per Turn] You may rest 1 of your cards: If there is a Character with a cost of 5 or more, set up to 3 of your DON!! cards as active. Then, you cannot play Character cards during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-020_p1",
+    "code": "OP14-020",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Dracule Mihawk",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-020_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-020_p1.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "5000",
+    "counter": "-",
+    "color": "Green",
+    "family": "The Seven Warlords of the Sea",
+    "ability": "If your opponent's Leader has the <Slash> attribute, this Leader gains +1000 power.[Activate: Main] [Once Per Turn] You may rest 1 of your cards: If there is a Character with a cost of 5 or more, set up to 3 of your DON!! cards as active. Then, you cannot play Character cards during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-021",
+    "code": "OP14-021",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Issho",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-021.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-021.png"
+    },
+    "cost": "6",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "7000",
+    "counter": "1000",
+    "color": "Green",
+    "family": "Dressrosa/Navy",
+    "ability": "[Your Turn] When this Character becomes rested, you may add 1 card from the top of your Life cards to your hand. If you do, up to 1 of your opponent's rested Characters or Stages will not become active in your opponent's next Refresh Phase.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-022",
+    "code": "OP14-022",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Usopp",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-022.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-022.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Ranged",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type04.png"
+    },
+    "power": "5000",
+    "counter": "1000",
+    "color": "Green",
+    "family": "FILM/Straw Hat Crew",
+    "ability": "[End of Your Turn] If your Leader has the {FILM} or {Straw Hat Crew} type, set up to 2 of your DON!! cards as active.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-023",
+    "code": "OP14-023",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Kikunojo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-023.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-023.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "2000",
+    "counter": "2000",
+    "color": "Green",
+    "family": "Land of Wano/The Akazaya Nine",
+    "ability": "[End of Your Turn] Set this Character as active.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-024",
+    "code": "OP14-024",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Kin'emon",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-024.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-024.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "5000",
+    "counter": "1000",
+    "color": "Green",
+    "family": "Land of Wano/The Akazaya Nine",
+    "ability": "[On Play] Set up to 3 of your DON!! cards as active. Then, you cannot play Character cards during this turn.[On K.O.] Rest up to 1 of your opponent's cards.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-025",
+    "code": "OP14-025",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Kuro",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-025.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-025.png"
+    },
+    "cost": "7",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "8000",
+    "counter": "-",
+    "color": "Green",
+    "family": "East Blue/Black Cat Pirates",
+    "ability": "[On Play] If your Leader is [Kuro], play up to 1 {East Blue} type Character card with a cost of 6 or less from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-026",
+    "code": "OP14-026",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Kouzuki Oden",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-026.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-026.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "5000",
+    "counter": "2000",
+    "color": "Green",
+    "family": "Land of Wano/Kouzuki Clan",
+    "ability": "[Opponent's Turn] If this Character is rested, this Character gains +2000 power.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-027",
+    "code": "OP14-027",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Shanks",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-027.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-027.png"
+    },
+    "cost": "7",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "9000",
+    "counter": "-",
+    "color": "Green",
+    "family": "East Blue/The Four Emperors/Red-Haired Pirates",
+    "ability": "[Your Turn] When this Character becomes rested, rest up to 1 of your opponent's Characters with 7000 base power or less.[Opponent's Turn] If this Character is rested, give all of your opponent's Characters −1000 power.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-027_p1",
+    "code": "OP14-027",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Shanks",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-027_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-027_p1.png"
+    },
+    "cost": "7",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "9000",
+    "counter": "-",
+    "color": "Green",
+    "family": "East Blue/The Four Emperors/Red-Haired Pirates",
+    "ability": "[Your Turn] When this Character becomes rested, rest up to 1 of your opponent's Characters with 7000 base power or less.[Opponent's Turn] If this Character is rested, give all of your opponent's Characters −1000 power.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-028",
+    "code": "OP14-028",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Johnny",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-028.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-028.png"
+    },
+    "cost": "2",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "2000",
+    "counter": "1000",
+    "color": "Green",
+    "family": "East Blue",
+    "ability": "[Your Turn] When this Character becomes rested, K.O. up to 1 of your opponent's rested Characters with a cost of 2 or less.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-029",
+    "code": "OP14-029",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Tashigi",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-029.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-029.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "6000",
+    "counter": "1000",
+    "color": "Green",
+    "family": "Navy",
+    "ability": "[Opponent's Turn] If this Character would be removed from the field by your opponent's effect, you may rest 1 of your cards instead.[Activate: Main] [Once Per Turn] You may rest 2 of your cards: This Character gains +2000 power until the end of your opponent's next End Phase.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-030",
+    "code": "OP14-030",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Chaka & Pell",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-030.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-030.png"
+    },
+    "cost": "6",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "7000",
+    "counter": "2000",
+    "color": "Green",
+    "family": "Alabasta",
+    "ability": "-",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-031",
+    "code": "OP14-031",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Nami",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-031.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-031.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "2000",
+    "counter": "1000",
+    "color": "Green",
+    "family": "FILM/Straw Hat Crew",
+    "ability": "[Blocker][On Play] Rest up to 2 of your opponent's Characters with a cost of 8 or less. Then, set up to 5 of your DON!! cards as active at the end of this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-031_p1",
+    "code": "OP14-031",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Nami",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-031_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-031_p1.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "2000",
+    "counter": "1000",
+    "color": "Green",
+    "family": "FILM/Straw Hat Crew",
+    "ability": "[Blocker][On Play] Rest up to 2 of your opponent's Characters with a cost of 8 or less. Then, set up to 5 of your DON!! cards as active at the end of this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-032",
+    "code": "OP14-032",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Humandrill",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-032.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-032.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "4000",
+    "counter": "2000",
+    "color": "Green",
+    "family": "Animal/Muggy Kingdom",
+    "ability": "[Your Turn] When this Character becomes rested, rest up to 1 of your opponent's Characters with a cost of 4 or less.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-033",
+    "code": "OP14-033",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Perona",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-033.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-033.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "6000",
+    "counter": "1000",
+    "color": "Green",
+    "family": "Muggy Kingdom/Thriller Bark Pirates",
+    "ability": "[On Play] Up to 2 of your opponent's Characters with a cost of 5 or less cannot be rested until the end of your opponent's next End Phase.[On K.O.] You may rest 1 of your cards: Play up to 1 green Character card with a cost of 5 or less from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-033_p1",
+    "code": "OP14-033",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Perona",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-033_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-033_p1.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "6000",
+    "counter": "1000",
+    "color": "Green",
+    "family": "Muggy Kingdom/Thriller Bark Pirates",
+    "ability": "[On Play] Up to 2 of your opponent's Characters with a cost of 5 or less cannot be rested until the end of your opponent's next End Phase.[On K.O.] You may rest 1 of your cards: Play up to 1 green Character card with a cost of 5 or less from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-034",
+    "code": "OP14-034",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Monkey.D.Luffy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-034.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-034.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "3000",
+    "counter": "1000",
+    "color": "Green",
+    "family": "FILM/Supernovas/Straw Hat Crew",
+    "ability": "[Your Turn] All of your green {Straw Hat Crew} type Characters with a base cost of 4 or more gain +1000 power.[Once Per Turn] If your {Straw Hat Crew} type Character would be K.O.'d by your opponent's effect, you may rest 1 of your Characters instead.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-035",
+    "code": "OP14-035",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Yosaku",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-035.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-035.png"
+    },
+    "cost": "2",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "2000",
+    "counter": "1000",
+    "color": "Green",
+    "family": "East Blue",
+    "ability": "[Your Turn] When this Character becomes rested, up to 1 of your opponent's rested Characters with a cost of 4 or less will not become active in your opponent's next Refresh Phase.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-036",
+    "code": "OP14-036",
+    "rarity": "C",
+    "type": "EVENT",
+    "name": "Strive to Surpass me, Roronoa Zoro!!!",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-036.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-036.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Green",
+    "family": "East Blue/The Seven Warlords of the Sea",
+    "ability": "[Counter] You may rest 1 of your cards: Up to 1 of your Leader or Character cards gains +4000 power during this battle.",
+    "trigger": "[Trigger] You may rest 1 of your cards: Rest up to 1 of your opponent's Characters with 7000 base power or less.",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-037",
+    "code": "OP14-037",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "For Fun",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-037.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-037.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Green",
+    "family": "East Blue/The Seven Warlords of the Sea",
+    "ability": "[Main] You may rest 3 of your cards: K.O. up to 1 of your opponent's rested Characters with 7000 base power or less.[Counter] Your Leader gains +3000 power during this battle.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-038",
+    "code": "OP14-038",
+    "rarity": "UC",
+    "type": "EVENT",
+    "name": "I Never Bother to Remember the Faces of Trash",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-038.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-038.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Green",
+    "family": "The Seven Warlords of the Sea",
+    "ability": "[Main] You may rest 2 of your cards: Draw 1 card and rest up to 1 of your opponent's Characters with 7000 base power or less.[Counter] Your Leader gains +3000 power during this battle.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-039",
+    "code": "OP14-039",
+    "rarity": "UC",
+    "type": "STAGE",
+    "name": "Coffin Boat",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-039.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-039.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Green",
+    "family": "East Blue/The Seven Warlords of the Sea",
+    "ability": "[On Play] If your Leader is [Dracule Mihawk], draw 1 card.[End of Your Turn] If your Leader is [Dracule Mihawk], set up to 1 of your DON!! cards as active.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-040",
+    "code": "OP14-040",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Jinbe",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-040.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-040.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "5000",
+    "counter": "-",
+    "color": "Blue",
+    "family": "Fish-Man/The Seven Warlords of the Sea/The Sun Pirates",
+    "ability": "[Activate: Main] You may trash 1 card from your hand: Give up to 2 rested DON!! cards to 1 of your {Fish-Man} or {Merfolk} type Leader or Character cards.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-040_p1",
+    "code": "OP14-040",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Jinbe",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-040_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-040_p1.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "5000",
+    "counter": "-",
+    "color": "Blue",
+    "family": "Fish-Man/The Seven Warlords of the Sea/The Sun Pirates",
+    "ability": "[Activate: Main] You may trash 1 card from your hand: Give up to 2 rested DON!! cards to 1 of your {Fish-Man} or {Merfolk} type Leader or Character cards.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-041",
+    "code": "OP14-041",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Boa Hancock",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-041.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-041.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "5000",
+    "counter": "-",
+    "color": "Blue/Yellow",
+    "family": "The Seven Warlords of the Sea/Kuja Pirates",
+    "ability": "[Opponent's Turn] When you play a Character, draw 1 card.[DON!! x1] [Once Per Turn] When one of your {Amazon Lily} or {Kuja Pirates} type Characters with 5000 base power or more is K.O.'d, add up to 1 card from the top of your opponent's Life cards to the owner's hand.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-041_p1",
+    "code": "OP14-041",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Boa Hancock",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-041_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-041_p1.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "5000",
+    "counter": "-",
+    "color": "Blue/Yellow",
+    "family": "The Seven Warlords of the Sea/Kuja Pirates",
+    "ability": "[Opponent's Turn] When you play a Character, draw 1 card.[DON!! x1] [Once Per Turn] When one of your {Amazon Lily} or {Kuja Pirates} type Characters with 5000 base power or more is K.O.'d, add up to 1 card from the top of your opponent's Life cards to the owner's hand.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-042",
+    "code": "OP14-042",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Arlong",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-042.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-042.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "3000",
+    "counter": "-",
+    "color": "Blue",
+    "family": "Fish-Man/The Sun Pirates",
+    "ability": "[On Play] If your Leader has the {Fish-Man} type, look at 4 cards from the top of your deck; reveal up to 1 card with a cost of 2 or more and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-042_p1",
+    "code": "OP14-042",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Arlong",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-042_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-042_p1.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "3000",
+    "counter": "-",
+    "color": "Blue",
+    "family": "Fish-Man/The Sun Pirates",
+    "ability": "[On Play] If your Leader has the {Fish-Man} type, look at 4 cards from the top of your deck; reveal up to 1 card with a cost of 2 or more and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-043",
+    "code": "OP14-043",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Aladine",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-043.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-043.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "5000",
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Merfolk/The Sun Pirates",
+    "ability": "[On Play] Play up to 1 {Fish-Man} or {Merfolk} type Character card with a cost of 3 or less from your hand.[On K.O.] Draw 1 card.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-044",
+    "code": "OP14-044",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Edward.Newgate",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-044.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-044.png"
+    },
+    "cost": "8",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "8000",
+    "counter": "1000",
+    "color": "Blue",
+    "family": "The Four Emperors/Whitebeard Pirates",
+    "ability": "[Blocker][On Play] Reveal 1 card from the top of your deck. If that card's type includes \"Whitebeard Pirates\", draw 2 cards and trash 1 card from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-045",
+    "code": "OP14-045",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Kuroobi",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-045.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-045.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "3000",
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Fish-Man/The Sun Pirates",
+    "ability": "When a card is trashed from your hand by an effect, this Character gains [Rush] during this turn.(This card can attack on the turn in which it is played.)[On K.O.] Draw 1 card.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-046",
+    "code": "OP14-046",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Koala",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-046.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-046.png"
+    },
+    "cost": "2",
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": "0",
+    "counter": "2000",
+    "color": "Blue",
+    "family": "Foolshout Island",
+    "ability": "[Activate: Main] You may trash this Character: Up to 1 of your {Fish-Man} or {Merfolk} type Leader or Character cards gains +2000 power during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-047",
+    "code": "OP14-047",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Shirahoshi",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-047.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-047.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": "0",
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Merfolk/Fish-Man Island",
+    "ability": "[Blocker][On Play] Draw 1 card and play up to 1 {Fish-Man} or {Merfolk} type Character card with a cost of 3 or less from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-048",
+    "code": "OP14-048",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Shiryu",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-048.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-048.png"
+    },
+    "cost": "8",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "10000",
+    "counter": "-",
+    "color": "Blue",
+    "family": "Impel Down",
+    "ability": "[On Play] Return up to 1 of your opponent's Characters to the owner's hand. Then, trash all cards from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-049",
+    "code": "OP14-049",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Jinbe",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-049.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-049.png"
+    },
+    "cost": "8",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "10000",
+    "counter": "-",
+    "color": "Blue",
+    "family": "Fish-Man/The Seven Warlords of the Sea/The Sun Pirates",
+    "ability": "When a card is trashed from your hand by an effect, this Character gains [Rush] during this turn.[On Play] You may rest 2 of your DON!! cards: Draw 2 cards and return up to 1 Character with a cost of 7 or less to the owner's hand.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-049_p1",
+    "code": "OP14-049",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Jinbe",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-049_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-049_p1.png"
+    },
+    "cost": "8",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "10000",
+    "counter": "-",
+    "color": "Blue",
+    "family": "Fish-Man/The Seven Warlords of the Sea/The Sun Pirates",
+    "ability": "When a card is trashed from your hand by an effect, this Character gains [Rush] during this turn.[On Play] You may rest 2 of your DON!! cards: Draw 2 cards and return up to 1 Character with a cost of 7 or less to the owner's hand.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-050",
+    "code": "OP14-050",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Chew",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-050.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-050.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Ranged",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type04.png"
+    },
+    "power": "3000",
+    "counter": "-",
+    "color": "Blue",
+    "family": "Fish-Man/The Sun Pirates",
+    "ability": "[On Play] If your Leader has the {Fish-Man} type, draw 1 card.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-051",
+    "code": "OP14-051",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Hatchan",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-051.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-051.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "3000",
+    "counter": "-",
+    "color": "Blue",
+    "family": "Fish-Man/The Sun Pirates",
+    "ability": "[DON!! x2] [On K.O.] Draw 1 card.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-052",
+    "code": "OP14-052",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Hannyabal",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-052.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-052.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "6000",
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Impel Down",
+    "ability": "[Blocker][On Play] You may trash 3 cards from your hand: Play up to 1 {Impel Down} type Character card with a cost of 6 or less from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-053",
+    "code": "OP14-053",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Vista",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-053.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-053.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "4000",
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Whitebeard Pirates",
+    "ability": "[Blocker][Opponent's Turn] If you have 7 or less cards in your hand, this Character's base power becomes the same as your Leader's base power.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-054",
+    "code": "OP14-054",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Fisher Tiger",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-054.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-054.png"
+    },
+    "cost": "6",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "7000",
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Fish-Man/The Sun Pirates",
+    "ability": "[On Play] If your Leader has the {Fish-Man} type, draw 3 cards.[End of Your Turn] Trash cards from your hand until you have 5 cards in your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-055",
+    "code": "OP14-055",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "The Macro Gang",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-055.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-055.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "6000",
+    "counter": "2000",
+    "color": "Blue",
+    "family": "Fish-Man/The Sun Pirates",
+    "ability": "-",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-056",
+    "code": "OP14-056",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Wadatsumi",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-056.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-056.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "5000",
+    "counter": "2000",
+    "color": "Blue",
+    "family": "Fish-Man/The Sun Pirates",
+    "ability": "This Character cannot attack.When a card is trashed from your hand by an effect, this Character's effect is negated during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-057",
+    "code": "OP14-057",
+    "rarity": "C",
+    "type": "EVENT",
+    "name": "Don't Worry!! I'm Here!!",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-057.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-057.png"
+    },
+    "cost": "2",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Blue",
+    "family": "Fish-Man/The Seven Warlords of the Sea/The Sun Pirates",
+    "ability": "[Main] All of your {Fish-Man} or {Merfolk} type Leader and Character cards gain +1000 power during this turn.",
+    "trigger": "[Trigger] Draw 2 cards.",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-058",
+    "code": "OP14-058",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "Ocean Current Shoulder Throw",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-058.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-058.png"
+    },
+    "cost": "2",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Blue",
+    "family": "Fish-Man/The Seven Warlords of the Sea/The Sun Pirates",
+    "ability": "[Main] You may rest 3 of your DON!! cards: Play up to 1 {Fish-Man} type Character card with a cost of 3 or less from your hand. Then, return up to 1 Character with 6000 base power to the owner's hand.[Counter] Draw 1 card and your Leader gains +3000 power during this battle.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-059",
+    "code": "OP14-059",
+    "rarity": "UC",
+    "type": "EVENT",
+    "name": "Please Take Me with You!! I Can Be of Great Help to You!!",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-059.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-059.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Blue",
+    "family": "Fish-Man/The Seven Warlords of the Sea/The Sun Pirates",
+    "ability": "[Main] If your Leader is [Jinbe] and you have 2 or less cards in your hand, draw 2 cards.",
+    "trigger": "[Trigger] Return up to 1 Character with a cost of 4 or less to the owner's hand.",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-060",
+    "code": "OP14-060",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Donquixote Doflamingo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-060.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-060.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "5000",
+    "counter": "-",
+    "color": "Purple",
+    "family": "The Seven Warlords of the Sea/Donquixote Pirates",
+    "ability": "[On Your Opponent's Attack] [Once Per Turn] DON!! −1: Select your Leader or 1 of your {Donquixote Pirates} type Characters. Change the attack target to the selected card.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-060_p1",
+    "code": "OP14-060",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Donquixote Doflamingo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-060_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-060_p1.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "5000",
+    "counter": "-",
+    "color": "Purple",
+    "family": "The Seven Warlords of the Sea/Donquixote Pirates",
+    "ability": "[On Your Opponent's Attack] [Once Per Turn] DON!! −1: Select your Leader or 1 of your {Donquixote Pirates} type Characters. Change the attack target to the selected card.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-061",
+    "code": "OP14-061",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Vergo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-061.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-061.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "7000",
+    "counter": "-",
+    "color": "Purple",
+    "family": "Punk Hazard/Navy/Donquixote Pirates",
+    "ability": "[Once Per Turn] If your {Donquixote Pirates} type Character would be removed from the field by your opponent's effect, you may return 1 DON!! card from your field to your DON!! deck instead.[When Attacking] DON!! −1: Give up to 1 of your opponent's Characters −2000 power during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-061_p1",
+    "code": "OP14-061",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Vergo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-061_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-061_p1.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "7000",
+    "counter": "-",
+    "color": "Purple",
+    "family": "Punk Hazard/Navy/Donquixote Pirates",
+    "ability": "[Once Per Turn] If your {Donquixote Pirates} type Character would be removed from the field by your opponent's effect, you may return 1 DON!! card from your field to your DON!! deck instead.[When Attacking] DON!! −1: Give up to 1 of your opponent's Characters −2000 power during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-062",
+    "code": "OP14-062",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Gladius",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-062.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-062.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "4000",
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Donquixote Pirates",
+    "ability": "[On K.O.] DON!! −1 (You may return the specified number of DON!! cards from your field to your DON!! deck.): K.O. or rest up to 1 of your opponent's Characters with a base power of 6000 or less.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-063",
+    "code": "OP14-063",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Sugar",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-063.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-063.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "1000",
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Donquixote Pirates",
+    "ability": "[On Play] Add up to 1 DON!! card from your DON!! deck and set it as active.[On K.O.] If your opponent has 6 or more DON!! cards on their field, play up to 1 {Donquixote Pirates} type Character card with a cost of 5 or less from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-064",
+    "code": "OP14-064",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Giolla",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-064.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-064.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "1000",
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Donquixote Pirates",
+    "ability": "[On K.O.] Add up to 1 DON!! card from your DON!! deck and rest it. Then, K.O. up to 1 of your opponent's Characters with a base power of 0.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-065",
+    "code": "OP14-065",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Senor Pink",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-065.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-065.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "5000",
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Donquixote Pirates",
+    "ability": "[On K.O.] Your opponent returns 1 DON!! card from their field to their DON!! deck.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-066",
+    "code": "OP14-066",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Diamante",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-066.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-066.png"
+    },
+    "cost": "6",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "8000",
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Donquixote Pirates",
+    "ability": "-",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-067",
+    "code": "OP14-067",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Dellinger",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-067.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-067.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "2000",
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Donquixote Pirates",
+    "ability": "[On K.O.] Add up to 1 DON!! card from your DON!! deck and rest it, look at 5 cards from the top of your deck; reveal up to 1 {Donquixote Pirates} type card and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-068",
+    "code": "OP14-068",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Trebol",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-068.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-068.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "5000",
+    "counter": "2000",
+    "color": "Purple",
+    "family": "Donquixote Pirates",
+    "ability": "[Opponent's Turn] [Once Per Turn] When a DON!! card on your field is returned to your DON!! deck, if your Leader has the {Donquixote Pirates} type, add up to 1 DON!! card from your DON!! deck and rest it.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-069",
+    "code": "OP14-069",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Donquixote Doflamingo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-069.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-069.png"
+    },
+    "cost": "10",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "10000",
+    "counter": "-",
+    "color": "Purple",
+    "family": "The Seven Warlords of the Sea/Donquixote Pirates",
+    "ability": "[On Play] DON!! −3: Choose one:• If your Leader has the {Donquixote Pirates} type, K.O. up to 1 of your opponent's Characters with a cost of 8 or less.• Up to 3 of your opponent's Characters with a cost of 7 or less cannot be rested until the end of your opponent's next End Phase.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-069_p1",
+    "code": "OP14-069",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Donquixote Doflamingo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-069_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-069_p1.png"
+    },
+    "cost": "10",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "10000",
+    "counter": "-",
+    "color": "Purple",
+    "family": "The Seven Warlords of the Sea/Donquixote Pirates",
+    "ability": "[On Play] DON!! −3: Choose one:• If your Leader has the {Donquixote Pirates} type, K.O. up to 1 of your opponent's Characters with a cost of 8 or less.• Up to 3 of your opponent's Characters with a cost of 7 or less cannot be rested until the end of your opponent's next End Phase.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-070",
+    "code": "OP14-070",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Buffalo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-070.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-070.png"
+    },
+    "cost": "2",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "1000",
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Donquixote Pirates",
+    "ability": "When this Character becomes rested by your opponent's Character's effect, you may return 1 DON!! card from your field to your DON!! deck. If you do, set this Character as active.[Blocker]",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-071",
+    "code": "OP14-071",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Pica",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-071.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-071.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "6000",
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Donquixote Pirates",
+    "ability": "[End of Your Turn] If your Leader has the {Donquixote Pirates} type, add up to 1 DON!! card from your DON!! deck and set it as active.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-072",
+    "code": "OP14-072",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Baby 5",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-072.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-072.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "1000",
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Donquixote Pirates",
+    "ability": "[On Play] Add up to 1 DON!! card from your DON!! deck and set it as active.[On K.O.] DON!! −1: Add up to 1 card from the top of your deck to the top of your Life cards.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-073",
+    "code": "OP14-073",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Machvise",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-073.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-073.png"
+    },
+    "cost": "6",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "7000",
+    "counter": "2000",
+    "color": "Purple",
+    "family": "Donquixote Pirates",
+    "ability": "-",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-074",
+    "code": "OP14-074",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Monet",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-074.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-074.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "6000",
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Punk Hazard/Donquixote Pirates",
+    "ability": "[On Play] If your Leader has the {Donquixote Pirates} type, add up to 1 DON!! card from your DON!! deck and set it as active.[On K.O.] Draw 2 cards and trash 1 card from your hand. Then, add up to 2 DON!! cards from your DON!! deck and rest them.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-075",
+    "code": "OP14-075",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Lao.G",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-075.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-075.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "4000",
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Donquixote Pirates",
+    "ability": "[On K.O.] Add up to 1 DON!! card from your DON!! deck and rest it. Then, give up to 1 of your opponent's Characters −2000 power during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-076",
+    "code": "OP14-076",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "Ever White",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-076.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-076.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Purple",
+    "family": "The Seven Warlords of the Sea/Donquixote Pirates",
+    "ability": "[Main] You may rest 2 of your DON!! cards: If your Leader has the {Donquixote Pirates} type, add up to 1 DON!! card from your DON!! deck and rest it.[Counter] Your Leader gains +3000 power during this battle.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-077",
+    "code": "OP14-077",
+    "rarity": "UC",
+    "type": "EVENT",
+    "name": "Penta-Chromatic String",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-077.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-077.png"
+    },
+    "cost": "2",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Purple",
+    "family": "The Seven Warlords of the Sea/Donquixote Pirates",
+    "ability": "[Counter] Up to 1 of your Leader or Character cards gains +4000 power during this battle. Then, if your opponent has a Character with 6000 power or more, add up to 1 DON!! card from your DON!! deck and rest it.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-078",
+    "code": "OP14-078",
+    "rarity": "C",
+    "type": "EVENT",
+    "name": "Bullet String",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-078.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-078.png"
+    },
+    "cost": "2",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Purple",
+    "family": "The Seven Warlords of the Sea/Donquixote Pirates",
+    "ability": "[Counter] DON!! −1: If your Leader has the {Donquixote Pirates} type, up to 1 of your Leader or Character cards gains +2000 power during this battle. Then, that card gains an additional +2000 power during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-079",
+    "code": "OP14-079",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Crocodile",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-079.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-079.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "5000",
+    "counter": "-",
+    "color": "Black",
+    "family": "The Seven Warlords of the Sea/Baroque Works",
+    "ability": "All of your opponent's Characters cannot be removed from the field by your effects.[Activate: Main] [Once Per Turn] You may K.O. 1 of your Characters with a type including \"Baroque Works\": Give up to 1 of your opponent's Characters −10 cost during this turn. Then, you may trash 2 cards from the top of your deck.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-079_p1",
+    "code": "OP14-079",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Crocodile",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-079_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-079_p1.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "5000",
+    "counter": "-",
+    "color": "Black",
+    "family": "The Seven Warlords of the Sea/Baroque Works",
+    "ability": "All of your opponent's Characters cannot be removed from the field by your effects.[Activate: Main] [Once Per Turn] You may K.O. 1 of your Characters with a type including \"Baroque Works\": Give up to 1 of your opponent's Characters −10 cost during this turn. Then, you may trash 2 cards from the top of your deck.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-080",
+    "code": "OP14-080",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Gecko Moria",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-080.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-080.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "5000",
+    "counter": "-",
+    "color": "Black/Yellow",
+    "family": "The Seven Warlords of the Sea/Thriller Bark Pirates",
+    "ability": "[Activate: Main] [Once Per Turn] You may K.O. 1 of your {Thriller Bark Pirates} type Characters: Your Leader and all of your Characters gain +1000 power during this turn.[When Attacking] You may trash 3 cards from your hand: Add up to 1 card from the top of your deck to the top of your Life cards.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-080_p1",
+    "code": "OP14-080",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Gecko Moria",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-080_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-080_p1.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "5000",
+    "counter": "-",
+    "color": "Black/Yellow",
+    "family": "The Seven Warlords of the Sea/Thriller Bark Pirates",
+    "ability": "[Activate: Main] [Once Per Turn] You may K.O. 1 of your {Thriller Bark Pirates} type Characters: Your Leader and all of your Characters gain +1000 power during this turn.[When Attacking] You may trash 3 cards from your hand: Add up to 1 card from the top of your deck to the top of your Life cards.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-081",
+    "code": "OP14-081",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Spider Mice",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-081.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-081.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "1000",
+    "counter": "1000",
+    "color": "Black",
+    "family": "Thriller Bark Pirates",
+    "ability": "[On Play] Trash 3 cards from the top of your deck.[On K.O.] K.O. up to 1 of your opponent's Characters with a base cost of 1.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-082",
+    "code": "OP14-082",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Oinkchuck",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-082.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-082.png"
+    },
+    "cost": "2",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "3000",
+    "counter": "1000",
+    "color": "Black",
+    "family": "Thriller Bark Pirates",
+    "ability": "[On K.O.] All of your {Thriller Bark Pirates} type Characters gain +4 cost until the end of your opponent's next End Phase.",
+    "trigger": "[Trigger] Play up to 1 {Thriller Bark Pirates} type Character card with a cost of 2 or less from your trash rested.",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-083",
+    "code": "OP14-083",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Ms. Wednesday",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-083.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-083.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "1000",
+    "counter": "2000",
+    "color": "Black",
+    "family": "Baroque Works",
+    "ability": "[Activate: Main] You may trash this Character: Give up to 1 of your opponent's 0 cost Characters −3000 power during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-084",
+    "code": "OP14-084",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Ms. All Sunday",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-084.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-084.png"
+    },
+    "cost": "7",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "8000",
+    "counter": "-",
+    "color": "Black",
+    "family": "Baroque Works",
+    "ability": "[On Play] If your Leader's type includes \"Baroque Works\", play up to 1 Character card with a type including \"Baroque Works\" and a cost of 4 or less and up to 1 Character card with a type including \"Baroque Works\" and a cost of 1 from your trash.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-084_p1",
+    "code": "OP14-084",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Ms. All Sunday",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-084_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-084_p1.png"
+    },
+    "cost": "7",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "8000",
+    "counter": "-",
+    "color": "Black",
+    "family": "Baroque Works",
+    "ability": "[On Play] If your Leader's type includes \"Baroque Works\", play up to 1 Character card with a type including \"Baroque Works\" and a cost of 4 or less and up to 1 Character card with a type including \"Baroque Works\" and a cost of 1 from your trash.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-085",
+    "code": "OP14-085",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Miss.Goldenweek(Marianne)",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-085.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-085.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": "2000",
+    "counter": "2000",
+    "color": "Black",
+    "family": "Baroque Works",
+    "ability": "[On K.O.] Draw 2 cards and trash 2 cards from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-086",
+    "code": "OP14-086",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Miss Doublefinger(Zala)",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-086.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-086.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "6000",
+    "counter": "1000",
+    "color": "Black",
+    "family": "Baroque Works",
+    "ability": "If you have 7 or more cards in your trash, this Character gains +1000 power, and all of your Characters with a type including \"Baroque Works\" gain +2 cost.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-087",
+    "code": "OP14-087",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Miss.Valentine(Mikita)",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-087.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-087.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "2000",
+    "counter": "1000",
+    "color": "Black",
+    "family": "Baroque Works",
+    "ability": "[On Play] If your Leader's type includes \"Baroque Works\", look at 4 cards from the top of your deck; reveal up to 1 card with a type including \"Baroque Works\" other than [Miss.Valentine(Mikita)] and add it to your hand. Then, trash the rest.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-088",
+    "code": "OP14-088",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Miss.MerryChristmas(Drophy)",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-088.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-088.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "2000",
+    "counter": "2000",
+    "color": "Black",
+    "family": "Baroque Works",
+    "ability": "[On K.O.] If your Leader's type includes \"Baroque Works\", draw 1 card and K.O. up to 1 of your opponent's Stages with a cost of 1.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-089",
+    "code": "OP14-089",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Ryuma",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-089.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-089.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "5000",
+    "counter": "-",
+    "color": "Black",
+    "family": "Land of Wano/Thriller Bark Pirates",
+    "ability": "[On K.O.] Draw 2 cards and trash 2 cards from your hand.",
+    "trigger": "[Trigger] Play up to 1 {Thriller Bark Pirates} type Character card with a cost of 4 or less from your trash rested.",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-090",
+    "code": "OP14-090",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Mr.1(Daz.Bonez)",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-090.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-090.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "6000",
+    "counter": "1000",
+    "color": "Black",
+    "family": "Baroque Works",
+    "ability": "If there is a Character with a cost of 0 or with a cost of 8 or more, this Character can attack Characters on the turn in which it is played.[On Play] Rest up to 1 of your opponent's Characters with a cost of 0.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-090_p1",
+    "code": "OP14-090",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Mr.1(Daz.Bonez)",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-090_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-090_p1.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "6000",
+    "counter": "1000",
+    "color": "Black",
+    "family": "Baroque Works",
+    "ability": "If there is a Character with a cost of 0 or with a cost of 8 or more, this Character can attack Characters on the turn in which it is played.[On Play] Rest up to 1 of your opponent's Characters with a cost of 0.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-091",
+    "code": "OP14-091",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Mr.2.Bon.Kurei(Bentham)",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-091.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-091.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "5000",
+    "counter": "1000",
+    "color": "Black",
+    "family": "Baroque Works",
+    "ability": "[On K.O.] Play up to 1 Character card with a type including \"Baroque Works\" and a cost of 5 or less other than [Mr.2.Bon.Kurei(Bentham)] from your hand or trash.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-091_p1",
+    "code": "OP14-091",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Mr.2.Bon.Kurei(Bentham)",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-091_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-091_p1.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "5000",
+    "counter": "1000",
+    "color": "Black",
+    "family": "Baroque Works",
+    "ability": "[On K.O.] Play up to 1 Character card with a type including \"Baroque Works\" and a cost of 5 or less other than [Mr.2.Bon.Kurei(Bentham)] from your hand or trash.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-092",
+    "code": "OP14-092",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Mr.3(Galdino)",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-092.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-092.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "6000",
+    "counter": "-",
+    "color": "Black",
+    "family": "Baroque Works",
+    "ability": "[Opponent's Turn] [Once Per Turn] If this Character would be K.O.'d, you may place 3 cards from your trash at the bottom of your deck in any order instead.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-093",
+    "code": "OP14-093",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Mr.4(Babe)",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-093.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-093.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "5000",
+    "counter": "1000",
+    "color": "Black",
+    "family": "Baroque Works",
+    "ability": "[Blocker][On K.O.] Add up to 1 Character card with a type including \"Baroque Works\" and a cost of 8 or less from your trash to your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-094",
+    "code": "OP14-094",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Mr.5(Gem)",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-094.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-094.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "6000",
+    "counter": "1000",
+    "color": "Black",
+    "family": "Baroque Works",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)[On Play] If there is a Character with a cost of 0 or with a cost of 8 or more, draw 2 cards and trash 1 card from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-095",
+    "code": "OP14-095",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Mr.9",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-095.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-095.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "6000",
+    "counter": "2000",
+    "color": "Black",
+    "family": "Baroque Works",
+    "ability": "-",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-096",
+    "code": "OP14-096",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "Ground Death",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-096.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-096.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Black",
+    "family": "The Seven Warlords of the Sea/Baroque Works",
+    "ability": "[Main] You may rest 2 of your DON!! cards: Negate the effect of up to 1 of your opponent's Characters with a cost of 5 or less during this turn.[Counter] If you have 10 or more cards in your trash, up to 1 of your Leader or Character cards gains +4000 power during this battle.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-096_p1",
+    "code": "OP14-096",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "Ground Death",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-096_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-096_p1.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Black",
+    "family": "The Seven Warlords of the Sea/Baroque Works",
+    "ability": "[Main] You may rest 2 of your DON!! cards: Negate the effect of up to 1 of your opponent's Characters with a cost of 5 or less during this turn.[Counter] If you have 10 or more cards in your trash, up to 1 of your Leader or Character cards gains +4000 power during this battle.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-097",
+    "code": "OP14-097",
+    "rarity": "UC",
+    "type": "EVENT",
+    "name": "Hurry Up and Make Me the Pirate King!",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-097.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-097.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Black",
+    "family": "The Seven Warlords of the Sea/Thriller Bark Pirates",
+    "ability": "[Main] Look at 3 cards from the top of your deck; reveal up to 1 {Thriller Bark Pirates} type card other than [Hurry Up and Make Me the Pirate King!] and add it to your hand. Then, trash the rest.",
+    "trigger": "[Trigger] Activate this card's [Main] effect.",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-098",
+    "code": "OP14-098",
+    "rarity": "C",
+    "type": "EVENT",
+    "name": "Crescent Cutlass",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-098.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-098.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Black",
+    "family": "Impel Down/Former Baroque Works",
+    "ability": "[Main] If there is a Character with a cost of 0 or with a cost of 8 or more, all of your Characters with a type including \"Baroque Works\" gain +3 cost until the end of your opponent's next End Phase.[Counter] Your Leader gains +3000 power during this battle.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-099",
+    "code": "OP14-099",
+    "rarity": "UC",
+    "type": "EVENT",
+    "name": "Disappointed?",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-099.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-099.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Black",
+    "family": "The Seven Warlords of the Sea/Baroque Works",
+    "ability": "[Main] Look at 3 cards from the top of your deck; reveal up to 1 card with a type including \"Baroque Works\" other than [Disappointed?] and add it to your hand. Then, trash the rest.",
+    "trigger": "[Trigger] Activate this card's [Main] effect.",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-100",
+    "code": "OP14-100",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Absalom",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-100.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-100.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Ranged",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type04.png"
+    },
+    "power": "5000",
+    "counter": "-",
+    "color": "Yellow",
+    "family": "Thriller Bark Pirates",
+    "ability": "[On K.O.] Look at 3 cards from the top of your deck; reveal up to 1 {Thriller Bark Pirates} type card and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "[Trigger] Play up to 1 {Thriller Bark Pirates} type Character card with a cost of 4 or less from your trash rested.",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-101",
+    "code": "OP14-101",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Oars",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-101.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-101.png"
+    },
+    "cost": "8",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "10000",
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Giant/Thriller Bark Pirates",
+    "ability": "-",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-102",
+    "code": "OP14-102",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Kumacy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-102.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-102.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "2000",
+    "counter": "2000",
+    "color": "Yellow",
+    "family": "Thriller Bark Pirates",
+    "ability": "-",
+    "trigger": "[Trigger] Play up to 1 {Thriller Bark Pirates} type Character card with a cost of 4 or less from your trash rested.",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-103",
+    "code": "OP14-103",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Gloriosa (Grandma Nyon)",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-103.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-103.png"
+    },
+    "cost": "2",
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": "0",
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Amazon Lily",
+    "ability": "[On Play] You may add 1 card from the top or bottom of your Life cards to your hand: Add up to 1 card from your hand to the top of your Life cards.",
+    "trigger": "[Trigger] Play this card.",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-104",
+    "code": "OP14-104",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Gecko Moria",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-104.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-104.png"
+    },
+    "cost": "8",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "10000",
+    "counter": "-",
+    "color": "Yellow",
+    "family": "The Seven Warlords of the Sea/Thriller Bark Pirates",
+    "ability": "[On Play] Select up to 1 {Thriller Bark Pirates} type Character with a cost of 4 or less from your trash and play it or add it to the top of your Life cards face-up.",
+    "trigger": "[Trigger] Play up to 1 Character card with a cost of 4 or less from your trash.",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-104_p1",
+    "code": "OP14-104",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Gecko Moria",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-104_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-104_p1.png"
+    },
+    "cost": "8",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "10000",
+    "counter": "-",
+    "color": "Yellow",
+    "family": "The Seven Warlords of the Sea/Thriller Bark Pirates",
+    "ability": "[On Play] Select up to 1 {Thriller Bark Pirates} type Character with a cost of 4 or less from your trash and play it or add it to the top of your Life cards face-up.",
+    "trigger": "[Trigger] Play up to 1 Character card with a cost of 4 or less from your trash.",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-105",
+    "code": "OP14-105",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Gorgon Sisters",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-105.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-105.png"
+    },
+    "cost": "6",
+    "attribute": {
+      "name": "Slash/Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type07.png"
+    },
+    "power": "5000",
+    "counter": "2000",
+    "color": "Yellow",
+    "family": "The Seven Warlords of the Sea/Kuja Pirates",
+    "ability": "[Activate: Main] [Once Per Turn] You may reveal 3 {Amazon Lily} or {Kuja Pirates} type cards from your hand: Give your Leader and all of your Characters up to 1 rested DON!! card each.",
+    "trigger": "[Trigger] If your Leader has the {Kuja Pirates} type, play this card.",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-106",
+    "code": "OP14-106",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Salome",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-106.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-106.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "1000",
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Animal/Amazon Lily",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)",
+    "trigger": "[Trigger] Play this card.",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-107",
+    "code": "OP14-107",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Shakuyaku",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-107.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-107.png"
+    },
+    "cost": "6",
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": "5000",
+    "counter": "2000",
+    "color": "Yellow",
+    "family": "Amazon Lily",
+    "ability": "[On Play] If your opponent has 3 or less Life cards, draw 2 cards and trash 2 cards from your hand.",
+    "trigger": "[Trigger] If your Leader has the {Kuja Pirates} type, play this card.",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-108",
+    "code": "OP14-108",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Silvers Rayleigh",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-108.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-108.png"
+    },
+    "cost": "6",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "6000",
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Former Roger Pirates",
+    "ability": "[On Play] If your Leader is multicolored and your opponent has 3 or less Life cards, K.O. up to 1 of your opponent's Characters with 7000 base power or less.",
+    "trigger": "[Trigger] Activate this card's [On Play] effect.",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-109",
+    "code": "OP14-109",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Victoria Cindry",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-109.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-109.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "1000",
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Thriller Bark Pirates",
+    "ability": "[Blocker]",
+    "trigger": "[Trigger] Play up to 1 {Thriller Bark Pirates} type Character card with a cost of 4 or less from your trash rested.",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-110",
+    "code": "OP14-110",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Dr. Hogback",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-110.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-110.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": "5000",
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Thriller Bark Pirates",
+    "ability": "[On K.O.] Play up to 1 Character card with a cost of 4 or less and a [Trigger] other than [Dr. Hogback] from your trash.",
+    "trigger": "[Trigger] Play up to 1 {Thriller Bark Pirates} type Character card with a cost of 4 or less from your trash rested.",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-111",
+    "code": "OP14-111",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Perona",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-111.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-111.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "5000",
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Thriller Bark Pirates",
+    "ability": "[On Play]/[On K.O.] Up to 1 of your opponent's Characters with a cost of 6 or less cannot attack until the end of your opponent's next End Phase.",
+    "trigger": "[Trigger] Play up to 1 {Thriller Bark Pirates} type Character card with a cost of 4 or less from your trash rested.",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-111_p1",
+    "code": "OP14-111",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Perona",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-111_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-111_p1.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "5000",
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Thriller Bark Pirates",
+    "ability": "[On Play]/[On K.O.] Up to 1 of your opponent's Characters with a cost of 6 or less cannot attack until the end of your opponent's next End Phase.",
+    "trigger": "[Trigger] Play up to 1 {Thriller Bark Pirates} type Character card with a cost of 4 or less from your trash rested.",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-112",
+    "code": "OP14-112",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Boa Hancock",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-112.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-112.png"
+    },
+    "cost": "9",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "10000",
+    "counter": "-",
+    "color": "Yellow",
+    "family": "The Seven Warlords of the Sea/Kuja Pirates",
+    "ability": "[On Play] If your Leader has the {The Seven Warlords of the Sea} type, add up to 1 card from the top of your deck to the top of your Life cards. Then, add up to 1 card from the top of your opponent's Life cards to the owner's hand.",
+    "trigger": "[Trigger] Play up to 1 Character card with 6000 power or less and a [Trigger] from your hand.",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-112_p1",
+    "code": "OP14-112",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Boa Hancock",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-112_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-112_p1.png"
+    },
+    "cost": "9",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "10000",
+    "counter": "-",
+    "color": "Yellow",
+    "family": "The Seven Warlords of the Sea/Kuja Pirates",
+    "ability": "[On Play] If your Leader has the {The Seven Warlords of the Sea} type, add up to 1 card from the top of your deck to the top of your Life cards. Then, add up to 1 card from the top of your opponent's Life cards to the owner's hand.",
+    "trigger": "[Trigger] Play up to 1 Character card with 6000 power or less and a [Trigger] from your hand.",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-113",
+    "code": "OP14-113",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Marguerite",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-113.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-113.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": "5000",
+    "counter": "-",
+    "color": "Yellow",
+    "family": "Amazon Lily",
+    "ability": "[On Play] Look at 5 cards from the top of your deck; reveal up to 1 {Amazon Lily} or {Kuja Pirates} type card and add it to your hand. Then, place the rest at the bottom of your deck in any order and trash 1 card from your hand.",
+    "trigger": "[Trigger] If your Leader has the {Kuja Pirates} type, play this card.",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-114",
+    "code": "OP14-114",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Ran",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-114.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-114.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Ranged",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type04.png"
+    },
+    "power": "5000",
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Kuja Pirates",
+    "ability": "[Activate: Main] [Once Per Turn] Give up to 1 rested DON!! card to 1 of your {Kuja Pirates} type Leader or Character cards.",
+    "trigger": "[Trigger] If your Leader has the {Kuja Pirates} type, play this card.",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-115",
+    "code": "OP14-115",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Rindo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-115.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-115.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Ranged",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type04.png"
+    },
+    "power": "5000",
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Kuja Pirates",
+    "ability": "[Opponent's Turn] [On K.O.] Add up to 1 card from the top of your deck to the top of your Life cards. Then, you take 1 damage.",
+    "trigger": "[Trigger] If your Leader has the {Kuja Pirates} type, play this card.",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-116",
+    "code": "OP14-116",
+    "rarity": "C",
+    "type": "EVENT",
+    "name": "Salamander",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-116.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-116.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Yellow",
+    "family": "Kuja Pirates",
+    "ability": "[Counter] Up to 1 of your Leader or Character cards gains +2000 power during this battle. Then, play up to 1 {Amazon Lily} or {Kuja Pirates} type Character card with a cost of 4 or less from your hand.",
+    "trigger": "[Trigger] Draw 1 card.",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-117",
+    "code": "OP14-117",
+    "rarity": "UC",
+    "type": "EVENT",
+    "name": "Brick Bat",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-117.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-117.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Yellow",
+    "family": "Thriller Bark Pirates",
+    "ability": "[Counter] Up to 1 of your {Thriller Bark Pirates} type Leader or Character cards gains +3000 power during this battle.",
+    "trigger": "[Trigger] Play up to 1 {Thriller Bark Pirates} type Character card with a cost of 4 or less from your trash rested.",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-118",
+    "code": "OP14-118",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "You'll Frighten Me... ♡",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-118.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-118.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Yellow",
+    "family": "The Seven Warlords of the Sea/Kuja Pirates",
+    "ability": "[Counter] If you have 2 or less Life cards, up to 1 of your opponent's active Characters cannot attack during this turn.",
+    "trigger": "[Trigger] Play up to 1 Character card with 6000 power or less and a [Trigger] from your hand.",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-118_p1",
+    "code": "OP14-118",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "You'll Frighten Me... ♡",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-118_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-118_p1.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Yellow",
+    "family": "The Seven Warlords of the Sea/Kuja Pirates",
+    "ability": "[Counter] If you have 2 or less Life cards, up to 1 of your opponent's active Characters cannot attack during this turn.",
+    "trigger": "[Trigger] Play up to 1 Character card with 6000 power or less and a [Trigger] from your hand.",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-119",
+    "code": "OP14-119",
+    "rarity": "SEC",
+    "type": "CHARACTER",
+    "name": "Dracule Mihawk",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-119.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-119.png"
+    },
+    "cost": "9",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "10000",
+    "counter": "-",
+    "color": "Green",
+    "family": "The Seven Warlords of the Sea",
+    "ability": "[Your Turn] When this Character becomes rested, up to 1 of your opponent's Characters with a cost of 9 or less cannot be rested until the end of your opponent's next End Phase.[On Your Opponent's Attack] [Once Per Turn] You may trash 1 card from your hand: Up to 1 of your Leader or Character cards gains +2000 power during this battle.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-119_p1",
+    "code": "OP14-119",
+    "rarity": "SEC",
+    "type": "CHARACTER",
+    "name": "Dracule Mihawk",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-119_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-119_p1.png"
+    },
+    "cost": "9",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "10000",
+    "counter": "-",
+    "color": "Green",
+    "family": "The Seven Warlords of the Sea",
+    "ability": "[Your Turn] When this Character becomes rested, up to 1 of your opponent's Characters with a cost of 9 or less cannot be rested until the end of your opponent's next End Phase.[On Your Opponent's Attack] [Once Per Turn] You may trash 1 card from your hand: Up to 1 of your Leader or Character cards gains +2000 power during this battle.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-119_p2",
+    "code": "OP14-119",
+    "rarity": "SEC",
+    "type": "CHARACTER",
+    "name": "Dracule Mihawk",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-119_p2.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-119_p2.png"
+    },
+    "cost": "9",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "10000",
+    "counter": "-",
+    "color": "Green",
+    "family": "The Seven Warlords of the Sea",
+    "ability": "[Your Turn] When this Character becomes rested, up to 1 of your opponent's Characters with a cost of 9 or less cannot be rested until the end of your opponent's next End Phase.[On Your Opponent's Attack] [Once Per Turn] You may trash 1 card from your hand: Up to 1 of your Leader or Character cards gains +2000 power during this battle.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-120",
+    "code": "OP14-120",
+    "rarity": "SEC",
+    "type": "CHARACTER",
+    "name": "Crocodile",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-120.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-120.png"
+    },
+    "cost": "8",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "10000",
+    "counter": "-",
+    "color": "Black",
+    "family": "The Seven Warlords of the Sea/Baroque Works",
+    "ability": "[On Play] Up to 1 of your opponent's Characters with a cost of 9 or less cannot attack until the end of your opponent's next End Phase. Then, if your opponent has a Character with a cost of 0 or with a cost of 8 or more, draw 1 card.[On K.O.] You may trash 1 card from your hand: Play this Character card from your trash.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-120_p1",
+    "code": "OP14-120",
+    "rarity": "SEC",
+    "type": "CHARACTER",
+    "name": "Crocodile",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-120_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-120_p1.png"
+    },
+    "cost": "8",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "10000",
+    "counter": "-",
+    "color": "Black",
+    "family": "The Seven Warlords of the Sea/Baroque Works",
+    "ability": "[On Play] Up to 1 of your opponent's Characters with a cost of 9 or less cannot attack until the end of your opponent's next End Phase. Then, if your opponent has a Character with a cost of 0 or with a cost of 8 or more, draw 1 card.[On K.O.] You may trash 1 card from your hand: Play this Character card from your trash.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "EB01-003_p5",
+    "code": "EB01-003",
+    "rarity": "SP CARD",
+    "type": "CHARACTER",
+    "name": "Kid & Killer",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB01-003_p5.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB01-003_p5.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Slash/Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type07.png"
+    },
+    "power": "5000",
+    "counter": "-",
+    "color": "Red",
+    "family": "Supernovas/Kid Pirates",
+    "ability": "[Rush] (This card can attack on the turn in which it is played.)[When Attacking] If your opponent has 2 or less Life cards, this Character gains +2000 power during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "EB01-023_p1",
+    "code": "EB01-023",
+    "rarity": "SP CARD",
+    "type": "CHARACTER",
+    "name": "Edward Weevil",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB01-023_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB01-023_p1.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "8000",
+    "counter": "1000",
+    "color": "Blue",
+    "family": "The Seven Warlords of the Sea",
+    "ability": "[On Play] Draw 1 card.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "EB04-039_p1",
+    "code": "EB04-039",
+    "rarity": "SP CARD",
+    "type": "CHARACTER",
+    "name": "Eustass\"Captain\"Kid",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-039_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-039_p1.png"
+    },
+    "cost": "7",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "8000",
+    "counter": "-",
+    "color": "Purple",
+    "family": "Supernovas/Kid Pirates",
+    "ability": "[On Play] Add up to 1 DON!! card from your DON!! deck and set it as active.[Activate: Main] You may trash this Character: Play up to 1 {Kid Pirates} type Character card with a cost of 5 or less from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP06-093_p5",
+    "code": "OP06-093",
+    "rarity": "SP CARD",
+    "type": "CHARACTER",
+    "name": "Perona",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP06-093_p5.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP06-093_p5.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "5000",
+    "counter": "2000",
+    "color": "Black",
+    "family": "Thriller Bark Pirates",
+    "ability": "[On Play] If your opponent has 5 or more cards in their hand, choose one:• Your opponent trashes 1 card from their hand.• Give up to 1 of your opponent's Characters −3 cost during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP07-046_p2",
+    "code": "OP07-046",
+    "rarity": "SP CARD",
+    "type": "CHARACTER",
+    "name": "Sengoku",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP07-046_p2.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP07-046_p2.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": "2000",
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Navy",
+    "ability": "[On Play] Look at 5 cards from the top of your deck; reveal up to 1 {The Seven Warlords of the Sea} type card and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP09-051_p4",
+    "code": "OP09-051",
+    "rarity": "SP CARD",
+    "type": "CHARACTER",
+    "name": "Buggy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP09-051_p4.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP09-051_p4.png"
+    },
+    "cost": "10",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "12000",
+    "counter": "-",
+    "color": "Blue",
+    "family": "The Four Emperors/Cross Guild",
+    "ability": "[On Play] Place up to 1 of your opponent's Characters at the bottom of the owner's deck. Then, if you do not have 5 Characters with a cost of 5 or more, place this Character at the bottom of the owner's deck.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP09-051_p5",
+    "code": "OP09-051",
+    "rarity": "SP CARD",
+    "type": "CHARACTER",
+    "name": "Buggy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP09-051_p5.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP09-051_p5.png"
+    },
+    "cost": "10",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "12000",
+    "counter": "-",
+    "color": "Blue",
+    "family": "The Four Emperors/Cross Guild",
+    "ability": "[On Play] Place up to 1 of your opponent's Characters at the bottom of the owner's deck. Then, if you do not have 5 Characters with a cost of 5 or more, place this Character at the bottom of the owner's deck.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP10-065_p1",
+    "code": "OP10-065",
+    "rarity": "SP CARD",
+    "type": "CHARACTER",
+    "name": "Sugar",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP10-065_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP10-065_p1.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "1000",
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Donquixote Pirates",
+    "ability": "[Activate: Main] Rest 1 of your DON!! cards and you may rest this Character: Look at 5 cards from the top of your deck; reveal up to 1 {Donquixote Pirates} type card and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP12-030_p2",
+    "code": "OP12-030",
+    "rarity": "SP CARD",
+    "type": "CHARACTER",
+    "name": "Dracule Mihawk",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-030_p2.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-030_p2.png"
+    },
+    "cost": "8",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "8000",
+    "counter": "-",
+    "color": "Green",
+    "family": "Muggy Kingdom/The Seven Warlords of the Sea",
+    "ability": "[Blocker][On Play] Set up to 4 of your DON!! cards as active. Then, you cannot play Character cards with a base cost of 7 or more during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "OP14-112_p2",
+    "code": "OP14-112",
+    "rarity": "SP CARD",
+    "type": "CHARACTER",
+    "name": "Boa Hancock",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-112_p2.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP14-112_p2.png"
+    },
+    "cost": "9",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "10000",
+    "counter": "-",
+    "color": "Yellow",
+    "family": "The Seven Warlords of the Sea/Kuja Pirates",
+    "ability": "[On Play] If your Leader has the {The Seven Warlords of the Sea} type, add up to 1 card from the top of your deck to the top of your Life cards. Then, add up to 1 card from the top of your opponent's Life cards to the owner's hand.",
+    "trigger": "[Trigger] Play up to 1 Character card with 6000 power or less and a [Trigger] from your hand.",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  },
+  {
+    "id": "PRB02-006_p2",
+    "code": "PRB02-006",
+    "rarity": "SP CARD",
+    "type": "CHARACTER",
+    "name": "Roronoa Zoro",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/PRB02-006_p2.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/PRB02-006_p2.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "4000",
+    "counter": "2000",
+    "color": "Green",
+    "family": "Supernovas/Straw Hat Crew",
+    "ability": "[Opponent's Turn] If this Character would be rested by your opponent's Character's effect, you may rest 1 of your other Characters instead.[Blocker]",
+    "trigger": "",
+    "set": {
+      "name": "-THE AZURE SEA’S SEVEN- [OP14-EB04]"
+    }
+  }
+]

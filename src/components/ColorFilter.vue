@@ -4,13 +4,17 @@ import { useCardStore } from '../stores/cardStore'
 const cardStore = useCardStore()
 
 const colors = ['red', 'blue', 'green', 'purple', 'black', 'yellow']
-const types = ['leader', 'character', 'event']
+const types = ['leader', 'character', 'event', 'stage']
 const rarities = [
   { value: 'sr', label: 'SR' },
+  { value: 'sec', label: 'SEC' },
   { value: 'l', label: 'L' },
   { value: 'r', label: 'R' },
   { value: 'uc', label: 'UC' },
   { value: 'c', label: 'C' },
+  { value: 'tr', label: 'TR' },
+  { value: 'sp card', label: 'SP' },
+  { value: 'p', label: 'P' },
 ]
 </script>
 
@@ -52,6 +56,23 @@ const rarities = [
         @click="cardStore.toggleRarity(r.value)"
       >
         {{ r.label }}
+      </button>
+    </div>
+
+    <!-- Counter buttons -->
+    <span class="filter-label">Counter</span>
+    <div class="btn-row">
+      <button
+        :class="['filter-btn', { active: cardStore.selectedCounters.includes(1000) }]"
+        @click="cardStore.toggleCounter(1000)"
+      >
+        1K
+      </button>
+      <button
+        :class="['filter-btn', { active: cardStore.selectedCounters.includes(2000) }]"
+        @click="cardStore.toggleCounter(2000)"
+      >
+        2K
       </button>
     </div>
 

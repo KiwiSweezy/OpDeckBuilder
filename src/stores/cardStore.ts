@@ -7,6 +7,23 @@ function baseId(id: string): string {
   return id.replace(/_p\d+$/, '')
 }
 
+const STORAGE_KEY = 'op-saved-decks'
+
+/** Read the saved decks map from localStorage */
+function readSavedDecks(): Record<string, string[]> {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY)
+    return raw ? JSON.parse(raw) : {}
+  } catch {
+    return {}
+  }
+}
+
+/** Write the saved decks map to localStorage */
+function writeSavedDecks(decks: Record<string, string[]>) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(decks))
+}
+
 export const useCardStore = defineStore('cards', {
   state: () => ({
     allCards: allCardsData as Card[],
@@ -14,9 +31,12 @@ export const useCardStore = defineStore('cards', {
     selectedColors: [] as string[],     // max 2 (OPTCG rule: decks are 1-2 colors)
     selectedTypes: [] as string[],      // 'leader', 'character', 'event'
     selectedRarities: [] as string[],   // 'sr', 'l', 'r', 'uc', 'c'
+    selectedCounters: [] as number[],    // 1000, 2000
     costSortDirection: '' as '' | 'asc' | 'desc',  // '' = no sort, 'asc' = low→high, 'desc' = high→low
     selectedCard: null as Card | null,  // card shown in preview panel
     deck: [] as Card[],                 // cards in the user's deck (duplicates = multiple copies)
+    deckName: '',                        // name for saving/loading decks
+    _savedDecksVersion: 0,               // bumped on save/delete to trigger reactivity
   }),
 
   getters: {
@@ -46,21 +66,19 @@ export const useCardStore = defineStore('cards', {
         cards = cards.filter(card => state.selectedRarities.includes(card.rarity))
       }
 
-      // Search: supports name/ID/family text search, or "c2000" syntax for counter value
+      // Counter filter
+      if (state.selectedCounters.length > 0) {
+        cards = cards.filter(card => state.selectedCounters.includes(card.counter))
+      }
+
+      // Search by name, ID, or family
       if (state.searchQuery.trim() !== '') {
         const query = state.searchQuery.toLowerCase()
-        const counterMatch = query.match(/^c(\d+)$/)
-
-        if (counterMatch && counterMatch[1]) {
-          const counterVal = parseInt(counterMatch[1])
-          cards = cards.filter(card => card.counter === counterVal)
-        } else {
-          cards = cards.filter(card =>
-            card.name.toLowerCase().includes(query) ||
-            card.id.toLowerCase().includes(query) ||
-            card.family.toLowerCase().includes(query)
-          )
-        }
+        cards = cards.filter(card =>
+          card.name.toLowerCase().includes(query) ||
+          card.id.toLowerCase().includes(query) ||
+          card.family.toLowerCase().includes(query)
+        )
       }
 
       // Optional sort by cost
@@ -91,6 +109,7 @@ export const useCardStore = defineStore('cards', {
         state.selectedColors.length > 0 ||
         state.selectedTypes.length > 0 ||
         state.selectedRarities.length > 0 ||
+        state.selectedCounters.length > 0 ||
         state.searchQuery.trim() !== ''
       )
     },
@@ -104,6 +123,12 @@ export const useCardStore = defineStore('cards', {
 
     /** Total number of cards in the database */
     totalCards: (state): number => state.allCards.length,
+
+    /** List of saved deck names from localStorage (reactive via _savedDecksVersion) */
+    savedDeckNames(state): string[] {
+      state._savedDecksVersion // read to create reactive dependency
+      return Object.keys(readSavedDecks())
+    },
   },
 
   actions: {
@@ -126,6 +151,16 @@ export const useCardStore = defineStore('cards', {
         this.selectedTypes.push(type)
       } else {
         this.selectedTypes.splice(index, 1)
+      }
+    },
+
+    /** Toggle a counter filter on/off */
+    toggleCounter(value: number) {
+      const index = this.selectedCounters.indexOf(value)
+      if (index === -1) {
+        this.selectedCounters.push(value)
+      } else {
+        this.selectedCounters.splice(index, 1)
       }
     },
 
@@ -229,6 +264,44 @@ export const useCardStore = defineStore('cards', {
       }
 
       this.deck = newDeck
+    },
+
+    /** Save the current deck to localStorage under deckName. Returns a status message. */
+    saveDeck(): string {
+      const name = this.deckName.trim()
+      if (!name) return 'Enter a deck name first'
+      if (this.deck.length === 0) return 'Deck is empty'
+
+      const decks = readSavedDecks()
+      decks[name] = this.deck.map(c => c.id)
+      writeSavedDecks(decks)
+      this._savedDecksVersion++
+      return `Saved "${name}"`
+    },
+
+    /** Load a saved deck from localStorage by name. Returns a status message. */
+    loadDeck(name: string): string {
+      const decks = readSavedDecks()
+      const ids = decks[name]
+      if (!ids) return `Deck "${name}" not found`
+
+      const newDeck: Card[] = []
+      for (const id of ids) {
+        const card = this.allCards.find(c => c.id === id)
+        if (card) newDeck.push(card)
+      }
+
+      this.deck = newDeck
+      this.deckName = name
+      return `Loaded "${name}" (${newDeck.length} cards)`
+    },
+
+    /** Delete a saved deck from localStorage */
+    deleteDeck(name: string) {
+      const decks = readSavedDecks()
+      delete decks[name]
+      writeSavedDecks(decks)
+      this._savedDecksVersion++
     },
   },
 })
