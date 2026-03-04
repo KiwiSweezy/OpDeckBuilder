@@ -99,7 +99,10 @@ function clearStatus() {
 
 <template>
   <div class="deck-sidebar">
-    <h1 class="app-title">OP Deck Builder</h1>
+    <h1 class="app-title">
+      <img src="/logo.png" alt="Logo" class="app-logo" />
+      OP Deck Builder
+    </h1>
 
     <!-- Deck name + Save -->
     <div class="control-group name-group" data-tour="name-group">
@@ -201,9 +204,21 @@ function clearStatus() {
 }
 
 .app-title {
-  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Carbon', sans-serif;
+  font-weight: normal;
+  font-size: 2.7rem;
+  letter-spacing: 1px;
   color: var(--text-primary);
-  margin-bottom: 4px;
+  margin-bottom: 8px;
+}
+
+.app-logo {
+  width: 112px;
+  height: 112px;
+  object-fit: contain;
 }
 
 .control-group {
