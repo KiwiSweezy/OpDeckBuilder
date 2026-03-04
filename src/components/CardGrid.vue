@@ -1,26 +1,74 @@
 <script setup lang="ts">
-// This component's job: pull cards from the store and lay them out in a grid.
-// It doesn't know HOW to render a single card — it delegates that to CardThumbnail.
-// This separation keeps each component focused on one responsibility.
-
+import { ref, computed, watch, onMounted, onBeforeUnmount } from 'vue'
 import { useCardStore } from '../stores/cardStore'
 import CardThumbnail from './CardThumbnail.vue'
 
 const cardStore = useCardStore()
+
+const BATCH_SIZE = 50
+const visibleCount = ref(BATCH_SIZE)
+const sentinel = ref<HTMLElement | null>(null)
+let observer: IntersectionObserver | null = null
+
+// Cards to actually render (capped by visibleCount)
+const visibleCards = computed(() =>
+  cardStore.filteredCards.slice(0, visibleCount.value)
+)
+
+const hasMore = computed(() =>
+  visibleCount.value < cardStore.filteredCards.length
+)
+
+// Reset visible count when filters change
+watch(() => cardStore.filteredCards, () => {
+  visibleCount.value = BATCH_SIZE
+})
+
+function loadMore() {
+  visibleCount.value = Math.min(
+    visibleCount.value + BATCH_SIZE,
+    cardStore.filteredCards.length
+  )
+}
+
+onMounted(() => {
+  observer = new IntersectionObserver(
+    (entries) => {
+      if (entries[0]?.isIntersecting && hasMore.value) {
+        loadMore()
+      }
+    },
+    { rootMargin: '200px' }
+  )
+  if (sentinel.value) observer.observe(sentinel.value)
+})
+
+watch(sentinel, (el) => {
+  if (observer && el) observer.observe(el)
+})
+
+onBeforeUnmount(() => {
+  observer?.disconnect()
+})
 </script>
 
 <template>
   <div v-if="!cardStore.hasActiveFilters" class="no-filters">
     Select a color or type a search to browse cards
   </div>
-  <div v-else class="card-grid">
-    <CardThumbnail
-      v-for="card in cardStore.filteredCards"
-      :key="card.id"
-      :card="card"
-      @select="cardStore.addToDeck"
-      @preview="cardStore.selectCard"
-    />
+  <div v-else>
+    <div class="card-grid">
+      <CardThumbnail
+        v-for="card in visibleCards"
+        :key="card.id"
+        :card="card"
+        @select="cardStore.addToDeck"
+        @preview="cardStore.selectCard"
+      />
+    </div>
+    <div v-if="hasMore" ref="sentinel" class="load-sentinel">
+      <span class="loading-text">Loading more cards...</span>
+    </div>
   </div>
 </template>
 
@@ -43,5 +91,15 @@ const cardStore = useCardStore()
   font-size: 0.9rem;
   text-align: center;
   padding: 40px 20px;
+}
+
+.load-sentinel {
+  text-align: center;
+  padding: 20px;
+}
+
+.loading-text {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
 }
 </style>

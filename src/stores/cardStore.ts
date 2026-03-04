@@ -7,7 +7,16 @@ function baseId(id: string): string {
   return id.replace(/_p\d+$/, '')
 }
 
+/** Convert color string like "red/green" to abbreviation like "RG" */
+const COLOR_ABBREVS: Record<string, string> = {
+  red: 'R', blue: 'U', green: 'G', purple: 'P', black: 'B', yellow: 'Y',
+}
+function colorAbbrev(color: string): string {
+  return color.split('/').map(c => COLOR_ABBREVS[c.trim()] ?? c[0]?.toUpperCase() ?? '').join('')
+}
+
 const STORAGE_KEY = 'op-saved-decks'
+const LAST_DECK_KEY = 'op-last-deck'
 
 /** Read the saved decks map from localStorage */
 function readSavedDecks(): Record<string, string[]> {
@@ -32,6 +41,7 @@ export const useCardStore = defineStore('cards', {
     selectedTypes: [] as string[],      // 'leader', 'character', 'event'
     selectedRarities: [] as string[],   // 'sr', 'l', 'r', 'uc', 'c'
     selectedCounters: [] as number[],    // 1000, 2000
+    selectedKeywords: [] as string[],    // 'rush', 'blocker', etc.
     costSortDirection: '' as '' | 'asc' | 'desc',  // '' = no sort, 'asc' = low→high, 'desc' = high→low
     selectedCard: null as Card | null,  // card shown in preview panel
     deck: [] as Card[],                 // cards in the user's deck (duplicates = multiple copies)
@@ -71,13 +81,28 @@ export const useCardStore = defineStore('cards', {
         cards = cards.filter(card => state.selectedCounters.includes(card.counter))
       }
 
-      // Search by name, ID, or family
+      // Keyword filter (ability text must match ALL selected keywords)
+      if (state.selectedKeywords.length > 0) {
+        const keywordPatterns: Record<string, RegExp> = {
+          searcher: /look at.*from the top of your deck/i,
+        }
+        cards = cards.filter(card => {
+          const ability = card.ability.toLowerCase()
+          return state.selectedKeywords.every(kw => {
+            const pattern = keywordPatterns[kw]
+            return pattern ? pattern.test(card.ability) : ability.includes(kw)
+          })
+        })
+      }
+
+      // Search by name, ID, family, or ability text
       if (state.searchQuery.trim() !== '') {
         const query = state.searchQuery.toLowerCase()
         cards = cards.filter(card =>
           card.name.toLowerCase().includes(query) ||
           card.id.toLowerCase().includes(query) ||
-          card.family.toLowerCase().includes(query)
+          card.family.toLowerCase().includes(query) ||
+          card.ability.toLowerCase().includes(query)
         )
       }
 
@@ -96,11 +121,34 @@ export const useCardStore = defineStore('cards', {
       return state.deck.length
     },
 
-    /** Returns a function to count copies of a specific card (exact ID) in the deck */
-    deckCardCount: (state) => {
-      return (cardId: string): number => {
-        return state.deck.filter(c => c.id === cardId).length
+    /** Deck breakdown stats for the stats panel */
+    deckStats(state) {
+      const nonLeader = state.deck.filter(c => c.type !== 'leader')
+      const costCurve: Record<number, number> = {}
+      let counter1k = 0
+      let counter2k = 0
+      let events = 0
+      let searchers = 0
+      let blockers = 0
+      let rush = 0
+      let banish = 0
+      let doubleAttack = 0
+      let onKO = 0
+      const searcherPattern = /look at.*from the top of your deck/i
+      for (const card of nonLeader) {
+        const ability = card.ability.toLowerCase()
+        costCurve[card.cost] = (costCurve[card.cost] ?? 0) + 1
+        if (card.counter === 1000) counter1k++
+        if (card.counter === 2000) counter2k++
+        if (card.type === 'event') events++
+        if (searcherPattern.test(card.ability)) searchers++
+        if (ability.includes('blocker')) blockers++
+        if (ability.includes('rush')) rush++
+        if (ability.includes('banish')) banish++
+        if (ability.includes('double attack')) doubleAttack++
+        if (ability.includes('on k.o.')) onKO++
       }
+      return { costCurve, counter1k, counter2k, events, searchers, blockers, rush, banish, doubleAttack, onKO }
     },
 
     /** True when any filter is active — card pool stays hidden until this is true */
@@ -110,6 +158,7 @@ export const useCardStore = defineStore('cards', {
         state.selectedTypes.length > 0 ||
         state.selectedRarities.length > 0 ||
         state.selectedCounters.length > 0 ||
+        state.selectedKeywords.length > 0 ||
         state.searchQuery.trim() !== ''
       )
     },
@@ -121,13 +170,21 @@ export const useCardStore = defineStore('cards', {
       return leader.color.split('/')
     },
 
-    /** Total number of cards in the database */
-    totalCards: (state): number => state.allCards.length,
-
-    /** List of saved deck names from localStorage (reactive via _savedDecksVersion) */
-    savedDeckNames(state): string[] {
+    /** Saved decks with leader info for the dropdown display */
+    savedDecks(state): { name: string; leaderName: string; leaderColors: string; leaderImage: string }[] {
       state._savedDecksVersion // read to create reactive dependency
-      return Object.keys(readSavedDecks())
+      const decks = readSavedDecks()
+      return Object.entries(decks).map(([name, ids]) => {
+        const leaderCard = ids
+          .map(id => state.allCards.find(c => c.id === id))
+          .find(c => c?.type === 'leader')
+        return {
+          name,
+          leaderName: leaderCard?.name ?? '',
+          leaderColors: leaderCard ? colorAbbrev(leaderCard.color) : '',
+          leaderImage: leaderCard?.images.small ?? '',
+        }
+      })
     },
   },
 
@@ -161,6 +218,16 @@ export const useCardStore = defineStore('cards', {
         this.selectedCounters.push(value)
       } else {
         this.selectedCounters.splice(index, 1)
+      }
+    },
+
+    /** Toggle a keyword filter on/off (matches against ability text) */
+    toggleKeyword(keyword: string) {
+      const index = this.selectedKeywords.indexOf(keyword)
+      if (index === -1) {
+        this.selectedKeywords.push(keyword)
+      } else {
+        this.selectedKeywords.splice(index, 1)
       }
     },
 
@@ -264,6 +331,13 @@ export const useCardStore = defineStore('cards', {
       }
 
       this.deck = newDeck
+      this.applyLeaderColors()
+    },
+
+    /** Check if a deck name already exists in saved decks */
+    hasSavedDeck(name: string): boolean {
+      const decks = readSavedDecks()
+      return name.trim() in decks
     },
 
     /** Save the current deck to localStorage under deckName. Returns a status message. */
@@ -275,6 +349,7 @@ export const useCardStore = defineStore('cards', {
       const decks = readSavedDecks()
       decks[name] = this.deck.map(c => c.id)
       writeSavedDecks(decks)
+      localStorage.setItem(LAST_DECK_KEY, name)
       this._savedDecksVersion++
       return `Saved "${name}"`
     },
@@ -293,7 +368,28 @@ export const useCardStore = defineStore('cards', {
 
       this.deck = newDeck
       this.deckName = name
+      localStorage.setItem(LAST_DECK_KEY, name)
+      this.applyLeaderColors()
       return `Loaded "${name}" (${newDeck.length} cards)`
+    },
+
+    /** Set color filters to match the leader's colors (if a leader exists in the deck) */
+    applyLeaderColors() {
+      const leader = this.deck.find(c => c.type === 'leader')
+      if (leader) {
+        this.selectedColors = leader.color.split('/')
+      }
+    },
+
+    /** Auto-load the most recently used deck on app startup */
+    initStore() {
+      const lastName = localStorage.getItem(LAST_DECK_KEY)
+      if (lastName) {
+        const decks = readSavedDecks()
+        if (decks[lastName]) {
+          this.loadDeck(lastName)
+        }
+      }
     },
 
     /** Delete a saved deck from localStorage */

@@ -5,12 +5,42 @@ import { useCardStore } from '../stores/cardStore'
 const cardStore = useCardStore()
 const statusMessage = ref('')
 const showLoadDropdown = ref(false)
+const showOverwriteConfirm = ref(false)
 
-/** Save the current deck to localStorage */
+/** Save the current deck to localStorage (with overwrite check) */
 function handleSave() {
+  const name = cardStore.deckName.trim()
+  if (!name || cardStore.deckSize === 0) {
+    const msg = cardStore.saveDeck()
+    statusMessage.value = msg
+    clearStatus()
+    return
+  }
+  if (cardStore.hasSavedDeck(name)) {
+    showOverwriteConfirm.value = true
+    return
+  }
+  confirmSave()
+}
+
+/** Actually perform the save */
+function confirmSave() {
+  showOverwriteConfirm.value = false
   const msg = cardStore.saveDeck()
   statusMessage.value = msg
   clearStatus()
+}
+
+/** Cancel overwrite */
+function cancelOverwrite() {
+  showOverwriteConfirm.value = false
+}
+
+/** Start a fresh deck (clear name + deck) */
+function handleNewDeck() {
+  cardStore.deckName = ''
+  cardStore.clearDeck()
+  showLoadDropdown.value = false
 }
 
 /** Load a deck from localStorage by name */
@@ -71,57 +101,83 @@ function clearStatus() {
   <div class="deck-sidebar">
     <h1 class="app-title">OP Deck Builder</h1>
 
-    <!-- Deck name + Save/Load -->
-    <div class="control-group">
-      <input
-        v-model="cardStore.deckName"
-        type="text"
-        placeholder="Deck name..."
-        class="deck-name-input"
-      />
-      <div class="btn-row">
-        <button class="sidebar-btn" @click="handleSave">Save</button>
+    <!-- Deck name + Save -->
+    <div class="control-group name-group" data-tour="name-group">
+      <div class="name-input-wrapper">
+        <input
+          v-model="cardStore.deckName"
+          type="text"
+          placeholder="Deck name..."
+          class="deck-name-input"
+        />
         <button
-          class="sidebar-btn"
-          :class="{ active: showLoadDropdown }"
+          class="dropdown-toggle"
           @click="showLoadDropdown = !showLoadDropdown"
         >
-          Load {{ showLoadDropdown ? '▴' : '▾' }}
+          {{ showLoadDropdown ? '▴' : '▾' }}
         </button>
       </div>
 
       <!-- Saved decks dropdown -->
       <div v-if="showLoadDropdown" class="load-dropdown">
-        <div v-if="cardStore.savedDeckNames.length === 0" class="dropdown-empty">
-          No saved decks
-        </div>
         <div
-          v-for="name in cardStore.savedDeckNames"
-          :key="name"
+          v-for="deck in cardStore.savedDecks"
+          :key="deck.name"
           class="dropdown-item"
+          @click="handleLoad(deck.name)"
         >
-          <button class="dropdown-name" @click="handleLoad(name)">
-            {{ name }}
-          </button>
-          <button class="dropdown-delete" @click.stop="handleDelete(name)">
+          <img
+            v-if="deck.leaderImage"
+            :src="deck.leaderImage"
+            class="dropdown-thumb"
+          />
+          <div v-else class="dropdown-thumb-placeholder" />
+          <div class="dropdown-info">
+            <span class="dropdown-deck-name">{{ deck.name }}</span>
+            <span v-if="deck.leaderName" class="dropdown-leader">
+              {{ deck.leaderColors }}, {{ deck.leaderName }}
+            </span>
+          </div>
+          <button class="dropdown-delete" @click.stop="handleDelete(deck.name)">
             &times;
           </button>
         </div>
+        <div class="dropdown-item new-deck" @click="handleNewDeck">
+          <div class="dropdown-thumb-placeholder new-deck-icon">+</div>
+          <div class="dropdown-info">
+            <span class="dropdown-deck-name">New Deck</span>
+          </div>
+        </div>
+      </div>
+
+      <button class="sidebar-btn full-width" @click="handleSave">Save Decklist</button>
+    </div>
+
+    <!-- Toast notification -->
+    <Teleport to="body">
+      <Transition name="toast">
+        <div v-if="statusMessage" class="toast">{{ statusMessage }}</div>
+      </Transition>
+    </Teleport>
+
+    <!-- Overwrite confirmation -->
+    <div v-if="showOverwriteConfirm" class="overwrite-confirm">
+      <span class="overwrite-text">Overwrite "{{ cardStore.deckName.trim() }}"?</span>
+      <div class="overwrite-actions">
+        <button class="sidebar-btn overwrite-btn confirm" @click="confirmSave">Yes</button>
+        <button class="sidebar-btn overwrite-btn" @click="cancelOverwrite">Cancel</button>
       </div>
     </div>
 
     <!-- Import / Export -->
-    <div class="control-group">
+    <div class="control-group" data-tour="import-export">
       <button class="sidebar-btn full-width" @click="handleImport">
         Import from Clipboard
       </button>
       <button class="sidebar-btn full-width" @click="handleExport">
-        Export to Clipboard
+        Export for Sim
       </button>
     </div>
-
-    <!-- Status message -->
-    <span v-if="statusMessage" class="status-message">{{ statusMessage }}</span>
 
     <!-- Clear deck -->
     <div class="control-group">
@@ -133,6 +189,7 @@ function clearStatus() {
         Clear Deck
       </button>
     </div>
+
   </div>
 </template>
 
@@ -155,24 +212,40 @@ function clearStatus() {
   gap: 6px;
 }
 
-.deck-name-input {
-  width: 100%;
-  padding: 8px 10px;
+.name-input-wrapper {
+  display: flex;
   background-color: var(--bg-tertiary);
   border: 1px solid var(--border-color);
   border-radius: 4px;
+  overflow: hidden;
+}
+
+.name-input-wrapper:focus-within {
+  border-color: var(--accent);
+}
+
+.deck-name-input {
+  flex: 1;
+  padding: 8px 10px;
+  background: none;
+  border: none;
   color: var(--text-primary);
   font-size: 0.85rem;
   outline: none;
 }
 
-.deck-name-input:focus {
-  border-color: var(--accent);
+.dropdown-toggle {
+  padding: 0 10px;
+  background: none;
+  border: none;
+  border-left: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 0.8rem;
 }
 
-.btn-row {
-  display: flex;
-  gap: 6px;
+.dropdown-toggle:hover {
+  color: var(--text-primary);
 }
 
 .sidebar-btn {
@@ -192,11 +265,6 @@ function clearStatus() {
   color: var(--text-primary);
 }
 
-.sidebar-btn.active {
-  border-color: var(--accent);
-  color: var(--accent);
-}
-
 .full-width {
   width: 100%;
 }
@@ -206,65 +274,153 @@ function clearStatus() {
   color: var(--accent);
 }
 
-.status-message {
-  color: var(--accent);
-  font-size: 0.8rem;
-  text-align: center;
-}
-
 /* Load dropdown */
 .load-dropdown {
   background-color: var(--bg-tertiary);
   border: 1px solid var(--border-color);
-  border-radius: 4px;
-  max-height: 200px;
+  border-radius: 6px;
+  max-height: 260px;
   overflow-y: auto;
-}
-
-.dropdown-empty {
-  padding: 8px 10px;
-  color: var(--text-secondary);
-  font-size: 0.8rem;
-  text-align: center;
 }
 
 .dropdown-item {
   display: flex;
   align-items: center;
+  gap: 10px;
+  padding: 6px 8px;
+  cursor: pointer;
   border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.15s ease;
 }
 
 .dropdown-item:last-child {
   border-bottom: none;
 }
 
-.dropdown-name {
-  flex: 1;
-  padding: 8px 10px;
-  background: none;
-  border: none;
-  color: var(--text-primary);
-  font-size: 0.8rem;
-  cursor: pointer;
-  text-align: left;
+.dropdown-item:hover {
+  background-color: var(--bg-secondary);
 }
 
-.dropdown-name:hover {
+.dropdown-thumb {
+  width: 36px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.dropdown-thumb-placeholder {
+  width: 36px;
+  height: 50px;
   background-color: var(--bg-secondary);
-  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.dropdown-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.dropdown-deck-name {
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dropdown-leader {
+  color: var(--text-secondary);
+  font-size: 0.7rem;
 }
 
 .dropdown-delete {
-  padding: 4px 10px;
+  padding: 4px 6px;
   background: none;
   border: none;
   color: var(--text-secondary);
-  font-size: 1rem;
+  font-size: 1.1rem;
   cursor: pointer;
   line-height: 1;
+  flex-shrink: 0;
 }
 
 .dropdown-delete:hover {
   color: var(--accent);
+}
+
+.new-deck-icon {
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: 1px dashed var(--border-color);
+  background: none;
+}
+
+/* Overwrite confirmation */
+.overwrite-confirm {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px;
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+}
+
+.overwrite-text {
+  color: var(--text-primary);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.overwrite-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.overwrite-btn {
+  flex: 1;
+}
+
+.overwrite-btn.confirm {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+</style>
+
+<style>
+/* Toast notification (unscoped — rendered via Teleport to body) */
+.toast {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  padding: 16px 32px;
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.toast-enter-active,
+.toast-leave-active {
+  transition: all 0.3s ease;
+}
+
+.toast-enter-from,
+.toast-leave-to {
+  opacity: 0;
+  transform: translateX(40px);
 }
 </style>

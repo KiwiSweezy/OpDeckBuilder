@@ -9,7 +9,7 @@ const cardStore = useCardStore()
     <input
       v-model="cardStore.searchQuery"
       type="text"
-      placeholder="Search by name, ID, or family..."
+      placeholder="Search by name, ID, family, or ability..."
       class="search-input"
     />
   </div>

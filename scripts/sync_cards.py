@@ -34,6 +34,7 @@ def normalize_card(card: dict) -> dict:
         "power": int(card["power"]) if card.get("power") and str(card["power"]) != "-" else 0,
         "counter": int(card["counter"]) if card.get("counter") and str(card["counter"]) != "-" else 0,
         "family": card.get("family", ""),
+        "ability": card.get("ability", ""),
     }
 
 

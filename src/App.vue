@@ -1,12 +1,36 @@
 <script setup lang="ts">
+import { computed, ref } from 'vue'
 import { useCardStore } from './stores/cardStore'
 import CardGrid from './components/CardGrid.vue'
 import SearchBar from './components/SearchBar.vue'
 import ColorFilter from './components/ColorFilter.vue'
 import DeckDisplay from './components/DeckDisplay.vue'
 import DeckSidebar from './components/DeckSidebar.vue'
+import DeckStats from './components/DeckStats.vue'
+import AppTour from './components/AppTour.vue'
 
 const cardStore = useCardStore()
+cardStore.initStore()
+
+const tourRef = ref<InstanceType<typeof AppTour> | null>(null)
+function startTour() {
+  tourRef.value?.start()
+}
+
+/** Detect keywords present in the selected card's ability text */
+const cardKeywords = computed(() => {
+  const card = cardStore.selectedCard
+  if (!card) return []
+  const ability = card.ability.toLowerCase()
+  const keywords: string[] = []
+  if (ability.includes('blocker')) keywords.push('Blocker')
+  if (ability.includes('rush')) keywords.push('Rush')
+  if (ability.includes('banish')) keywords.push('Banish')
+  if (ability.includes('double attack')) keywords.push('Double Attack')
+  if (ability.includes('on k.o.')) keywords.push('On KO')
+  if (/look at.*from the top of your deck/i.test(card.ability)) keywords.push('Searcher')
+  return keywords
+})
 </script>
 
 <template>
@@ -15,8 +39,9 @@ const cardStore = useCardStore()
     <div class="sidebar">
       <div class="sidebar-controls">
         <DeckSidebar />
+        <button class="tour-trigger" @click="startTour" title="Start tour">?</button>
       </div>
-      <div class="sidebar-preview">
+      <div class="sidebar-preview" data-tour="sidebar-preview">
         <div v-if="cardStore.selectedCard" class="preview-content">
           <img
             :src="cardStore.selectedCard.images.large"
@@ -27,29 +52,41 @@ const cardStore = useCardStore()
           <p class="preview-details">
             {{ cardStore.selectedCard.id }} ·
             Cost {{ cardStore.selectedCard.cost }} ·
+            Power {{ cardStore.selectedCard.power }} ·
             {{ cardStore.selectedCard.attribute }}
           </p>
+          <p class="preview-details">
+            {{ cardStore.selectedCard.rarity.toUpperCase() }}<span v-if="cardStore.selectedCard.counter"> · Counter {{ cardStore.selectedCard.counter }}</span>
+          </p>
           <p class="preview-family">{{ cardStore.selectedCard.family }}</p>
+          <div v-if="cardKeywords.length" class="preview-keywords">
+            <span v-for="kw in cardKeywords" :key="kw" class="keyword-badge">{{ kw }}</span>
+          </div>
+          <p v-if="cardStore.selectedCard.ability && cardStore.selectedCard.ability !== '-'" class="preview-ability">
+            {{ cardStore.selectedCard.ability.replace(/<br>/g, '\n') }}
+          </p>
         </div>
         <p v-else class="preview-placeholder">Hover a card to preview</p>
+        <DeckStats />
       </div>
     </div>
 
     <!-- RIGHT-TOP: deck display area (cards in deck) -->
-    <div class="deck-area">
+    <div class="deck-area" data-tour="deck-area">
       <DeckDisplay />
     </div>
 
     <!-- RIGHT-BOTTOM-LEFT: search + filters -->
-    <div class="filters">
+    <div class="filters" data-tour="filters">
       <SearchBar />
       <ColorFilter />
     </div>
 
     <!-- RIGHT-BOTTOM-RIGHT: card search results -->
-    <div class="card-pool">
+    <div class="card-pool" data-tour="card-pool">
       <CardGrid />
     </div>
+    <AppTour ref="tourRef" />
   </div>
 </template>
 
@@ -86,7 +123,8 @@ const cardStore = useCardStore()
 
 /* Controls sit at top, only as tall as their content */
 .sidebar-controls {
-  padding: 16px;
+  position: relative;
+  padding: 16px 16px 31px;
   border-bottom: 1px solid var(--border-color);
 }
 
@@ -155,5 +193,55 @@ const cardStore = useCardStore()
   font-size: 0.8rem;
   margin-top: 4px;
   font-style: italic;
+}
+
+.preview-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.keyword-badge {
+  padding: 2px 8px;
+  background-color: var(--accent);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 600;
+  border-radius: 10px;
+  text-transform: uppercase;
+}
+
+.tour-trigger {
+  position: absolute;
+  bottom: 4px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  background: none;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.tour-trigger:hover {
+  border-color: var(--accent);
+  color: var(--text-primary);
+}
+
+.preview-ability {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-top: 8px;
+  line-height: 1.4;
+  white-space: pre-line;
 }
 </style>

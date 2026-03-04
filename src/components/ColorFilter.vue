@@ -76,6 +76,49 @@ const rarities = [
       </button>
     </div>
 
+    <!-- Keyword buttons -->
+    <span class="filter-label">Keyword</span>
+    <div class="btn-row">
+      <button
+        :class="['filter-btn', { active: cardStore.selectedKeywords.includes('rush') }]"
+        @click="cardStore.toggleKeyword('rush')"
+      >
+        Rush
+      </button>
+      <button
+        :class="['filter-btn', { active: cardStore.selectedKeywords.includes('blocker') }]"
+        @click="cardStore.toggleKeyword('blocker')"
+      >
+        Blocker
+      </button>
+      <button
+        :class="['filter-btn', { active: cardStore.selectedKeywords.includes('banish') }]"
+        @click="cardStore.toggleKeyword('banish')"
+      >
+        Banish
+      </button>
+    </div>
+    <div class="btn-row">
+      <button
+        :class="['filter-btn', { active: cardStore.selectedKeywords.includes('double attack') }]"
+        @click="cardStore.toggleKeyword('double attack')"
+      >
+        Double Attack
+      </button>
+      <button
+        :class="['filter-btn', { active: cardStore.selectedKeywords.includes('searcher') }]"
+        @click="cardStore.toggleKeyword('searcher')"
+      >
+        Searcher
+      </button>
+      <button
+        :class="['filter-btn', { active: cardStore.selectedKeywords.includes('on k.o.') }]"
+        @click="cardStore.toggleKeyword('on k.o.')"
+      >
+        On KO
+      </button>
+    </div>
+
     <!-- Sort by cost -->
     <span class="filter-label">Sort by Cost</span>
     <div class="btn-row">

@@ -18,4 +18,5 @@ export interface Card {
   power: number              // e.g. 5000, 0 if none
   counter: number            // e.g. 1000, 2000, 0 if none
   family: string             // e.g. "Land of Wano/Kouzuki Clan"
+  ability: string            // card effect/ability text
 }
