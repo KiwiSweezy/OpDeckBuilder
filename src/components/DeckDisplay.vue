@@ -20,8 +20,8 @@ const groupedDeck = computed(() => {
   }
   return Array.from(groups.values()).sort((a, b) => {
     // Sort by primary color first
-    const aColor = colorOrder.indexOf(a.card.color.split('/')[0])
-    const bColor = colorOrder.indexOf(b.card.color.split('/')[0])
+    const aColor = colorOrder.indexOf(a.card.color.split('/')[0] ?? '')
+    const bColor = colorOrder.indexOf(b.card.color.split('/')[0] ?? '')
     if (aColor !== bColor) return aColor - bColor
     // Then by cost descending
     return b.card.cost - a.card.cost

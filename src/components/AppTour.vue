@@ -56,8 +56,8 @@ const isActive = ref(false)
 const currentStep = ref(0)
 const spotlightRect = ref({ top: 0, left: 0, width: 0, height: 0 })
 
-const step = computed(() => steps[currentStep.value])
-const isCentered = computed(() => step.value.target === null)
+const step = computed(() => steps[currentStep.value]!)
+const isCentered = computed(() => step.value!.target === null)
 const stepLabel = computed(() => `${currentStep.value + 1} / ${steps.length}`)
 
 // Tooltip position: centered on spotlight, below if room, above otherwise
@@ -112,7 +112,7 @@ function finish() {
 
 function updateSpotlight() {
   nextTick(() => {
-    const target = step.value.target
+    const target = step.value!.target
     if (!target) {
       spotlightRect.value = { top: 0, left: 0, width: 0, height: 0 }
       return
@@ -176,8 +176,8 @@ defineExpose({ start })
           <span class="tour-step-label">{{ stepLabel }}</span>
           <button class="tour-skip" @click="skip">Skip</button>
         </div>
-        <h3 class="tour-title">{{ step.title }}</h3>
-        <p class="tour-description">{{ step.description }}</p>
+        <h3 class="tour-title">{{ step?.title }}</h3>
+        <p class="tour-description">{{ step?.description }}</p>
         <div class="tour-actions">
           <button v-if="currentStep > 0" class="tour-btn tour-btn-back" @click="back">Back</button>
           <button class="tour-btn tour-btn-next" @click="next">
