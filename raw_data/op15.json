@@ -1,0 +1,4902 @@
+[
+  {
+    "id": "EB04-001",
+    "code": "EB04-001",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Jewelry Bonney",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-001.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-001.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "5000",
+    "counter": "-",
+    "color": "Red/Yellow",
+    "family": "Egghead/Bonney Pirates",
+    "ability": "[Opponent's Turn] If you have 1 or less Life cards, this Leader gains +2000 power.[Activate: Main] [Once Per Turn] Give up to 1 of your opponent's Characters −1000 power during this turn. Then, if you have 2 or more Life cards, you may add 1 card from the top of your Life cards to your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "EB04-001_p1",
+    "code": "EB04-001",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Jewelry Bonney",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-001_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-001_p1.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "5000",
+    "counter": "-",
+    "color": "Red/Yellow",
+    "family": "Egghead/Bonney Pirates",
+    "ability": "[Opponent's Turn] If you have 1 or less Life cards, this Leader gains +2000 power.[Activate: Main] [Once Per Turn] Give up to 1 of your opponent's Characters −1000 power during this turn. Then, if you have 2 or more Life cards, you may add 1 card from the top of your Life cards to your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "EB04-002",
+    "code": "EB04-002",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Jewelry Bonney",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-002.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-002.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "2000",
+    "counter": "1000",
+    "color": "Red",
+    "family": "Egghead/Bonney Pirates",
+    "ability": "[On Play] Look at 4 cards from the top of your deck; reveal up to 1 {Egghead} or {Straw Hat Crew} type card other than [Jewelry Bonney] and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "EB04-002_p1",
+    "code": "EB04-002",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Jewelry Bonney",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-002_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-002_p1.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "2000",
+    "counter": "1000",
+    "color": "Red",
+    "family": "Egghead/Bonney Pirates",
+    "ability": "[On Play] Look at 4 cards from the top of your deck; reveal up to 1 {Egghead} or {Straw Hat Crew} type card other than [Jewelry Bonney] and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "EB04-003",
+    "code": "EB04-003",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Smoker & Tashigi",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-003.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-003.png"
+    },
+    "cost": "8",
+    "attribute": {
+      "name": "Slash/Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type07.png"
+    },
+    "power": "8000",
+    "counter": "-",
+    "color": "Red",
+    "family": "Punk Hazard/Navy",
+    "ability": "[Rush] (This card can attack on the turn in which it is played.)[Opponent's Turn] Your {Navy} type Leader's base power becomes 7000.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "EB04-004",
+    "code": "EB04-004",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Zeff",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-004.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-004.png"
+    },
+    "cost": "7",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "8000",
+    "counter": "-",
+    "color": "Red",
+    "family": "East Blue",
+    "ability": "[When Attacking] Your Leader's base power becomes 7000 until the end of your opponent's next End Phase.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "EB04-005",
+    "code": "EB04-005",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Trafalgar Law",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-005.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-005.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "5000",
+    "counter": "2000",
+    "color": "Red",
+    "family": "The Seven Warlords of the Sea/Supernovas/Heart Pirates",
+    "ability": "This Character cannot attack unless your opponent has 2 or more Characters with a base power of 5000 or more.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "EB04-006",
+    "code": "EB04-006",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Moda",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-006.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-006.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": "0",
+    "counter": "2000",
+    "color": "Red",
+    "family": "Lulucia Kingdom",
+    "ability": "[On Play] Look at 7 cards from the top of your deck; reveal up to 1 [Lulucia Kingdom] and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "EB04-007",
+    "code": "EB04-007",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Roronoa Zoro",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-007.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-007.png"
+    },
+    "cost": "7",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "9000",
+    "counter": "-",
+    "color": "Red",
+    "family": "Egghead/Straw Hat Crew",
+    "ability": "[On Play] Your Leader gains +2000 power until the end of your opponent's next End Phase.[Activate: Main] [Once Per Turn] If your opponent has a Character with 8000 power or more, this Character gains [Rush: Character] during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "EB04-007_p1",
+    "code": "EB04-007",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Roronoa Zoro",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-007_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-007_p1.png"
+    },
+    "cost": "7",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "9000",
+    "counter": "-",
+    "color": "Red",
+    "family": "Egghead/Straw Hat Crew",
+    "ability": "[On Play] Your Leader gains +2000 power until the end of your opponent's next End Phase.[Activate: Main] [Once Per Turn] If your opponent has a Character with 8000 power or more, this Character gains [Rush: Character] during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "EB04-008",
+    "code": "EB04-008",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "Distorted Future",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-008.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-008.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Red",
+    "family": "Egghead/Bonney Pirates",
+    "ability": "[Main] If you have 2 or less Life cards, give up to 1 of your opponent's Characters −3000 power during this turn.[Counter] Your Leader gains +3000 power during this battle.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "EB04-009",
+    "code": "EB04-009",
+    "rarity": "C",
+    "type": "EVENT",
+    "name": "It's My Student's Farewell. I Want It to Be Proper.",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-009.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-009.png"
+    },
+    "cost": "0",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Red",
+    "family": "Former Roger Pirates",
+    "ability": "[Main] You may give 1 active DON!! card to 1 of your [Silvers Rayleigh]: Give up to 1 of your opponent's Characters −2000 power during this turn.[Counter] Up to 1 of your Characters or [Silvers Rayleigh] gains +2000 power during this battle.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "EB04-010",
+    "code": "EB04-010",
+    "rarity": "C",
+    "type": "STAGE",
+    "name": "Lulucia Kingdom",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-010.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-010.png"
+    },
+    "cost": "7",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Red",
+    "family": "Lulucia Kingdom",
+    "ability": "[Opponent's Turn] All of your Characters with a base cost of 1 gain +5000 power.[On Play] Set the power of up to 1 of your opponent's Characters to 0 during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "EB04-042",
+    "code": "EB04-042",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Alpha",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-042.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-042.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "2000",
+    "counter": "2000",
+    "color": "Black",
+    "family": "CP8",
+    "ability": "[On Play] You may trash 3 cards from the top of your deck: Give up to 1 of your opponent's Characters −1 cost during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "EB04-043",
+    "code": "EB04-043",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Kaku",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-043.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-043.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "4000",
+    "counter": "2000",
+    "color": "Black",
+    "family": "Egghead/CP0",
+    "ability": "[Once Per Turn] If your black Character with a base cost of 5 or less would be K.O.'d by your opponent's effect, you may place 3 cards from your trash at the bottom of your deck in any order instead.[On Play] Trash 2 cards from the top of your deck.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "EB04-043_p1",
+    "code": "EB04-043",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Kaku",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-043_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-043_p1.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "4000",
+    "counter": "2000",
+    "color": "Black",
+    "family": "Egghead/CP0",
+    "ability": "[Once Per Turn] If your black Character with a base cost of 5 or less would be K.O.'d by your opponent's effect, you may place 3 cards from your trash at the bottom of your deck in any order instead.[On Play] Trash 2 cards from the top of your deck.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "EB04-044",
+    "code": "EB04-044",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Koby",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-044.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-044.png"
+    },
+    "cost": "6",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "7000",
+    "counter": "1000",
+    "color": "Black",
+    "family": "Navy/SWORD",
+    "ability": "[Once Per Turn] If your Leader's type includes \"Navy\" and this Character would be removed from the field, you may trash 1 card from your hand instead.[Your Turn] [Once Per Turn] When your opponent's Character is K.O.'d, draw 1 card.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "EB04-044_p1",
+    "code": "EB04-044",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Koby",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-044_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-044_p1.png"
+    },
+    "cost": "6",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "7000",
+    "counter": "1000",
+    "color": "Black",
+    "family": "Navy/SWORD",
+    "ability": "[Once Per Turn] If your Leader's type includes \"Navy\" and this Character would be removed from the field, you may trash 1 card from your hand instead.[Your Turn] [Once Per Turn] When your opponent's Character is K.O.'d, draw 1 card.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "EB04-044_p2",
+    "code": "EB04-044",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Koby",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-044_p2.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-044_p2.png"
+    },
+    "cost": "6",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "7000",
+    "counter": "1000",
+    "color": "Black",
+    "family": "Navy/SWORD",
+    "ability": "[Once Per Turn] If your Leader's type includes \"Navy\" and this Character would be removed from the field, you may trash 1 card from your hand instead.[Your Turn] [Once Per Turn] When your opponent's Character is K.O.'d, draw 1 card.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "EB04-045",
+    "code": "EB04-045",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Ginny",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-045.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-045.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Ranged",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type04.png"
+    },
+    "power": "2000",
+    "counter": "2000",
+    "color": "Black",
+    "family": "Revolutionary Army",
+    "ability": "[Activate: Main] You may rest this Character: If there are 2 or more Characters with a cost of 8 or more, up to 1 of your {Revolutionary Army} type Leader or Character cards gains +1000 power during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "EB04-046",
+    "code": "EB04-046",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Doll",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-046.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-046.png"
+    },
+    "cost": "2",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "1000",
+    "counter": "1000",
+    "color": "Black",
+    "family": "Egghead/Navy",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)[Opponent's Turn] All of your {Navy} type Characters gain +2 cost.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "EB04-047",
+    "code": "EB04-047",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Helmeppo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-047.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-047.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "3000",
+    "counter": "2000",
+    "color": "Black",
+    "family": "Navy/SWORD",
+    "ability": "[Activate: Main] You may trash this Character: Play up to 1 {SWORD} type Character card with a cost of 3 or less other than [Helmeppo] from your hand or trash.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "EB04-048",
+    "code": "EB04-048",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Rob Lucci",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-048.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-048.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "6000",
+    "counter": "-",
+    "color": "Black",
+    "family": "Egghead/CP0",
+    "ability": "If your Leader's type includes \"CP\", this Character gains +1000 power and +2 cost for every 5 cards in your trash.[On Play] You may trash 1 of your Characters: Draw 1 card.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "EB04-048_p1",
+    "code": "EB04-048",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Rob Lucci",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-048_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-048_p1.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "6000",
+    "counter": "-",
+    "color": "Black",
+    "family": "Egghead/CP0",
+    "ability": "If your Leader's type includes \"CP\", this Character gains +1000 power and +2 cost for every 5 cards in your trash.[On Play] You may trash 1 of your Characters: Draw 1 card.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "EB04-049",
+    "code": "EB04-049",
+    "rarity": "C",
+    "type": "EVENT",
+    "name": "Finger Pistol Yellow Lotus",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-049.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-049.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Black",
+    "family": "CP9",
+    "ability": "[Main] You may trash 2 cards from the top of your deck: K.O. up to 1 of your opponent's Characters with a base cost of 5 or less.",
+    "trigger": "[Trigger] Activate this card's [Main] effect.",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "EB04-050",
+    "code": "EB04-050",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "I'll Whip You Into Shape. ♡",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-050.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-050.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Black",
+    "family": "Navy/SWORD",
+    "ability": "[Main] Up to 1 of your {SWORD} type Leader or Character cards can also attack active Characters during this turn.[Counter] Your Leader gains +3000 power during this battle.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "EB04-051",
+    "code": "EB04-051",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Emet",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-051.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-051.png"
+    },
+    "cost": "8",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "7000",
+    "counter": "-",
+    "color": "Yellow",
+    "family": "Egghead",
+    "ability": "This Character cannot attack unless there is a Character with 12000 base power or more.",
+    "trigger": "[Trigger] Give all of your opponent's Characters −3000 power during this turn. Then, if you have 0 Life cards, play this card.",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "EB04-052",
+    "code": "EB04-052",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Sanji",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-052.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-052.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "4000",
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Egghead/Straw Hat Crew",
+    "ability": "[When Attacking] This Character's base power becomes the same as your opponent's Leader during this turn.[On K.O.] If you have 2 or less Life cards, play up to 1 yellow Character card with 6000 power or less from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "EB04-052_p1",
+    "code": "EB04-052",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Sanji",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-052_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-052_p1.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "4000",
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Egghead/Straw Hat Crew",
+    "ability": "[When Attacking] This Character's base power becomes the same as your opponent's Leader during this turn.[On K.O.] If you have 2 or less Life cards, play up to 1 yellow Character card with 6000 power or less from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "EB04-053",
+    "code": "EB04-053",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Sentomaru",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-053.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-053.png"
+    },
+    "cost": "2",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "1000",
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Egghead/Navy",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)[On Block] If you have 2 or less Life cards, draw 1 card.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "EB04-054",
+    "code": "EB04-054",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Bartholomew Kuma",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-054.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-054.png"
+    },
+    "cost": "7",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "7000",
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Egghead/Revolutionary Army",
+    "ability": "[On Play] If you have 2 or less Life cards, add up to 1 card from the top of your deck to the top of your Life cards.[On K.O.] Add up to 1 card from the top of your opponent's Life cards to the owner's hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "EB04-055",
+    "code": "EB04-055",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Bartholomew Kuma",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-055.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-055.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "5000",
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "The Seven Warlords of the Sea/Revolutionary Army",
+    "ability": "[On K.O.] Play up to 1 {Revolutionary Army} type Character card with a cost of 4 or less from your hand.",
+    "trigger": "[Trigger] If your Leader has the {Revolutionary Army} type and you and your opponent have a total of 5 or less Life cards, play this card.",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "EB04-056",
+    "code": "EB04-056",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Pacifista",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-056.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-056.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "1000",
+    "counter": "2000",
+    "color": "Yellow",
+    "family": "Biological Weapon/Egghead/Navy",
+    "ability": "If you have [Jewelry Bonney] and you have 0 Life cards, this Character gains [Blocker].(After your opponent declares an attack, you may rest this card to make it the new target of the attack.)",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "EB04-057",
+    "code": "EB04-057",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Vegapunk",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-057.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-057.png"
+    },
+    "cost": "2",
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": "0",
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Ohara/Scientist",
+    "ability": "If you have 2 or less Life cards, all of your yellow {Scientist} type Characters cannot be removed from the field by your opponent's effects.[DON!! x1] This Character gains [Blocker].",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "EB04-058",
+    "code": "EB04-058",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Borsalino",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-058.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-058.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "6000",
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Egghead/Navy",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)[On Play] If you have 2 or less Life cards, add up to 1 card from the top of your deck to the top of your Life cards.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "EB04-058_p1",
+    "code": "EB04-058",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Borsalino",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-058_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-058_p1.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "6000",
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Egghead/Navy",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)[On Play] If you have 2 or less Life cards, add up to 1 card from the top of your deck to the top of your Life cards.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "EB04-059",
+    "code": "EB04-059",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "Black Rope Dragon Twister",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-059.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-059.png"
+    },
+    "cost": "6",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Yellow",
+    "family": "Fish-Man Island/Supernovas/Straw Hat Crew",
+    "ability": "[Main] You may turn 1 card from the top of your Life cards face-up: If you have less Characters than your opponent, K.O. up to 1 of your opponent's Characters with a cost of 6 or less and up to 1 of your opponent's Characters with a cost of 5 or less.",
+    "trigger": "[Trigger] Draw 2 cards and trash 1 card from your hand.",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "EB04-060",
+    "code": "EB04-060",
+    "rarity": "C",
+    "type": "EVENT",
+    "name": "Gum-Gum Hawk Gatling",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-060.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-060.png"
+    },
+    "cost": "2",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Yellow",
+    "family": "Egghead/The Four Emperors/Straw Hat Crew",
+    "ability": "[Main] You may add 1 card from the top or bottom of your Life cards to your hand: Add up to 1 {Egghead} type Character card from your hand to the top of your Life cards face-up. Then, give up to 1 of your opponent's Characters −1000 power during this turn.",
+    "trigger": "[Trigger] Draw 2 cards and trash 1 card from your hand.",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "EB04-061",
+    "code": "EB04-061",
+    "rarity": "SEC",
+    "type": "CHARACTER",
+    "name": "Monkey.D.Luffy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-061.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-061.png"
+    },
+    "cost": "10",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "12000",
+    "counter": "-",
+    "color": "Yellow",
+    "family": "Egghead/The Four Emperors/Straw Hat Crew",
+    "ability": "If you have 1 or less Life cards, give this card in your hand −1 cost.[On Play] You may trash 1 card from your hand: Your Leader gains +2000 power until the end of your opponent's next End Phase. Then, this Character gains [Blocker] until the end of your opponent's next End Phase.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "EB04-061_p1",
+    "code": "EB04-061",
+    "rarity": "SEC",
+    "type": "CHARACTER",
+    "name": "Monkey.D.Luffy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-061_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-061_p1.png"
+    },
+    "cost": "10",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "12000",
+    "counter": "-",
+    "color": "Yellow",
+    "family": "Egghead/The Four Emperors/Straw Hat Crew",
+    "ability": "If you have 1 or less Life cards, give this card in your hand −1 cost.[On Play] You may trash 1 card from your hand: Your Leader gains +2000 power until the end of your opponent's next End Phase. Then, this Character gains [Blocker] until the end of your opponent's next End Phase.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP13-037_p1",
+    "code": "OP13-037",
+    "rarity": "TR",
+    "type": "CHARACTER",
+    "name": "Roronoa Zoro",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP13-037_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP13-037_p1.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "5000",
+    "counter": "1000",
+    "color": "Green",
+    "family": "FILM/Supernovas/Straw Hat Crew",
+    "ability": "[On Play] If your Leader has the {FILM} or {Straw Hat Crew} type, set up to 2 of your DON!! cards as active.[End of Your Turn] Set this Character as active.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-001",
+    "code": "OP15-001",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Krieg",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-001.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-001.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "5000",
+    "counter": "-",
+    "color": "Red/Green",
+    "family": "East Blue/Krieg Pirates",
+    "ability": "[DON!! x1] [Opponent's Turn] If the only Characters on your field are {East Blue} type Characters, give all of your opponent's Characters −2000 power.[Activate: Main] [Once Per Turn] Rest up to 1 of your opponent's Characters that has 2 or more DON!! cards given.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-001_p1",
+    "code": "OP15-001",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Krieg",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-001_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-001_p1.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "5000",
+    "counter": "-",
+    "color": "Red/Green",
+    "family": "East Blue/Krieg Pirates",
+    "ability": "[DON!! x1] [Opponent's Turn] If the only Characters on your field are {East Blue} type Characters, give all of your opponent's Characters −2000 power.[Activate: Main] [Once Per Turn] Rest up to 1 of your opponent's Characters that has 2 or more DON!! cards given.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-002",
+    "code": "OP15-002",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Lucy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-002.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-002.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "5000",
+    "counter": "-",
+    "color": "Red/Blue",
+    "family": "Dressrosa/Revolutionary Army",
+    "ability": "[When Attacking]/[On Your Opponent's Attack] You may trash any number of Event or Stage cards from your hand. This Leader gains +1000 power during this battle for every card trashed.[Activate: Main] [Once Per Turn] If you have activated an Event with a base cost of 3 or more during this turn, draw 1 card.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-002_p1",
+    "code": "OP15-002",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Lucy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-002_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-002_p1.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "5000",
+    "counter": "-",
+    "color": "Red/Blue",
+    "family": "Dressrosa/Revolutionary Army",
+    "ability": "[When Attacking]/[On Your Opponent's Attack] You may trash any number of Event or Stage cards from your hand. This Leader gains +1000 power during this battle for every card trashed.[Activate: Main] [Once Per Turn] If you have activated an Event with a base cost of 3 or more during this turn, draw 1 card.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-003",
+    "code": "OP15-003",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Alvida",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-003.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-003.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "6000",
+    "counter": "1000",
+    "color": "Red",
+    "family": "East Blue/Alvida Pirates",
+    "ability": "If this Character would be K.O.'d, you may trash 1 Character card with a power of 6000 or less from your hand instead.[Activate: Main] [Once Per Turn] You may give 1 of your opponent's rested DON!! cards to 1 of your opponent's Characters: Give up to 1 rested DON!! card to its owner's Leader or 1 of their Characters.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-003_p1",
+    "code": "OP15-003",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Alvida",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-003_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-003_p1.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "6000",
+    "counter": "1000",
+    "color": "Red",
+    "family": "East Blue/Alvida Pirates",
+    "ability": "If this Character would be K.O.'d, you may trash 1 Character card with a power of 6000 or less from your hand instead.[Activate: Main] [Once Per Turn] You may give 1 of your opponent's rested DON!! cards to 1 of your opponent's Characters: Give up to 1 rested DON!! card to its owner's Leader or 1 of their Characters.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-004",
+    "code": "OP15-004",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Sea Cat",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-004.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-004.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": "0",
+    "counter": "1000",
+    "color": "Red",
+    "family": "Animal/Alabasta",
+    "ability": "[On Play] If your Leader has 0 power or less, give up to 1 of your opponent's Characters −3000 power during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-005",
+    "code": "OP15-005",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Cabaji",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-005.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-005.png"
+    },
+    "cost": "2",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "3000",
+    "counter": "1000",
+    "color": "Red",
+    "family": "East Blue/Buggy Pirates",
+    "ability": "[When Attacking] If your opponent has any DON!! cards given, this Character gains +2000 power during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-006",
+    "code": "OP15-006",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Cavendish",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-006.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-006.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "4000",
+    "counter": "2000",
+    "color": "Red",
+    "family": "Dressrosa/Beautiful Pirates",
+    "ability": "If you have 4 or more Events in your trash, this Character gains +2000 power.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-007",
+    "code": "OP15-007",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Gin",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-007.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-007.png"
+    },
+    "cost": "6",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "7000",
+    "counter": "1000",
+    "color": "Red",
+    "family": "East Blue/Krieg Pirates",
+    "ability": "[On Play] If your Leader has the {East Blue} type, play up to 1 Character card with a cost of 5 or less from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-007_p1",
+    "code": "OP15-007",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Gin",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-007_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-007_p1.png"
+    },
+    "cost": "6",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "7000",
+    "counter": "1000",
+    "color": "Red",
+    "family": "East Blue/Krieg Pirates",
+    "ability": "[On Play] If your Leader has the {East Blue} type, play up to 1 Character card with a cost of 5 or less from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-008",
+    "code": "OP15-008",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Krieg",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-008.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-008.png"
+    },
+    "cost": "8",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "9000",
+    "counter": "-",
+    "color": "Red",
+    "family": "East Blue/Krieg Pirates",
+    "ability": "[On Play] Give up to 3 of your opponent's rested DON!! cards to 1 of your opponent's Characters. Then, this Character gains [Rush] during this turn.[Activate: Main] [Once Per Turn] If this Character was played on this turn, give all of your opponent's Characters −1000 power during this turn for every DON!! card given to that Character.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-008_p1",
+    "code": "OP15-008",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Krieg",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-008_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-008_p1.png"
+    },
+    "cost": "8",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "9000",
+    "counter": "-",
+    "color": "Red",
+    "family": "East Blue/Krieg Pirates",
+    "ability": "[On Play] Give up to 3 of your opponent's rested DON!! cards to 1 of your opponent's Characters. Then, this Character gains [Rush] during this turn.[Activate: Main] [Once Per Turn] If this Character was played on this turn, give all of your opponent's Characters −1000 power during this turn for every DON!! card given to that Character.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-009",
+    "code": "OP15-009",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Koby",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-009.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-009.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "2000",
+    "counter": "2000",
+    "color": "Red",
+    "family": "East Blue/Navy",
+    "ability": "If your Character with 7000 base power or less would be removed from the field by your opponent's effect, you may give your Leader −2000 power during this turn instead.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-010",
+    "code": "OP15-010",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Nezumi",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-010.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-010.png"
+    },
+    "cost": "2",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "2000",
+    "counter": "1000",
+    "color": "Red",
+    "family": "East Blue/Navy",
+    "ability": "[Activate: Main] [Once Per Turn] Give up to 1 rested DON!! card to its owner's Leader or 1 of their Characters.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-011",
+    "code": "OP15-011",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Pearl",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-011.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-011.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "4000",
+    "counter": "1000",
+    "color": "Red",
+    "family": "East Blue/Krieg Pirates",
+    "ability": "[Opponent's Turn] If your Leader has the {East Blue} type, this Character gains [Blocker] and +2000 power.[On K.O.] If your Leader has the {East Blue} type, K.O. up to 1 of your opponent's Characters with 6000 base power or less.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-012",
+    "code": "OP15-012",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Buggy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-012.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-012.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "4000",
+    "counter": "1000",
+    "color": "Red",
+    "family": "East Blue/Buggy Pirates",
+    "ability": "[When Attacking] Give up to 1 rested DON!! card to its owner's Leader or 1 of their Characters.[On K.O.] Draw 1 card.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-013",
+    "code": "OP15-013",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Pincers",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-013.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-013.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "2000",
+    "counter": "2000",
+    "color": "Red",
+    "family": "Animal/Alabasta",
+    "ability": "If your Leader has 0 power or less, give this card in your hand −2 cost.[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-014",
+    "code": "OP15-014",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Bartolomeo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-014.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-014.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "6000",
+    "counter": "-",
+    "color": "Red",
+    "family": "Dressrosa/Barto Club",
+    "ability": "If this Character would be K.O.'d, you may trash 1 Event from your hand instead.[On Play] Activate up to 1 {Dressrosa} type Event with a base cost of 3 or less from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-015",
+    "code": "OP15-015",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Higuma",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-015.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-015.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "1000",
+    "counter": "2000",
+    "color": "Red",
+    "family": "East Blue/Mountain Bandits",
+    "ability": "[On Play] Give up to 1 of your opponent's rested DON!! cards to 1 of your opponent's Characters. Then, give −1000 power during this turn to up to 1 of your opponent's Characters with a DON!! card given.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-016",
+    "code": "OP15-016",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Fullbody",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-016.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-016.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "6000",
+    "counter": "2000",
+    "color": "Red",
+    "family": "Navy",
+    "ability": "-",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-017",
+    "code": "OP15-017",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Morgan",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-017.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-017.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "6000",
+    "counter": "1000",
+    "color": "Red",
+    "family": "East Blue/Navy",
+    "ability": "[Blocker][Activate: Main] [Once Per Turn] You may give 1 of your opponent's rested DON!! cards to 1 of your opponent's Characters: Give up to 1 rested DON!! card to its owner's Leader or 1 of their Characters.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-018",
+    "code": "OP15-018",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Mohji",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-018.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-018.png"
+    },
+    "cost": "2",
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": "3000",
+    "counter": "1000",
+    "color": "Red",
+    "family": "East Blue/Buggy Pirates",
+    "ability": "[When Attacking] K.O. up to 1 of your opponent's Characters with 3000 power or less with a DON!! card given.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-019",
+    "code": "OP15-019",
+    "rarity": "UC",
+    "type": "EVENT",
+    "name": "Barrier Bulls",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-019.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-019.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Red",
+    "family": "Dressrosa/Barto Club",
+    "ability": "[Main] Draw 1 card and your Leader gains +1000 power until the end of your opponent's next End Phase.",
+    "trigger": "[Trigger] Give up to 1 of your opponent's Characters −4000 power during this turn.",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-020",
+    "code": "OP15-020",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "Fire Fist",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-020.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-020.png"
+    },
+    "cost": "7",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Red",
+    "family": "Dressrosa/Revolutionary Army",
+    "ability": "[Main] Your Leader gains +3000 power during this turn and give up to 1 of your opponent's Characters −8000 power until the end of your opponent's next End Phase. Then, you may trash 2 cards from your hand. If you do, K.O. up to 1 of your opponent's Characters with 0 power or less.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-021",
+    "code": "OP15-021",
+    "rarity": "UC",
+    "type": "EVENT",
+    "name": "Just Watch Me, Ace!!!",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-021.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-021.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Red",
+    "family": "Dressrosa/Revolutionary Army",
+    "ability": "If you have 4 or more Events in your trash, give this card in your hand −3 cost.[Main]/[Counter] Give up to 1 of your opponent's Characters −3000 power during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-022",
+    "code": "OP15-022",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Brook",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-022.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-022.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "5000",
+    "counter": "-",
+    "color": "Green/Black",
+    "family": "Straw Hat Crew",
+    "ability": "Under the rules of this game, you do not lose when your deck has 0 cards. You lose at the end of the turn in which your deck becomes 0 cards.[Activate: Main] [Once Per Turn] Trash 4 cards from the top of your deck. Then, if your deck has 0 cards, set up to 1 of your Characters as active.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-022_p1",
+    "code": "OP15-022",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Brook",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-022_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-022_p1.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "5000",
+    "counter": "-",
+    "color": "Green/Black",
+    "family": "Straw Hat Crew",
+    "ability": "Under the rules of this game, you do not lose when your deck has 0 cards. You lose at the end of the turn in which your deck becomes 0 cards.[Activate: Main] [Once Per Turn] Trash 4 cards from the top of your deck. Then, if your deck has 0 cards, set up to 1 of your Characters as active.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-023",
+    "code": "OP15-023",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Arlong",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-023.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-023.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "5000",
+    "counter": "1000",
+    "color": "Green",
+    "family": "Fish-Man/East Blue/Arlong Pirates",
+    "ability": "[On K.O.] Up to 2 of your opponent's rested cards will not become active in your opponent's next Refresh Phase.[Activate: Main] [Once Per Turn] You may give 1 of your opponent's rested DON!! cards to 1 of your opponent's Characters: Give up to 1 DON!! card from its owner's cost area to its owner's Leader or 1 of their Characters.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-024",
+    "code": "OP15-024",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Usopp",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-024.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-024.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Ranged",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type04.png"
+    },
+    "power": "5000",
+    "counter": "1000",
+    "color": "Green",
+    "family": "Straw Hat Crew",
+    "ability": "[Opponent's Turn] This Character cannot be rested by your opponent's Leader and Character effects and gains [Blocker].[On K.O.] Rest up to 1 of your opponent's Leader or Character cards with a cost of 7 or less.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-025",
+    "code": "OP15-025",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Kuro",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-025.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-025.png"
+    },
+    "cost": "7",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "7000",
+    "counter": "1000",
+    "color": "Green",
+    "family": "East Blue/Black Cat Pirates",
+    "ability": "[Blocker][On Play] Give up to 2 DON!! cards from your opponent's cost area to 1 of your opponent's Characters. Then, at the end of this turn, up to 1 rested Character with 3 or more DON!! cards given will not become active in your opponent's next Refresh Phase.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-025_p1",
+    "code": "OP15-025",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Kuro",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-025_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-025_p1.png"
+    },
+    "cost": "7",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "7000",
+    "counter": "1000",
+    "color": "Green",
+    "family": "East Blue/Black Cat Pirates",
+    "ability": "[Blocker][On Play] Give up to 2 DON!! cards from your opponent's cost area to 1 of your opponent's Characters. Then, at the end of this turn, up to 1 rested Character with 3 or more DON!! cards given will not become active in your opponent's next Refresh Phase.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-026",
+    "code": "OP15-026",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Jango",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-026.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-026.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "2000",
+    "counter": "1000",
+    "color": "Green",
+    "family": "East Blue/Black Cat Pirates",
+    "ability": "[On Play] Look at 3 cards from the top of your deck; reveal up to 1 {East Blue} type card and add it to your hand. Then, place the rest at the bottom of your deck in any order.[Activate: Main] You may trash this Character: Give up to 1 of your opponent's rested DON!! cards to 1 of your opponent's Characters.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-027",
+    "code": "OP15-027",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Dracule Mihawk",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-027.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-027.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "5000",
+    "counter": "2000",
+    "color": "Green",
+    "family": "East Blue/The Seven Warlords of the Sea",
+    "ability": "[On Play] Rest up to 1 of your opponent's Characters with a DON!! card given.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-028",
+    "code": "OP15-028",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Meowban Brothers",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-028.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-028.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "2000",
+    "counter": "2000",
+    "color": "Green",
+    "family": "East Blue/Black Cat Pirates",
+    "ability": "[On Play] If your Leader has the {East Blue} type, give up to 1 DON!! card from your opponent's cost area to 1 of your opponent's Characters.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-029",
+    "code": "OP15-029",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Bartholomew Kuma",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-029.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-029.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "5000",
+    "counter": "1000",
+    "color": "Green",
+    "family": "The Seven Warlords of the Sea/Revolutionary Army",
+    "ability": "[On Play] Up to 1 of your opponent's Characters with a cost of 5 or less cannot be rested until the end of your opponent's next End Phase.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-030",
+    "code": "OP15-030",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Hyouzou",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-030.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-030.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "6000",
+    "counter": "2000",
+    "color": "Green",
+    "family": "Merfolk/Fish-Man Island",
+    "ability": "-",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-031",
+    "code": "OP15-031",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Purinpurin",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-031.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-031.png"
+    },
+    "cost": "2",
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": "2000",
+    "counter": "1000",
+    "color": "Green",
+    "family": "East Blue/Navy",
+    "ability": "[On Play] Select up to 1 of your opponent's rested Characters. If the chosen Character has a cost equal to the number of DON!! cards given to it, K.O. it.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-032",
+    "code": "OP15-032",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Brook",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-032.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-032.png"
+    },
+    "cost": "6",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "6000",
+    "counter": "1000",
+    "color": "Green",
+    "family": "Straw Hat Crew",
+    "ability": "[On Play] Rest up to 1 of your opponent's cards.[Activate: Main] You may trash this Character: If your Leader has the {Straw Hat Crew} type, set up to 1 of your Characters with a base cost of 8 or less as active.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-032_p1",
+    "code": "OP15-032",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Brook",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-032_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-032_p1.png"
+    },
+    "cost": "6",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "6000",
+    "counter": "1000",
+    "color": "Green",
+    "family": "Straw Hat Crew",
+    "ability": "[On Play] Rest up to 1 of your opponent's cards.[Activate: Main] You may trash this Character: If your Leader has the {Straw Hat Crew} type, set up to 1 of your Characters with a base cost of 8 or less as active.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-033",
+    "code": "OP15-033",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Hody Jones",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-033.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-033.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "5000",
+    "counter": "1000",
+    "color": "Green",
+    "family": "Fish-Man/Fish-Man Island/New Fish-Man Pirates",
+    "ability": "[On Play] Set your {Fish-Man} type Leader as active. Then, add 1 card from the top of your Life cards to your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-034",
+    "code": "OP15-034",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Yorki",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-034.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-034.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "0",
+    "counter": "2000",
+    "color": "Green",
+    "family": "Rumbar Pirates",
+    "ability": "[Your Turn] [On Play] Up to 1 of your [Brook] cards gains +2000 power during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-035",
+    "code": "OP15-035",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Laboon",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-035.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-035.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "2000",
+    "counter": "2000",
+    "color": "Green",
+    "family": "Animal",
+    "ability": "If your Character with 7000 base power or less would be removed from the field by your opponent's effect, you may rest 2 of your cards instead.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-036",
+    "code": "OP15-036",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Ryuma",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-036.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-036.png"
+    },
+    "cost": "6",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "8000",
+    "counter": "-",
+    "color": "Green",
+    "family": "Land of Wano/Thriller Bark Pirates",
+    "ability": "[On Play]/[When Attacking] K.O. up to 1 of your opponent's rested Characters with a cost of 4 or less.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-037",
+    "code": "OP15-037",
+    "rarity": "UC",
+    "type": "EVENT",
+    "name": "The Outcome Will Tell Us Who's Strong and Who's Weak",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-037.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-037.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Green",
+    "family": "East Blue/Krieg Pirates",
+    "ability": "[Main] Look at 5 cards from the top of your deck; reveal up to 1 {East Blue} type card other than [The Outcome Will Tell Us Who's Strong and Who's Weak] and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "[Trigger] Draw 1 card.",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-038",
+    "code": "OP15-038",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "It's an Order! Do Not Defy Me!!!",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-038.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-038.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Green",
+    "family": "East Blue/Krieg Pirates",
+    "ability": "[Main] Up to 1 of your opponent's rested Characters with a cost of 8 or less that has 2 or more DON!! cards given will not become active in your opponent's next Refresh Phase.[Counter] Up to 1 of your [Krieg] cards gains +4000 power during this battle.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-039",
+    "code": "OP15-039",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Rebecca",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-039.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-039.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": "5000",
+    "counter": "-",
+    "color": "Blue",
+    "family": "Dressrosa",
+    "ability": "This Leader cannot attack.[Activate: Main] You may rest this Leader and return 1 of your {Dressrosa} type Characters to the owner's hand: Play up to 1 {Dressrosa} type Character card with a cost of 3 from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-039_p1",
+    "code": "OP15-039",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Rebecca",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-039_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-039_p1.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": "5000",
+    "counter": "-",
+    "color": "Blue",
+    "family": "Dressrosa",
+    "ability": "This Leader cannot attack.[Activate: Main] You may rest this Leader and return 1 of your {Dressrosa} type Characters to the owner's hand: Play up to 1 {Dressrosa} type Character card with a cost of 3 from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-040",
+    "code": "OP15-040",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Viola",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-040.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-040.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "2000",
+    "counter": "2000",
+    "color": "Blue",
+    "family": "Dressrosa/Donquixote Pirates",
+    "ability": "[On Play] Look at 3 cards from the top of your deck; reveal up to 1 {Dressrosa} type card and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-041",
+    "code": "OP15-041",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Orlumbus",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-041.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-041.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "4000",
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Dressrosa/Yonta Maria Fleet",
+    "ability": "[On K.O.] Draw 1 card.[Activate: Main] [Once Per Turn] You may place 1 of your Characters at the bottom of the owner's deck: This Character gains [Rush] during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-042",
+    "code": "OP15-042",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Kyros",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-042.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-042.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "5000",
+    "counter": "-",
+    "color": "Blue",
+    "family": "Dressrosa",
+    "ability": "[On Play] You may trash 1 card from your hand: If your Leader is [Rebecca], this Character gains [Rush] during this turn.[On K.O.] Add this Character card from your trash to your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-043",
+    "code": "OP15-043",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Kelly Funk",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-043.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-043.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "3000",
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Dressrosa/Mogaro Kingdom",
+    "ability": "[On Play] Play up to 1 [Bobby Funk] from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-044",
+    "code": "OP15-044",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Koala",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-044.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-044.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "2000",
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Dressrosa/Revolutionary Army",
+    "ability": "[Blocker][On K.O.] Look at 3 cards from the top of your deck; reveal up to 1 {Dressrosa} type Event and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-045",
+    "code": "OP15-045",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Sai",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-045.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-045.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "6000",
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Dressrosa/Happosui Army",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)[On Play] You may trash 1 Event from your hand: Draw 2 cards.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-046",
+    "code": "OP15-046",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Sabo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-046.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-046.png"
+    },
+    "cost": "7",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "9000",
+    "counter": "-",
+    "color": "Blue",
+    "family": "Dressrosa/Revolutionary Army",
+    "ability": "[Blocker][On Play] If your Leader has the {Dressrosa} type, activate up to 1 {Dressrosa} type Event from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-046_p1",
+    "code": "OP15-046",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Sabo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-046_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-046_p1.png"
+    },
+    "cost": "7",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "9000",
+    "counter": "-",
+    "color": "Blue",
+    "family": "Dressrosa/Revolutionary Army",
+    "ability": "[Blocker][On Play] If your Leader has the {Dressrosa} type, activate up to 1 {Dressrosa} type Event from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-047",
+    "code": "OP15-047",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Sanji",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-047.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-047.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "4000",
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Dressrosa/Straw Hat Crew",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)[On Play] Up to 1 of your Characters gains [Unblockable] during this turn.(This card cannot be blocked.)",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-047_p1",
+    "code": "OP15-047",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Sanji",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-047_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-047_p1.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "4000",
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Dressrosa/Straw Hat Crew",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)[On Play] Up to 1 of your Characters gains [Unblockable] during this turn.(This card cannot be blocked.)",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-048",
+    "code": "OP15-048",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Chinjao",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-048.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-048.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "5000",
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Dressrosa/Happosui Army",
+    "ability": "[On Play] You may trash 1 Event from your hand: Draw 2 cards.[Opponent's Turn] [On K.O.] Your opponent places 1 card from their hand at the bottom of their deck.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-049",
+    "code": "OP15-049",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Hajrudin",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-049.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-049.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "6000",
+    "counter": "2000",
+    "color": "Blue",
+    "family": "Giant/Dressrosa/New Giant Pirates",
+    "ability": "-",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-050",
+    "code": "OP15-050",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Bobby Funk",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-050.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-050.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "3000",
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Dressrosa/Mogaro Kingdom",
+    "ability": "If you have [Kelly Funk], this Character gains +3000 power.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-051",
+    "code": "OP15-051",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Monkey.D.Luffy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-051.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-051.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "4000",
+    "counter": "2000",
+    "color": "Blue",
+    "family": "Dressrosa/Straw Hat Crew",
+    "ability": "[Opponent's Turn] If your Leader has the {Dressrosa} type, this Character gains +3000 power.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-052",
+    "code": "OP15-052",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Leo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-052.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-052.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "2000",
+    "counter": "2000",
+    "color": "Blue",
+    "family": "The Tontattas/Dressrosa",
+    "ability": "If your Character with 7000 base power or less would be removed from the field by your opponent's effect, you may place 1 of your Characters at the bottom of the owner's deck instead.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-053",
+    "code": "OP15-053",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Rebecca",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-053.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-053.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": "0",
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Dressrosa",
+    "ability": "[DON!! x1] This Character gains [Blocker].[On Play] Look at 3 cards from the top of your deck; reveal up to 1 {Dressrosa} type card and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-053_p1",
+    "code": "OP15-053",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Rebecca",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-053_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-053_p1.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": "0",
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Dressrosa",
+    "ability": "[DON!! x1] This Character gains [Blocker].[On Play] Look at 3 cards from the top of your deck; reveal up to 1 {Dressrosa} type card and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-054",
+    "code": "OP15-054",
+    "rarity": "C",
+    "type": "EVENT",
+    "name": "And No One Else Can Have It! It's Our Memento of Him",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-054.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-054.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Blue",
+    "family": "Dressrosa/Revolutionary Army",
+    "ability": "[Main] If your Leader is [Lucy], choose one:• Draw 2 cards and trash 1 card from your hand. Then, play up to 1 {Dressrosa} type Character card with a cost of 4 or less from your hand.• Return up to 1 Stage to the owner's hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-055",
+    "code": "OP15-055",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "Go Ahead and Use 'Em, Mr. Luffy!!!",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-055.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-055.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Blue",
+    "family": "Dressrosa/Barto Club",
+    "ability": "[Main] Choose one:• Draw 2 cards.• Up to 1 of your {Dressrosa} type Characters gains [Blocker] until the end of your opponent's next End Phase.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-056",
+    "code": "OP15-056",
+    "rarity": "C",
+    "type": "EVENT",
+    "name": "Would You Let Me Eat the Flame-Flame Fruit?",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-056.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-056.png"
+    },
+    "cost": "7",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Blue",
+    "family": "Dressrosa/Revolutionary Army",
+    "ability": "[Main] Draw 2 cards. Then, your [Lucy] Leader gains [Double Attack] and +3000 power during this turn.(This card deals 2 damage.)",
+    "trigger": "[Trigger] Draw 2 cards.",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-057",
+    "code": "OP15-057",
+    "rarity": "C",
+    "type": "STAGE",
+    "name": "Dressrosa Kingdom",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-057.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-057.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Blue",
+    "family": "Dressrosa",
+    "ability": "[On Play] If your Leader has the {Dressrosa} type, draw 1 card.[On Your Opponent's Attack] You may rest this Stage and trash 1 Event or Stage card from your hand: Up to 1 of your Leader or Character cards gains +2000 power during this battle.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-058",
+    "code": "OP15-058",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Enel",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-058.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-058.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "5000",
+    "counter": "-",
+    "color": "Purple",
+    "family": "Sky Island",
+    "ability": "Under the rules of this game, your DON!! deck consists of 6 cards.[Activate: Main] [Once Per Turn] If it is your second turn or later, add up to 1 DON!! card from your DON!! deck and set it as active, and add up to 4 additional DON!! cards and rest them. Then, give up to 4 rested DON!! cards to 1 of your Characters.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-058_p1",
+    "code": "OP15-058",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Enel",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-058_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-058_p1.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "5000",
+    "counter": "-",
+    "color": "Purple",
+    "family": "Sky Island",
+    "ability": "Under the rules of this game, your DON!! deck consists of 6 cards.[Activate: Main] [Once Per Turn] If it is your second turn or later, add up to 1 DON!! card from your DON!! deck and set it as active, and add up to 4 additional DON!! cards and rest them. Then, give up to 4 rested DON!! cards to 1 of your Characters.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-059",
+    "code": "OP15-059",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Amazon",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-059.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-059.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": "0",
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Sky Island",
+    "ability": "[On Your Opponent's Attack] You may rest this Character: Your opponent may return 1 of their active DON!! cards to their DON!! deck. If they do not, give up to 1 of your opponent's Leader or Character cards −2000 power during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-060",
+    "code": "OP15-060",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Enel",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-060.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-060.png"
+    },
+    "cost": "6",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "8000",
+    "counter": "-",
+    "color": "Purple",
+    "family": "Sky Island",
+    "ability": "If you have 6 or less DON!! cards on your field, this Character cannot be removed from the field by your opponent's effects and gains +2000 power.[Activate: Main] DON!! −1: This Character gains [Blocker] until the end of your opponent's next End Phase. Then, trash 1 card from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-060_p1",
+    "code": "OP15-060",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Enel",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-060_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-060_p1.png"
+    },
+    "cost": "6",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "8000",
+    "counter": "-",
+    "color": "Purple",
+    "family": "Sky Island",
+    "ability": "If you have 6 or less DON!! cards on your field, this Character cannot be removed from the field by your opponent's effects and gains +2000 power.[Activate: Main] DON!! −1: This Character gains [Blocker] until the end of your opponent's next End Phase. Then, trash 1 card from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-061",
+    "code": "OP15-061",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Ohm",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-061.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-061.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "2000",
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Sky Island/Vassals",
+    "ability": "[On Play] DON!! −1: Draw 1 card.[When Attacking] If you have 6 or less DON!! cards on your field, give up to 1 of your opponent's Characters −1000 power during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-061_p1",
+    "code": "OP15-061",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Ohm",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-061_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-061_p1.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "2000",
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Sky Island/Vassals",
+    "ability": "[On Play] DON!! −1: Draw 1 card.[When Attacking] If you have 6 or less DON!! cards on your field, give up to 1 of your opponent's Characters −1000 power during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-062",
+    "code": "OP15-062",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Captain Seamars",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-062.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-062.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "6000",
+    "counter": "2000",
+    "color": "Purple",
+    "family": "The Moon/Space Pirates",
+    "ability": "-",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-063",
+    "code": "OP15-063",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Gedatsu",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-063.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-063.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "2000",
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Sky Island/Vassals",
+    "ability": "[On Play] DON!! −1: Draw 1 card.[On K.O.] If you have 6 or less DON!! cards on your field, K.O. up to 1 of your opponent's Characters with 2000 power or less.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-064",
+    "code": "OP15-064",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Kotori",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-064.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-064.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "2000",
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Sky Island",
+    "ability": "[Activate: Main] DON!! −2, You may rest this Character: If you have [Satori] and [Hotori], rest up to 1 of your opponent's Characters with 5000 power or less.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-065",
+    "code": "OP15-065",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Goro",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-065.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-065.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": "0",
+    "counter": "2000",
+    "color": "Purple",
+    "family": "Alabasta/Hot Springs Island",
+    "ability": "[On Play] Reveal 1 card from the top of your deck. If the revealed card has a cost of 2 or less, add up to 1 DON!! card from your DON!! deck and rest it.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-066",
+    "code": "OP15-066",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Satori",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-066.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-066.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "2000",
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Sky Island/Vassals",
+    "ability": "[On Play] DON!! −1: Draw 1 card.[When Attacking] If you have 6 or less DON!! cards on your field, look at 2 cards from the top of your deck and place them at the top or bottom of your deck in any order.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-067",
+    "code": "OP15-067",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Shura",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-067.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-067.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "2000",
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Sky Island/Vassals",
+    "ability": "If you have 6 or less DON!! cards on your field, this Character gains [Rush].(This card can attack on the turn in which it is played.)[On Play] DON!! −1: Draw 1 card.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-068",
+    "code": "OP15-068",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Heavenly Warriors",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-068.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-068.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "1000",
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Sky Island",
+    "ability": "If you have 6 or less DON!! cards on your field, this Character gains [Blocker].(After your opponent declares an attack, you may rest this card to make it the new target of the attack.)",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-069",
+    "code": "OP15-069",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Nola",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-069.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-069.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "2000",
+    "counter": "2000",
+    "color": "Purple",
+    "family": "Animal/Sky Island",
+    "ability": "If your Character with 7000 base power or less would be removed from the field by your opponent's effect, you may return 1 DON!! card from your field to your DON!! deck instead.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-070",
+    "code": "OP15-070",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Fuza",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-070.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-070.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "4000",
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Animal/Sky Island",
+    "ability": "All of your [Shura] cards and this Character gain [Unblockable].(This card cannot be blocked.)[Opponent's Turn] All of your [Shura] cards' base power and this Character's base power become 6000.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-071",
+    "code": "OP15-071",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Holly",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-071.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-071.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "4000",
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Animal/Sky Island",
+    "ability": "All of your [Ohm] cards and this Character gain [Double Attack].(This card deals 2 damage.)[Opponent's Turn] All of your [Ohm] cards' base power and this Character's base power become 6000.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-072",
+    "code": "OP15-072",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Hotori",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-072.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-072.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "2000",
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Sky Island",
+    "ability": "[Activate: Main] DON!! −2, You may rest this Character: If you have [Kotori] and [Satori], give up to 1 of your opponent's Characters −3000 power during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-073",
+    "code": "OP15-073",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Yama",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-073.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-073.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "4000",
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Sky Island",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)[On Play] Play up to 1 [Heavenly Warriors] with a cost of 1 or up to 1 {Vassals} type Character card with a cost of 1 from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-074",
+    "code": "OP15-074",
+    "rarity": "UC",
+    "type": "EVENT",
+    "name": "Varie",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-074.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-074.png"
+    },
+    "cost": "0",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Purple",
+    "family": "Sky Island",
+    "ability": "[Main] DON!! −1: If your Leader is [Enel], draw 1 card. Then, up to 1 of your Characters gains +2 cost until the end of your opponent's next End Phase.[Counter] Up to 1 of your [Enel] cards gains +2000 power during this battle.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-075",
+    "code": "OP15-075",
+    "rarity": "UC",
+    "type": "EVENT",
+    "name": "El Thor",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-075.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-075.png"
+    },
+    "cost": "0",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Purple",
+    "family": "Sky Island",
+    "ability": "[Main] DON!! −1: If your Leader is [Enel], up to 1 of your Leader or Character cards gains +1000 power during this turn. Then, K.O. up to 1 of your opponent's Characters with 3000 power or less.[Counter] Up to 1 of your [Enel] cards gains +2000 power during this battle.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-076",
+    "code": "OP15-076",
+    "rarity": "UC",
+    "type": "EVENT",
+    "name": "Lightning Beast Kiten",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-076.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-076.png"
+    },
+    "cost": "0",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Purple",
+    "family": "Sky Island",
+    "ability": "[Main] DON!! −1: If your Leader is [Enel], draw 1 card. Then, give up to 1 of your opponent's Characters −1000 power during this turn.[Counter] Up to 1 of your [Enel] cards gains +2000 power during this battle.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-077",
+    "code": "OP15-077",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "Lightning Dragon",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-077.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-077.png"
+    },
+    "cost": "0",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Purple",
+    "family": "Sky Island",
+    "ability": "[Main] DON!! −1: Draw 1 card. Then, up to 1 of your opponent's rested Characters with 6000 power or less will not become active in your opponent's next Refresh Phase.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-077_p1",
+    "code": "OP15-077",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "Lightning Dragon",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-077_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-077_p1.png"
+    },
+    "cost": "0",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Purple",
+    "family": "Sky Island",
+    "ability": "[Main] DON!! −1: Draw 1 card. Then, up to 1 of your opponent's rested Characters with 6000 power or less will not become active in your opponent's next Refresh Phase.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-078",
+    "code": "OP15-078",
+    "rarity": "SR",
+    "type": "EVENT",
+    "name": "Mamaragan",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-078.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-078.png"
+    },
+    "cost": "0",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Purple",
+    "family": "Sky Island",
+    "ability": "[Main] DON!! −2: Draw 1 card. Then, rest up to 1 of your opponent's Characters with 5000 power or less.[Counter] Up to 1 of your Leader or Character cards gains +1000 power during this battle. Then, if you have 6 or less DON!! cards on your field, draw 1 card.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-078_p1",
+    "code": "OP15-078",
+    "rarity": "SR",
+    "type": "EVENT",
+    "name": "Mamaragan",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-078_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-078_p1.png"
+    },
+    "cost": "0",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Purple",
+    "family": "Sky Island",
+    "ability": "[Main] DON!! −2: Draw 1 card. Then, rest up to 1 of your opponent's Characters with 5000 power or less.[Counter] Up to 1 of your Leader or Character cards gains +1000 power during this battle. Then, if you have 6 or less DON!! cards on your field, draw 1 card.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-079",
+    "code": "OP15-079",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Absalom",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-079.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-079.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Ranged",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type04.png"
+    },
+    "power": "5000",
+    "counter": "1000",
+    "color": "Black",
+    "family": "Thriller Bark Pirates",
+    "ability": "[On K.O.] Add up to 1 {Thriller Bark Pirates} type card from your trash to your hand.",
+    "trigger": "[Trigger] Activate this card's [On K.O.] effect.",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-080",
+    "code": "OP15-080",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Oars",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-080.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-080.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "0",
+    "counter": "1000",
+    "color": "Black",
+    "family": "Giant/Thriller Bark Pirates",
+    "ability": "If you have [Gecko Moria] with 10000 power or more on your field and there are no other [Oars] cards, this Character gains +7000 power.[On K.O.] You may place 3 cards from your trash at the bottom of your deck in any order: Play this Character card from your trash.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-081",
+    "code": "OP15-081",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Sanji",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-081.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-081.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "2000",
+    "counter": "2000",
+    "color": "Black",
+    "family": "Straw Hat Crew",
+    "ability": "[On Play] If your Leader has the {Straw Hat Crew} type, trash 5 cards from the top of your deck.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-082",
+    "code": "OP15-082",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Charlotte Lola",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-082.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-082.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "5000",
+    "counter": "1000",
+    "color": "Black",
+    "family": "Rolling Pirates",
+    "ability": "[On Play] Trash 3 cards from the top of your deck.[On K.O.] Add up to 1 of your Character cards with a cost of 8 or less from your trash to your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-083",
+    "code": "OP15-083",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Spoil",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-083.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-083.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": "0",
+    "counter": "2000",
+    "color": "Black",
+    "family": "The Victims' Club",
+    "ability": "[On Play] Trash 3 cards from the top of your deck.[Activate: Main] You may trash this Character: If you have 15 or more cards in your trash, give up to 1 rested DON!! card to 1 of your Leader or Character cards.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-084",
+    "code": "OP15-084",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Dr. Hogback",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-084.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-084.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": "2000",
+    "counter": "1000",
+    "color": "Black",
+    "family": "Thriller Bark Pirates",
+    "ability": "[On Play] If your Leader has the {Thriller Bark Pirates} type, trash 5 cards from the top of your deck.[On K.O.] If you have 6 or less cards in your hand, draw 1 card.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-085",
+    "code": "OP15-085",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Tony Tony.Chopper",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-085.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-085.png"
+    },
+    "cost": "2",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "2000",
+    "counter": "1000",
+    "color": "Black",
+    "family": "Animal/Straw Hat Crew",
+    "ability": "[On Play] Trash 3 cards from the top of your deck.[Activate: Main] You may trash this Character: If your Leader has the {Straw Hat Crew} type, add up to 1 {Straw Hat Crew} type Character card other than [Tony Tony.Chopper] from your trash to your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-086",
+    "code": "OP15-086",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Nami",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-086.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-086.png"
+    },
+    "cost": "8",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "6000",
+    "counter": "-",
+    "color": "Black",
+    "family": "Straw Hat Crew",
+    "ability": "[On Play] If your Leader has the {Straw Hat Crew} type, play up to 1 {Straw Hat Crew} type Character with a cost of 7 or less from your trash. The Character played with this effect gains [Rush] during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-086_p1",
+    "code": "OP15-086",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Nami",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-086_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-086_p1.png"
+    },
+    "cost": "8",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "6000",
+    "counter": "-",
+    "color": "Black",
+    "family": "Straw Hat Crew",
+    "ability": "[On Play] If your Leader has the {Straw Hat Crew} type, play up to 1 {Straw Hat Crew} type Character with a cost of 7 or less from your trash. The Character played with this effect gains [Rush] during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-087",
+    "code": "OP15-087",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Nico Robin",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-087.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-087.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "7000",
+    "counter": "-",
+    "color": "Black",
+    "family": "Straw Hat Crew",
+    "ability": "If you have 10 or more cards in your trash, this Character gains [Blocker].[On Play] Draw 2 cards and trash 2 cards from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-088",
+    "code": "OP15-088",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Pirates Docking Six",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-088.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-088.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "7000",
+    "counter": "-",
+    "color": "Black",
+    "family": "Straw Hat Crew",
+    "ability": "This Character gains +6 cost.[On Play] You may trash 3 cards from the top of your deck: Play up to 1 {Straw Hat Crew} type Character card with a cost of 2 or less from your trash.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-089",
+    "code": "OP15-089",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Franky",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-089.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-089.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "6000",
+    "counter": "2000",
+    "color": "Black",
+    "family": "Straw Hat Crew",
+    "ability": "-",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-090",
+    "code": "OP15-090",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Perona",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-090.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-090.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "2000",
+    "counter": "2000",
+    "color": "Black",
+    "family": "Thriller Bark Pirates",
+    "ability": "If your Character with 7000 base power or less would be removed from the field by your opponent's effect, you may trash 1 card from your hand instead.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-091",
+    "code": "OP15-091",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Margarita",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-091.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-091.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": "0",
+    "counter": "2000",
+    "color": "Black",
+    "family": "The Owner of Cindry's Shadow",
+    "ability": "[On Play] Place up to 1 card from your opponent's trash at the bottom of the owner's deck.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-092",
+    "code": "OP15-092",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Monkey.D.Luffy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-092.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-092.png"
+    },
+    "cost": "7",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "7000",
+    "counter": "1000",
+    "color": "Black",
+    "family": "Straw Hat Crew",
+    "ability": "Apply each of the following effects based on the number of cards in your trash:• If there are 10 or more cards, this Character's base power becomes 9000 and it gains +10 cost.• If you have 20 or more cards, during your opponent's turn, your Leader's base power becomes 7000.• If you have 30 or more cards, this Character gains +1000 power.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-092_p1",
+    "code": "OP15-092",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Monkey.D.Luffy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-092_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-092_p1.png"
+    },
+    "cost": "7",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "7000",
+    "counter": "1000",
+    "color": "Black",
+    "family": "Straw Hat Crew",
+    "ability": "Apply each of the following effects based on the number of cards in your trash:• If there are 10 or more cards, this Character's base power becomes 9000 and it gains +10 cost.• If you have 20 or more cards, during your opponent's turn, your Leader's base power becomes 7000.• If you have 30 or more cards, this Character gains +1000 power.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-093",
+    "code": "OP15-093",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "The Risky Brothers",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-093.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-093.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "2000",
+    "counter": "1000",
+    "color": "Black",
+    "family": "Rolling Pirates",
+    "ability": "[Activate: Main] You may trash this Character: If you have 15 or more cards in your trash, up to 1 of your [Monkey.D.Luffy] Characters gains [Rush: Character] and the <Slash> attribute during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-094",
+    "code": "OP15-094",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Roronoa Zoro",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-094.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-094.png"
+    },
+    "cost": "2",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "1000",
+    "counter": "1000",
+    "color": "Black",
+    "family": "Straw Hat Crew",
+    "ability": "If your {Straw Hat Crew} type Character other than this Character would be removed from the field by your opponent's effect, you may trash this Character instead.[Blocker]",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-095",
+    "code": "OP15-095",
+    "rarity": "UC",
+    "type": "EVENT",
+    "name": "Gum-Gum Storm",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-095.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-095.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Black",
+    "family": "Straw Hat Crew",
+    "ability": "[Main] You may rest 1 of your DON!! cards: If you have 15 or more cards in your trash, up to 1 of your {Straw Hat Crew} type Leader or Character cards gains +3000 power during this turn.[Counter] If you have 15 or more cards in your trash, up to 1 of your Leader or Character cards gains +4000 power during this battle.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-096",
+    "code": "OP15-096",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "Swallow Bond en Avant",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-096.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-096.png"
+    },
+    "cost": "0",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Black",
+    "family": "Straw Hat Crew",
+    "ability": "[Main] You may rest 1 of your DON!! cards: If your Leader has the {Straw Hat Crew} type, trash 5 cards from the top of your deck.[Counter] You may trash 1 card from your hand: Up to 1 of your Leader or Character cards gains +3000 power during this battle.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-097",
+    "code": "OP15-097",
+    "rarity": "C",
+    "type": "EVENT",
+    "name": "I Find It Embarrassing as a Human Being",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-097.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-097.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Black",
+    "family": "Straw Hat Crew",
+    "ability": "[Main] If you have 10 or more cards in your trash, up to 1 of your opponent's Characters with a base cost of 5 or less cannot attack until the end of your opponent's next End Phase.",
+    "trigger": "[Trigger] Activate this card's [Main] effect.",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-098",
+    "code": "OP15-098",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Monkey.D.Luffy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-098.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-098.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "5000",
+    "counter": "-",
+    "color": "Yellow",
+    "family": "Sky Island/Straw Hat Crew",
+    "ability": "If your {Sky Island} type Character with 6000 base power or more would be removed from the field by your opponent, you may add 1 card from the top of your Life cards to your hand instead.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-098_p1",
+    "code": "OP15-098",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Monkey.D.Luffy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-098_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-098_p1.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "5000",
+    "counter": "-",
+    "color": "Yellow",
+    "family": "Sky Island/Straw Hat Crew",
+    "ability": "If your {Sky Island} type Character with 6000 base power or more would be removed from the field by your opponent, you may add 1 card from the top of your Life cards to your hand instead.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-099",
+    "code": "OP15-099",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Urouge",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-099.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-099.png"
+    },
+    "cost": "6",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "7000",
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Sky Island/Supernovas/Fallen Monk Pirates",
+    "ability": "[On Play] You may trash 1 {Supernovas} type card from your hand: This Character gains [Rush] during this turn.[Activate: Main] You may turn 1 card from the top of your Life cards face-down: Give up to 1 rested DON!! card to your Leader or 1 of your Characters.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-100",
+    "code": "OP15-100",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Kamakiri",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-100.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-100.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "6000",
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Sky Island/Shandian Warrior",
+    "ability": "[On Play] You may trash this Character and add 1 card from the top of your Life cards to your hand: K.O. up to 1 of your opponent's Characters with a cost of 6 or less.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-101",
+    "code": "OP15-101",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Kalgara",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-101.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-101.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "5000",
+    "counter": "-",
+    "color": "Yellow",
+    "family": "Jaya/Sky Island/Shandian Warrior",
+    "ability": "[On Play] You may trash 1 card from your hand: Look at 5 cards from the top of your deck; reveal up to a total of 2 [Mont Blanc Noland] or {Shandian Warrior} type cards and add them to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-102",
+    "code": "OP15-102",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Gan.Fall",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-102.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-102.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "4000",
+    "counter": "2000",
+    "color": "Yellow",
+    "family": "Sky Island",
+    "ability": "If you have a {Sky Island} type Character with 7000 power or more, give this card in your hand −3 cost.[On Play] Rest up to 1 of your opponent's Characters with a cost equal to or less than the number of your opponent's Life cards.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-103",
+    "code": "OP15-103",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Genbo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-103.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-103.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Ranged",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type04.png"
+    },
+    "power": "4000",
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Sky Island/Shandian Warrior",
+    "ability": "-",
+    "trigger": "[Trigger] Draw 1 card. Then, if you have 2 or less Life cards, play this card.",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-104",
+    "code": "OP15-104",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Conis",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-104.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-104.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": "0",
+    "counter": "2000",
+    "color": "Yellow",
+    "family": "Sky Island",
+    "ability": "[On Play] If you have less Life cards than your opponent, draw 2 cards and trash 2 cards from your hand.",
+    "trigger": "[Trigger] Draw 2 cards and trash 1 card from your hand.",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-105",
+    "code": "OP15-105",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Jewelry Bonney",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-105.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-105.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "2000",
+    "counter": "2000",
+    "color": "Yellow",
+    "family": "Supernovas/Bonney Pirates",
+    "ability": "If your Character with 7000 base power or less would be removed from the field by your opponent's effect, you may add 1 card from the top of your Life cards to your hand instead.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-106",
+    "code": "OP15-106",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Octoballoon",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-106.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-106.png"
+    },
+    "cost": "2",
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": "0",
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Animal/Sky Island",
+    "ability": "-",
+    "trigger": "[Trigger] Draw 1 card. Then, play up to 1 yellow Character or Stage card with a cost of 2 or less from your hand.",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-107",
+    "code": "OP15-107",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Tony Tony.Chopper",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-107.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-107.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "6000",
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Animal/Sky Island/Straw Hat Crew",
+    "ability": "-",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-108",
+    "code": "OP15-108",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Nami",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-108.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-108.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "2000",
+    "counter": "2000",
+    "color": "Yellow",
+    "family": "Sky Island/Straw Hat Crew",
+    "ability": "[On Play] Look at 3 cards from the top of your deck; reveal up to 1 {Sky Island} type card and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-109",
+    "code": "OP15-109",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Nico Robin",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-109.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-109.png"
+    },
+    "cost": "7",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "7000",
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Sky Island/Straw Hat Crew",
+    "ability": "[On Play] You may add 1 card from the top of your Life cards to your hand: If your Leader has the {Straw Hat Crew} type, add up to 1 card from the top of your deck to the top of your Life cards. Then, play up to 1 {Sky Island} type Character card with a cost of 5 or less from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-109_p1",
+    "code": "OP15-109",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Nico Robin",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-109_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-109_p1.png"
+    },
+    "cost": "7",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "7000",
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Sky Island/Straw Hat Crew",
+    "ability": "[On Play] You may add 1 card from the top of your Life cards to your hand: If your Leader has the {Straw Hat Crew} type, add up to 1 card from the top of your deck to the top of your Life cards. Then, play up to 1 {Sky Island} type Character card with a cost of 5 or less from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-110",
+    "code": "OP15-110",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Braham",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-110.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-110.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Ranged",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type04.png"
+    },
+    "power": "4000",
+    "counter": "2000",
+    "color": "Yellow",
+    "family": "Sky Island/Shandian Warrior",
+    "ability": "[On K.O.] If your Leader has the {Shandian Warrior} type, add up to 1 card from the top of your deck to the top of your Life cards.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-111",
+    "code": "OP15-111",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Mont Blanc Noland",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-111.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-111.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "5000",
+    "counter": "2000",
+    "color": "Yellow",
+    "family": "Jaya/Botanist",
+    "ability": "[DON!! x1] [When Attacking] Up to 1 of your [Kalgara] cards gains [Rush] during this turn.(This card can attack on the turn in which it is played.)",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-112",
+    "code": "OP15-112",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Raki",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-112.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-112.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Ranged",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type04.png"
+    },
+    "power": "4000",
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Sky Island/Shandian Warrior",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)[On Play] Play up to 1 {Shandian Warrior} type Character card with a cost of 3 or less from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-113",
+    "code": "OP15-113",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Roronoa Zoro",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-113.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-113.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "6000",
+    "counter": "-",
+    "color": "Yellow",
+    "family": "Sky Island/Straw Hat Crew",
+    "ability": "[On Play] You may trash 1 card from your hand: Add up to 1 card from the top of your deck to the top of your Life cards.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-113_p1",
+    "code": "OP15-113",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Roronoa Zoro",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-113_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-113_p1.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "6000",
+    "counter": "-",
+    "color": "Yellow",
+    "family": "Sky Island/Straw Hat Crew",
+    "ability": "[On Play] You may trash 1 card from your hand: Add up to 1 card from the top of your deck to the top of your Life cards.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-114",
+    "code": "OP15-114",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Wyper",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-114.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-114.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Ranged",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type04.png"
+    },
+    "power": "6000",
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Sky Island/Shandian Warrior",
+    "ability": "[On Play] You may turn 1 card from the top of your Life cards face-up: Give all of your opponent's Characters −2000 power during this turn. Then, K.O. all of your opponent's Characters with 0 power or less.[Activate: Main] [Once Per Turn] Give up to 1 rested DON!! card to 1 of your {Sky Island} type Leader or Character cards.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-114_p1",
+    "code": "OP15-114",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Wyper",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-114_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-114_p1.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Ranged",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type04.png"
+    },
+    "power": "6000",
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Sky Island/Shandian Warrior",
+    "ability": "[On Play] You may turn 1 card from the top of your Life cards face-up: Give all of your opponent's Characters −2000 power during this turn. Then, K.O. all of your opponent's Characters with 0 power or less.[Activate: Main] [Once Per Turn] Give up to 1 rested DON!! card to 1 of your {Sky Island} type Leader or Character cards.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-115",
+    "code": "OP15-115",
+    "rarity": "C",
+    "type": "EVENT",
+    "name": "Impact Dial",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-115.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-115.png"
+    },
+    "cost": "2",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Yellow",
+    "family": "Sky Island/Straw Hat Crew",
+    "ability": "[Main] K.O. up to 1 of your opponent's Characters with a cost of 4 or less. Then, add 1 card from the top of your Life cards to your hand.",
+    "trigger": "[Trigger] K.O. up to 1 of your opponent's Characters with a cost of 4 or less.",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-116",
+    "code": "OP15-116",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "Gum-Gum Golden Rifle",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-116.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-116.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Yellow",
+    "family": "Sky Island/Straw Hat Crew",
+    "ability": "[Main] If your Leader has the {Straw Hat Crew} type, trash 1 card from the top of your Life cards. Then, add up to 1 card from the top of your deck to the top of your Life cards and trash 1 card from your hand.[Counter] Your Leader gains +4000 power during this battle.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-116_p1",
+    "code": "OP15-116",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "Gum-Gum Golden Rifle",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-116_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-116_p1.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Yellow",
+    "family": "Sky Island/Straw Hat Crew",
+    "ability": "[Main] If your Leader has the {Straw Hat Crew} type, trash 1 card from the top of your Life cards. Then, add up to 1 card from the top of your deck to the top of your Life cards and trash 1 card from your hand.[Counter] Your Leader gains +4000 power during this battle.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-117",
+    "code": "OP15-117",
+    "rarity": "UC",
+    "type": "EVENT",
+    "name": "Heso!!",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-117.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-117.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Yellow",
+    "family": "Sky Island",
+    "ability": "[Main] Draw 1 card. Then, give up to 1 rested DON!! card to 1 of your {Sky Island} type Leader or Character cards.",
+    "trigger": "[Trigger] If your Leader has the {Sky Island} type, draw 2 cards.",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-118",
+    "code": "OP15-118",
+    "rarity": "SEC",
+    "type": "CHARACTER",
+    "name": "Enel",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-118.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-118.png"
+    },
+    "cost": "6",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "8000",
+    "counter": "-",
+    "color": "Purple",
+    "family": "Sky Island",
+    "ability": "If you have 6 or less DON!! cards on your field, this Character cannot be removed from the field by your opponent's effects and gains +2000 power.[On Play] DON!! −1: Look at 5 cards from the top of your deck and add up to 1 card to your hand. Then, place the rest at the bottom of your deck in any order, and trash 1 card from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-118_p1",
+    "code": "OP15-118",
+    "rarity": "SEC",
+    "type": "CHARACTER",
+    "name": "Enel",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-118_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-118_p1.png"
+    },
+    "cost": "6",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "8000",
+    "counter": "-",
+    "color": "Purple",
+    "family": "Sky Island",
+    "ability": "If you have 6 or less DON!! cards on your field, this Character cannot be removed from the field by your opponent's effects and gains +2000 power.[On Play] DON!! −1: Look at 5 cards from the top of your deck and add up to 1 card to your hand. Then, place the rest at the bottom of your deck in any order, and trash 1 card from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-118_p2",
+    "code": "OP15-118",
+    "rarity": "SEC",
+    "type": "CHARACTER",
+    "name": "Enel",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-118_p2.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-118_p2.png"
+    },
+    "cost": "6",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "8000",
+    "counter": "-",
+    "color": "Purple",
+    "family": "Sky Island",
+    "ability": "If you have 6 or less DON!! cards on your field, this Character cannot be removed from the field by your opponent's effects and gains +2000 power.[On Play] DON!! −1: Look at 5 cards from the top of your deck and add up to 1 card to your hand. Then, place the rest at the bottom of your deck in any order, and trash 1 card from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-119",
+    "code": "OP15-119",
+    "rarity": "SEC",
+    "type": "CHARACTER",
+    "name": "Monkey.D.Luffy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-119.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-119.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "7000",
+    "counter": "-",
+    "color": "Yellow",
+    "family": "Sky Island/Straw Hat Crew",
+    "ability": "If you have 6 or more DON!! cards on your field, this Character gains [Rush].When your opponent activates an Event or [Blocker], reveal up to 1 card from the top of your Life cards. This Character gains +1000 power during this turn per 1 cost on the revealed card.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP15-119_p1",
+    "code": "OP15-119",
+    "rarity": "SEC",
+    "type": "CHARACTER",
+    "name": "Monkey.D.Luffy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-119_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP15-119_p1.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "7000",
+    "counter": "-",
+    "color": "Yellow",
+    "family": "Sky Island/Straw Hat Crew",
+    "ability": "If you have 6 or more DON!! cards on your field, this Character gains [Rush].When your opponent activates an Event or [Blocker], reveal up to 1 card from the top of your Life cards. This Character gains +1000 power during this turn per 1 cost on the revealed card.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "EB02-052_p2",
+    "code": "EB02-052",
+    "rarity": "SP CARD",
+    "type": "CHARACTER",
+    "name": "Enel",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB02-052_p2.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB02-052_p2.png"
+    },
+    "cost": "10",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "11000",
+    "counter": "-",
+    "color": "Yellow",
+    "family": "Sky Island",
+    "ability": "If your Leader has the {Sky Island} type, this Character gains [Rush].[When Attacking] You may trash 1 card from your hand: If you have 1 or less Life cards, add up to 1 card from the top of your deck to the top of your Life cards. Then, this Character gains +1000 power during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "EB04-003_p1",
+    "code": "EB04-003",
+    "rarity": "SP CARD",
+    "type": "CHARACTER",
+    "name": "Smoker & Tashigi",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-003_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB04-003_p1.png"
+    },
+    "cost": "8",
+    "attribute": {
+      "name": "Slash/Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type07.png"
+    },
+    "power": "8000",
+    "counter": "-",
+    "color": "Red",
+    "family": "Punk Hazard/Navy",
+    "ability": "[Rush] (This card can attack on the turn in which it is played.)[Opponent's Turn] Your {Navy} type Leader's base power becomes 7000.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP11-106_p2",
+    "code": "OP11-106",
+    "rarity": "SP CARD",
+    "type": "CHARACTER",
+    "name": "Zeus",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-106_p2.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-106_p2.png"
+    },
+    "cost": "2",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "2000",
+    "counter": "2000",
+    "color": "Yellow",
+    "family": "Homies/Big Mom Pirates",
+    "ability": "[On Play] You may add 1 card from the top or bottom of your Life cards to your hand: K.O. up to 1 of your opponent's Characters with a cost of 5 or less.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP12-014_p2",
+    "code": "OP12-014",
+    "rarity": "SP CARD",
+    "type": "CHARACTER",
+    "name": "Boa Hancock",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-014_p2.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-014_p2.png"
+    },
+    "cost": "2",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "3000",
+    "counter": "-",
+    "color": "Red",
+    "family": "The Seven Warlords of the Sea/Kuja Pirates",
+    "ability": "[On Play] Look at 5 cards from the top of your deck; reveal up to 1 [Monkey.D.Luffy] or red Event and add it to your hand. Then, place the rest at the bottom of your deck in any order.[Activate: Main] You may trash this Character: Give up to 2 rested DON!! cards to your Leader or 1 of your Characters.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP13-031_p1",
+    "code": "OP13-031",
+    "rarity": "SP CARD",
+    "type": "CHARACTER",
+    "name": "Trafalgar Law",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP13-031_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP13-031_p1.png"
+    },
+    "cost": "6",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "6000",
+    "counter": "-",
+    "color": "Green",
+    "family": "FILM/Supernovas/Heart Pirates",
+    "ability": "If you have 1 or less Life cards, this Character gains [Blocker].[On Play] You may return 1 of your Characters to the owner's hand: Play up to 1 Character card with a cost of 5 or less from your hand rested.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "OP13-042_p2",
+    "code": "OP13-042",
+    "rarity": "SP CARD",
+    "type": "CHARACTER",
+    "name": "Edward.Newgate",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP13-042_p2.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP13-042_p2.png"
+    },
+    "cost": "10",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "12000",
+    "counter": "-",
+    "color": "Blue",
+    "family": "The Four Emperors/Whitebeard Pirates",
+    "ability": "[Blocker][On Play] Draw 2 cards and trash 1 card from your hand. Then, give your Leader and 1 Character up to 2 rested DON!! cards each.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "P-105_p1",
+    "code": "P-105",
+    "rarity": "SP CARD",
+    "type": "CHARACTER",
+    "name": "Sabo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/P-105_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/P-105_p1.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "6000",
+    "counter": "-",
+    "color": "Black",
+    "family": "Revolutionary Army",
+    "ability": "If your Leader has the {Revolutionary Army} type, this Character gains [Blocker] and +4 cost.[On Play] You may add 1 card from the top or bottom of your Life cards to your hand: Give up to 1 rested DON!! card to your Leader or 1 of your Characters.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "PRB02-014_p2",
+    "code": "PRB02-014",
+    "rarity": "SP CARD",
+    "type": "CHARACTER",
+    "name": "Sabo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/PRB02-014_p2.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/PRB02-014_p2.png"
+    },
+    "cost": "6",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "6000",
+    "counter": "2000",
+    "color": "Black",
+    "family": "Dressrosa/Revolutionary Army",
+    "ability": "If you have 15 or more cards in your trash, give this card in your hand −3 cost.[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  },
+  {
+    "id": "ST26-005_p1",
+    "code": "ST26-005",
+    "rarity": "SP CARD",
+    "type": "CHARACTER",
+    "name": "Monkey.D.Luffy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST26-005_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST26-005_p1.png"
+    },
+    "cost": "6",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "7000",
+    "counter": "-",
+    "color": "Purple",
+    "family": "Straw Hat Crew",
+    "ability": "[On Play]/[When Attacking] DON!! −2 (You may return the specified number of DON!! cards from your field to your DON!! deck.): If your Leader is multicolored and your opponent has 5 or more DON!! cards on their field, your {Straw Hat Crew} type Leader's base power becomes 7000 until the end of your opponent's next End Phase.",
+    "trigger": "",
+    "set": {
+      "name": "-ADVENTURE ON KAMI'S ISLAND- [OP15-EB04]"
+    }
+  }
+]
