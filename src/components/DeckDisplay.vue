@@ -5,9 +5,9 @@ import { useCardStore } from '../stores/cardStore'
 const cardStore = useCardStore()
 
 const colorOrder = ['red', 'blue', 'green', 'purple', 'black', 'yellow']
+const typeOrder: Record<string, number> = { leader: 0, character: 1, event: 2, stage: 3 }
 
-// Group deck cards by exact ID, sorted by color then cost (descending)
-// Alt arts (e.g. st14-003 vs st14-003_p1) show as separate stacks.
+// Group deck cards by exact ID, sorted by type → primary color → secondary color → cost asc
 const groupedDeck = computed(() => {
   const groups = new Map<string, { card: typeof cardStore.deck[0], count: number }>()
   for (const card of cardStore.deck) {
@@ -19,12 +19,22 @@ const groupedDeck = computed(() => {
     }
   }
   return Array.from(groups.values()).sort((a, b) => {
-    // Sort by primary color first
-    const aColor = colorOrder.indexOf(a.card.color.split('/')[0] ?? '')
-    const bColor = colorOrder.indexOf(b.card.color.split('/')[0] ?? '')
-    if (aColor !== bColor) return aColor - bColor
-    // Then by cost descending
-    return b.card.cost - a.card.cost
+    // 1. Type: leader → character → event → stage
+    const aType = typeOrder[a.card.type] ?? 9
+    const bType = typeOrder[b.card.type] ?? 9
+    if (aType !== bType) return aType - bType
+    // 2. Primary color
+    const aParts = a.card.color.split('/')
+    const bParts = b.card.color.split('/')
+    const aPrimary = colorOrder.indexOf(aParts[0] ?? '')
+    const bPrimary = colorOrder.indexOf(bParts[0] ?? '')
+    if (aPrimary !== bPrimary) return aPrimary - bPrimary
+    // 3. Secondary color (-1 for mono-color sorts first)
+    const aSecondary = aParts[1] ? colorOrder.indexOf(aParts[1]) : -1
+    const bSecondary = bParts[1] ? colorOrder.indexOf(bParts[1]) : -1
+    if (aSecondary !== bSecondary) return aSecondary - bSecondary
+    // 4. Cost lowest to highest
+    return a.card.cost - b.card.cost
   })
 })
 

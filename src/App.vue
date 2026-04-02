@@ -17,6 +17,32 @@ function startTour() {
   tourRef.value?.start()
 }
 
+/* Resizable sidebar */
+const SIDEBAR_MAX = 500
+const SIDEBAR_MIN = 280
+const sidebarWidth = ref(SIDEBAR_MAX)
+const isResizing = ref(false)
+
+function onResizeStart(e: MouseEvent) {
+  e.preventDefault()
+  isResizing.value = true
+  const onMove = (ev: MouseEvent) => {
+    const w = Math.min(SIDEBAR_MAX, Math.max(SIDEBAR_MIN, ev.clientX))
+    sidebarWidth.value = w
+  }
+  const onUp = () => {
+    isResizing.value = false
+    window.removeEventListener('mousemove', onMove)
+    window.removeEventListener('mouseup', onUp)
+  }
+  window.addEventListener('mousemove', onMove)
+  window.addEventListener('mouseup', onUp)
+}
+
+const gridStyle = computed(() => ({
+  gridTemplateColumns: `${sidebarWidth.value}px 400px 1fr`,
+}))
+
 /** Detect keywords present in the selected card's ability text */
 const cardKeywords = computed(() => {
   const card = cardStore.selectedCard
@@ -34,9 +60,10 @@ const cardKeywords = computed(() => {
 </script>
 
 <template>
-  <div class="app-layout">
+  <div class="app-layout" :class="{ 'is-resizing': isResizing }" :style="gridStyle">
     <!-- LEFT: sidebar with controls + card preview -->
     <div class="sidebar">
+      <div class="resize-handle" @mousedown="onResizeStart"></div>
       <div class="sidebar-controls">
         <DeckSidebar />
         <button class="tour-trigger" @click="startTour" title="Start tour">?</button>
@@ -103,12 +130,17 @@ const cardKeywords = computed(() => {
 */
 .app-layout {
   display: grid;
-  grid-template-columns: 500px 400px 1fr;
+  /* grid-template-columns set dynamically via :style */
   grid-template-rows: 3fr 2fr;
   grid-template-areas:
     "sidebar deck    deck"
     "sidebar filters cards";
   height: 100vh;
+}
+
+.app-layout.is-resizing {
+  user-select: none;
+  cursor: col-resize;
 }
 
 /* LEFT: full-height sidebar */
@@ -119,6 +151,24 @@ const cardKeywords = computed(() => {
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  position: relative;
+}
+
+.resize-handle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 5px;
+  height: 100%;
+  cursor: col-resize;
+  z-index: 10;
+  background: transparent;
+  transition: background 0.15s ease;
+}
+
+.resize-handle:hover,
+.app-layout.is-resizing .resize-handle {
+  background: var(--accent);
 }
 
 /* Controls sit at top, only as tall as their content */
