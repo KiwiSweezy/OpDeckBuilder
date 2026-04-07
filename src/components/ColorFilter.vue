@@ -16,6 +16,16 @@ const rarities = [
   { value: 'sp card', label: 'SP' },
   { value: 'p', label: 'P' },
 ]
+const keywords = [
+  { value: 'rush', label: 'Rush' },
+  { value: 'blocker', label: 'Blocker' },
+  { value: 'banish', label: 'Banish' },
+  { value: 'double attack', label: 'Double Attack' },
+  { value: 'searcher', label: 'Searcher' },
+  { value: 'on k.o.', label: 'On KO' },
+  { value: 'removal', label: 'Removal' },
+  { value: 'anti-removal', label: 'Anti-Removal' },
+]
 </script>
 
 <template>
@@ -65,58 +75,38 @@ const rarities = [
       <button
         :class="['filter-btn', { active: cardStore.selectedCounters.includes(1000) }]"
         @click="cardStore.toggleCounter(1000)"
-      >
-        1K
-      </button>
+      >1K</button>
       <button
         :class="['filter-btn', { active: cardStore.selectedCounters.includes(2000) }]"
         @click="cardStore.toggleCounter(2000)"
-      >
-        2K
-      </button>
+      >2K</button>
     </div>
 
     <!-- Keyword buttons -->
     <span class="filter-label">Keyword</span>
     <div class="btn-row">
       <button
-        :class="['filter-btn', { active: cardStore.selectedKeywords.includes('rush') }]"
-        @click="cardStore.toggleKeyword('rush')"
-      >
-        Rush
-      </button>
-      <button
-        :class="['filter-btn', { active: cardStore.selectedKeywords.includes('blocker') }]"
-        @click="cardStore.toggleKeyword('blocker')"
-      >
-        Blocker
-      </button>
-      <button
-        :class="['filter-btn', { active: cardStore.selectedKeywords.includes('banish') }]"
-        @click="cardStore.toggleKeyword('banish')"
-      >
-        Banish
-      </button>
+        v-for="kw in keywords.slice(0, 3)"
+        :key="kw.value"
+        :class="['filter-btn', { active: cardStore.selectedKeywords.includes(kw.value) }]"
+        @click="cardStore.toggleKeyword(kw.value)"
+      >{{ kw.label }}</button>
     </div>
     <div class="btn-row">
       <button
-        :class="['filter-btn', { active: cardStore.selectedKeywords.includes('double attack') }]"
-        @click="cardStore.toggleKeyword('double attack')"
-      >
-        Double Attack
-      </button>
+        v-for="kw in keywords.slice(3, 6)"
+        :key="kw.value"
+        :class="['filter-btn', { active: cardStore.selectedKeywords.includes(kw.value) }]"
+        @click="cardStore.toggleKeyword(kw.value)"
+      >{{ kw.label }}</button>
+    </div>
+    <div class="btn-row">
       <button
-        :class="['filter-btn', { active: cardStore.selectedKeywords.includes('searcher') }]"
-        @click="cardStore.toggleKeyword('searcher')"
-      >
-        Searcher
-      </button>
-      <button
-        :class="['filter-btn', { active: cardStore.selectedKeywords.includes('on k.o.') }]"
-        @click="cardStore.toggleKeyword('on k.o.')"
-      >
-        On KO
-      </button>
+        v-for="kw in keywords.slice(6)"
+        :key="kw.value"
+        :class="['filter-btn', { active: cardStore.selectedKeywords.includes(kw.value) }]"
+        @click="cardStore.toggleKeyword(kw.value)"
+      >{{ kw.label }}</button>
     </div>
 
     <!-- Sort by cost -->
@@ -125,15 +115,11 @@ const rarities = [
       <button
         :class="['filter-btn', { active: cardStore.costSortDirection === 'desc' }]"
         @click="cardStore.costSortDirection = cardStore.costSortDirection === 'desc' ? '' : 'desc'"
-      >
-        High to Low
-      </button>
+      >High to Low</button>
       <button
         :class="['filter-btn', { active: cardStore.costSortDirection === 'asc' }]"
         @click="cardStore.costSortDirection = cardStore.costSortDirection === 'asc' ? '' : 'asc'"
-      >
-        Low to High
-      </button>
+      >Low to High</button>
     </div>
   </div>
 </template>
@@ -142,28 +128,30 @@ const rarities = [
 .filter-bar {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 5px;
 }
 
 .filter-label {
   color: var(--text-secondary);
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   text-transform: uppercase;
   font-weight: bold;
+  letter-spacing: 0.04em;
   margin-top: 4px;
+  margin-bottom: 1px;
 }
 
 /* 3-column grid for color buttons */
 .btn-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 4px;
+  gap: 5px;
 }
 
 /* Flex row for type, rarity, options */
 .btn-row {
   display: flex;
-  gap: 4px;
+  gap: 5px;
 }
 
 .btn-row .filter-btn {
@@ -173,14 +161,20 @@ const rarities = [
 .filter-btn {
   padding: 6px 10px;
   border: 1px solid var(--border-color);
-  border-radius: 4px;
+  border-radius: 5px;
   background-color: var(--bg-tertiary);
   color: var(--text-secondary);
   cursor: pointer;
-  font-size: 0.75rem;
+  font-size: 0.76rem;
   text-transform: capitalize;
   transition: all 0.15s ease;
   white-space: nowrap;
+  line-height: 1.2;
+}
+
+.filter-btn:hover {
+  border-color: var(--text-secondary);
+  color: var(--text-primary);
 }
 
 .filter-btn.active {

@@ -7,6 +7,8 @@ import ColorFilter from './components/ColorFilter.vue'
 import DeckDisplay from './components/DeckDisplay.vue'
 import DeckSidebar from './components/DeckSidebar.vue'
 import DeckStats from './components/DeckStats.vue'
+import DeckShareModal from './components/DeckShareModal.vue'
+import ProxyPage from './components/ProxyPage.vue'
 import AppTour from './components/AppTour.vue'
 
 const cardStore = useCardStore()
@@ -16,6 +18,14 @@ const tourRef = ref<InstanceType<typeof AppTour> | null>(null)
 function startTour() {
   tourRef.value?.start()
 }
+
+const showShareModal = ref(false)
+function openShare() {
+  if (cardStore.deckSize === 0) return
+  showShareModal.value = true
+}
+
+const currentView = ref<'builder' | 'proxy'>('builder')
 
 /* Resizable sidebar */
 const SIDEBAR_MAX = 500
@@ -39,8 +49,35 @@ function onResizeStart(e: MouseEvent) {
   window.addEventListener('mouseup', onUp)
 }
 
+/* Resizable bottom row (filters + card pool) */
+const BOTTOM_MIN = 200       // smallest the bottom row can shrink to
+const BOTTOM_MAX_RATIO = 0.7 // bottom row can take at most 70% of viewport
+const bottomHeight = ref(0)  // 0 = use default 2fr; set on first drag
+const isResizingRow = ref(false)
+
+function onRowResizeStart(e: MouseEvent) {
+  e.preventDefault()
+  isResizingRow.value = true
+  const onMove = (ev: MouseEvent) => {
+    const vh = window.innerHeight
+    const fromBottom = vh - ev.clientY
+    const max = vh * BOTTOM_MAX_RATIO
+    bottomHeight.value = Math.min(max, Math.max(BOTTOM_MIN, fromBottom))
+  }
+  const onUp = () => {
+    isResizingRow.value = false
+    window.removeEventListener('mousemove', onMove)
+    window.removeEventListener('mouseup', onUp)
+  }
+  window.addEventListener('mousemove', onMove)
+  window.addEventListener('mouseup', onUp)
+}
+
 const gridStyle = computed(() => ({
   gridTemplateColumns: `${sidebarWidth.value}px 400px 1fr`,
+  gridTemplateRows: bottomHeight.value > 0
+    ? `1fr ${bottomHeight.value}px`
+    : '3fr 2fr',
 }))
 
 /** Detect keywords present in the selected card's ability text */
@@ -60,7 +97,8 @@ const cardKeywords = computed(() => {
 </script>
 
 <template>
-  <div class="app-layout" :class="{ 'is-resizing': isResizing }" :style="gridStyle">
+  <ProxyPage v-if="currentView === 'proxy'" @back="currentView = 'builder'" />
+  <div v-else class="app-layout" :class="{ 'is-resizing': isResizing, 'is-resizing-row': isResizingRow }" :style="gridStyle">
     <!-- LEFT: sidebar with controls + card preview -->
     <div class="sidebar">
       <div class="resize-handle" @mousedown="onResizeStart"></div>
@@ -101,6 +139,34 @@ const cardKeywords = computed(() => {
     <!-- RIGHT-TOP: deck display area (cards in deck) -->
     <div class="deck-area" data-tour="deck-area">
       <DeckDisplay />
+      <button
+        class="share-fab"
+        :class="{ disabled: cardStore.deckSize === 0 }"
+        @click="openShare"
+        title="Share Deck"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="18" cy="5" r="3"></circle>
+          <circle cx="6" cy="12" r="3"></circle>
+          <circle cx="18" cy="19" r="3"></circle>
+          <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+          <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+        </svg>
+        <span>Share</span>
+      </button>
+      <button
+        class="share-fab proxy-fab"
+        @click="currentView = 'proxy'"
+        title="Proxy this deck list"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 6 2 18 2 18 9"></polyline>
+          <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+          <rect x="6" y="14" width="12" height="8"></rect>
+        </svg>
+        <span>Proxy</span>
+      </button>
+      <div class="row-resize-handle" @mousedown="onRowResizeStart"></div>
     </div>
 
     <!-- RIGHT-BOTTOM-LEFT: search + filters -->
@@ -114,6 +180,7 @@ const cardKeywords = computed(() => {
       <CardGrid />
     </div>
     <AppTour ref="tourRef" />
+    <DeckShareModal :open="showShareModal" @close="showShareModal = false" />
   </div>
 </template>
 
@@ -141,6 +208,11 @@ const cardKeywords = computed(() => {
 .app-layout.is-resizing {
   user-select: none;
   cursor: col-resize;
+}
+
+.app-layout.is-resizing-row {
+  user-select: none;
+  cursor: row-resize;
 }
 
 /* LEFT: full-height sidebar */
@@ -194,6 +266,73 @@ const cardKeywords = computed(() => {
   border-bottom: 1px solid var(--border-color);
   padding: 12px;
   overflow-y: auto;
+  position: relative;
+}
+
+.share-fab {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 14px;
+  background: rgba(15, 15, 15, 0.85);
+  color: var(--text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow:
+    0 4px 14px rgba(0, 0, 0, 0.6),
+    0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: all 0.18s ease;
+}
+
+.share-fab:hover {
+  background: rgba(0, 0, 0, 0.95);
+  border-color: var(--accent);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.7),
+    0 0 0 1px var(--accent);
+}
+
+.share-fab.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.share-fab svg {
+  display: block;
+}
+
+/* Proxy button sits directly below the Share button */
+.proxy-fab {
+  top: 56px;
+}
+
+.row-resize-handle {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  cursor: row-resize;
+  z-index: 10;
+  background: transparent;
+  transition: background 0.15s ease;
+}
+
+.row-resize-handle:hover,
+.app-layout.is-resizing-row .row-resize-handle {
+  background: var(--accent);
 }
 
 /* RIGHT-BOTTOM-LEFT: search + filters */
@@ -201,7 +340,7 @@ const cardKeywords = computed(() => {
   grid-area: filters;
   background-color: var(--bg-primary);
   border-right: 1px solid var(--border-color);
-  padding: 12px;
+  padding: 10px 12px;
   overflow-y: auto;
 }
 

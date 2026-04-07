@@ -85,6 +85,10 @@ export const useCardStore = defineStore('cards', {
       if (state.selectedKeywords.length > 0) {
         const keywordPatterns: Record<string, RegExp> = {
           searcher: /look at.*from the top of your deck/i,
+          // Removes opponent's characters: KO effects or bouncing to hand/deck
+          removal: /k\.?o\.? (up to|all|one|1)\b|return up to \d.{0,80}of your opponent|return.{0,100}opponent.{0,100}(hand|deck)/i,
+          // Protective effects: cannot be removed, or "would be KO'd ... instead"
+          'anti-removal': /cannot be removed from the field|would (be )?(k\.?o.?ed?|leave|removed).{0,120}instead/i,
         }
         cards = cards.filter(card => {
           const ability = card.ability.toLowerCase()

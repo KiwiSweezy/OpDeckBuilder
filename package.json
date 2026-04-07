@@ -6,11 +6,14 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "download-images": "python scripts/download_images.py",
+    "localize-images": "python scripts/localize_images.py"
   },
   "dependencies": {
     "@types/d3": "^7.4.3",
     "d3": "^7.9.0",
+    "html-to-image": "^1.11.13",
     "pinia": "^3.0.4",
     "vue": "^3.5.25"
   },
