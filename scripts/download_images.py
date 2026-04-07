@@ -23,12 +23,17 @@ ROOT = Path(__file__).resolve().parent.parent
 CARDS_JSON = ROOT / "src" / "data" / "cards.json"
 OUTPUT_DIR = ROOT / "public" / "images" / "cards"
 
-WEBP_QUALITY = 75
-MAX_WIDTH = 200
+# LimitlessTCG hosts OPTCG card images on a Digital Ocean Spaces CDN.
+# URL format: https://.../one-piece/{SET}/{CARD-ID}_EN.webp
+# where SET is the set code (OP15, EB04, ST26, PRB02, etc.)
+LIMITLESS_BASE = "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/one-piece"
+BANDAI_IMAGE_BASE = "https://en.onepiece-cardgame.com/images/cardlist/card/"
+
+WEBP_QUALITY = 85
+MAX_WIDTH = 600
 MAX_WORKERS = 8
 REQUEST_TIMEOUT = 15
 
-# Bandai sometimes blocks without a browser-like User-Agent
 HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -39,45 +44,62 @@ HEADERS = {
 
 
 def get_unique_images(cards: list[dict]) -> dict[str, str]:
-    """Return {filename_stem: url} for every unique image in cards.json."""
+    """Return {filename_stem: limitless_url} for every unique card.
+
+    The set code is parsed from the card ID (everything before the first dash).
+    e.g. "OP15-003_p1" -> set "OP15", URL ".../one-piece/OP15/OP15-003_p1_EN.webp"
+    """
     images = {}
     for card in cards:
         url = card["images"]["small"]
-        if not url or not url.startswith("http"):
+        if not url:
             continue
-        # Extract filename without extension or query params
-        # e.g. "OP01-001.png?240831" -> "OP01-001"
+        # Filename stem from current URL (works for both remote + localized)
         raw_filename = urlparse(url).path.split("/")[-1]
         stem = raw_filename.rsplit(".", 1)[0]
-        images[stem] = url
+        # Set code = everything before the first dash in the card ID
+        if "-" not in stem:
+            continue
+        set_code = stem.split("-", 1)[0]
+        images[stem] = f"{LIMITLESS_BASE}/{set_code}/{stem}_EN.webp"
     return images
 
 
+def _fetch_and_save(url: str, out_path: Path) -> None:
+    """Download a single image, resize, and save as WebP. Raises on failure."""
+    resp = requests.get(url, headers=HEADERS, timeout=REQUEST_TIMEOUT)
+    resp.raise_for_status()
+
+    img = Image.open(BytesIO(resp.content))
+    img = img.convert("RGBA") if img.mode == "RGBA" else img.convert("RGB")
+
+    if img.width > MAX_WIDTH:
+        ratio = MAX_WIDTH / img.width
+        new_height = int(img.height * ratio)
+        img = img.resize((MAX_WIDTH, new_height), Image.LANCZOS)
+
+    img.save(out_path, "WEBP", quality=WEBP_QUALITY)
+
+
 def download_and_convert(stem: str, url: str, force: bool = False) -> str:
-    """Download a single image and convert to WebP. Returns status message."""
+    """Download an image with limitless → Bandai fallback for missing prints."""
     out_path = OUTPUT_DIR / f"{stem}.webp"
 
     if out_path.exists() and not force:
         return f"SKIP {stem} (already exists)"
 
+    # Try limitless first
     try:
-        resp = requests.get(url, headers=HEADERS, timeout=REQUEST_TIMEOUT)
-        resp.raise_for_status()
-
-        img = Image.open(BytesIO(resp.content))
-        img = img.convert("RGBA") if img.mode == "RGBA" else img.convert("RGB")
-
-        # Resize to MAX_WIDTH while preserving aspect ratio
-        if img.width > MAX_WIDTH:
-            ratio = MAX_WIDTH / img.width
-            new_height = int(img.height * ratio)
-            img = img.resize((MAX_WIDTH, new_height), Image.LANCZOS)
-
-        img.save(out_path, "WEBP", quality=WEBP_QUALITY)
-
+        _fetch_and_save(url, out_path)
         return f"OK   {stem}"
-    except Exception as e:
-        return f"FAIL {stem}: {e}"
+    except Exception as limitless_err:
+        # Fall back to Bandai for cards limitless doesn't host (e.g. _r1/_r2 reprints)
+        bandai_url = f"{BANDAI_IMAGE_BASE}{stem}.png"
+        try:
+            _fetch_and_save(bandai_url, out_path)
+            return f"OK   {stem} (bandai fallback)"
+        except Exception as bandai_err:
+            return f"FAIL {stem}: limitless={limitless_err} bandai={bandai_err}"
 
 
 def main():

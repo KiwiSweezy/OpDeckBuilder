@@ -17,12 +17,12 @@ const cardStore = useCardStore()
 
 <style scoped>
 .search-bar {
-  margin-bottom: 12px;
+  margin-bottom: 6px;
 }
 
 .search-input {
   width: 100%;
-  padding: 10px 14px;
+  padding: 7px 12px;
   background-color: var(--bg-tertiary);
   border: 1px solid var(--border-color);
   border-radius: 6px;
