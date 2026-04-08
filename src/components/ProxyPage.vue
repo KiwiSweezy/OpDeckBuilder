@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
 import { useCardStore } from '../stores/cardStore'
 import type { Card } from '../types/Card'
 
@@ -12,6 +12,10 @@ const proxyList = ref<Map<string, { card: Card; qty: number }>>(new Map())
 const searchQuery = ref('')
 const showDeckDropdown = ref(false)
 const showHelp = ref(true)
+const paperSize = ref<'letter' | '4x6'>('letter')
+
+/** Cards per sheet depends on paper size */
+const cardsPerPage = computed(() => paperSize.value === 'letter' ? 9 : 2)
 
 /** Total proxy count */
 const totalProxies = computed(() => {
@@ -44,15 +48,17 @@ const printCards = computed(() => {
   return out
 })
 
-/** Search results — limited to 30 to keep the UI snappy */
+/** Search results — multi-token search across name + id + family.
+ *  Each whitespace-separated token must match somewhere on the card,
+ *  so "luffy op15", "op15 luffy", and "monkey luffy" all work. */
 const searchResults = computed(() => {
-  const q = searchQuery.value.trim().toLowerCase()
-  if (!q) return []
+  const tokens = searchQuery.value.trim().toLowerCase().split(/\s+/).filter(Boolean)
+  if (tokens.length === 0) return []
   return cardStore.allCards
-    .filter(c =>
-      c.name.toLowerCase().includes(q) ||
-      c.id.toLowerCase().includes(q)
-    )
+    .filter(c => {
+      const haystack = `${c.name} ${c.id} ${c.family}`.toLowerCase()
+      return tokens.every(t => haystack.includes(t))
+    })
     .slice(0, 30)
 })
 
@@ -99,6 +105,29 @@ function loadFromDeck(name: string) {
   proxyList.value = newList
   showDeckDropdown.value = false
 }
+
+/** Inject a dynamic @page rule into <head> based on the selected paper size.
+ *  CSS @page can't read CSS variables, so we rewrite the rule on change. */
+function applyPaperSize(size: 'letter' | '4x6') {
+  let style = document.getElementById('proxy-page-size') as HTMLStyleElement | null
+  if (!style) {
+    style = document.createElement('style')
+    style.id = 'proxy-page-size'
+    document.head.appendChild(style)
+  }
+  if (size === '4x6') {
+    // 4×6 in landscape (6in × 4in) so 2 cards fit side by side
+    style.textContent = '@page { size: 6in 4in; margin: 0.2cm; }'
+  } else {
+    style.textContent = '@page { size: letter; margin: 0.7cm; }'
+  }
+}
+
+watch(paperSize, applyPaperSize, { immediate: false })
+onMounted(() => applyPaperSize(paperSize.value))
+onUnmounted(() => {
+  document.getElementById('proxy-page-size')?.remove()
+})
 
 function handlePrint() {
   window.print()
@@ -225,16 +254,25 @@ function handlePrint() {
     <!-- MAIN AREA: card grid (screen) / inline-block flow (print) -->
     <main class="proxy-main">
       <div class="proxy-toolbar dont-print">
-        <span class="proxy-count">{{ totalProxies }} proxies · ~{{ Math.max(1, Math.ceil(totalProxies / 9)) }} page(s)</span>
-        <button class="print-btn" :disabled="totalProxies === 0" @click="handlePrint">
-          Print
-        </button>
+        <span class="proxy-count">{{ totalProxies }} proxies · ~{{ Math.max(1, Math.ceil(totalProxies / cardsPerPage)) }} page(s)</span>
+        <div class="toolbar-right">
+          <label class="paper-select">
+            <span>Paper</span>
+            <select v-model="paperSize">
+              <option value="letter">Letter (9 per page)</option>
+              <option value="4x6">4×6 Photo (2 per page)</option>
+            </select>
+          </label>
+          <button class="print-btn" :disabled="totalProxies === 0" @click="handlePrint">
+            Print
+          </button>
+        </div>
       </div>
       <div class="proxies-wrap">
         <div v-if="totalProxies === 0" class="empty-state">
           <div class="empty-state-text">Your proxy cards will appear here</div>
         </div>
-        <div v-else class="proxies">
+        <div v-else class="proxies" :class="`paper-${paperSize}`">
           <div
             v-for="(card, idx) in printCards"
             :key="idx"
@@ -698,11 +736,47 @@ function handlePrint() {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 12px;
 }
 
 .proxy-count {
   color: var(--text-secondary);
   font-size: 0.85rem;
+}
+
+.toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.paper-select {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+.paper-select select {
+  padding: 6px 10px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  color: var(--text-primary);
+  font-size: 0.8rem;
+  cursor: pointer;
+  outline: none;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.paper-select select:hover {
+  border-color: var(--accent);
 }
 
 .print-btn {
@@ -816,10 +890,11 @@ function handlePrint() {
     height: 8.52cm;
     display: block;
   }
-}
 
-@page {
-  size: letter;
-  margin: 0.7cm;
+  /* 4×6 photo paper: 2 cards side-by-side, then page break.
+     Page is set to 6in × 4in landscape via dynamic @page rule. */
+  .proxies.paper-4x6 .proxies-card {
+    margin: 0.1cm;
+  }
 }
 </style>
