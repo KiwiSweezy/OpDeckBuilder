@@ -829,7 +829,7 @@ function handlePrint() {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 8px;
-  max-width: 720px;
+  max-width: 792px;
   width: 100%;
   background: white;
   padding: 16px;
