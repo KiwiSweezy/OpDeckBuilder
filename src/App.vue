@@ -11,6 +11,7 @@ import DeckShareModal from './components/DeckShareModal.vue'
 import ProxyPage from './components/ProxyPage.vue'
 import AppTour from './components/AppTour.vue'
 
+
 const cardStore = useCardStore()
 cardStore.initStore()
 
