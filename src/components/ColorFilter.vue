@@ -82,6 +82,18 @@ const keywords = [
       >2K</button>
     </div>
 
+    <!-- Format / rotation -->
+    <span class="filter-label">Format</span>
+    <div class="btn-row">
+      <button
+        :class="['filter-btn', { active: cardStore.hideRotated }]"
+        @click="cardStore.toggleHideRotated"
+        title="Hides cards from sets that rotated out of Standard on 2026-04-01 (OP01-OP04, ST01-ST09)"
+      >
+        Hide Rotated (Block 1)
+      </button>
+    </div>
+
     <!-- Keyword buttons -->
     <span class="filter-label">Keyword</span>
     <div class="btn-row">

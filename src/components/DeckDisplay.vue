@@ -51,6 +51,28 @@ const nonLeaderGroups = computed(() => {
   <div class="deck-display">
     <div class="deck-display-header">
       <span class="deck-count">{{ cardStore.deckSize }} / 51</span>
+      <div v-if="cardStore.searchChips.length > 0" class="active-filters">
+        <span class="filters-label">Active filters:</span>
+        <div
+          v-for="chip in cardStore.searchChips"
+          :key="chip"
+          class="filter-chip"
+        >
+          <span class="chip-text">{{ chip }}</span>
+          <button
+            type="button"
+            class="chip-x"
+            @click="cardStore.removeSearchChip(chip)"
+            :aria-label="`Remove ${chip}`"
+          >×</button>
+        </div>
+        <button
+          v-if="cardStore.searchChips.length > 1"
+          type="button"
+          class="clear-chips"
+          @click="cardStore.clearSearchChips"
+        >clear all</button>
+      </div>
     </div>
 
     <div v-if="cardStore.deckSize === 0" class="deck-empty">
@@ -115,6 +137,8 @@ const nonLeaderGroups = computed(() => {
 .deck-display-header {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
   margin-bottom: 8px;
 }
 
@@ -122,6 +146,78 @@ const nonLeaderGroups = computed(() => {
   color: var(--text-secondary);
   font-size: 0.9rem;
   font-weight: bold;
+}
+
+.active-filters {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding-left: 12px;
+  border-left: 1px solid var(--border-color);
+}
+
+.filters-label {
+  color: var(--text-secondary);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+.filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 4px 2px 9px;
+  background-color: var(--accent);
+  color: white;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.filter-chip .chip-text {
+  text-transform: capitalize;
+}
+
+.filter-chip .chip-x {
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  background: rgba(0, 0, 0, 0.25);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 0.85rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease;
+}
+
+.filter-chip .chip-x:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.clear-chips {
+  padding: 2px 8px;
+  background: none;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  color: var(--text-secondary);
+  font-size: 0.7rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.clear-chips:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .deck-empty {

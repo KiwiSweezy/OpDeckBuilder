@@ -7,6 +7,20 @@ function baseId(id: string): string {
   return id.replace(/_p\d+$/, '')
 }
 
+/** Sets that rotated out of Standard format on 2026-04-01 (Block 1).
+ *  Cards from these sets are filtered when "Hide Rotated" is on.
+ *  Reprints of these cards in newer sets keep their newer set IDs and stay legal. */
+const ROTATED_SETS = new Set([
+  'OP01', 'OP02', 'OP03', 'OP04',
+  'ST01', 'ST02', 'ST03', 'ST04', 'ST05', 'ST06', 'ST07', 'ST08', 'ST09',
+])
+
+/** Returns the set prefix from a card ID (everything before the first dash). */
+function cardSet(id: string): string {
+  const dash = id.indexOf('-')
+  return dash === -1 ? id : id.slice(0, dash)
+}
+
 /** Convert color string like "red/green" to abbreviation like "RG" */
 const COLOR_ABBREVS: Record<string, string> = {
   red: 'R', blue: 'U', green: 'G', purple: 'P', black: 'B', yellow: 'Y',
@@ -42,6 +56,8 @@ export const useCardStore = defineStore('cards', {
     selectedRarities: [] as string[],   // 'sr', 'l', 'r', 'uc', 'c'
     selectedCounters: [] as number[],    // 1000, 2000
     selectedKeywords: [] as string[],    // 'rush', 'blocker', etc.
+    searchChips: [] as string[],          // committed search filters (AND-combined)
+    hideRotated: false,                   // hide Block 1 cards (OP01-OP04, ST01-ST09)
     costSortDirection: '' as '' | 'asc' | 'desc',  // '' = no sort, 'asc' = low→high, 'desc' = high→low
     selectedCard: null as Card | null,  // card shown in preview panel
     deck: [] as Card[],                 // cards in the user's deck (duplicates = multiple copies)
@@ -81,6 +97,11 @@ export const useCardStore = defineStore('cards', {
         cards = cards.filter(card => state.selectedCounters.includes(card.counter))
       }
 
+      // Hide rotated (Block 1) cards
+      if (state.hideRotated) {
+        cards = cards.filter(card => !ROTATED_SETS.has(cardSet(card.id)))
+      }
+
       // Keyword filter (ability text must match ALL selected keywords)
       if (state.selectedKeywords.length > 0) {
         const keywordPatterns: Record<string, RegExp> = {
@@ -99,15 +120,21 @@ export const useCardStore = defineStore('cards', {
         })
       }
 
-      // Search by name, ID, family, or ability text
-      if (state.searchQuery.trim() !== '') {
-        const query = state.searchQuery.toLowerCase()
-        cards = cards.filter(card =>
-          card.name.toLowerCase().includes(query) ||
-          card.id.toLowerCase().includes(query) ||
-          card.family.toLowerCase().includes(query) ||
-          card.ability.toLowerCase().includes(query)
+      // Search: every committed chip must match, plus the in-progress query.
+      // Each term ORs across name/id/family/ability; chips AND together.
+      const matchTerm = (card: Card, term: string) => {
+        const t = term.toLowerCase()
+        return (
+          card.name.toLowerCase().includes(t) ||
+          card.id.toLowerCase().includes(t) ||
+          card.family.toLowerCase().includes(t) ||
+          card.ability.toLowerCase().includes(t)
         )
+      }
+      const liveQuery = state.searchQuery.trim()
+      const allTerms = [...state.searchChips, ...(liveQuery ? [liveQuery] : [])]
+      if (allTerms.length > 0) {
+        cards = cards.filter(card => allTerms.every(term => matchTerm(card, term)))
       }
 
       // Optional sort by cost
@@ -163,6 +190,7 @@ export const useCardStore = defineStore('cards', {
         state.selectedRarities.length > 0 ||
         state.selectedCounters.length > 0 ||
         state.selectedKeywords.length > 0 ||
+        state.searchChips.length > 0 ||
         state.searchQuery.trim() !== ''
       )
     },
@@ -223,6 +251,34 @@ export const useCardStore = defineStore('cards', {
       } else {
         this.selectedCounters.splice(index, 1)
       }
+    },
+
+    /** Toggle the Block 1 / rotated cards filter on/off */
+    toggleHideRotated() {
+      this.hideRotated = !this.hideRotated
+    },
+
+    /** Commit the current search query as a chip and clear the input.
+     *  Each chip is an AND filter on the card pool. */
+    commitSearchChip() {
+      const term = this.searchQuery.trim()
+      if (!term) return
+      // Avoid duplicates
+      if (!this.searchChips.includes(term)) {
+        this.searchChips.push(term)
+      }
+      this.searchQuery = ''
+    },
+
+    /** Remove a single chip by value */
+    removeSearchChip(term: string) {
+      const i = this.searchChips.indexOf(term)
+      if (i !== -1) this.searchChips.splice(i, 1)
+    },
+
+    /** Clear all chips at once */
+    clearSearchChips() {
+      this.searchChips = []
     },
 
     /** Toggle a keyword filter on/off (matches against ability text) */
