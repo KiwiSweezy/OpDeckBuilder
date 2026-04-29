@@ -90,7 +90,7 @@ const keywords = [
         @click="cardStore.toggleHideRotated"
         title="Hides cards from sets that rotated out of Standard on 2026-04-01 (OP01-OP04, ST01-ST09)"
       >
-        Hide Rotated (Block 1)
+        Hide Rotated
       </button>
     </div>
 
