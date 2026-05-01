@@ -369,20 +369,40 @@ export const useCardStore = defineStore('cards', {
 
     /**
      * Import a deck from sim format text.
-     * Parses lines like "4xOP15-108" or "1xST29-009".
-     * Clears the current deck and rebuilds it, skipping unknown IDs.
+     * Robust to CRLF/CR/LF line endings, en-dash vs hyphen in card IDs,
+     * Unicode whitespace, and minor format variations like "4 x ID" or "4*ID".
      */
     importDeck(text: string) {
-      const lines = text.trim().split('\n')
+      // Normalize line endings (handles \r\n, \r, \n) and split
+      const lines = text.replace(/\r\n?/g, '\n').split('\n')
       const newDeck: Card[] = []
 
-      for (const line of lines) {
-        const match = line.trim().match(/^(\d+)x(.+)$/i)
+      // Build a normalized lookup so we can match even if the input has
+      // weird unicode dashes or non-ASCII characters in the card ID
+      const normalize = (s: string) =>
+        s.toUpperCase()
+          .replace(/[‐-―−]/g, '-')  // en-dash, em-dash, minus → hyphen
+          .replace(/[ ​‌‍﻿]/g, '')  // strip nbsp, ZWSP, BOM
+          .replace(/\s+/g, '')
+
+      const cardsByNormId = new Map<string, Card>()
+      for (const c of this.allCards) {
+        cardsByNormId.set(normalize(c.id), c)
+      }
+
+      // Match: optional whitespace, count, optional whitespace, x or *,
+      // optional whitespace, the rest of the line as the ID
+      const lineRe = /^\s*(\d+)\s*[x*×]\s*(.+?)\s*$/i
+
+      for (const rawLine of lines) {
+        const line = rawLine.trim()
+        if (!line) continue
+        const match = line.match(lineRe)
         if (!match || !match[1] || !match[2]) continue
 
-        const count = parseInt(match[1])
-        const cardId = match[2].trim()
-        const card = this.allCards.find(c => c.id === cardId)
+        const count = parseInt(match[1], 10)
+        if (!count || count > 51) continue
+        const card = cardsByNormId.get(normalize(match[2]))
         if (!card) continue
 
         for (let i = 0; i < count; i++) {
