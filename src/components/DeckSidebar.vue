@@ -74,18 +74,47 @@ async function handleImport() {
   clearStatus()
 }
 
+/** Copy text to clipboard with a Safari/older-browser-safe fallback.
+ *  navigator.clipboard fails silently on Safari if it's not invoked
+ *  synchronously inside a user-event handler, so we fall back to a
+ *  hidden textarea + document.execCommand('copy'). */
+function copyToClipboard(text: string): boolean {
+  // Modern path — try first
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).catch(() => {/* fall through */})
+  }
+  // Always also do the textarea fallback synchronously — Safari needs this
+  try {
+    const ta = document.createElement('textarea')
+    ta.value = text
+    ta.setAttribute('readonly', '')
+    ta.style.position = 'fixed'
+    ta.style.top = '0'
+    ta.style.left = '0'
+    ta.style.opacity = '0'
+    document.body.appendChild(ta)
+    ta.focus()
+    ta.select()
+    ta.setSelectionRange(0, text.length)
+    const ok = document.execCommand('copy')
+    document.body.removeChild(ta)
+    return ok
+  } catch {
+    return false
+  }
+}
+
 /** Export the deck to clipboard in sim format (e.g. "4xOP15-108") */
-async function handleExport() {
+function handleExport() {
   if (cardStore.deckSize === 0) {
     statusMessage.value = 'Deck is empty'
     clearStatus()
     return
   }
-  try {
-    const text = cardStore.exportDeck()
-    await navigator.clipboard.writeText(text)
+  const text = cardStore.exportDeck()
+  if (copyToClipboard(text)) {
     statusMessage.value = 'Copied to clipboard!'
-  } catch {
+  } else {
     statusMessage.value = 'Could not write to clipboard'
   }
   clearStatus()
