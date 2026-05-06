@@ -90,6 +90,11 @@ const nonLeaderGroups = computed(() => {
         <div class="stack-wrapper">
           <img :src="leader.images.small" :alt="leader.name" class="stack-img" />
         </div>
+        <button
+          class="remove-btn"
+          title="Remove leader (shift+click to clear)"
+          @click.stop="$event.shiftKey ? cardStore.removeAllFromDeck(leader.id) : cardStore.removeFromDeck(leader.id)"
+        >×</button>
         <span class="card-label">Leader</span>
       </div>
 
@@ -103,6 +108,11 @@ const nonLeaderGroups = computed(() => {
         @mouseenter="cardStore.selectCard(entry.card)"
         @contextmenu.prevent="$event.shiftKey ? cardStore.removeAllFromDeck(entry.card.id) : cardStore.removeFromDeck(entry.card.id)"
       >
+        <button
+          class="remove-btn"
+          title="Remove one (shift+click to remove all)"
+          @click.stop="$event.shiftKey ? cardStore.removeAllFromDeck(entry.card.id) : cardStore.removeFromDeck(entry.card.id)"
+        >×</button>
         <!--
           Each copy is rendered as a stacked image.
           CSS offsets them so they overlap like a fan.
@@ -304,5 +314,46 @@ const nonLeaderGroups = computed(() => {
   padding: 2px 6px;
   border-radius: 3px;
   z-index: 10;
+}
+
+/* Remove button — sits in top-left corner of each stack.
+   Visible on hover for mouse/trackpad users, always visible on touch. */
+.remove-btn {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 11;
+  opacity: 0;
+  transition: opacity 0.15s ease, background 0.15s ease, transform 0.1s ease;
+}
+
+.card-stack:hover .remove-btn {
+  opacity: 1;
+}
+
+.remove-btn:hover {
+  background: var(--accent);
+  transform: scale(1.1);
+}
+
+/* Touch devices: no hover, so always show the remove button */
+@media (hover: none) {
+  .remove-btn {
+    opacity: 1;
+  }
 }
 </style>
