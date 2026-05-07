@@ -235,16 +235,18 @@ const previewedCount = computed(() => {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  height: 100dvh;  /* dynamic viewport — adapts to iOS URL bar */
   background: var(--bg-primary);
   overflow: hidden;
 }
 
-/* TOP BAR */
+/* TOP BAR — extra top padding for iPhone notch / status bar */
 .mobile-topbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 8px 12px;
+  padding-top: calc(8px + env(safe-area-inset-top));
   background: var(--bg-secondary);
   border-bottom: 1px solid var(--border-color);
   flex-shrink: 0;

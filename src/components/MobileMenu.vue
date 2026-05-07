@@ -245,10 +245,13 @@ function confirmClear() {
   width: 86%;
   max-width: 380px;
   height: 100vh;
+  height: 100dvh;
   background: var(--bg-secondary);
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
   box-shadow: 4px 0 16px rgba(0, 0, 0, 0.5);
 }
 

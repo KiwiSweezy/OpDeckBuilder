@@ -50,8 +50,10 @@ function handleBackdropClick(e: MouseEvent) {
 .sheet-window {
   width: 100%;
   max-height: 88vh;
+  max-height: 88dvh;
   background: var(--bg-secondary);
   border-radius: 16px 16px 0 0;
+  padding-bottom: env(safe-area-inset-bottom);
   box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
