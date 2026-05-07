@@ -12,6 +12,7 @@ import ProxyPage from './components/ProxyPage.vue'
 import AppTour from './components/AppTour.vue'
 import MobileLayout from './components/MobileLayout.vue'
 import { useBreakpoint } from './composables/useBreakpoint'
+import { tcgplayerUrl } from './utils/pricing'
 
 const { isMobile } = useBreakpoint()
 
@@ -140,6 +141,19 @@ const cardKeywords = computed(() => {
           <p v-if="cardStore.selectedCard.ability && cardStore.selectedCard.ability !== '-'" class="preview-ability">
             {{ cardStore.selectedCard.ability.replace(/<br>/g, '\n') }}
           </p>
+          <a
+            class="tcgplayer-link"
+            :href="tcgplayerUrl(cardStore.selectedCard.id)"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View on TCGplayer
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15 3 21 3 21 9"/>
+              <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+          </a>
         </div>
         <p v-else class="preview-placeholder">Hover a card to preview</p>
         <DeckStats />
@@ -443,5 +457,26 @@ const cardKeywords = computed(() => {
   margin-top: 8px;
   line-height: 1.4;
   white-space: pre-line;
+}
+
+.tcgplayer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 7px 14px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.tcgplayer-link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 </style>

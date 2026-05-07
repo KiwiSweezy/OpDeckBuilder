@@ -8,6 +8,7 @@ import DeckStats from './DeckStats.vue'
 import MobileDeckList from './MobileDeckList.vue'
 import MobileMenu from './MobileMenu.vue'
 import BottomSheet from './BottomSheet.vue'
+import { tcgplayerUrl } from '../utils/pricing'
 
 const emit = defineEmits<{
   (e: 'navigate', view: 'proxy'): void
@@ -201,6 +202,19 @@ const previewedCount = computed(() => {
           v-if="cardStore.selectedCard.ability && cardStore.selectedCard.ability !== '-'"
           class="preview-ability"
         >{{ cardStore.selectedCard.ability.replace(/<br>/g, '\n') }}</p>
+        <a
+          class="preview-tcgplayer"
+          :href="tcgplayerUrl(cardStore.selectedCard.id)"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View on TCGplayer
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+            <polyline points="15 3 21 3 21 9"/>
+            <line x1="10" y1="14" x2="21" y2="3"/>
+          </svg>
+        </a>
         <div class="preview-qty">
           <button
             class="qty-btn"
@@ -520,6 +534,28 @@ const previewedCount = computed(() => {
   text-align: left;
   margin-top: 8px;
   width: 100%;
+}
+
+.preview-tcgplayer {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 10px 16px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-decoration: none;
+  align-self: center;
+}
+
+.preview-tcgplayer:active {
+  background: var(--bg-secondary);
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .preview-qty {
