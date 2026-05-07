@@ -563,6 +563,9 @@ const previewedCount = computed(() => {
   font-family: monospace;
   font-size: 0.78rem;
   cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;  /* no iOS long-press context menu */
 }
 
 .copy-id:active {

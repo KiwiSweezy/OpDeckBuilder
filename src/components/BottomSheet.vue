@@ -7,6 +7,8 @@ const props = defineProps<{
 }>()
 const emit = defineEmits<{ (e: 'close'): void }>()
 
+const sheetContentRef = ref<HTMLElement | null>(null)
+
 // Lock body scroll while sheet is open
 watch(() => props.open, (open) => {
   document.body.style.overflow = open ? 'hidden' : ''
@@ -18,9 +20,13 @@ function handleBackdropClick(e: MouseEvent) {
 }
 
 /* ===== Drag-to-dismiss =====
- * Track touch/mouse on the drag handle area. Translate the sheet down by
- * the drag delta. If user releases past DISMISS_THRESHOLD px, emit close;
- * otherwise spring back to 0. Only downward drags are honored. */
+ * Drag works from anywhere on the sheet, with smart conflict handling:
+ * - The handle area always allows drag-to-dismiss
+ * - The body of the sheet allows it ONLY when content is scrolled to the
+ *   top — otherwise native scroll takes over
+ * - Interactive elements (buttons, links, inputs) are excluded so they
+ *   still work normally
+ * - Dragging upward releases the gesture (native scroll resumes) */
 const DISMISS_THRESHOLD = 100
 const dragOffset = ref(0)
 const isDragging = ref(false)
@@ -30,7 +36,23 @@ function getY(e: TouchEvent | MouseEvent): number {
   return 'touches' in e ? e.touches[0]?.clientY ?? 0 : e.clientY
 }
 
-function onDragStart(e: TouchEvent | MouseEvent) {
+/** Drag from the body — only engage when scroll is at top */
+function onBodyDragStart(e: TouchEvent | MouseEvent) {
+  const target = e.target as HTMLElement
+  // Don't capture clicks on interactive elements
+  if (target.closest('button, a, input, textarea, select')) return
+  // Only engage if scrollable content is at the top
+  const content = sheetContentRef.value
+  if (content && content.scrollTop > 0) return
+  beginDrag(e)
+}
+
+/** Drag from the handle — always engage */
+function onHandleDragStart(e: TouchEvent | MouseEvent) {
+  beginDrag(e)
+}
+
+function beginDrag(e: TouchEvent | MouseEvent) {
   isDragging.value = true
   startY = getY(e)
   dragOffset.value = 0
@@ -43,8 +65,13 @@ function onDragStart(e: TouchEvent | MouseEvent) {
 function onDragMove(e: TouchEvent | MouseEvent) {
   if (!isDragging.value) return
   const delta = getY(e) - startY
-  // Only allow downward drag (positive delta)
-  dragOffset.value = Math.max(0, delta)
+  if (delta < 0) {
+    // User dragging UP from a downward drag — release back to 0 and
+    // let native scroll take over from here
+    dragOffset.value = 0
+    return
+  }
+  dragOffset.value = delta
   if ('touches' in e) e.preventDefault()
 }
 
@@ -73,12 +100,14 @@ function onDragEnd() {
           :class="{ dragging: isDragging }"
           :style="{ transform: dragOffset ? `translateY(${dragOffset}px)` : '' }"
           @click.stop
+          @touchstart.passive="onBodyDragStart"
+          @mousedown="onBodyDragStart"
         >
-          <!-- Drag-to-dismiss area: handle + (optional) header -->
+          <!-- Drag handle: always engages drag-to-dismiss -->
           <div
             class="sheet-drag-area"
-            @touchstart.passive="onDragStart"
-            @mousedown="onDragStart"
+            @touchstart.passive.stop="onHandleDragStart"
+            @mousedown.stop="onHandleDragStart"
           >
             <div class="sheet-handle"></div>
             <div v-if="title" class="sheet-header">
@@ -86,7 +115,7 @@ function onDragEnd() {
               <button class="sheet-close" @click.stop="emit('close')">×</button>
             </div>
           </div>
-          <div class="sheet-content">
+          <div ref="sheetContentRef" class="sheet-content">
             <slot />
           </div>
         </div>

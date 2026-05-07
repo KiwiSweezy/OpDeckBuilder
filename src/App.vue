@@ -487,6 +487,9 @@ const cardKeywords = computed(() => {
   font-family: monospace;
   font-size: 0.82rem;
   cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;  /* no iOS long-press context menu */
   transition: all 0.15s ease;
 }
 
