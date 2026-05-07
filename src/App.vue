@@ -12,8 +12,8 @@ import ProxyPage from './components/ProxyPage.vue'
 import AppTour from './components/AppTour.vue'
 import MobileLayout from './components/MobileLayout.vue'
 import { useBreakpoint } from './composables/useBreakpoint'
-import { tcgplayerUrl } from './utils/pricing'
 import { copyToClipboard } from './utils/clipboard'
+import { useDeckTotal } from './composables/useDeckTotal'
 
 const copiedId = ref('')
 function copyCardId(id: string) {
@@ -43,6 +43,9 @@ function openShare() {
 }
 
 const currentView = ref<'builder' | 'proxy'>('builder')
+
+/* Deck total for the auto-displaying market pill */
+const deckTotal = useDeckTotal()
 
 /* Resizable sidebar */
 const SIDEBAR_MAX = 500
@@ -159,19 +162,6 @@ const cardKeywords = computed(() => {
           <p v-if="cardStore.selectedCard.ability && cardStore.selectedCard.ability !== '-'" class="preview-ability">
             {{ cardStore.selectedCard.ability.replace(/<br>/g, '\n') }}
           </p>
-          <a
-            class="tcgplayer-link"
-            :href="tcgplayerUrl(cardStore.selectedCard.id)"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View on TCGplayer
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-              <polyline points="15 3 21 3 21 9"/>
-              <line x1="10" y1="14" x2="21" y2="3"/>
-            </svg>
-          </a>
         </div>
         <p v-else class="preview-placeholder">Hover a card to preview</p>
         <DeckStats />
@@ -207,6 +197,18 @@ const cardKeywords = computed(() => {
           <rect x="6" y="14" width="12" height="8"></rect>
         </svg>
         <span>Proxy</span>
+      </button>
+      <!-- Auto-displaying market pill: shows deck total. Click to toggle USD/CAD. -->
+      <button
+        class="market-pill"
+        :class="{ disabled: cardStore.deckSize === 0 }"
+        @click="cardStore.toggleCurrency"
+        :title="`Click to switch to ${cardStore.currency === 'USD' ? 'CAD' : 'USD'}`"
+      >
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 1v22M17 5H9.5a3.5 3.5 0 1 0 0 7h5a3.5 3.5 0 1 1 0 7H6"/>
+        </svg>
+        <span class="market-amount">{{ deckTotal.formatted.value }}</span>
       </button>
       <div class="row-resize-handle" @mousedown="onRowResizeStart"></div>
     </div>
@@ -356,9 +358,62 @@ const cardKeywords = computed(() => {
   display: block;
 }
 
-/* Proxy button sits directly below the Share button */
+/* Stacked floating buttons in top-right of the deck area */
 .proxy-fab {
   top: 56px;
+}
+
+/* Market pill: stacked as the third button below Share and Proxy */
+.market-pill {
+  position: absolute;
+  top: 98px;
+  right: 18px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 14px;
+  background: rgba(15, 15, 15, 0.85);
+  color: var(--text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow:
+    0 4px 14px rgba(0, 0, 0, 0.6),
+    0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: all 0.18s ease;
+}
+
+.market-pill:hover {
+  background: rgba(0, 0, 0, 0.95);
+  border-color: #4dd0b2;
+  transform: translateY(-1px);
+}
+
+.market-pill.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.market-pill svg {
+  display: block;
+  color: #4dd0b2;
+}
+
+.market-amount {
+  color: #4dd0b2;
+  font-variant-numeric: tabular-nums;
+}
+
+.market-currency {
+  color: var(--text-secondary);
+  font-size: 0.7rem;
+  font-weight: 500;
 }
 
 .row-resize-handle {
@@ -387,12 +442,17 @@ const cardKeywords = computed(() => {
   overflow-y: auto;
 }
 
-/* RIGHT-BOTTOM-RIGHT: card pool */
+/* RIGHT-BOTTOM-RIGHT: card pool.
+   `container-type: inline-size` lets the card grid respond to this
+   container's actual width (not the viewport), so resizing the sidebar
+   reflows the grid correctly. */
 .card-pool {
   grid-area: cards;
   background-color: var(--bg-primary);
   padding: 16px;
   overflow-y: auto;
+  container-type: inline-size;
+  container-name: cardpool;
 }
 
 /* Preview styles */
@@ -498,24 +558,4 @@ const cardKeywords = computed(() => {
   color: var(--text-primary);
 }
 
-.tcgplayer-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 12px;
-  padding: 7px 14px;
-  background: var(--bg-tertiary);
-  border: 1px solid var(--border-color);
-  border-radius: 6px;
-  color: var(--text-primary);
-  font-size: 0.85rem;
-  font-weight: 500;
-  text-decoration: none;
-  transition: all 0.15s ease;
-}
-
-.tcgplayer-link:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-}
 </style>

@@ -296,6 +296,7 @@ function confirmClear() {
   text-align: center;
 }
 
+
 .drawer-section {
   padding: 14px 16px;
   border-bottom: 1px solid var(--border-color);

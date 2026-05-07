@@ -1,8 +1,33 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { useCardStore } from '../stores/cardStore'
+import { getCardPriceUSD, getUsdToCadRate, formatPrice } from '../utils/pricing'
 
 const cardStore = useCardStore()
+
+/* Per-card price overlay support.
+   Single batch watcher fetches every visible card's price when the deck
+   changes; the cache in pricing.ts means repeat lookups are free. */
+const cardPrices = ref<Record<string, number | null>>({})
+const cadRate = ref(1.40)
+getUsdToCadRate().then(r => { cadRate.value = r })
+
+watch(() => cardStore.deck.map(c => c.id).join('|'), async (joined) => {
+  if (!joined) { cardPrices.value = {}; return }
+  const ids = Array.from(new Set(joined.split('|')))
+  const results = await Promise.all(
+    ids.map(id => getCardPriceUSD(id).then(p => [id, p] as const).catch(() => [id, null] as const))
+  )
+  const next: Record<string, number | null> = {}
+  for (const [id, p] of results) next[id] = p
+  cardPrices.value = next
+}, { immediate: true })
+
+function priceForCard(cardId: string): string | null {
+  const p = cardPrices.value[cardId]
+  if (typeof p !== 'number') return null
+  return formatPrice(p, cardStore.currency, cadRate.value)
+}
 
 const colorOrder = ['red', 'blue', 'green', 'purple', 'black', 'yellow']
 const typeOrder: Record<string, number> = { leader: 0, character: 1, event: 2, stage: 3 }
@@ -95,6 +120,7 @@ const nonLeaderGroups = computed(() => {
           title="Remove leader (shift+click to clear)"
           @click.stop="$event.shiftKey ? cardStore.removeAllFromDeck(leader.id) : cardStore.removeFromDeck(leader.id)"
         >×</button>
+        <span v-if="priceForCard(leader.id)" class="price-badge">{{ priceForCard(leader.id) }}</span>
         <span class="card-label">Leader</span>
       </div>
 
@@ -134,6 +160,11 @@ const nonLeaderGroups = computed(() => {
           />
         </div>
         <span class="card-count-badge">x{{ entry.count }}</span>
+        <span
+          v-if="priceForCard(entry.card.id)"
+          class="price-badge"
+          :style="{ bottom: `${4 - (entry.count - 1) * 18}px` }"
+        >{{ priceForCard(entry.card.id) }}</span>
       </div>
     </div>
   </div>
@@ -240,7 +271,7 @@ const nonLeaderGroups = computed(() => {
 .deck-cards {
   display: flex;
   flex-wrap: wrap;
-  gap: 60px 14px;
+  gap: 60px 14px;  /* extra row gap leaves room for the price tag below each card */
   align-items: flex-start;
 }
 
@@ -315,6 +346,28 @@ const nonLeaderGroups = computed(() => {
   border-radius: 3px;
   z-index: 10;
 }
+
+/* Per-card market price tag — bottom-right of the front card, sits over
+   the copyright/footer area so it doesn't cover any meaningful art or
+   ability text. */
+.price-badge {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  background: rgba(0, 0, 0, 0.85);
+  color: #4dd0b2;
+  font-size: 0.7rem;
+  font-weight: bold;
+  font-variant-numeric: tabular-nums;
+  padding: 1px 6px;
+  border-radius: 8px;
+  border: 1px solid rgba(77, 208, 178, 0.35);
+  z-index: 10;
+  pointer-events: none;
+  white-space: nowrap;
+  line-height: 1.3;
+}
+
 
 /* Remove button — sits in top-left corner of each stack.
    Visible on hover for mouse/trackpad users, always visible on touch. */

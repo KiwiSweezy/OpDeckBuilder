@@ -21,6 +21,43 @@ function cardSet(id: string): string {
   return dash === -1 ? id : id.slice(0, dash)
 }
 
+/** Lazily-built lowercase search index for fast text matching.
+ *  Maps card.id → "name id family ability" all lowercased and concatenated.
+ *  Built once on first access since allCards never changes after load. */
+const SEARCH_INDEX_CACHE = new Map<string, string>()
+function searchIndexFor(card: Card): string {
+  let cached = SEARCH_INDEX_CACHE.get(card.id)
+  if (cached === undefined) {
+    cached = `${card.name} ${card.id} ${card.family} ${card.ability}`.toLowerCase()
+    SEARCH_INDEX_CACHE.set(card.id, cached)
+  }
+  return cached
+}
+
+/** Lazily-built lowercase ability cache for keyword matching */
+const ABILITY_LOWER_CACHE = new Map<string, string>()
+function abilityLowerFor(card: Card): string {
+  let cached = ABILITY_LOWER_CACHE.get(card.id)
+  if (cached === undefined) {
+    cached = card.ability.toLowerCase()
+    ABILITY_LOWER_CACHE.set(card.id, cached)
+  }
+  return cached
+}
+
+/** Cached split of card.color into its components ("red/blue" → ["red","blue"]).
+ *  Color filter runs this for every card every time — caching saves a string
+ *  allocation per card per filter change. */
+const COLORS_SPLIT_CACHE = new Map<string, string[]>()
+function colorsFor(card: Card): string[] {
+  let cached = COLORS_SPLIT_CACHE.get(card.id)
+  if (cached === undefined) {
+    cached = card.color.split('/')
+    COLORS_SPLIT_CACHE.set(card.id, cached)
+  }
+  return cached
+}
+
 /** Convert color string like "red/green" to abbreviation like "RG" */
 const COLOR_ABBREVS: Record<string, string> = {
   red: 'R', blue: 'U', green: 'G', purple: 'P', black: 'B', yellow: 'Y',
@@ -58,6 +95,7 @@ export const useCardStore = defineStore('cards', {
     selectedKeywords: [] as string[],    // 'rush', 'blocker', etc.
     searchChips: [] as string[],          // committed search filters (AND-combined)
     hideRotated: false,                   // hide Block 1 cards (OP01-OP04, ST01-ST09)
+    currency: 'USD' as 'USD' | 'CAD',    // display currency for prices
     costSortDirection: '' as '' | 'asc' | 'desc',  // '' = no sort, 'asc' = low→high, 'desc' = high→low
     selectedCard: null as Card | null,  // card shown in preview panel
     deck: [] as Card[],                 // cards in the user's deck (duplicates = multiple copies)
@@ -67,89 +105,88 @@ export const useCardStore = defineStore('cards', {
 
   getters: {
     /**
-     * Applies all active filters to the card pool.
-     * Filters stack: color → type → rarity → search/counter → sort.
+     * Applies all active filters in a SINGLE pass over allCards.
+     * Combining filters means one array allocation instead of 8, and we
+     * short-circuit as soon as any condition fails for a card.
      */
     filteredCards(state): Card[] {
-      let cards = state.allCards
-
-      // Color filter: every color on a card must be within the selected colors.
-      // e.g. selecting red+blue shows red, blue, and red/blue cards — but NOT red/purple.
-      if (state.selectedColors.length > 0) {
-        cards = cards.filter(card => {
-          const cardColors = card.color.split('/')
-          return cardColors.every(c => state.selectedColors.includes(c))
-        })
-      }
-
-      // Type filter
-      if (state.selectedTypes.length > 0) {
-        cards = cards.filter(card => state.selectedTypes.includes(card.type))
-      }
-
-      // Rarity filter
-      if (state.selectedRarities.length > 0) {
-        cards = cards.filter(card => state.selectedRarities.includes(card.rarity))
-      }
-
-      // Counter filter
-      if (state.selectedCounters.length > 0) {
-        cards = cards.filter(card => state.selectedCounters.includes(card.counter))
-      }
-
-      // Hide rotated (Block 1) cards
-      if (state.hideRotated) {
-        cards = cards.filter(card => !ROTATED_SETS.has(cardSet(card.id)))
-      }
-
-      // Keyword filter (ability text must match ALL selected keywords)
-      if (state.selectedKeywords.length > 0) {
-        const keywordPatterns: Record<string, RegExp> = {
-          searcher: /look at.*from the top of your deck/i,
-          // Removes opponent's characters: KO effects or bouncing to hand/deck
-          removal: /k\.?o\.? (up to|all|one|1)\b|return up to \d.{0,80}of your opponent|return.{0,100}opponent.{0,100}(hand|deck)/i,
-          // Protective effects: cannot be removed, or "would be KO'd ... instead"
-          'anti-removal': /cannot be removed from the field|would (be )?(k\.?o.?ed?|leave|removed).{0,120}instead/i,
-        }
-        cards = cards.filter(card => {
-          const ability = card.ability.toLowerCase()
-          return state.selectedKeywords.every(kw => {
-            const pattern = keywordPatterns[kw]
-            return pattern ? pattern.test(card.ability) : ability.includes(kw)
-          })
-        })
-      }
-
-      // Search: every committed chip must match, plus the in-progress query.
-      // Each term ORs across name/id/family/ability; chips AND together.
-      const matchTerm = (card: Card, term: string) => {
-        const t = term.toLowerCase()
-        return (
-          card.name.toLowerCase().includes(t) ||
-          card.id.toLowerCase().includes(t) ||
-          card.family.toLowerCase().includes(t) ||
-          card.ability.toLowerCase().includes(t)
-        )
-      }
+      // Snapshot all filter state once (avoids repeated proxy lookups in hot loop)
+      const colors = state.selectedColors
+      const types = state.selectedTypes
+      const rarities = state.selectedRarities
+      const counters = state.selectedCounters
+      const keywords = state.selectedKeywords
+      const hideRotated = state.hideRotated
       const liveQuery = state.searchQuery.trim()
-      const allTerms = [...state.searchChips, ...(liveQuery ? [liveQuery] : [])]
-      if (allTerms.length > 0) {
-        cards = cards.filter(card => allTerms.every(term => matchTerm(card, term)))
-      }
+      const chips = state.searchChips
 
-      // Optional sort by cost
-      if (state.costSortDirection === 'asc') {
-        cards = [...cards].sort((a, b) => a.cost - b.cost)
-      } else if (state.costSortDirection === 'desc') {
-        cards = [...cards].sort((a, b) => b.cost - a.cost)
-      }
+      const hasColors = colors.length > 0
+      const hasTypes = types.length > 0
+      const hasRarities = rarities.length > 0
+      const hasCounters = counters.length > 0
+      const hasKeywords = keywords.length > 0
+      const hasSearch = chips.length > 0 || liveQuery.length > 0
+      const sortDir = state.costSortDirection
 
+      const lowerTerms = hasSearch
+        ? [...chips, ...(liveQuery ? [liveQuery] : [])].map(t => t.toLowerCase())
+        : null
+
+      const keywordPatterns: Record<string, RegExp> = hasKeywords ? {
+        searcher: /look at.*from the top of your deck/i,
+        removal: /k\.?o\.? (up to|all|one|1)\b|return up to \d.{0,80}of your opponent|return.{0,100}opponent.{0,100}(hand|deck)/i,
+        'anti-removal': /cannot be removed from the field|would (be )?(k\.?o.?ed?|leave|removed).{0,120}instead/i,
+      } : {}
+
+      const cards = state.allCards.filter(card => {
+        // Color
+        if (hasColors) {
+          const cardColors = colorsFor(card)
+          for (const c of cardColors) if (!colors.includes(c)) return false
+        }
+        // Type
+        if (hasTypes && !types.includes(card.type)) return false
+        // Rarity
+        if (hasRarities && !rarities.includes(card.rarity)) return false
+        // Counter
+        if (hasCounters && !counters.includes(card.counter)) return false
+        // Hide rotated (Block 1)
+        if (hideRotated && ROTATED_SETS.has(cardSet(card.id))) return false
+        // Keywords
+        if (hasKeywords) {
+          const ability = abilityLowerFor(card)
+          for (const kw of keywords) {
+            const pattern = keywordPatterns[kw]
+            if (pattern ? !pattern.test(card.ability) : !ability.includes(kw)) return false
+          }
+        }
+        // Search chips + live query
+        if (lowerTerms) {
+          const haystack = searchIndexFor(card)
+          for (const t of lowerTerms) if (!haystack.includes(t)) return false
+        }
+        return true
+      })
+
+      // Sort (only allocates when sorting is active)
+      if (sortDir === 'asc') return cards.sort((a, b) => a.cost - b.cost)
+      if (sortDir === 'desc') return cards.sort((a, b) => b.cost - a.cost)
       return cards
     },
 
     /** Total cards currently in the deck */
     deckSize(state): number {
       return state.deck.length
+    },
+
+    /** O(1) lookup map: cardId → number of copies in deck.
+     *  Lets CardThumbnails check their count without filtering the whole deck. */
+    deckCounts(state): Record<string, number> {
+      const counts: Record<string, number> = {}
+      for (const card of state.deck) {
+        counts[card.id] = (counts[card.id] ?? 0) + 1
+      }
+      return counts
     },
 
     /** Deck breakdown stats for the stats panel */
@@ -256,6 +293,12 @@ export const useCardStore = defineStore('cards', {
     /** Toggle the Block 1 / rotated cards filter on/off */
     toggleHideRotated() {
       this.hideRotated = !this.hideRotated
+    },
+
+    /** Switch display currency (USD ↔ CAD). Persists to localStorage. */
+    toggleCurrency() {
+      this.currency = this.currency === 'USD' ? 'CAD' : 'USD'
+      try { localStorage.setItem('op-currency', this.currency) } catch {}
     },
 
     /** Commit the current search query as a chip and clear the input.
@@ -470,6 +513,13 @@ export const useCardStore = defineStore('cards', {
           this.loadDeck(lastName)
         }
       }
+      // Restore currency preference
+      try {
+        const savedCurrency = localStorage.getItem('op-currency')
+        if (savedCurrency === 'USD' || savedCurrency === 'CAD') {
+          this.currency = savedCurrency
+        }
+      } catch {}
     },
 
     /** Delete a saved deck from localStorage */

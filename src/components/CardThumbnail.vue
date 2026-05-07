@@ -13,10 +13,8 @@ const emit = defineEmits<{
 const cardStore = useCardStore()
 const { isMobile } = useBreakpoint()
 
-/** How many copies of this card are in the current deck */
-const countInDeck = computed(() =>
-  cardStore.deck.filter(c => c.id === props.card.id).length
-)
+/** How many copies of this card are in the current deck (O(1) lookup) */
+const countInDeck = computed(() => cardStore.deckCounts[props.card.id] ?? 0)
 
 /** Primary color for the border accent (first half of "red/blue" → "red") */
 const primaryColor = computed(() => props.card.color.split('/')[0] ?? '')

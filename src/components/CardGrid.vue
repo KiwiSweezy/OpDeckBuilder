@@ -80,20 +80,31 @@ onBeforeUnmount(() => {
     - If there's extra space, columns stretch equally (1fr)
   This makes the grid fully responsive with zero media queries.
 */
-/* auto-fit (not auto-fill) collapses empty tracks so cards stretch
-   to fill the row when only a few fit — better on narrow screens. */
+/* Catalog-grid pattern (used by Amazon/Etsy/Shopify): fixed-width tracks
+   that wrap. `auto-fill` with a fixed track size means every card is the
+   same size regardless of count — 1 card, 3 cards, or 300 cards all render
+   at the same width and pack left-to-right. The number of columns adapts
+   to the viewport automatically; no media queries needed for desktop. */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-template-columns: repeat(auto-fill, 150px);
   gap: 10px;
+  justify-content: start;
 }
 
-/* Phone screens: tile cards with name + qty controls need more room.
-   ~115px min keeps 3 columns at 375px while leaving room for the controls. */
+/* Phones are narrow enough that fixed-width cards waste too much space,
+   so here we let columns stretch (1fr) to use the full row width. The
+   per-tile max-width keeps an individual card from growing huge on a
+   wider phone/tablet. */
 @media (max-width: 480px) {
   .card-grid {
     grid-template-columns: repeat(auto-fit, minmax(115px, 1fr));
     gap: 6px;
+  }
+  .card-grid > * {
+    max-width: 170px;
+    width: 100%;
+    justify-self: center;
   }
 }
 
