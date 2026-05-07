@@ -9,6 +9,8 @@ import MobileDeckList from './MobileDeckList.vue'
 import MobileMenu from './MobileMenu.vue'
 import BottomSheet from './BottomSheet.vue'
 import { copyToClipboard } from '../utils/clipboard'
+import { useCardPrice } from '../composables/useCardPrice'
+import { formatPrice, getUsdToCadRate } from '../utils/pricing'
 
 const copiedId = ref('')
 function copyCardId(id: string) {
@@ -57,6 +59,24 @@ const previewedCount = computed(() => {
   const card = cardStore.selectedCard
   if (!card) return 0
   return cardStore.deck.filter(c => c.id === card.id).length
+})
+
+/* Market price for the previewed card, only relevant once at least one
+   copy is in the deck. Mirrors the desktop market-pill colour (#4dd0b2). */
+const previewedCardId = computed(() => cardStore.selectedCard?.id ?? null)
+const { price: previewPrice } = useCardPrice(previewedCardId)
+const cadRate = ref(1.40)
+getUsdToCadRate().then(r => { cadRate.value = r })
+
+const previewPriceLine = computed(() => {
+  if (previewedCount.value === 0) return null
+  const usd = previewPrice.value
+  if (typeof usd !== 'number') return null
+  const unit = formatPrice(usd, cardStore.currency, cadRate.value)
+  const total = formatPrice(usd * previewedCount.value, cardStore.currency, cadRate.value)
+  return previewedCount.value === 1
+    ? unit
+    : `${unit} × ${previewedCount.value} = ${total}`
 })
 
 
@@ -221,6 +241,17 @@ const previewedCount = computed(() => {
           v-if="cardStore.selectedCard.ability && cardStore.selectedCard.ability !== '-'"
           class="preview-ability"
         >{{ cardStore.selectedCard.ability.replace(/<br>/g, '\n') }}</p>
+        <button
+          v-if="previewPriceLine"
+          class="preview-price-pill"
+          @click="cardStore.toggleCurrency"
+          :title="`Tap to switch to ${cardStore.currency === 'USD' ? 'CAD' : 'USD'}`"
+        >
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 1v22M17 5H9.5a3.5 3.5 0 1 0 0 7h5a3.5 3.5 0 1 1 0 7H6"/>
+          </svg>
+          <span>{{ previewPriceLine }}</span>
+        </button>
         <div class="preview-qty">
           <button
             class="qty-btn"
@@ -560,6 +591,31 @@ const previewedCount = computed(() => {
 .copy-id:active {
   border-color: var(--accent);
   color: var(--accent);
+}
+
+.preview-price-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 5px 12px;
+  background: rgba(15, 15, 15, 0.85);
+  border: 1px solid rgba(77, 208, 178, 0.35);
+  border-radius: 14px;
+  color: #4dd0b2;
+  font-size: 0.78rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+  align-self: center;
+}
+
+.preview-price-pill:active {
+  background: rgba(0, 0, 0, 0.95);
+}
+
+.preview-price-pill svg {
+  display: block;
 }
 
 .preview-qty {
