@@ -2,6 +2,9 @@
 import { computed, ref, nextTick } from 'vue'
 import { toPng } from 'html-to-image'
 import { useCardStore } from '../stores/cardStore'
+import { useBreakpoint } from '../composables/useBreakpoint'
+
+const { isMobile } = useBreakpoint()
 
 const props = defineProps<{ open: boolean }>()
 const emit = defineEmits<{ (e: 'close'): void }>()
@@ -106,8 +109,38 @@ async function handleDownload() {
     status.value = 'Failed to generate image'
     return
   }
+  const filename = `${deckTitle.value.replace(/[^a-z0-9]+/gi, '-')}.png`
+
+  // On mobile (esp. iOS), use Web Share API so the OS share sheet opens.
+  // From there the user can pick "Save Image" → Photos / Camera Roll.
+  // Fallback to direct download on desktop or browsers without share support.
+  if (isMobile.value && navigator.share) {
+    try {
+      const blob = await (await fetch(dataUrl)).blob()
+      const file = new File([blob], filename, { type: 'image/png' })
+      if (navigator.canShare && navigator.canShare({ files: [file] })) {
+        await navigator.share({
+          files: [file],
+          title: deckTitle.value,
+          text: `${deckTitle.value} — built with OP Deck Builder`,
+        })
+        status.value = 'Shared!'
+        setTimeout(() => { status.value = '' }, 2000)
+        return
+      }
+    } catch (err: unknown) {
+      // User-canceled the share sheet — that's fine, just clear status
+      if ((err as Error)?.name === 'AbortError') {
+        status.value = ''
+        return
+      }
+      // Real failure → fall through to download fallback
+    }
+  }
+
+  // Fallback: classic download anchor
   const link = document.createElement('a')
-  link.download = `${deckTitle.value.replace(/[^a-z0-9]+/gi, '-')}.png`
+  link.download = filename
   link.href = dataUrl
   link.click()
   status.value = 'Downloaded!'
@@ -140,7 +173,91 @@ function handleBackdropClick(e: MouseEvent) {
 
 <template>
   <Teleport to="body">
-    <div v-if="open" class="modal-backdrop" @click="handleBackdropClick">
+    <!-- Mobile: compact action dialog. Sheet still rendered off-screen so PNG capture works. -->
+    <div v-if="open && isMobile" class="m-backdrop" @click="handleBackdropClick">
+      <div class="m-dialog">
+        <div class="m-dialog-header">
+          <h3>Share Deck</h3>
+          <button class="m-close" @click="emit('close')">×</button>
+        </div>
+        <p class="m-dialog-sub">Generate an image of "{{ deckTitle }}"</p>
+        <div v-if="status" class="m-status">{{ status }}</div>
+        <div class="m-actions">
+          <button class="m-action" @click="handleCopy" :disabled="isExporting">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2"/>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+            </svg>
+            <span>Copy to Clipboard</span>
+          </button>
+          <button class="m-action primary" @click="handleDownload" :disabled="isExporting">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/>
+              <polyline points="16 6 12 2 8 6"/>
+              <line x1="12" y1="2" x2="12" y2="15"/>
+            </svg>
+            <span>Save / Share Image</span>
+          </button>
+        </div>
+
+        <!-- Hidden sheet kept in DOM for html-to-image to capture -->
+        <div class="hidden-sheet">
+          <div ref="sheetRef" class="share-sheet">
+            <div class="sheet-header">
+              <div class="leader-thumb">
+                <img v-if="leader" :src="leader.images.small" :alt="leader.name" />
+              </div>
+              <h1 class="sheet-title">{{ deckTitle }}</h1>
+              <div class="sheet-brand">
+                <img src="/logo.png" alt="logo" />
+              </div>
+            </div>
+            <div class="sheet-cards">
+              <div v-for="entry in nonLeaderGroups" :key="entry.card.id" class="sheet-card">
+                <div class="card-img-wrap">
+                  <img :src="entry.card.images.small" :alt="entry.card.name" />
+                  <span class="count-badge">×{{ entry.count }}</span>
+                </div>
+                <div class="card-id">{{ entry.card.id }}</div>
+              </div>
+            </div>
+            <div class="sheet-stats">
+              <div class="stat-block">
+                <div class="stat-label cost">Cost</div>
+                <div class="cost-bars">
+                  <div v-for="entry in costCurve" :key="entry.cost" class="cost-bar-col">
+                    <div class="cost-bar" :style="{ height: `${(entry.count / maxCost) * 60}px` }">
+                      <span class="cost-bar-num">{{ entry.count }}</span>
+                    </div>
+                    <div class="cost-bar-cost">{{ entry.cost }}</div>
+                  </div>
+                </div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-label type">Type</div>
+                <div class="stat-row">
+                  <div class="stat-cell"><div class="stat-num">{{ typeStats.chars }}</div><div class="stat-sub">CHAR</div></div>
+                  <div class="stat-cell"><div class="stat-num">{{ typeStats.events }}</div><div class="stat-sub">EVENT</div></div>
+                  <div v-if="typeStats.stages > 0" class="stat-cell"><div class="stat-num">{{ typeStats.stages }}</div><div class="stat-sub">STAGE</div></div>
+                </div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-label counter">Counter</div>
+                <div class="stat-row">
+                  <div class="stat-cell"><div class="stat-num">{{ counterStats.c0 }}</div><div class="stat-sub">0</div></div>
+                  <div class="stat-cell"><div class="stat-num">{{ counterStats.c1k }}</div><div class="stat-sub">1000</div></div>
+                  <div class="stat-cell"><div class="stat-num">{{ counterStats.c2k }}</div><div class="stat-sub">2000</div></div>
+                </div>
+              </div>
+            </div>
+            <div class="sheet-footer">created with OP Deck Builder</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Desktop: full preview modal -->
+    <div v-else-if="open" class="modal-backdrop" @click="handleBackdropClick">
       <div class="modal-window">
         <div class="modal-header">
           <h2>Share Deck</h2>
@@ -262,6 +379,114 @@ function handleBackdropClick(e: MouseEvent) {
   align-items: center;
   justify-content: center;
   padding: 20px;
+}
+
+/* ===== MOBILE COMPACT DIALOG ===== */
+.m-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.m-dialog {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  width: 100%;
+  max-width: 360px;
+  padding: 18px 18px 16px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.6);
+}
+
+.m-dialog-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.m-dialog-header h3 {
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.m-close {
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  line-height: 1;
+  padding: 0;
+  cursor: pointer;
+}
+
+.m-dialog-sub {
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  margin: 4px 0 12px;
+}
+
+.m-status {
+  text-align: center;
+  padding: 8px;
+  margin-bottom: 10px;
+  background: var(--bg-tertiary);
+  border-radius: 6px;
+  color: var(--accent);
+  font-size: 0.85rem;
+}
+
+.m-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.m-action {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+}
+
+.m-action:active {
+  background: var(--bg-secondary);
+}
+
+.m-action.primary {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+.m-action:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Hide the share sheet from view but keep it in DOM for capture */
+.hidden-sheet {
+  position: fixed;
+  top: 0;
+  left: -9999px;
+  pointer-events: none;
 }
 
 .modal-window {

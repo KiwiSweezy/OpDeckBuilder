@@ -80,10 +80,21 @@ onBeforeUnmount(() => {
     - If there's extra space, columns stretch equally (1fr)
   This makes the grid fully responsive with zero media queries.
 */
+/* auto-fit (not auto-fill) collapses empty tracks so cards stretch
+   to fill the row when only a few fit — better on narrow screens. */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 10px;
+}
+
+/* Phone screens: tile cards with name + qty controls need more room.
+   ~115px min keeps 3 columns at 375px while leaving room for the controls. */
+@media (max-width: 480px) {
+  .card-grid {
+    grid-template-columns: repeat(auto-fit, minmax(115px, 1fr));
+    gap: 6px;
+  }
 }
 
 .no-filters {

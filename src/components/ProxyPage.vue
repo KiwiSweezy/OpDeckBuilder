@@ -13,6 +13,7 @@ const searchQuery = ref('')
 const showDeckDropdown = ref(false)
 const showHelp = ref(true)
 const paperSize = ref<'letter' | '4x6'>('letter')
+const showSidebar = ref(false)  // mobile-only: toggle the slide-in sidebar drawer
 
 /** Cards per sheet depends on paper size */
 const cardsPerPage = computed(() => paperSize.value === 'letter' ? 9 : 2)
@@ -136,8 +137,11 @@ function handlePrint() {
 
 <template>
   <div class="proxy-page">
-    <!-- LEFT SIDEBAR -->
-    <aside class="proxy-sidebar">
+    <!-- Mobile-only backdrop when drawer is open -->
+    <div v-if="showSidebar" class="sidebar-backdrop" @click="showSidebar = false"></div>
+
+    <!-- LEFT SIDEBAR (becomes a slide-in drawer on mobile) -->
+    <aside class="proxy-sidebar" :class="{ 'is-open': showSidebar }">
       <div class="sidebar-header">
         <button class="back-btn" @click="emit('back')">← Back</button>
         <h2 class="sidebar-title">Proxy Builder</h2>
@@ -254,6 +258,13 @@ function handlePrint() {
     <!-- MAIN AREA: card grid (screen) / inline-block flow (print) -->
     <main class="proxy-main">
       <div class="proxy-toolbar dont-print">
+        <button class="mobile-menu-toggle" @click="showSidebar = true" aria-label="Open proxy menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
         <span class="proxy-count">{{ totalProxies }} proxies · ~{{ Math.max(1, Math.ceil(totalProxies / cardsPerPage)) }} page(s)</span>
         <div class="toolbar-right">
           <label class="paper-select">
@@ -292,6 +303,25 @@ function handlePrint() {
   grid-template-columns: 420px 1fr;
   height: 100vh;
   background: var(--bg-primary);
+  position: relative;
+}
+
+.mobile-menu-toggle {
+  display: none;  /* hidden on desktop */
+  width: 36px;
+  height: 36px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-primary);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.sidebar-backdrop {
+  display: none;  /* hidden on desktop */
 }
 
 /* ===== SIDEBAR ===== */
@@ -895,6 +925,55 @@ function handlePrint() {
      Page is set to 6in × 4in landscape via dynamic @page rule. */
   .proxies.paper-4x6 .proxies-card {
     margin: 0.1cm;
+  }
+}
+
+/* ===== MOBILE STYLES ===== */
+@media (max-width: 767px) {
+  .proxy-page {
+    grid-template-columns: 1fr;  /* sidebar overlays content instead of taking a column */
+  }
+
+  .proxy-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 86%;
+    max-width: 380px;
+    z-index: 1300;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+    box-shadow: 4px 0 16px rgba(0, 0, 0, 0.5);
+  }
+
+  .proxy-sidebar.is-open {
+    transform: translateX(0);
+  }
+
+  .sidebar-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1299;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .proxy-toolbar {
+    gap: 8px;
+  }
+
+  .proxies-wrap {
+    padding: 12px;
+  }
+
+  .proxies {
+    grid-template-columns: repeat(2, 1fr);  /* 2 cards across on phone */
+    max-width: 100%;
   }
 }
 </style>

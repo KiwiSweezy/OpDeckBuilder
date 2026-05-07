@@ -10,6 +10,10 @@ import DeckStats from './components/DeckStats.vue'
 import DeckShareModal from './components/DeckShareModal.vue'
 import ProxyPage from './components/ProxyPage.vue'
 import AppTour from './components/AppTour.vue'
+import MobileLayout from './components/MobileLayout.vue'
+import { useBreakpoint } from './composables/useBreakpoint'
+
+const { isMobile } = useBreakpoint()
 
 
 const cardStore = useCardStore()
@@ -99,6 +103,11 @@ const cardKeywords = computed(() => {
 
 <template>
   <ProxyPage v-if="currentView === 'proxy'" @back="currentView = 'builder'" />
+  <MobileLayout
+    v-else-if="isMobile"
+    @navigate="currentView = $event"
+    @share="openShare"
+  />
   <div v-else class="app-layout" :class="{ 'is-resizing': isResizing, 'is-resizing-row': isResizingRow }" :style="gridStyle">
     <!-- LEFT: sidebar with controls + card preview -->
     <div class="sidebar">
@@ -181,8 +190,9 @@ const cardKeywords = computed(() => {
       <CardGrid />
     </div>
     <AppTour ref="tourRef" />
-    <DeckShareModal :open="showShareModal" @close="showShareModal = false" />
   </div>
+  <!-- Share modal: outside the layout so both mobile + desktop can open it -->
+  <DeckShareModal :open="showShareModal" @close="showShareModal = false" />
 </template>
 
 <style scoped>

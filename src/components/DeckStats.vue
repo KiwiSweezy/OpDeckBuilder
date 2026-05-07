@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref, watch, onMounted } from 'vue'
+import { computed, ref, watch, onMounted, onBeforeUnmount } from 'vue'
 import * as d3 from 'd3'
 import { useCardStore } from '../stores/cardStore'
 
@@ -122,7 +122,25 @@ function renderChart() {
   counts.exit().remove()
 }
 
-onMounted(() => renderChart())
+/* Re-render the chart whenever:
+ *   - the data changes (deck edited)
+ *   - the container resizes (e.g. mobile tab switched from hidden→visible,
+ *     or window/orientation change). Width starts at 0 when hidden via
+ *     display:none, so we MUST re-render once the container has real width. */
+let resizeObserver: ResizeObserver | null = null
+
+onMounted(() => {
+  renderChart()
+  if (chartRef.value) {
+    resizeObserver = new ResizeObserver(() => renderChart())
+    resizeObserver.observe(chartRef.value)
+  }
+})
+
+onBeforeUnmount(() => {
+  resizeObserver?.disconnect()
+})
+
 watch(costEntries, () => renderChart(), { deep: true, flush: 'post' })
 </script>
 
