@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref, watch, onMounted, onBeforeUnmount } from 'vue'
+import { computed, ref, watch, onBeforeUnmount } from 'vue'
 import * as d3 from 'd3'
 import { useCardStore } from '../stores/cardStore'
 
@@ -126,16 +126,22 @@ function renderChart() {
  *   - the data changes (deck edited)
  *   - the container resizes (e.g. mobile tab switched from hidden→visible,
  *     or window/orientation change). Width starts at 0 when hidden via
- *     display:none, so we MUST re-render once the container has real width. */
+ *     display:none, so we MUST re-render once the container has real width.
+ *
+ * The chart container lives inside a v-if that's only true when the deck
+ * has cards. So chartRef may be null on mount and become available later.
+ * Watching chartRef lets us (re)attach the observer lazily — this is what
+ * makes the mobile Stats tab work when the deck starts empty. */
 let resizeObserver: ResizeObserver | null = null
 
-onMounted(() => {
+watch(chartRef, (el) => {
+  resizeObserver?.disconnect()
+  resizeObserver = null
+  if (!el) return
+  resizeObserver = new ResizeObserver(() => renderChart())
+  resizeObserver.observe(el)
   renderChart()
-  if (chartRef.value) {
-    resizeObserver = new ResizeObserver(() => renderChart())
-    resizeObserver.observe(chartRef.value)
-  }
-})
+}, { immediate: true, flush: 'post' })
 
 onBeforeUnmount(() => {
   resizeObserver?.disconnect()
