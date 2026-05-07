@@ -13,6 +13,17 @@ import AppTour from './components/AppTour.vue'
 import MobileLayout from './components/MobileLayout.vue'
 import { useBreakpoint } from './composables/useBreakpoint'
 import { tcgplayerUrl } from './utils/pricing'
+import { copyToClipboard } from './utils/clipboard'
+
+const copiedId = ref('')
+function copyCardId(id: string) {
+  if (copyToClipboard(id)) {
+    copiedId.value = id
+    setTimeout(() => {
+      if (copiedId.value === id) copiedId.value = ''
+    }, 1500)
+  }
+}
 
 const { isMobile } = useBreakpoint()
 
@@ -126,7 +137,14 @@ const cardKeywords = computed(() => {
           />
           <h2 class="preview-name">{{ cardStore.selectedCard.name }}</h2>
           <p class="preview-details">
-            {{ cardStore.selectedCard.id }} ·
+            <button
+              class="copy-id"
+              :title="`Copy ${cardStore.selectedCard.id} to clipboard`"
+              @click="copyCardId(cardStore.selectedCard.id)"
+            >
+              {{ copiedId === cardStore.selectedCard.id ? 'Copied!' : cardStore.selectedCard.id }}
+            </button>
+            ·
             Cost {{ cardStore.selectedCard.cost }} ·
             Power {{ cardStore.selectedCard.power }} ·
             {{ cardStore.selectedCard.attribute }}
@@ -457,6 +475,24 @@ const cardKeywords = computed(() => {
   margin-top: 8px;
   line-height: 1.4;
   white-space: pre-line;
+}
+
+.copy-id {
+  display: inline-block;
+  padding: 1px 6px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  color: inherit;
+  font-family: monospace;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.copy-id:hover {
+  border-color: var(--accent);
+  color: var(--text-primary);
 }
 
 .tcgplayer-link {

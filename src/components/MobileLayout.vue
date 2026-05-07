@@ -9,6 +9,17 @@ import MobileDeckList from './MobileDeckList.vue'
 import MobileMenu from './MobileMenu.vue'
 import BottomSheet from './BottomSheet.vue'
 import { tcgplayerUrl } from '../utils/pricing'
+import { copyToClipboard } from '../utils/clipboard'
+
+const copiedId = ref('')
+function copyCardId(id: string) {
+  if (copyToClipboard(id)) {
+    copiedId.value = id
+    setTimeout(() => {
+      if (copiedId.value === id) copiedId.value = ''
+    }, 1500)
+  }
+}
 
 const emit = defineEmits<{
   (e: 'navigate', view: 'proxy'): void
@@ -188,7 +199,13 @@ const previewedCount = computed(() => {
         />
         <h2 class="preview-name">{{ cardStore.selectedCard.name }}</h2>
         <p class="preview-meta">
-          {{ cardStore.selectedCard.id }} · Cost {{ cardStore.selectedCard.cost }} ·
+          <button
+            class="copy-id"
+            @click="copyCardId(cardStore.selectedCard.id)"
+          >
+            {{ copiedId === cardStore.selectedCard.id ? 'Copied!' : cardStore.selectedCard.id }}
+          </button>
+          · Cost {{ cardStore.selectedCard.cost }} ·
           Power {{ cardStore.selectedCard.power }} · {{ cardStore.selectedCard.attribute }}
         </p>
         <p class="preview-meta">
@@ -534,6 +551,23 @@ const previewedCount = computed(() => {
   text-align: left;
   margin-top: 8px;
   width: 100%;
+}
+
+.copy-id {
+  display: inline-block;
+  padding: 1px 6px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  color: inherit;
+  font-family: monospace;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+
+.copy-id:active {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .preview-tcgplayer {
