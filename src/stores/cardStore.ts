@@ -95,7 +95,8 @@ export const useCardStore = defineStore('cards', {
     selectedKeywords: [] as string[],    // 'rush', 'blocker', etc.
     searchChips: [] as string[],          // committed search filters (AND-combined)
     hideRotated: false,                   // hide Block 1 cards (OP01-OP04, ST01-ST09)
-    currency: 'USD' as 'USD' | 'CAD',    // display currency for prices
+    currency: 'USD' as 'USD' | 'CAD' | 'GBP',  // display currency for prices
+    deckCardScale: 1.0,                  // 0.6–1.4 multiplier for desktop deck card sizes
     costSortDirection: '' as '' | 'asc' | 'desc',  // '' = no sort, 'asc' = low→high, 'desc' = high→low
     selectedCard: null as Card | null,  // card shown in preview panel
     deck: [] as Card[],                 // cards in the user's deck (duplicates = multiple copies)
@@ -295,10 +296,18 @@ export const useCardStore = defineStore('cards', {
       this.hideRotated = !this.hideRotated
     },
 
-    /** Switch display currency (USD ↔ CAD). Persists to localStorage. */
+    /** Cycle display currency: USD → CAD → GBP → USD. Persists to localStorage. */
     toggleCurrency() {
-      this.currency = this.currency === 'USD' ? 'CAD' : 'USD'
+      const next: Record<string, 'USD' | 'CAD' | 'GBP'> = { USD: 'CAD', CAD: 'GBP', GBP: 'USD' }
+      this.currency = next[this.currency] ?? 'USD'
       try { localStorage.setItem('op-currency', this.currency) } catch {}
+    },
+
+    /** Set the desktop deck card scale (clamped to 0.6–1.4). Persists. */
+    setDeckCardScale(scale: number) {
+      const clamped = Math.max(0.6, Math.min(1.4, Math.round(scale * 10) / 10))
+      this.deckCardScale = clamped
+      try { localStorage.setItem('op-deck-card-scale', String(clamped)) } catch {}
     },
 
     /** Commit the current search query as a chip and clear the input.
@@ -516,8 +525,15 @@ export const useCardStore = defineStore('cards', {
       // Restore currency preference
       try {
         const savedCurrency = localStorage.getItem('op-currency')
-        if (savedCurrency === 'USD' || savedCurrency === 'CAD') {
+        if (savedCurrency === 'USD' || savedCurrency === 'CAD' || savedCurrency === 'GBP') {
           this.currency = savedCurrency
+        }
+      } catch {}
+      // Restore deck card scale preference
+      try {
+        const savedScale = parseFloat(localStorage.getItem('op-deck-card-scale') ?? '')
+        if (!Number.isNaN(savedScale)) {
+          this.deckCardScale = Math.max(0.6, Math.min(1.4, savedScale))
         }
       } catch {}
     },

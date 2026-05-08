@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
 import { useCardStore } from '../stores/cardStore'
-import { getCardPriceUSD, getUsdToCadRate, formatPrice } from '../utils/pricing'
+import { getCardPriceUSD, getUsdToCadRate, getUsdToGbpRate, formatPrice } from '../utils/pricing'
 
 const cardStore = useCardStore()
 
@@ -9,8 +9,9 @@ const cardStore = useCardStore()
    Single batch watcher fetches every visible card's price when the deck
    changes; the cache in pricing.ts means repeat lookups are free. */
 const cardPrices = ref<Record<string, number | null>>({})
-const cadRate = ref(1.40)
-getUsdToCadRate().then(r => { cadRate.value = r })
+const fxRates = ref({ CAD: 1.40, GBP: 0.79 })
+getUsdToCadRate().then(r => { fxRates.value = { ...fxRates.value, CAD: r } })
+getUsdToGbpRate().then(r => { fxRates.value = { ...fxRates.value, GBP: r } })
 
 watch(() => cardStore.deck.map(c => c.id).join('|'), async (joined) => {
   if (!joined) { cardPrices.value = {}; return }
@@ -26,7 +27,30 @@ watch(() => cardStore.deck.map(c => c.id).join('|'), async (joined) => {
 function priceForCard(cardId: string): string | null {
   const p = cardPrices.value[cardId]
   if (typeof p !== 'number') return null
-  return formatPrice(p, cardStore.currency, cadRate.value)
+  return formatPrice(p, cardStore.currency, fxRates.value)
+}
+
+/* Deck card resize. Base width 195px is what the layout was tuned around;
+   the stack-offsets (15px horizontal, 18px vertical) scale proportionally
+   so the leaning-stack visual stays consistent at every size. */
+const BASE_CARD_W = 195
+const BASE_H_OFFSET = 15
+const BASE_V_OFFSET = 18
+
+const cardW = computed(() => Math.round(BASE_CARD_W * cardStore.deckCardScale))
+const hOffset = computed(() => BASE_H_OFFSET * cardStore.deckCardScale)
+const vOffset = computed(() => BASE_V_OFFSET * cardStore.deckCardScale)
+
+/* CSS custom properties consumed by the scoped stylesheet — bound to one
+   element so a single style mutation re-flows every card in the deck. */
+const deckSizeStyle = computed(() => ({
+  '--deck-card-w': `${cardW.value}px`,
+  '--deck-h-offset': `${hOffset.value}px`,
+  '--deck-v-offset': `${vOffset.value}px`,
+}))
+
+function bumpScale(delta: number) {
+  cardStore.setDeckCardScale(cardStore.deckCardScale + delta)
 }
 
 const colorOrder = ['red', 'blue', 'green', 'purple', 'black', 'yellow']
@@ -73,9 +97,31 @@ const nonLeaderGroups = computed(() => {
 </script>
 
 <template>
-  <div class="deck-display">
+  <div class="deck-display" :style="deckSizeStyle">
     <div class="deck-display-header">
       <span class="deck-count">{{ cardStore.deckSize }} / 51</span>
+
+      <!-- Card size chips: shrink / grow every card in the deck preview together.
+           Sits right next to the deck count so it can't collide with the
+           floating Share/Proxy/Market pills in the top-right of .deck-area. -->
+      <div class="size-chips" title="Resize deck cards">
+        <button
+          type="button"
+          class="size-chip"
+          :disabled="cardStore.deckCardScale <= 0.6"
+          @click="bumpScale(-0.1)"
+          aria-label="Shrink cards"
+        >−</button>
+        <span class="size-chip-value">{{ Math.round(cardStore.deckCardScale * 100) }}%</span>
+        <button
+          type="button"
+          class="size-chip"
+          :disabled="cardStore.deckCardScale >= 1.4"
+          @click="bumpScale(0.1)"
+          aria-label="Grow cards"
+        >+</button>
+      </div>
+
       <div v-if="cardStore.searchChips.length > 0" class="active-filters">
         <span class="filters-label">Active filters:</span>
         <div
@@ -129,7 +175,7 @@ const nonLeaderGroups = computed(() => {
         v-for="entry in nonLeaderGroups"
         :key="entry.card.id"
         class="card-stack"
-        :style="{ width: `${195 + (entry.count - 1) * 15}px` }"
+        :style="{ width: `calc(var(--deck-card-w) + ${entry.count - 1} * var(--deck-h-offset))` }"
         @click="cardStore.addToDeck(entry.card)"
         @mouseenter="cardStore.selectCard(entry.card)"
         @contextmenu.prevent="$event.shiftKey ? cardStore.removeAllFromDeck(entry.card.id) : cardStore.removeFromDeck(entry.card.id)"
@@ -146,8 +192,8 @@ const nonLeaderGroups = computed(() => {
         <div
           class="stack-wrapper"
           :style="{
-            height: `calc(100% + ${(entry.count - 1) * 18}px)`,
-            width: `calc(100% + ${(entry.count - 1) * 15}px)`
+            height: `calc(100% + ${entry.count - 1} * var(--deck-v-offset))`,
+            width: `calc(100% + ${entry.count - 1} * var(--deck-h-offset))`
           }"
         >
           <img
@@ -156,14 +202,17 @@ const nonLeaderGroups = computed(() => {
             :src="entry.card.images.small"
             :alt="entry.card.name"
             class="stack-img"
-            :style="{ top: `${(i - 1) * 18}px`, left: `${(i - 1) * 15}px` }"
+            :style="{
+              top: `calc(${i - 1} * var(--deck-v-offset))`,
+              left: `calc(${i - 1} * var(--deck-h-offset))`
+            }"
           />
         </div>
         <span class="card-count-badge">x{{ entry.count }}</span>
         <span
           v-if="priceForCard(entry.card.id)"
           class="price-badge"
-          :style="{ bottom: `${4 - (entry.count - 1) * 18}px` }"
+          :style="{ bottom: `calc(4px - ${entry.count - 1} * var(--deck-v-offset))` }"
         >{{ priceForCard(entry.card.id) }}</span>
       </div>
     </div>
@@ -261,6 +310,54 @@ const nonLeaderGroups = computed(() => {
   color: var(--accent);
 }
 
+/* Card size chips — sit inline next to the deck count, well clear of the
+   floating Share / Proxy / Market pills anchored to the top-right corner. */
+.size-chips {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 4px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+}
+
+.size-chip {
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-weight: bold;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.12s ease;
+}
+
+.size-chip:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.size-chip:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.size-chip-value {
+  color: var(--text-secondary);
+  font-size: 0.7rem;
+  font-variant-numeric: tabular-nums;
+  min-width: 30px;
+  text-align: center;
+}
+
 .deck-empty {
   color: var(--text-secondary);
   font-size: 0.85rem;
@@ -271,14 +368,16 @@ const nonLeaderGroups = computed(() => {
 .deck-cards {
   display: flex;
   flex-wrap: wrap;
-  gap: 60px 14px;  /* extra row gap leaves room for the price tag below each card */
+  /* Row gap scales with card size so spacing reads consistently across the
+     0.6→1.4 zoom range. Column gap stays small/constant. */
+  gap: calc(var(--deck-card-w, 195px) * 0.31) 14px;
   align-items: flex-start;
 }
 
 /* Each card group is a stack container */
 .card-stack {
   position: relative;
-  width: 195px;
+  width: var(--deck-card-w, 195px);
   cursor: pointer;
   transition: transform 0.1s ease;
 }
@@ -297,7 +396,7 @@ const nonLeaderGroups = computed(() => {
   position: absolute;
   top: 0;
   left: 0;
-  width: 195px;
+  width: var(--deck-card-w, 195px);
   display: block;
   border-radius: 4px;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);

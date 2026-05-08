@@ -1,6 +1,6 @@
 import { ref, watch, computed } from 'vue'
 import { useCardStore } from '../stores/cardStore'
-import { getCardPriceUSD, getUsdToCadRate, formatPrice } from '../utils/pricing'
+import { getCardPriceUSD, getUsdToCadRate, getUsdToGbpRate, formatPrice } from '../utils/pricing'
 
 /** Sum the market price of every card in the deck.
  *  Refetches whenever the deck changes (debounced internally by the cache).
@@ -10,10 +10,11 @@ export function useDeckTotal() {
 
   const totalUSD = ref<number | null>(null)
   const loading = ref(false)
-  const cadRate = ref(1.40)
+  const rates = ref({ CAD: 1.40, GBP: 0.79 })
 
-  // Load FX rate once on first use
-  getUsdToCadRate().then(r => { cadRate.value = r })
+  // Load FX rates once on first use
+  getUsdToCadRate().then(r => { rates.value = { ...rates.value, CAD: r } })
+  getUsdToGbpRate().then(r => { rates.value = { ...rates.value, GBP: r } })
 
   let token = 0
   watch(() => cardStore.deck.map(c => c.id), async (ids) => {
@@ -35,7 +36,7 @@ export function useDeckTotal() {
 
   const formatted = computed(() => {
     if (totalUSD.value === null) return '—'
-    return formatPrice(totalUSD.value, cardStore.currency, cadRate.value)
+    return formatPrice(totalUSD.value, cardStore.currency, rates.value)
   })
 
   const cardCount = computed(() => cardStore.deck.length)

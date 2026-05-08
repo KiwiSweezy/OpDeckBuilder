@@ -203,7 +203,7 @@ const cardKeywords = computed(() => {
         class="market-pill"
         :class="{ disabled: cardStore.deckSize === 0 }"
         @click="cardStore.toggleCurrency"
-        :title="`Click to switch to ${cardStore.currency === 'USD' ? 'CAD' : 'USD'}`"
+        :title="`Click to switch to ${({ USD: 'CAD', CAD: 'GBP', GBP: 'USD' } as const)[cardStore.currency]}`"
       >
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M12 1v22M17 5H9.5a3.5 3.5 0 1 0 0 7h5a3.5 3.5 0 1 1 0 7H6"/>

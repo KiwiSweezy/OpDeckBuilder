@@ -10,7 +10,7 @@ import MobileMenu from './MobileMenu.vue'
 import BottomSheet from './BottomSheet.vue'
 import { copyToClipboard } from '../utils/clipboard'
 import { useCardPrice } from '../composables/useCardPrice'
-import { formatPrice, getUsdToCadRate } from '../utils/pricing'
+import { formatPrice, getUsdToCadRate, getUsdToGbpRate } from '../utils/pricing'
 
 const copiedId = ref('')
 function copyCardId(id: string) {
@@ -65,15 +65,16 @@ const previewedCount = computed(() => {
    copy is in the deck. Mirrors the desktop market-pill colour (#4dd0b2). */
 const previewedCardId = computed(() => cardStore.selectedCard?.id ?? null)
 const { price: previewPrice } = useCardPrice(previewedCardId)
-const cadRate = ref(1.40)
-getUsdToCadRate().then(r => { cadRate.value = r })
+const fxRates = ref({ CAD: 1.40, GBP: 0.79 })
+getUsdToCadRate().then(r => { fxRates.value = { ...fxRates.value, CAD: r } })
+getUsdToGbpRate().then(r => { fxRates.value = { ...fxRates.value, GBP: r } })
 
 const previewPriceLine = computed(() => {
   if (previewedCount.value === 0) return null
   const usd = previewPrice.value
   if (typeof usd !== 'number') return null
-  const unit = formatPrice(usd, cardStore.currency, cadRate.value)
-  const total = formatPrice(usd * previewedCount.value, cardStore.currency, cadRate.value)
+  const unit = formatPrice(usd, cardStore.currency, fxRates.value)
+  const total = formatPrice(usd * previewedCount.value, cardStore.currency, fxRates.value)
   return previewedCount.value === 1
     ? unit
     : `${unit} × ${previewedCount.value} = ${total}`
@@ -245,7 +246,7 @@ const previewPriceLine = computed(() => {
           v-if="previewPriceLine"
           class="preview-price-pill"
           @click="cardStore.toggleCurrency"
-          :title="`Tap to switch to ${cardStore.currency === 'USD' ? 'CAD' : 'USD'}`"
+          :title="`Tap to switch to ${({ USD: 'CAD', CAD: 'GBP', GBP: 'USD' } as const)[cardStore.currency]}`"
         >
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 1v22M17 5H9.5a3.5 3.5 0 1 0 0 7h5a3.5 3.5 0 1 1 0 7H6"/>

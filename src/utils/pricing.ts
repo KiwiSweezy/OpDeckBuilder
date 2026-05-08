@@ -124,24 +124,41 @@ export async function getCardPriceUSD(cardId: string): Promise<number | null> {
   return exact?.marketPrice ?? null
 }
 
-/* ===== Currency conversion (USD → CAD) =====
+/* ===== Currency conversion (USD → CAD / GBP) =====
  *
- * Uses a hardcoded approximate rate to avoid CORS-blocked / unreliable
- * external FX APIs causing render-blocking failures. Update USD_TO_CAD
- * periodically as needed; for a deck-building tool, an approximate rate
- * is more than fine.
+ * Uses hardcoded approximate rates to avoid CORS-blocked / unreliable
+ * external FX APIs causing render-blocking failures. Update these
+ * periodically as needed; for a deck-building tool, approximate rates
+ * are more than fine.
  *
- * Rate as of 2026-05: 1 USD ≈ 1.38 CAD
+ * Rates as of 2026-05: 1 USD ≈ 1.38 CAD, 1 USD ≈ 0.79 GBP
  */
 const USD_TO_CAD_APPROX = 1.38
+const USD_TO_GBP_APPROX = 0.79
+
+export type Currency = 'USD' | 'CAD' | 'GBP'
+export type FxRates = { CAD: number; GBP: number }
 
 /** Get USD→CAD exchange rate. Synchronous + cheap — no network request. */
 export async function getUsdToCadRate(): Promise<number> {
   return USD_TO_CAD_APPROX
 }
 
-export function formatPrice(usd: number, currency: 'USD' | 'CAD', cadRate: number): string {
-  const value = currency === 'CAD' ? usd * cadRate : usd
-  const symbol = currency === 'CAD' ? 'C$' : '$'
-  return `${symbol}${value.toFixed(2)}`
+/** Get USD→GBP exchange rate. */
+export async function getUsdToGbpRate(): Promise<number> {
+  return USD_TO_GBP_APPROX
+}
+
+const CURRENCY_SYMBOL: Record<Currency, string> = {
+  USD: '$',
+  CAD: 'C$',
+  GBP: '£',
+}
+
+export function formatPrice(usd: number, currency: Currency, rates: FxRates): string {
+  const value =
+    currency === 'CAD' ? usd * rates.CAD :
+    currency === 'GBP' ? usd * rates.GBP :
+    usd
+  return `${CURRENCY_SYMBOL[currency]}${value.toFixed(2)}`
 }
