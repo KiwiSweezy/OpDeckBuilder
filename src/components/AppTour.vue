@@ -18,7 +18,7 @@ const steps: TourStep[] = [
   {
     target: 'name-group',
     title: 'Deck Name & Save',
-    description: 'Name your deck and save it here. Use the dropdown to load or manage your saved decks.',
+    description: 'Name your deck here. The arrow opens your saved decks — click one to load it.',
   },
   {
     target: 'import-export',
@@ -28,22 +28,17 @@ const steps: TourStep[] = [
   {
     target: 'deck-area',
     title: 'Your Deck',
-    description: 'Your deck appears here. Left-click a card to add another copy. Right-click to remove one. Shift + right-click removes the entire stack.',
+    description: 'Your deck lives here. Left-click a card to add another copy, right-click to remove one, and shift + right-click to clear the whole stack. Your cost curve and stats sit underneath.',
   },
   {
     target: 'filters',
     title: 'Filters & Search',
-    description: 'Use color, type, rarity, counter, and keyword filters to narrow down the card pool. You can also search by name, ID, family, or ability text.',
+    description: 'Colours are always here; everything else lives in the dropdowns. Search matches name, ID, set, attribute, type and ability text. Active filters show as chips you can click to remove.',
   },
   {
     target: 'card-pool',
     title: 'Card Pool',
-    description: 'Click any card here to add it to your deck. Hover over a card to preview it on the left.',
-  },
-  {
-    target: 'sidebar-preview',
-    title: 'Card Preview & Stats',
-    description: "Hover over any card to see its full art, stats, ability text, and keyword badges here. Your deck's cost curve and stats also appear below.",
+    description: 'Click any card to add it to your deck. Hover one to see its full art, stats and ability text in the preview panel.',
   },
   {
     target: null,

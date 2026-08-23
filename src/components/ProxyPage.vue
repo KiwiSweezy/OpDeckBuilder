@@ -9,14 +9,19 @@ const cardStore = useCardStore()
 /** Local proxy list — not bound to deck rules. Map of cardId → { card, quantity } */
 const proxyList = ref<Map<string, { card: Card; qty: number }>>(new Map())
 
+type PaperSize = 'a4' | 'letter' | '4x6'
+
 const searchQuery = ref('')
 const showDeckDropdown = ref(false)
 const showHelp = ref(true)
-const paperSize = ref<'letter' | '4x6'>('letter')
-const showSidebar = ref(false)  // mobile-only: toggle the slide-in sidebar drawer
+const paperSize = ref<PaperSize>('a4')
+const showGuides = ref(true)     // hairline cut guides on the shared card edges
+const showSidebar = ref(false)   // mobile-only: toggle the slide-in sidebar drawer
 
-/** Cards per sheet depends on paper size */
-const cardsPerPage = computed(() => paperSize.value === 'letter' ? 9 : 2)
+/** Grid shape per sheet. A4/Letter both take a 3×3 block of 63×88mm cards
+ *  (189×264mm); a 6in×4in photo sheet takes 2 side by side. */
+const gridCols = computed(() => paperSize.value === '4x6' ? 2 : 3)
+const cardsPerPage = computed(() => paperSize.value === '4x6' ? 2 : 9)
 
 /** Total proxy count */
 const totalProxies = computed(() => {
@@ -47,6 +52,18 @@ const printCards = computed(() => {
     for (let i = 0; i < entry.qty; i++) out.push(entry.card)
   }
   return out
+})
+
+/** Deterministic pagination: chunk into explicit per-sheet arrays so that
+ *  "N per page" is a fact of the markup, not an accident of how a line box
+ *  happened to overflow. The page counter below reads straight off this. */
+const printPages = computed(() => {
+  const per = cardsPerPage.value
+  const pages: Card[][] = []
+  for (let i = 0; i < printCards.value.length; i += per) {
+    pages.push(printCards.value.slice(i, i + per))
+  }
+  return pages
 })
 
 /** Search results — multi-token search across name + id + family.
@@ -108,8 +125,16 @@ function loadFromDeck(name: string) {
 }
 
 /** Inject a dynamic @page rule into <head> based on the selected paper size.
- *  CSS @page can't read CSS variables, so we rewrite the rule on change. */
-function applyPaperSize(size: 'letter' | '4x6') {
+ *  CSS @page can't read CSS variables, so we rewrite the rule on change.
+ *
+ *  Margins are the *page* margin only — they never sit between cards. They are
+ *  the smallest values that still clear a typical printer's non-printable edge
+ *  while leaving room for a full 189×264mm block of nine true-size cards:
+ *    A4     210 × 297mm → content 194 × 277mm  (33mm of vertical slack)
+ *    Letter 215.9 × 279.4mm → content 191.9 × 267.4mm (only 15.4mm of slack,
+ *           hence the tighter 6mm vertical margin)
+ *    6×4in  152.4 × 101.6mm → content 146.4 × 95.6mm for a 126×88mm pair */
+function applyPaperSize(size: PaperSize) {
   let style = document.getElementById('proxy-page-size') as HTMLStyleElement | null
   if (!style) {
     style = document.createElement('style')
@@ -118,9 +143,11 @@ function applyPaperSize(size: 'letter' | '4x6') {
   }
   if (size === '4x6') {
     // 4×6 in landscape (6in × 4in) so 2 cards fit side by side
-    style.textContent = '@page { size: 6in 4in; margin: 0.2cm; }'
+    style.textContent = '@page { size: 6in 4in; margin: 3mm; }'
+  } else if (size === 'letter') {
+    style.textContent = '@page { size: letter; margin: 6mm 12mm; }'
   } else {
-    style.textContent = '@page { size: letter; margin: 0.7cm; }'
+    style.textContent = '@page { size: A4; margin: 10mm 8mm; }'
   }
 }
 
@@ -237,14 +264,15 @@ function handlePrint() {
           </div>
           <div class="help-block">
             <strong>2. Preview your sheets</strong>
-            <p>Cards are laid out 9 per page on Letter-sized sheets in the main area. Each physical proxy gets its own slot.</p>
+            <p>Cards are laid out 9 per page on A4 or Letter sheets (2 per page on 4&times;6 photo paper). The preview shows each sheet exactly as it will print, at true size.</p>
           </div>
           <div class="help-block">
             <strong>3. Print at real size</strong>
-            <p>Click <span class="kbd">Print</span> to open your browser's print dialog. Cards print at official TCG size (63&times;88mm). For best results:</p>
+            <p>Click <span class="kbd">Print</span> to open your browser's print dialog. Cards print at official TCG size (63&times;88mm) with <strong>no gap between them</strong>, so one straight cut splits two cards. For best results:</p>
             <ul>
               <li>Set your printer to <strong>100% scale</strong> (no "fit to page")</li>
               <li>Disable headers and footers</li>
+              <li>Disable "fit to printable area" / margins in the print dialog</li>
               <li>Use thicker paper or cardstock</li>
             </ul>
           </div>
@@ -265,11 +293,16 @@ function handlePrint() {
             <line x1="3" y1="18" x2="21" y2="18"/>
           </svg>
         </button>
-        <span class="proxy-count">{{ totalProxies }} proxies · ~{{ Math.max(1, Math.ceil(totalProxies / cardsPerPage)) }} page(s)</span>
+        <span class="proxy-count">{{ totalProxies }} proxies · {{ printPages.length }} page(s)</span>
         <div class="toolbar-right">
+          <label class="guide-toggle" title="Print a hairline on every cut line">
+            <input type="checkbox" v-model="showGuides" />
+            <span>Cut guides</span>
+          </label>
           <label class="paper-select">
             <span>Paper</span>
             <select v-model="paperSize">
+              <option value="a4">A4 (9 per page)</option>
               <option value="letter">Letter (9 per page)</option>
               <option value="4x6">4×6 Photo (2 per page)</option>
             </select>
@@ -279,17 +312,30 @@ function handlePrint() {
           </button>
         </div>
       </div>
-      <div class="proxies-wrap">
-        <div v-if="totalProxies === 0" class="empty-state">
+      <div class="proxies-wrap" :class="[`paper-${paperSize}`, { 'show-guides': showGuides }]">
+        <div v-if="totalProxies === 0" class="empty-state dont-print">
           <div class="empty-state-text">Your proxy cards will appear here</div>
         </div>
-        <div v-else class="proxies" :class="`paper-${paperSize}`">
-          <div
-            v-for="(card, idx) in printCards"
-            :key="idx"
-            class="proxies-card"
-          >
-            <img :src="card.images.large" :alt="card.name" />
+        <!-- One .proxy-sheet per physical sheet of paper. Screen and print use
+             the exact same geometry — the only difference is that on screen a
+             sheet is a shadowed white page, and in print it is the page. -->
+        <div
+          v-for="(page, pageIdx) in printPages"
+          :key="pageIdx"
+          class="proxy-sheet"
+        >
+          <div class="proxy-grid" :style="{ '--cols': gridCols }">
+            <div
+              v-for="(card, idx) in page"
+              :key="idx"
+              class="proxy-card"
+            >
+              <img :src="card.images.large" :alt="card.name"
+                   width="600" height="838" decoding="async" fetchpriority="low" />
+            </div>
+          </div>
+          <div class="sheet-label dont-print">
+            Page {{ pageIdx + 1 }} of {{ printPages.length }}
           </div>
         </div>
       </div>
@@ -708,11 +754,19 @@ function handlePrint() {
   margin-bottom: 0;
 }
 
-.help-block strong {
+/* Direct children only — the step headings. A <strong> nested inside a <p> or
+   an <li> is emphasis mid-sentence and must stay inline. */
+.help-block > strong {
   color: var(--text-primary);
   font-size: 0.8rem;
   display: block;
   margin-bottom: 3px;
+}
+
+.help-block p strong,
+.help-block li strong {
+  color: var(--text-primary);
+  font-weight: 600;
 }
 
 .help-block p {
@@ -809,6 +863,25 @@ function handlePrint() {
   border-color: var(--accent);
 }
 
+.guide-toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+}
+
+.guide-toggle input {
+  accent-color: var(--accent);
+  cursor: pointer;
+  margin: 0;
+}
+
 .print-btn {
   padding: 8px 18px;
   background: var(--accent);
@@ -829,21 +902,48 @@ function handlePrint() {
   cursor: not-allowed;
 }
 
+/* ===== SHEET GEOMETRY =====
+   Screen and print share ONE model, driven by --u ("one paper millimetre").
+   In print --u is a real millimetre, so a card is literally 63mm × 88mm. On
+   screen --u shrinks on narrow viewports, which scales the whole sheet — page,
+   margins and cards together — so the preview stays a faithful miniature of
+   the printed result instead of a differently-shaped grid. */
 .proxies-wrap {
+  --u: 1mm;
+  --card-w: calc(63 * var(--u));
+  --card-h: calc(88 * var(--u));
+  --sheet-w: calc(210 * var(--u));    /* A4 */
+  --sheet-h: calc(297 * var(--u));
+  --sheet-pad-x: calc(8 * var(--u));  /* must match the @page margin */
+  --sheet-pad-y: calc(10 * var(--u));
   flex: 1;
-  overflow-y: auto;
-  padding: 30px;
-  display: flex;
-  justify-content: center;
+  overflow: auto;
+  padding: var(--space-8) var(--space-6);
+  display: block;
+}
+
+.proxies-wrap.paper-letter {
+  --sheet-w: calc(215.9 * var(--u));
+  --sheet-h: calc(279.4 * var(--u));
+  --sheet-pad-x: calc(12 * var(--u));
+  --sheet-pad-y: calc(6 * var(--u));
+}
+
+.proxies-wrap.paper-4x6 {
+  --sheet-w: calc(152.4 * var(--u));
+  --sheet-h: calc(101.6 * var(--u));
+  --sheet-pad-x: calc(3 * var(--u));
+  --sheet-pad-y: calc(3 * var(--u));
 }
 
 .empty-state {
   width: 100%;
   max-width: 700px;
   min-height: 400px;
+  margin: 0 auto;
   background: var(--bg-secondary);
   border: 2px dashed var(--border-color);
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -854,82 +954,140 @@ function handlePrint() {
   font-size: 0.95rem;
 }
 
-/* On-screen: simple 3-column grid that flows naturally */
-.proxies {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  max-width: 792px;
-  width: 100%;
-  background: white;
-  padding: 16px;
-  border-radius: 4px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
-  align-self: flex-start;
+/* One physical sheet of paper. */
+.proxy-sheet {
+  position: relative;
+  box-sizing: border-box;
+  width: var(--sheet-w);
+  min-height: var(--sheet-h);
+  margin: 0 auto var(--space-9);
+  padding: var(--sheet-pad-y) var(--sheet-pad-x);
+  background: #fff;
+  box-shadow: var(--shadow-lg, 0 4px 24px rgba(0, 0, 0, 0.5));
 }
 
-.proxies-card img {
+.proxy-sheet:last-child {
+  margin-bottom: 0;
+}
+
+.sheet-label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: calc(-1 * var(--space-7));
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: var(--text-2xs, 0.65rem);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* The card block itself: fixed-width columns, ZERO gap, so every adjacent
+   pair shares one cut line. Fixed columns (not 1fr) also mean a partial last
+   row keeps the same column origins as the full rows above it — a straight
+   guillotine cut down the sheet never slices through a card. */
+.proxy-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--cols, 3), var(--card-w));
+  grid-auto-rows: var(--card-h);
+  gap: 0;
+  width: max-content;
+  margin: 0 auto;
+}
+
+.proxy-card {
+  position: relative;
+  width: var(--card-w);
+  height: var(--card-h);
+  overflow: hidden;
+}
+
+.proxy-card img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  /* Sources are 600×838 = exactly 63/88, so `cover` fills the slot without
+     cropping. Without this the default `fill` stretches every card. */
+  object-fit: cover;
+}
+
+/* Hairline cut guides.
+   Must be an overlay pseudo-element, not an inset box-shadow on .proxy-card:
+   box-shadow paints below the element's content, and the card <img> is opaque
+   and fills the box, so it occluded the guide completely. ::after paints above
+   the image, and being absolutely positioned it still adds zero layout. */
+.proxies-wrap.show-guides .proxy-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 0 0.1mm rgba(0, 0, 0, 0.45);
+  pointer-events: none;
 }
 
 /* ===== PRINT STYLES =====
-   Modeled after limitlesstcg's approach:
-   - Switch from grid to inline-block flow
-   - Use real-world cm units so cards print at exact TCG size
-   - Browser handles wrapping and pagination naturally via break-inside
-*/
+   The sheet wrappers above already decide what lands on which page, so print
+   only has to strip the screen chrome and let each sheet break after itself.
+   Nothing here introduces spacing between cards. */
 @media print {
-  body { display: block; min-height: auto; }
-  .dont-print, .proxy-sidebar, .proxy-toolbar { display: none !important; }
+  .dont-print,
+  .proxy-sidebar,
+  .sidebar-backdrop,
+  .proxy-toolbar,
+  .empty-state,
+  .sheet-label { display: none !important; }
 
   .proxy-page {
     display: block;
     height: auto;
-    background: white;
+    background: #fff;
   }
+
   .proxy-main,
   .proxies-wrap {
     overflow: visible;
-    padding: 0;
-    display: block;
-    background: white;
-  }
-  .proxies {
-    display: block;
-    line-height: 0;
-    font-size: 0;
     margin: 0;
     padding: 0;
-    background: white;
-    box-shadow: none;
-    border-radius: 0;
-    max-width: none;
-    width: auto;
-    text-align: center;  /* center the inline-block cards on the page */
-  }
-  .proxies-card {
-    display: inline-block;
-    break-inside: avoid;
-    margin: 0.08cm;  /* small breathing room — keeps 9 cards per page */
-  }
-  .proxies-card img {
-    /* Real TCG card size: 63mm × 88mm (limitless uses 6.02 × 8.52cm) */
-    width: 6.02cm;
-    height: 8.52cm;
     display: block;
+    background: #fff;
   }
 
-  /* 4×6 photo paper: 2 cards side-by-side, then page break.
-     Page is set to 6in × 4in landscape via dynamic @page rule. */
-  .proxies.paper-4x6 .proxies-card {
-    margin: 0.1cm;
+  /* One real millimetre per unit, whatever the screen breakpoints said. */
+  .proxies-wrap {
+    --u: 1mm;
+  }
+
+  /* The page box (via @page) already supplies the paper margin, so the sheet
+     is just a full-bleed container that ends in a page break. */
+  .proxy-sheet {
+    width: auto;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    box-shadow: none;
+    break-after: page;
+    break-inside: avoid;
+  }
+
+  .proxy-sheet:last-child {
+    break-after: auto;  /* no trailing blank page */
   }
 }
 
+/* ===== SCREEN-ONLY SHEET SCALING =====
+   `screen and` is load-bearing: an unqualified max-width query also matches
+   while printing (a Letter page area is only ~763px wide), which is how the
+   mobile padding below used to leak into every printed sheet. */
+@media screen and (max-width: 1180px) {
+  .proxies-wrap { --u: 0.78mm; }
+}
+
+@media screen and (max-width: 900px) {
+  .proxies-wrap { --u: 0.62mm; }
+}
+
 /* ===== MOBILE STYLES ===== */
-@media (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .proxy-page {
     grid-template-columns: 1fr;  /* sidebar overlays content instead of taking a column */
   }
@@ -965,15 +1123,16 @@ function handlePrint() {
 
   .proxy-toolbar {
     gap: 8px;
+    flex-wrap: wrap;
   }
 
   .proxies-wrap {
-    padding: 12px;
+    --u: 0.44mm;
+    padding: var(--space-5);
   }
 
-  .proxies {
-    grid-template-columns: repeat(2, 1fr);  /* 2 cards across on phone */
-    max-width: 100%;
+  .guide-toggle span {
+    display: none;  /* keep the checkbox, drop the label on narrow toolbars */
   }
 }
 </style>

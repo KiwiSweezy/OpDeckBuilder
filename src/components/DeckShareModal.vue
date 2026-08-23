@@ -20,7 +20,7 @@ const typeOrder: Record<string, number> = { leader: 0, character: 1, event: 2, s
 /** Cards grouped + sorted same as DeckDisplay (leader → char → event → stage) */
 const groupedDeck = computed(() => {
   const groups = new Map<string, { card: typeof cardStore.deck[0]; count: number }>()
-  for (const card of cardStore.deck) {
+  for (const card of cardStore.displayDeck) {
     const existing = groups.get(card.id)
     if (existing) existing.count++
     else groups.set(card.id, { card, count: 1 })
@@ -41,7 +41,7 @@ const groupedDeck = computed(() => {
   })
 })
 
-const leader = computed(() => cardStore.deck.find(c => c.type === 'leader') ?? null)
+const leader = computed(() => cardStore.displayDeck.find(c => c.type === 'leader') ?? null)
 const nonLeaderGroups = computed(() => groupedDeck.value.filter(g => g.card.type !== 'leader'))
 
 /** Cost curve data for the bar chart (only non-leader cards, only costs that exist) */

@@ -30,12 +30,13 @@ function priceForCard(cardId: string): string | null {
   return formatPrice(p, cardStore.currency, fxRates.value)
 }
 
-/* Deck card resize. Base width 195px is what the layout was tuned around;
-   the stack-offsets (15px horizontal, 18px vertical) scale proportionally
-   so the leaning-stack visual stays consistent at every size. */
-const BASE_CARD_W = 195
-const BASE_H_OFFSET = 15
-const BASE_V_OFFSET = 18
+/* Deck card resize. Tuned for the vertical deck rail: at the default 420px
+   rail width a 4-copy stack is ~123px, so three fit per row, and widening the
+   rail adds columns. The stack offsets scale with the card so the fanned-stack
+   visual holds across the 0.6-1.4 zoom range. */
+const BASE_CARD_W = 108
+const BASE_H_OFFSET = 5
+const BASE_V_OFFSET = 8
 
 const cardW = computed(() => Math.round(BASE_CARD_W * cardStore.deckCardScale))
 const hOffset = computed(() => BASE_H_OFFSET * cardStore.deckCardScale)
@@ -58,13 +59,20 @@ const typeOrder: Record<string, number> = { leader: 0, character: 1, event: 2, s
 
 // Group deck cards by exact ID, sorted by type → primary color → secondary color → cost asc
 const groupedDeck = computed(() => {
-  const groups = new Map<string, { card: typeof cardStore.deck[0], count: number }>()
-  for (const card of cardStore.deck) {
+  // `deck` is the user's own prints and stays the identity used by every action;
+  // `displayDeck` is the same list with Bling substitutions applied. They are
+  // index-aligned, so pair them and render the display print while acting on the
+  // real one — that keeps add/remove, the 4-copy limit and saving bling-proof.
+  const deck = cardStore.deck
+  const display = cardStore.displayDeck
+  const groups = new Map<string, { card: typeof cardStore.deck[0], display: typeof cardStore.deck[0], count: number }>()
+  for (let i = 0; i < deck.length; i++) {
+    const card = deck[i]!
     const existing = groups.get(card.id)
     if (existing) {
       existing.count++
     } else {
-      groups.set(card.id, { card, count: 1 })
+      groups.set(card.id, { card, display: display[i] ?? card, count: 1 })
     }
   }
   return Array.from(groups.values()).sort((a, b) => {
@@ -91,6 +99,13 @@ const leader = computed(() => {
   return cardStore.deck.find(c => c.type === 'leader') ?? null
 })
 
+/** The leader's display print (Bling-substituted), falling back to the real one. */
+const leaderDisplay = computed(() => {
+  const i = cardStore.deck.findIndex(c => c.type === 'leader')
+  if (i === -1) return null
+  return cardStore.displayDeck[i] ?? cardStore.deck[i] ?? null
+})
+
 const nonLeaderGroups = computed(() => {
   return groupedDeck.value.filter(entry => entry.card.type !== 'leader')
 })
@@ -99,7 +114,7 @@ const nonLeaderGroups = computed(() => {
 <template>
   <div class="deck-display" :style="deckSizeStyle">
     <div class="deck-display-header">
-      <span class="deck-count">{{ cardStore.deckSize }} / 51</span>
+      <span class="deck-title">Deck</span>
 
       <!-- Card size chips: shrink / grow every card in the deck preview together.
            Sits right next to the deck count so it can't collide with the
@@ -122,28 +137,6 @@ const nonLeaderGroups = computed(() => {
         >+</button>
       </div>
 
-      <div v-if="cardStore.searchChips.length > 0" class="active-filters">
-        <span class="filters-label">Active filters:</span>
-        <div
-          v-for="chip in cardStore.searchChips"
-          :key="chip"
-          class="filter-chip"
-        >
-          <span class="chip-text">{{ chip }}</span>
-          <button
-            type="button"
-            class="chip-x"
-            @click="cardStore.removeSearchChip(chip)"
-            :aria-label="`Remove ${chip}`"
-          >×</button>
-        </div>
-        <button
-          v-if="cardStore.searchChips.length > 1"
-          type="button"
-          class="clear-chips"
-          @click="cardStore.clearSearchChips"
-        >clear all</button>
-      </div>
     </div>
 
     <div v-if="cardStore.deckSize === 0" class="deck-empty">
@@ -155,11 +148,12 @@ const nonLeaderGroups = computed(() => {
       <div
         v-if="leader"
         class="card-stack leader-card"
-        @mouseenter="cardStore.selectCard(leader)"
+        @mouseenter="cardStore.selectCard(leaderDisplay ?? leader)"
         @contextmenu.prevent="$event.shiftKey ? cardStore.removeAllFromDeck(leader.id) : cardStore.removeFromDeck(leader.id)"
       >
         <div class="stack-wrapper">
-          <img :src="leader.images.small" :alt="leader.name" class="stack-img" />
+          <img :src="(leaderDisplay ?? leader).images.small" :alt="leader.name" class="stack-img"
+            width="600" height="838" decoding="async" />
         </div>
         <button
           class="remove-btn"
@@ -177,7 +171,7 @@ const nonLeaderGroups = computed(() => {
         class="card-stack"
         :style="{ width: `calc(var(--deck-card-w) + ${entry.count - 1} * var(--deck-h-offset))` }"
         @click="cardStore.addToDeck(entry.card)"
-        @mouseenter="cardStore.selectCard(entry.card)"
+        @mouseenter="cardStore.selectCard(entry.display)"
         @contextmenu.prevent="$event.shiftKey ? cardStore.removeAllFromDeck(entry.card.id) : cardStore.removeFromDeck(entry.card.id)"
       >
         <button
@@ -199,7 +193,7 @@ const nonLeaderGroups = computed(() => {
           <img
             v-for="i in entry.count"
             :key="i"
-            :src="entry.card.images.small"
+            :src="entry.display.images.small"
             :alt="entry.card.name"
             class="stack-img"
             :style="{
@@ -370,14 +364,14 @@ const nonLeaderGroups = computed(() => {
   flex-wrap: wrap;
   /* Row gap scales with card size so spacing reads consistently across the
      0.6→1.4 zoom range. Column gap stays small/constant. */
-  gap: calc(var(--deck-card-w, 195px) * 0.31) 14px;
+  gap: calc(var(--deck-card-w, 108px) * 0.34) 10px;
   align-items: flex-start;
 }
 
 /* Each card group is a stack container */
 .card-stack {
   position: relative;
-  width: var(--deck-card-w, 195px);
+  width: var(--deck-card-w, 108px);
   cursor: pointer;
   transition: transform 0.1s ease;
 }
@@ -396,7 +390,12 @@ const nonLeaderGroups = computed(() => {
   position: absolute;
   top: 0;
   left: 0;
-  width: var(--deck-card-w, 195px);
+  width: var(--deck-card-w, 108px);
+  /* Required: the width/height attributes on these <img> tags reserve space
+     before decode, but without this the height attribute wins as the used
+     height and the card stretches. */
+  height: auto;
+  aspect-ratio: var(--card-aspect);
   display: block;
   border-radius: 4px;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
@@ -416,6 +415,7 @@ const nonLeaderGroups = computed(() => {
 
 .leader-card .stack-img {
   width: 100%;
+  height: auto;
 }
 
 .card-label {

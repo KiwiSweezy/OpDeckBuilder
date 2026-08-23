@@ -2,6 +2,7 @@ import { defineStore } from 'pinia'
 import { markRaw } from 'vue'
 import type { Card } from '../types/Card'
 import allCardsData from '../data/cards.json'
+import { getVariantsCached, prefetchVariants } from '../utils/pricing'
 
 /** The full card list, deliberately NOT reactive.
  *
@@ -30,6 +31,61 @@ export function cardById(id: string): Card | undefined {
  *  4-copy limit with the original and export under the original's ID. */
 function baseId(id: string): string {
   return id.replace(/_[pr]\d+$/, '')
+}
+
+/** Every printing we hold, grouped by base card id. Built once.
+ *  1065 of 2780 base cards have more than one printing. */
+const PRINTS_BY_BASE: ReadonlyMap<string, Card[]> = (() => {
+  const map = new Map<string, Card[]>()
+  for (const card of ALL_CARDS) {
+    const base = card.id.replace(/_[pr]\d+$/, '')
+    const list = map.get(base)
+    if (list) list.push(card)
+    else map.set(base, [card])
+  }
+  return map
+})()
+
+/** The three bling tiers, in cycle order. The button shows the CURRENT state. */
+export const BLING_LEVELS = ['Bling', 'Blingy', 'Blingest'] as const
+export type BlingLevel = 0 | 1 | 2
+
+/** Printings of this card that we have an image for AND the price API knows a
+ *  market price for, ranked cheapest -> priciest.
+ *
+ *  Both halves matter: the API sometimes prices a print we don't hold, and we
+ *  hold prints (every OP17 / ST30-ST36 card, plus most _rN reprints) the API
+ *  has never heard of. Only the intersection can be both shown and priced.
+ *  Returns [] when the card can't be ranked, which means "leave it alone". */
+function rankedPrints(card: Card): Card[] {
+  const variants = getVariantsCached(card.id)
+  if (!variants || variants.length === 0) return []
+  const owned = PRINTS_BY_BASE.get(card.id.replace(/_[pr]\d+$/, '')) ?? []
+  const byId = new Map(owned.map(c => [c.id, c]))
+  return variants
+    .filter(v => byId.has(v.imageId))
+    .slice()
+    .sort((a, b) => a.marketPrice - b.marketPrice)
+    .map(v => byId.get(v.imageId)!)
+}
+
+/** Pick the printing to DISPLAY for a card at a given bling level.
+ *
+ *  Level 0 returns the card untouched rather than forcing the cheapest print —
+ *  so cycling back to "Bling" restores exactly what the user picked instead of
+ *  quietly discarding a print they chose on purpose.
+ *
+ *  Note this never picks by `_pN` suffix: on cards with 2+ priced alts, `_p1`
+ *  is the most expensive only 3% of the time, so suffix order is close to
+ *  meaningless. Ranking is always by real market price. */
+function blingPrint(card: Card, level: BlingLevel): Card {
+  if (level === 0) return card
+  const ranked = rankedPrints(card)
+  if (ranked.length < 2) return card
+  if (level === 2) return ranked[ranked.length - 1]!
+  // Upper-middle of the range. With only two prints there is no middle, so
+  // "blingy" and "blingest" land on the same card — which is honest.
+  return ranked[Math.ceil((ranked.length - 1) / 2)]!
 }
 
 /** Sets that rotated out of Standard format on 2026-04-01 (Block 1).
@@ -143,6 +199,9 @@ export const useCardStore = defineStore('cards', {
     selectedCard: null as Card | null,  // card shown in preview panel
     deck: [] as Card[],                 // cards in the user's deck (duplicates = multiple copies)
     deckName: '',                        // name for saving/loading decks
+    blingLevel: 0 as BlingLevel,         // 0 Bling / 1 Blingy / 2 Blingest — display only
+    blingLoading: false,                 // true while variant prices are being fetched
+    _priceVersion: 0,                    // bumped when prices land, to re-run bling getters
     _savedDecksVersion: 0,               // bumped on save/delete to trigger reactivity
   }),
 
@@ -217,6 +276,37 @@ export const useCardStore = defineStore('cards', {
       if (sortDir === 'asc') return cards.sort((a, b) => a.cost - b.cost)
       if (sortDir === 'desc') return cards.sort((a, b) => b.cost - a.cost)
       return cards
+    },
+
+    /** The deck as it should be DISPLAYED, with bling substitutions applied.
+     *
+     *  Bling is deliberately a view layer: `deck` keeps the user's own prints, so
+     *  saving, exporting, the 4-copy limit and the pool's +/- controls all keep
+     *  working on the real ids. It also matters for correctness — 296 alt prints
+     *  carry genuinely different ability text and one (EB01-023_p1) has different
+     *  power and counter, so substituting into `deck` itself would silently
+     *  change deck stats. */
+    displayDeck(state): Card[] {
+      void state._priceVersion  // re-run when prices arrive (the cache isn't reactive)
+      if (state.blingLevel === 0) return state.deck
+      return state.deck.map(c => blingPrint(c, state.blingLevel))
+    },
+
+    /** Label for the bling button — always the CURRENT state. */
+    blingLabel(state): string {
+      return BLING_LEVELS[state.blingLevel]
+    },
+
+    /** How many deck cards actually changed print at the current level.
+     *  Lets the UI stay honest when a deck simply has no blingable cards. */
+    blingSwapCount(state): number {
+      void state._priceVersion
+      if (state.blingLevel === 0) return 0
+      let n = 0
+      for (const c of state.deck) {
+        if (blingPrint(c, state.blingLevel).id !== c.id) n++
+      }
+      return n
     },
 
     /** Total cards currently in the deck */
@@ -332,6 +422,29 @@ export const useCardStore = defineStore('cards', {
         this.selectedCounters.push(value)
       } else {
         this.selectedCounters.splice(index, 1)
+      }
+    },
+
+    /** Cycle Bling -> Blingy -> Blingest -> Bling.
+     *
+     *  Ranking needs every printing's market price, but the API returns all
+     *  printings of a card in ONE response keyed by base id, and pricing.ts
+     *  already caches that whole list — so for a deck whose prices have been
+     *  shown at all, this costs zero extra network requests. */
+    async cycleBling() {
+      this.blingLevel = ((this.blingLevel + 1) % 3) as BlingLevel
+      try { localStorage.setItem('op-bling-level', String(this.blingLevel)) } catch {}
+      if (this.blingLevel === 0 || this.deck.length === 0) return
+
+      const ids = this.deck.map(c => c.id)
+      // Only show the spinner if something still needs fetching.
+      const needsFetch = ids.some(id => getVariantsCached(id) === undefined)
+      if (needsFetch) this.blingLoading = true
+      try {
+        await prefetchVariants(ids)
+      } finally {
+        this.blingLoading = false
+        this._priceVersion++
       }
     },
 
@@ -566,6 +679,17 @@ export const useCardStore = defineStore('cards', {
           this.loadDeck(lastName)
         }
       }
+      // Restore bling level
+      try {
+        const savedBling = Number(localStorage.getItem('op-bling-level'))
+        if (savedBling === 1 || savedBling === 2) {
+          this.blingLevel = savedBling
+          // Prices are cached per base id, so warm them for the restored deck.
+          if (this.deck.length) {
+            prefetchVariants(this.deck.map(c => c.id)).then(() => { this._priceVersion++ })
+          }
+        }
+      } catch {}
       // Restore currency preference
       try {
         const savedCurrency = localStorage.getItem('op-currency')

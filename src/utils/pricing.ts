@@ -111,6 +111,27 @@ export function getCardPriceUSDCached(cardId: string): number | null | undefined
   return exact?.marketPrice ?? null
 }
 
+/** All known printings of a base card, straight from the cache, or undefined
+ *  when we haven't fetched that base yet.
+ *
+ *  The API returns every printing of a card in ONE response and we cache the
+ *  whole list per base id, so ranking a card's prints by price costs no extra
+ *  network request once anything from that base has been priced. This is what
+ *  makes the Bling toggle free. */
+export function getVariantsCached(cardId: string): VariantPrice[] | null | undefined {
+  const entry = getCache()[baseId(cardId)]
+  if (!entry || Date.now() - entry.fetchedAt >= CACHE_TTL_MS) return undefined
+  return entry.variants
+}
+
+/** Warm the variant cache for a set of cards. Resolves once every base has been
+ *  looked up (from cache or network). Concurrent calls for the same base are
+ *  coalesced by getVariants. */
+export async function prefetchVariants(cardIds: string[]): Promise<void> {
+  const bases = [...new Set(cardIds.map(baseId))]
+  await Promise.all(bases.map(b => getVariants(b).catch(() => null)))
+}
+
 /** Async lookup that fetches if not cached.
  *  Returns null when the API has no data for THIS specific variant — we
  *  intentionally do NOT fall back to other variants because alt-art prices

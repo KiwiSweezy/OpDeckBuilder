@@ -1,566 +1,275 @@
 <script setup lang="ts">
-import { computed, defineAsyncComponent, ref } from 'vue'
+import { computed, defineAsyncComponent, onBeforeUnmount, ref } from 'vue'
 import { useCardStore } from './stores/cardStore'
+import AppHeader from './components/AppHeader.vue'
+import FilterBar from './components/FilterBar.vue'
 import CardGrid from './components/CardGrid.vue'
-import SearchBar from './components/SearchBar.vue'
-import ColorFilter from './components/ColorFilter.vue'
+import CardPreview from './components/CardPreview.vue'
 import DeckDisplay from './components/DeckDisplay.vue'
-import DeckSidebar from './components/DeckSidebar.vue'
 import DeckStats from './components/DeckStats.vue'
-
-// Loaded on demand. The share sheet drags in html-to-image (441KB) and the
-// proxy printer is 979 lines that most sessions never open — neither belongs
-// in the chunk that blocks first paint.
-const DeckShareModal = defineAsyncComponent(() => import('./components/DeckShareModal.vue'))
-const ProxyPage = defineAsyncComponent(() => import('./components/ProxyPage.vue'))
 import AppTour from './components/AppTour.vue'
 import MobileLayout from './components/MobileLayout.vue'
 import { useBreakpoint } from './composables/useBreakpoint'
-import { copyToClipboard } from './utils/clipboard'
-import { useDeckTotal } from './composables/useDeckTotal'
 
-const copiedId = ref('')
-function copyCardId(id: string) {
-  if (copyToClipboard(id)) {
-    copiedId.value = id
-    setTimeout(() => {
-      if (copiedId.value === id) copiedId.value = ''
-    }, 1500)
-  }
-}
+// Loaded on demand. The share sheet drags in html-to-image and the proxy
+// printer is ~1000 lines that most sessions never open — neither belongs in the
+// chunk that blocks first paint.
+const DeckShareModal = defineAsyncComponent(() => import('./components/DeckShareModal.vue'))
+const ProxyPage = defineAsyncComponent(() => import('./components/ProxyPage.vue'))
 
 const { isMobile } = useBreakpoint()
-
-
 const cardStore = useCardStore()
 cardStore.initStore()
 
 const tourRef = ref<InstanceType<typeof AppTour> | null>(null)
-function startTour() {
-  tourRef.value?.start()
-}
-
 const showShareModal = ref(false)
+const currentView = ref<'builder' | 'proxy'>('builder')
+
 function openShare() {
   if (cardStore.deckSize === 0) return
   showShareModal.value = true
 }
 
-const currentView = ref<'builder' | 'proxy'>('builder')
+/* ---------------------------------------------------------------------------
+   Resizable split between the deck pane and the card pool.
 
-/* Deck total for the auto-displaying market pill */
-const deckTotal = useDeckTotal()
+   The old implementation attached a raw mousemove listener that wrote a ref on
+   every single event — with a high-refresh mouse that's 125-1000 relayouts per
+   second of the entire grid, including up to 51 absolutely-positioned deck
+   images. This coalesces to one write per animation frame and uses pointer
+   capture so the drag survives the cursor leaving the handle.
+--------------------------------------------------------------------------- */
+const DECK_MIN = 300
+const DECK_MAX = 720
+const DECK_DEFAULT = 420
 
-/* Resizable sidebar */
-const SIDEBAR_MAX = 500
-const SIDEBAR_MIN = 280
-const sidebarWidth = ref(SIDEBAR_MAX)
+function readStoredWidth(): number {
+  try {
+    const v = Number(localStorage.getItem('op-deck-pane-width'))
+    if (Number.isFinite(v) && v >= DECK_MIN && v <= DECK_MAX) return v
+  } catch { /* ignore */ }
+  return DECK_DEFAULT
+}
+
+const deckWidth = ref(readStoredWidth())
 const isResizing = ref(false)
 
-function onResizeStart(e: MouseEvent) {
+let frame = 0
+let latestX = 0
+let activeHandle: HTMLElement | null = null
+let activePointer: number | null = null
+
+function applyWidth() {
+  frame = 0
+  const max = Math.min(DECK_MAX, window.innerWidth - 420)
+  deckWidth.value = Math.min(max, Math.max(DECK_MIN, latestX))
+}
+
+function onResizeMove(e: PointerEvent) {
+  latestX = e.clientX
+  if (!frame) frame = requestAnimationFrame(applyWidth)
+}
+
+function endResize() {
+  isResizing.value = false
+  if (frame) { cancelAnimationFrame(frame); frame = 0 }
+  window.removeEventListener('pointermove', onResizeMove)
+  window.removeEventListener('pointerup', endResize)
+  window.removeEventListener('pointercancel', endResize)
+  if (activeHandle && activePointer !== null) {
+    try { activeHandle.releasePointerCapture(activePointer) } catch { /* already released */ }
+  }
+  activeHandle = null
+  activePointer = null
+  try { localStorage.setItem('op-deck-pane-width', String(deckWidth.value)) } catch { /* ignore */ }
+}
+
+function onResizeStart(e: PointerEvent) {
   e.preventDefault()
   isResizing.value = true
-  const onMove = (ev: MouseEvent) => {
-    const w = Math.min(SIDEBAR_MAX, Math.max(SIDEBAR_MIN, ev.clientX))
-    sidebarWidth.value = w
-  }
-  const onUp = () => {
-    isResizing.value = false
-    window.removeEventListener('mousemove', onMove)
-    window.removeEventListener('mouseup', onUp)
-  }
-  window.addEventListener('mousemove', onMove)
-  window.addEventListener('mouseup', onUp)
+  activeHandle = e.currentTarget as HTMLElement
+  activePointer = e.pointerId
+  activeHandle.setPointerCapture(e.pointerId)
+  latestX = e.clientX
+  window.addEventListener('pointermove', onResizeMove)
+  window.addEventListener('pointerup', endResize)
+  window.addEventListener('pointercancel', endResize)
 }
 
-/* Resizable bottom row (filters + card pool) */
-const BOTTOM_MIN = 200       // smallest the bottom row can shrink to
-const BOTTOM_MAX_RATIO = 0.7 // bottom row can take at most 70% of viewport
-const bottomHeight = ref(0)  // 0 = use default 2fr; set on first drag
-const isResizingRow = ref(false)
-
-function onRowResizeStart(e: MouseEvent) {
-  e.preventDefault()
-  isResizingRow.value = true
-  const onMove = (ev: MouseEvent) => {
-    const vh = window.innerHeight
-    const fromBottom = vh - ev.clientY
-    const max = vh * BOTTOM_MAX_RATIO
-    bottomHeight.value = Math.min(max, Math.max(BOTTOM_MIN, fromBottom))
-  }
-  const onUp = () => {
-    isResizingRow.value = false
-    window.removeEventListener('mousemove', onMove)
-    window.removeEventListener('mouseup', onUp)
-  }
-  window.addEventListener('mousemove', onMove)
-  window.addEventListener('mouseup', onUp)
+/** Double-click the divider to snap back to the default width. */
+function resetWidth() {
+  deckWidth.value = DECK_DEFAULT
+  try { localStorage.setItem('op-deck-pane-width', String(DECK_DEFAULT)) } catch { /* ignore */ }
 }
 
-const gridStyle = computed(() => ({
-  gridTemplateColumns: `${sidebarWidth.value}px 400px 1fr`,
-  gridTemplateRows: bottomHeight.value > 0
-    ? `1fr ${bottomHeight.value}px`
-    : '3fr 2fr',
-}))
+onBeforeUnmount(endResize)
 
-/** Detect keywords present in the selected card's ability text */
-const cardKeywords = computed(() => {
-  const card = cardStore.selectedCard
-  if (!card) return []
-  const ability = card.ability.toLowerCase()
-  const keywords: string[] = []
-  if (ability.includes('blocker')) keywords.push('Blocker')
-  if (ability.includes('rush')) keywords.push('Rush')
-  if (ability.includes('banish')) keywords.push('Banish')
-  if (ability.includes('double attack')) keywords.push('Double Attack')
-  if (ability.includes('on k.o.')) keywords.push('On KO')
-  if (/look at.*from the top of your deck/i.test(card.ability)) keywords.push('Searcher')
-  return keywords
-})
+const shellStyle = computed(() => ({ gridTemplateColumns: `${deckWidth.value}px 1fr` }))
 </script>
 
 <template>
   <ProxyPage v-if="currentView === 'proxy'" @back="currentView = 'builder'" />
+
   <MobileLayout
     v-else-if="isMobile"
     @navigate="currentView = $event"
     @share="openShare"
   />
-  <div v-else class="app-layout" :class="{ 'is-resizing': isResizing, 'is-resizing-row': isResizingRow }" :style="gridStyle">
-    <!-- LEFT: sidebar with controls + card preview -->
-    <div class="sidebar">
-      <div class="resize-handle" @mousedown="onResizeStart"></div>
-      <div class="sidebar-controls">
-        <DeckSidebar />
-        <button class="tour-trigger" @click="startTour" title="Start tour">?</button>
+
+  <div v-else class="shell" :class="{ resizing: isResizing }" :style="shellStyle">
+    <AppHeader
+      @share="openShare"
+      @proxy="currentView = 'proxy'"
+      @tour="tourRef?.start()"
+    />
+
+    <!-- LEFT: the deck being built -->
+    <section class="deck-pane" data-tour="deck-area">
+      <div class="deck-scroll">
+        <DeckDisplay />
       </div>
-      <div class="sidebar-preview" data-tour="sidebar-preview">
-        <div v-if="cardStore.selectedCard" class="preview-content">
-          <img
-            :src="cardStore.selectedCard.images.large"
-            :alt="cardStore.selectedCard.name"
-            class="preview-image"
-          />
-          <h2 class="preview-name">{{ cardStore.selectedCard.name }}</h2>
-          <p class="preview-details">
-            <button
-              class="copy-id"
-              :title="`Copy ${cardStore.selectedCard.id} to clipboard`"
-              @click="copyCardId(cardStore.selectedCard.id)"
-            >
-              {{ copiedId === cardStore.selectedCard.id ? 'Copied!' : cardStore.selectedCard.id }}
-            </button>
-            ·
-            {{ cardStore.selectedCard.type === 'leader' ? 'Life' : 'Cost' }} {{ cardStore.selectedCard.cost }} ·
-            Power {{ cardStore.selectedCard.power }} ·
-            {{ cardStore.selectedCard.attribute }}
-          </p>
-          <p class="preview-details">
-            {{ cardStore.selectedCard.type.toUpperCase() }} ·
-            {{ cardStore.selectedCard.rarity.toUpperCase() }}<span v-if="cardStore.selectedCard.counter"> · Counter {{ cardStore.selectedCard.counter }}</span><span v-if="cardStore.selectedCard.set"> · {{ cardStore.selectedCard.set }}</span>
-          </p>
-          <p class="preview-family">{{ cardStore.selectedCard.family }}</p>
-          <div v-if="cardKeywords.length" class="preview-keywords">
-            <span v-for="kw in cardKeywords" :key="kw" class="keyword-badge">{{ kw }}</span>
-          </div>
-          <p v-if="cardStore.selectedCard.ability && cardStore.selectedCard.ability !== '-'" class="preview-ability">
-            {{ cardStore.selectedCard.ability.replace(/<br>/g, '\n') }}
-          </p>
-        </div>
-        <p v-else class="preview-placeholder">Hover a card to preview</p>
+      <div class="deck-stats-pane">
         <DeckStats />
       </div>
-    </div>
+      <div
+        class="col-handle"
+        role="separator"
+        aria-orientation="vertical"
+        aria-label="Resize deck panel"
+        title="Drag to resize · double-click to reset"
+        @pointerdown="onResizeStart"
+        @dblclick="resetWidth"
+      ></div>
+    </section>
 
-    <!-- RIGHT-TOP: deck display area (cards in deck) -->
-    <div class="deck-area" data-tour="deck-area">
-      <DeckDisplay />
-      <button
-        class="share-fab"
-        :class="{ disabled: cardStore.deckSize === 0 }"
-        @click="openShare"
-        title="Share Deck"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="18" cy="5" r="3"></circle>
-          <circle cx="6" cy="12" r="3"></circle>
-          <circle cx="18" cy="19" r="3"></circle>
-          <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
-          <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
-        </svg>
-        <span>Share</span>
-      </button>
-      <button
-        class="share-fab proxy-fab"
-        @click="currentView = 'proxy'"
-        title="Proxy this deck list"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="6 9 6 2 18 2 18 9"></polyline>
-          <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
-          <rect x="6" y="14" width="12" height="8"></rect>
-        </svg>
-        <span>Proxy</span>
-      </button>
-      <!-- Auto-displaying market pill: shows deck total. Click to toggle USD/CAD. -->
-      <button
-        class="market-pill"
-        :class="{ disabled: cardStore.deckSize === 0 }"
-        @click="cardStore.toggleCurrency"
-        :title="`Click to switch to ${({ USD: 'CAD', CAD: 'GBP', GBP: 'USD' } as const)[cardStore.currency]}`"
-      >
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 1v22M17 5H9.5a3.5 3.5 0 1 0 0 7h5a3.5 3.5 0 1 1 0 7H6"/>
-        </svg>
-        <span class="market-amount">{{ deckTotal.formatted.value }}</span>
-      </button>
-      <div class="row-resize-handle" @mousedown="onRowResizeStart"></div>
-    </div>
+    <!-- RIGHT: the card pool, which now gets the room -->
+    <section class="pool-pane">
+      <FilterBar />
+      <div class="pool-scroll" data-tour="card-pool">
+        <CardGrid />
+      </div>
+    </section>
 
-    <!-- RIGHT-BOTTOM-LEFT: search + filters -->
-    <div class="filters" data-tour="filters">
-      <SearchBar />
-      <ColorFilter />
-    </div>
-
-    <!-- RIGHT-BOTTOM-RIGHT: card search results -->
-    <div class="card-pool" data-tour="card-pool">
-      <CardGrid />
-    </div>
+    <CardPreview />
     <AppTour ref="tourRef" />
   </div>
-  <!-- Share modal: outside the layout so both mobile + desktop can open it -->
+
+  <!-- Outside the shell so mobile and desktop can both open it -->
   <DeckShareModal :open="showShareModal" @close="showShareModal = false" />
 </template>
 
 <style scoped>
 /*
-  2-row, 3-column grid:
-  Left sidebar spans both rows (controls + preview stacked).
-  Row 1: deck area (spans 2 cols)
-  Row 2: filters | card pool
+  Two columns under a fixed header:
 
-  grid-template-areas:
-  "sidebar deck    deck"
-  "sidebar filters cards"
+    "header  header"   52px
+    "deck    pool"     1fr
+
+  The previous layout was a 2x3 grid whose bottom row was hardcoded to `3fr 2fr`
+  with a fixed 400px filter column. Measured on a 1600x950 viewport that gave the
+  deck area 41% of the screen (empty until you add cards), the sidebar 31% (empty
+  until you hover), the filters 10% (overflowing by 188px), and the card pool
+  about 18% — roughly nine of 4789 cards visible at a time. Filters moved into a
+  horizontal bar and the preview became a floating overlay, so both of those
+  columns collapse into the pool.
 */
-.app-layout {
+.shell {
   display: grid;
-  /* grid-template-columns set dynamically via :style */
-  grid-template-rows: 3fr 2fr;
   grid-template-areas:
-    "sidebar deck    deck"
-    "sidebar filters cards";
+    "header header"
+    "deck   pool";
+  /* minmax(0, 1fr) not 1fr: a grid track sized `1fr` still has min-height:auto,
+     so a tall child stretches the row past the container instead of scrolling
+     inside it. Measured the deck pane at ~28000px tall before this. */
+  grid-template-rows: 52px minmax(0, 1fr);
   height: 100vh;
+  height: 100dvh;
+  background: var(--surface-canvas);
+  overflow: hidden;
 }
 
-.app-layout.is-resizing {
+.shell.resizing {
   user-select: none;
   cursor: col-resize;
 }
 
-.app-layout.is-resizing-row {
-  user-select: none;
-  cursor: row-resize;
-}
-
-/* LEFT: full-height sidebar */
-.sidebar {
-  grid-area: sidebar;
-  background-color: var(--bg-secondary);
-  border-right: 1px solid var(--border-color);
+/* ---- deck pane ---- */
+.deck-pane {
+  grid-area: deck;
+  position: relative;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
-  position: relative;
+  min-width: 0;
+  min-height: 0;
+  background: var(--surface-raised);
+  border-right: 1px solid var(--border-subtle);
 }
 
-.resize-handle {
+.deck-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: var(--space-5);
+  /* Isolate the deck's layout/paint from the pool so scrolling one doesn't
+     invalidate the other. */
+  contain: layout paint;
+}
+
+.deck-stats-pane {
+  flex-shrink: 0;
+  max-height: 40%;
+  overflow-y: auto;
+  padding: var(--space-4) var(--space-5);
+  border-top: 1px solid var(--border-subtle);
+  background: var(--surface-raised-2);
+}
+
+/* Wide hit area, thin visual. The old handles were 5px and fully transparent
+   until hover, with no affordance at all. */
+.col-handle {
   position: absolute;
   top: 0;
-  right: 0;
-  width: 5px;
+  right: -4px;
+  width: 9px;
   height: 100%;
+  z-index: var(--z-float);
   cursor: col-resize;
-  z-index: 10;
-  background: transparent;
-  transition: background 0.15s ease;
+  touch-action: none;
 }
-
-.resize-handle:hover,
-.app-layout.is-resizing .resize-handle {
+.col-handle::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 4px;
+  width: 1px;
+  height: 100%;
+  background: transparent;
+  transition: background var(--dur-fast) var(--ease-out);
+}
+.col-handle:hover::after,
+.shell.resizing .col-handle::after {
   background: var(--accent);
 }
 
-/* Controls sit at top, only as tall as their content */
-.sidebar-controls {
-  position: relative;
-  padding: 16px 16px 31px;
-  border-bottom: 1px solid var(--border-color);
-}
-
-/* Preview fills the remaining space */
-.sidebar-preview {
-  flex: 1;
-  padding: 16px 24px;
+/* ---- pool pane ---- */
+.pool-pane {
+  grid-area: pool;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  background: var(--surface-canvas);
 }
 
-/* RIGHT-TOP: deck display — spans 2 columns */
-.deck-area {
-  grid-area: deck;
-  background-color: var(--bg-secondary);
-  border-bottom: 1px solid var(--border-color);
-  padding: 12px;
+.pool-scroll {
+  flex: 1;
+  min-height: 0;
   overflow-y: auto;
-  position: relative;
-}
-
-.share-fab {
-  position: absolute;
-  top: 14px;
-  right: 18px;
-  z-index: 20;
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  padding: 8px 14px;
-  background: rgba(15, 15, 15, 0.85);
-  color: var(--text-primary);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  cursor: pointer;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  box-shadow:
-    0 4px 14px rgba(0, 0, 0, 0.6),
-    0 2px 4px rgba(0, 0, 0, 0.4);
-  transition: all 0.18s ease;
-}
-
-.share-fab:hover {
-  background: rgba(0, 0, 0, 0.95);
-  border-color: var(--accent);
-  color: white;
-  transform: translateY(-1px);
-  box-shadow:
-    0 6px 18px rgba(0, 0, 0, 0.7),
-    0 0 0 1px var(--accent);
-}
-
-.share-fab.disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-.share-fab svg {
-  display: block;
-}
-
-/* Stacked floating buttons in top-right of the deck area */
-.proxy-fab {
-  top: 56px;
-}
-
-/* Market pill: stacked as the third button below Share and Proxy */
-.market-pill {
-  position: absolute;
-  top: 98px;
-  right: 18px;
-  z-index: 20;
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  padding: 8px 14px;
-  background: rgba(15, 15, 15, 0.85);
-  color: var(--text-primary);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  cursor: pointer;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  box-shadow:
-    0 4px 14px rgba(0, 0, 0, 0.6),
-    0 2px 4px rgba(0, 0, 0, 0.4);
-  transition: all 0.18s ease;
-}
-
-.market-pill:hover {
-  background: rgba(0, 0, 0, 0.95);
-  border-color: #4dd0b2;
-  transform: translateY(-1px);
-}
-
-.market-pill.disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-.market-pill svg {
-  display: block;
-  color: #4dd0b2;
-}
-
-.market-amount {
-  color: #4dd0b2;
-  font-variant-numeric: tabular-nums;
-}
-
-.market-currency {
-  color: var(--text-secondary);
-  font-size: 0.7rem;
-  font-weight: 500;
-}
-
-.row-resize-handle {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 5px;
-  cursor: row-resize;
-  z-index: 10;
-  background: transparent;
-  transition: background 0.15s ease;
-}
-
-.row-resize-handle:hover,
-.app-layout.is-resizing-row .row-resize-handle {
-  background: var(--accent);
-}
-
-/* RIGHT-BOTTOM-LEFT: search + filters */
-.filters {
-  grid-area: filters;
-  background-color: var(--bg-primary);
-  border-right: 1px solid var(--border-color);
-  padding: 10px 12px;
-  overflow-y: auto;
-}
-
-/* RIGHT-BOTTOM-RIGHT: card pool.
-   `container-type: inline-size` lets the card grid respond to this
-   container's actual width (not the viewport), so resizing the sidebar
-   reflows the grid correctly. */
-.card-pool {
-  grid-area: cards;
-  background-color: var(--bg-primary);
-  padding: 16px;
-  overflow-y: auto;
+  padding: var(--space-5);
+  /* Lets the grid size its tracks against this element's width rather than the
+     viewport, so dragging the divider reflows the columns correctly. */
   container-type: inline-size;
   container-name: cardpool;
+  contain: layout paint;
 }
-
-/* Preview styles */
-.preview-placeholder {
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  text-align: center;
-  margin-top: 20px;
-}
-
-.preview-image {
-  width: 100%;
-  border-radius: 8px;
-}
-
-.preview-name {
-  color: var(--text-primary);
-  font-size: 1.1rem;
-  margin-top: 12px;
-}
-
-.preview-details {
-  color: var(--text-secondary);
-  font-size: 0.85rem;
-  margin-top: 6px;
-}
-
-.preview-family {
-  color: var(--text-secondary);
-  font-size: 0.8rem;
-  margin-top: 4px;
-  font-style: italic;
-}
-
-.preview-keywords {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
-  margin-top: 8px;
-}
-
-.keyword-badge {
-  padding: 2px 8px;
-  background-color: var(--accent);
-  color: white;
-  font-size: 0.7rem;
-  font-weight: 600;
-  border-radius: 10px;
-  text-transform: uppercase;
-}
-
-.tour-trigger {
-  position: absolute;
-  bottom: 4px;
-  right: 8px;
-  width: 24px;
-  height: 24px;
-  padding: 0;
-  background: none;
-  border: 1px solid var(--border-color);
-  border-radius: 50%;
-  color: var(--text-secondary);
-  font-size: 0.75rem;
-  font-weight: bold;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.15s ease;
-}
-
-.tour-trigger:hover {
-  border-color: var(--accent);
-  color: var(--text-primary);
-}
-
-.preview-ability {
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  margin-top: 8px;
-  line-height: 1.4;
-  white-space: pre-line;
-}
-
-.copy-id {
-  display: inline-block;
-  padding: 1px 6px;
-  background: var(--bg-tertiary);
-  border: 1px solid var(--border-color);
-  border-radius: 4px;
-  color: inherit;
-  font-family: monospace;
-  font-size: 0.82rem;
-  cursor: pointer;
-  user-select: none;
-  -webkit-user-select: none;
-  -webkit-touch-callout: none;  /* no iOS long-press context menu */
-  transition: all 0.15s ease;
-}
-
-.copy-id:hover {
-  border-color: var(--accent);
-  color: var(--text-primary);
-}
-
 </style>

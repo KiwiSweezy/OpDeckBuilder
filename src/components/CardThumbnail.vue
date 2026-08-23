@@ -2,16 +2,23 @@
 import { computed } from 'vue'
 import type { Card } from '../types/Card'
 import { useCardStore } from '../stores/cardStore'
-import { useBreakpoint } from '../composables/useBreakpoint'
 
-const props = defineProps<{ card: Card }>()
+/*
+  `isMobile` arrives as a prop from CardGrid, which owns the single
+  useBreakpoint() subscription for the whole pool. Calling the composable here
+  registered an onMounted + onUnmounted pair for every tile on screen.
+*/
+const props = withDefaults(
+  defineProps<{ card: Card; isMobile?: boolean }>(),
+  { isMobile: false }
+)
+
 const emit = defineEmits<{
   select: [card: Card]
   preview: [card: Card]
 }>()
 
 const cardStore = useCardStore()
-const { isMobile } = useBreakpoint()
 
 /** How many copies of this card are in the current deck (O(1) lookup) */
 const countInDeck = computed(() => cardStore.deckCounts[props.card.id] ?? 0)
@@ -38,7 +45,18 @@ function handleRemove(e: Event) {
     @click="emit('preview', card)"
   >
     <div class="tile-img-wrap">
-      <img :src="card.images.small" :alt="card.name" loading="lazy" />
+      <!--
+        width/height + aspect-ratio reserve the tile's box before the bytes
+        arrive, so the grid never collapses to 0px and then jump-reflows.
+      -->
+      <img
+        :src="card.images.small"
+        :alt="card.name"
+        width="600"
+        height="838"
+        loading="lazy"
+        decoding="async"
+      />
       <span class="cost-badge">{{ card.cost }}</span>
     </div>
     <div class="tile-name">{{ card.name }}</div>
@@ -58,24 +76,38 @@ function handleRemove(e: Event) {
     </div>
   </div>
 
-  <!-- Desktop: simple image-only thumbnail (unchanged) -->
+  <!-- Desktop: simple image-only thumbnail -->
   <div
     v-else
     class="card-thumbnail"
     @click="emit('select', card)"
     @mouseenter="emit('preview', card)"
   >
-    <img :src="card.images.small" :alt="card.name" loading="lazy" />
+    <img
+      :src="card.images.small"
+      :alt="card.name"
+      width="600"
+      height="838"
+      loading="lazy"
+      decoding="async"
+    />
   </div>
 </template>
 
 <style scoped>
 /* ===== DESKTOP THUMBNAIL ===== */
+/*
+  aspect-ratio gives the tile its full height on the very first layout pass,
+  before the image has loaded. Without it the grid item had no intrinsic
+  height, every row collapsed to 0px and then reflowed as artwork decoded.
+*/
 .card-thumbnail {
-  border-radius: 6px;
+  aspect-ratio: var(--card-aspect);
+  border-radius: var(--radius-card);
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.15s ease;
+  background: var(--surface-raised);
+  transition: transform var(--dur-fast) var(--ease-out);
 }
 
 .card-thumbnail:hover {
@@ -91,14 +123,14 @@ function handleRemove(e: Event) {
 
 /* ===== MOBILE TILE ===== */
 .card-tile {
-  background: var(--bg-tertiary);
-  border: 2px solid var(--border-color);
-  border-radius: 8px;
+  background: var(--surface-raised-2);
+  border: 2px solid var(--border-default);
+  border-radius: var(--radius-md);
   overflow: hidden;
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  transition: transform 0.1s ease;
+  transition: transform var(--dur-instant) var(--ease-out);
 }
 
 .card-tile:active {
@@ -108,55 +140,59 @@ function handleRemove(e: Event) {
 .tile-img-wrap {
   position: relative;
   width: 100%;
+  aspect-ratio: var(--card-aspect);
+  background: var(--surface-sunken);
 }
 
 .tile-img-wrap img {
   width: 100%;
+  height: 100%;
   display: block;
+  object-fit: cover;
 }
 
 .cost-badge {
   position: absolute;
-  top: 4px;
-  left: 4px;
+  top: var(--space-2);
+  left: var(--space-2);
   background: rgba(0, 0, 0, 0.85);
-  color: white;
-  font-size: 0.72rem;
-  font-weight: bold;
-  padding: 2px 6px;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: var(--text-strong);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-strong);
 }
 
 .tile-name {
-  padding: 4px 6px 2px;
-  color: var(--text-primary);
-  font-size: 0.72rem;
-  font-weight: 500;
+  padding: var(--space-2) var(--space-3) var(--space-1);
+  color: var(--text-default);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  line-height: 1.2;
+  line-height: var(--leading-tight);
 }
 
 .tile-controls {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 4px 4px 6px;
-  gap: 2px;
+  padding: var(--space-2) var(--space-2) var(--space-3);
+  gap: var(--space-1);
 }
 
 .ctrl-btn {
   width: 26px;
   height: 26px;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  border-radius: 50%;
-  color: var(--text-primary);
-  font-size: 1rem;
-  font-weight: bold;
+  background: var(--surface-raised);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-pill);
+  color: var(--text-default);
+  font-size: var(--text-md);
+  font-weight: var(--weight-bold);
   line-height: 1;
   padding: 0;
   cursor: pointer;
@@ -176,30 +212,30 @@ function handleRemove(e: Event) {
 }
 
 .ctrl-btn.plus {
-  background: #2e7d32;
-  color: white;
-  border-color: #2e7d32;
+  background: var(--positive);
+  color: var(--text-inverse);
+  border-color: var(--positive);
 }
 
 .ctrl-btn.minus:not(:disabled) {
-  background: #c62828;
-  color: white;
-  border-color: #c62828;
+  background: var(--danger);
+  color: var(--text-inverse);
+  border-color: var(--danger);
 }
 
 .ctrl-count {
-  color: var(--text-primary);
-  font-size: 0.95rem;
-  font-weight: bold;
+  color: var(--text-strong);
+  font-size: var(--text-base);
+  font-weight: var(--weight-bold);
   min-width: 20px;
   text-align: center;
 }
 
 /* Color-coded borders to match card color (Exburst pattern) */
-.border-red    { border-color: #c62828; }
-.border-blue   { border-color: #1565c0; }
-.border-green  { border-color: #2e7d32; }
-.border-purple { border-color: #6a1b9a; }
-.border-black  { border-color: #555; }
-.border-yellow { border-color: #f9a825; }
+.border-red    { border-color: var(--op-red); }
+.border-blue   { border-color: var(--op-blue); }
+.border-green  { border-color: var(--op-green); }
+.border-purple { border-color: var(--op-purple); }
+.border-black  { border-color: var(--op-black); }
+.border-yellow { border-color: var(--op-yellow); }
 </style>

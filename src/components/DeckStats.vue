@@ -31,6 +31,14 @@ function renderChart() {
 
   const data = costEntries.value
   const width = container.clientWidth
+
+  // Bail out while the container has no width rather than building a zero-width
+  // SVG. Creating the <svg> at width 0 and later only mutating its attributes
+  // left Chromium with a stale, empty paint region for the whole subtree — the
+  // bars had correct geometry in the DOM and a correct computed fill, but never
+  // painted until an unrelated child was appended. The ResizeObserver below
+  // calls back as soon as there is a real width, so nothing is lost by waiting.
+  if (width <= 0) return
   const innerWidth = width - MARGIN.left - MARGIN.right
   const innerHeight = CHART_HEIGHT - MARGIN.top - MARGIN.bottom
 
@@ -76,7 +84,7 @@ function renderChart() {
     .attr('height', 0)
     .attr('rx', 3)
     .attr('ry', 3)
-    .attr('fill', 'var(--accent)')
+    .style('fill', 'var(--accent)')
     .attr('opacity', 0.85)
     .merge(bars)
     .transition()
@@ -96,7 +104,7 @@ function renderChart() {
   labels.enter()
     .append('text')
     .attr('text-anchor', 'middle')
-    .attr('fill', 'var(--text-secondary)')
+    .style('fill', 'var(--text-secondary)')
     .attr('font-size', '10px')
     .merge(labels)
     .attr('x', d => (x(String(d.cost)) ?? 0) + x.bandwidth() / 2)
@@ -112,7 +120,7 @@ function renderChart() {
   counts.enter()
     .append('text')
     .attr('text-anchor', 'middle')
-    .attr('fill', 'var(--text-secondary)')
+    .style('fill', 'var(--text-secondary)')
     .attr('font-size', '9px')
     .attr('font-weight', '600')
     .merge(counts)
