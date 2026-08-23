@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, defineAsyncComponent, ref } from 'vue'
 import { useCardStore } from './stores/cardStore'
 import CardGrid from './components/CardGrid.vue'
 import SearchBar from './components/SearchBar.vue'
@@ -7,8 +7,12 @@ import ColorFilter from './components/ColorFilter.vue'
 import DeckDisplay from './components/DeckDisplay.vue'
 import DeckSidebar from './components/DeckSidebar.vue'
 import DeckStats from './components/DeckStats.vue'
-import DeckShareModal from './components/DeckShareModal.vue'
-import ProxyPage from './components/ProxyPage.vue'
+
+// Loaded on demand. The share sheet drags in html-to-image (441KB) and the
+// proxy printer is 979 lines that most sessions never open — neither belongs
+// in the chunk that blocks first paint.
+const DeckShareModal = defineAsyncComponent(() => import('./components/DeckShareModal.vue'))
+const ProxyPage = defineAsyncComponent(() => import('./components/ProxyPage.vue'))
 import AppTour from './components/AppTour.vue'
 import MobileLayout from './components/MobileLayout.vue'
 import { useBreakpoint } from './composables/useBreakpoint'

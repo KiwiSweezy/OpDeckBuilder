@@ -1,3 +1,41 @@
+/* ============================================================================
+   OP DECK BUILDER — GLOBAL STYLESHEET
+
+   Design principle: the cards ARE the interface. Card art is loud, saturated
+   and busy, so the chrome around it is deliberately quiet — a neutral, very
+   slightly blue-cool dark ramp with restrained accents. Anything that competes
+   with a card for attention is a bug.
+
+   Everything below is tokens. Components should reference these and not
+   hardcode colours, sizes, radii, shadows or durations.
+   ========================================================================= */
+
+/* ===== FONTS =====
+   Inter, self-hosted (no third-party request on the critical path). Previously
+   the UI declared Inter but never loaded it, so everything silently rendered
+   in system-ui. Variable weight 400-700 in one file per subset. */
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter-latin.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter-latin-ext.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+    U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+    U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Display face, used only for the wordmark. */
 @font-face {
   font-family: 'Carbon';
   src: url('/CarbonBold.ttf') format('truetype');
@@ -6,60 +44,262 @@
   font-display: swap;
 }
 
-/* ===== CSS CUSTOM PROPERTIES =====
-   These are like variables. Define them once here,
-   use them everywhere with var(--name).
-   If you want to tweak a color later, change it in ONE place. */
 :root {
-  --bg-primary: #0d0d0d;
-  --bg-secondary: #1a1a1a;
-  --bg-tertiary: #242424;
-  --text-primary: #e8e8e8;
-  --text-secondary: #999;
-  --border-color: #333;
-  --accent: #c62828;
-  --font-family: 'Inter', system-ui, sans-serif;
+  /* ===== SURFACES =====
+     A 6-step ramp. `canvas` is the page, `raised` is a panel, `overlay` is a
+     popover/modal. Cool-tinted rather than pure grey so card art reads warmer. */
+  --surface-canvas: #0b0c0e;
+  --surface-sunken: #08090a;
+  --surface-raised: #141619;
+  --surface-raised-2: #1b1e22;
+  --surface-overlay: #21252a;
+  --surface-hover: #262b31;
+
+  /* ===== TEXT ===== */
+  --text-strong: #f2f4f7;
+  --text-default: #d6dae0;
+  --text-muted: #9aa2ad;
+  --text-subtle: #6b737e;
+  --text-inverse: #0b0c0e;
+
+  /* ===== BORDERS ===== */
+  --border-subtle: #1f2328;
+  --border-default: #2b3138;
+  --border-strong: #3c444e;
+
+  /* ===== BRAND / ACCENT =====
+     One Piece red, tuned for a dark UI (the original #c62828 is muddy on
+     near-black). --accent-quiet is for tinted fills behind text. */
+  --accent: #e0374a;
+  --accent-hover: #f04a5c;
+  --accent-press: #c22b3d;
+  --accent-quiet: rgba(224, 55, 74, 0.14);
+  --accent-ring: rgba(224, 55, 74, 0.45);
+  --on-accent: #ffffff;
+
+  /* ===== SEMANTIC ===== */
+  --positive: #3fbf87;
+  --positive-quiet: rgba(63, 191, 135, 0.14);
+  --warning: #e0a23c;
+  --warning-quiet: rgba(224, 162, 60, 0.14);
+  --danger: #e0574d;
+  --info: #4a9fe0;
+
+  /* ===== OPTCG COLOUR IDENTITY =====
+     Game-semantic, not decorative — these are the six deck colours. Each has a
+     solid (for active states) and a quiet tint (for chips and washes). */
+  --op-red: #e0374a;
+  --op-blue: #3b82d9;
+  --op-green: #2fa96b;
+  --op-purple: #9b5bd6;
+  --op-black: #6b737e;
+  --op-yellow: #e0b13c;
+  --op-red-quiet: rgba(224, 55, 74, 0.16);
+  --op-blue-quiet: rgba(59, 130, 217, 0.16);
+  --op-green-quiet: rgba(47, 169, 107, 0.16);
+  --op-purple-quiet: rgba(155, 91, 214, 0.16);
+  --op-black-quiet: rgba(107, 115, 126, 0.2);
+  --op-yellow-quiet: rgba(224, 177, 60, 0.16);
+
+  /* ===== SPACING — 4px base ===== */
+  --space-1: 2px;
+  --space-2: 4px;
+  --space-3: 6px;
+  --space-4: 8px;
+  --space-5: 12px;
+  --space-6: 16px;
+  --space-7: 20px;
+  --space-8: 24px;
+  --space-9: 32px;
+  --space-10: 40px;
+
+  /* ===== TYPE SCALE ===== */
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Carbon', var(--font-sans);
+  --font-mono: ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, monospace;
+
+  --text-2xs: 0.6875rem;  /* 11px — badges, counts */
+  --text-xs: 0.75rem;     /* 12px — labels, meta */
+  --text-sm: 0.8125rem;   /* 13px — body default in dense UI */
+  --text-base: 0.875rem;  /* 14px */
+  --text-md: 1rem;        /* 16px */
+  --text-lg: 1.125rem;    /* 18px */
+  --text-xl: 1.375rem;    /* 22px */
+  --text-2xl: 1.75rem;    /* 28px */
+
+  --leading-tight: 1.2;
+  --leading-normal: 1.45;
+  --leading-relaxed: 1.6;
+
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* ===== RADII ===== */
+  --radius-xs: 3px;
+  --radius-sm: 5px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-pill: 999px;
+  /* OPTCG cards have a ~3.5% corner radius; at a 150px tile that's ~5px. */
+  --radius-card: 4px;
+
+  /* ===== ELEVATION ===== */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.55);
+  --shadow-pop: 0 8px 28px rgba(0, 0, 0, 0.6), 0 0 0 1px var(--border-default);
+
+  /* ===== MOTION =====
+     Deliberately short. The brief is "smooth, not fancy" — motion should make
+     state changes legible, never make the user wait. */
+  --dur-instant: 80ms;
+  --dur-fast: 130ms;
+  --dur-base: 200ms;
+  --dur-slow: 300ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* ===== Z-INDEX SCALE ===== */
+  --z-base: 0;
+  --z-sticky: 10;
+  --z-float: 20;
+  --z-popover: 100;
+  --z-drawer: 200;
+  --z-modal: 300;
+  --z-toast: 400;
+  --z-tour: 500;
+
+  /* ===== CARD GEOMETRY =====
+     A real OPTCG card is 63mm x 88mm. Every card image in the app is 600x838,
+     which is exactly that ratio. Use this so tiles reserve height before the
+     image decodes instead of collapsing to 0 and reflowing. */
+  --card-aspect: 63 / 88;
+
+  /* ===== LEGACY ALIASES =====
+     Older components still reference these names. Mapped onto the new ramp so
+     the whole app shifts together; remove once every component is migrated. */
+  --bg-primary: var(--surface-canvas);
+  --bg-secondary: var(--surface-raised);
+  --bg-tertiary: var(--surface-raised-2);
+  --text-primary: var(--text-default);
+  --text-secondary: var(--text-muted);
+  --border-color: var(--border-default);
+  --font-family: var(--font-sans);
 }
 
-/* ===== RESET =====
-   Browsers add default margin/padding to elements.
-   This removes it so you start from a clean slate.
-   box-sizing: border-box makes width/height include padding+border
-   (otherwise padding ADDS to the width, which is confusing). */
-*, *::before, *::after {
+/* ===== RESET ===== */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-body {
-  font-family: var(--font-family);
-  color: var(--text-primary);
-  background-color: var(--bg-primary);
-  /* This is key: the app fills the whole screen,
-     scrolling happens INSIDE panels, not on the page itself */
-  overflow: hidden;
-  /* Disable iOS double-tap zoom (and the 300ms tap delay) on every
-     element. Pinch-to-zoom is preserved because it's a multi-touch
-     gesture; `manipulation` only blocks double-tap and gesture events. */
-  touch-action: manipulation;
+html {
+  -webkit-text-size-adjust: 100%;
 }
 
-/* The #app div fills the entire viewport.
-   Use 100dvh so iOS Safari's collapsing URL bar doesn't cut off content;
-   100vh fallback for browsers that don't support dvh yet. */
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+  color: var(--text-default);
+  background-color: var(--surface-canvas);
+  /* The app shell fills the viewport; scrolling happens inside panels. */
+  overflow: hidden;
+  /* Kill the double-tap zoom delay without blocking pinch-zoom. */
+  touch-action: manipulation;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-synthesis-weight: none;
+}
+
 #app {
   width: 100vw;
   height: 100vh;
   height: 100dvh;
 }
 
-/* ===== MODERN THIN SCROLLBARS =====
-   Floating overlay-style. Track is invisible, thumb is a small
-   pill that only becomes visible when the user hovers the
-   scrollable area. Firefox uses scrollbar-width/color. */
+img {
+  /* Never let an image force its intrinsic width into a layout. */
+  max-width: 100%;
+  display: block;
+}
 
-/* Firefox */
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* ===== FOCUS =====
+   The app strips default outlines in several places. This gives a single,
+   consistent keyboard-only ring so tabbing stays visible. */
+:focus-visible {
+  outline: 2px solid var(--accent-ring);
+  outline-offset: 2px;
+  border-radius: var(--radius-xs);
+}
+
+/* ===== ACCESSIBILITY ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ===== PRINT RESET — GLOBAL, ON PURPOSE =====
+   This MUST live here and not in a component. ProxyPage.vue previously tried
+   to reset <body> from inside <style scoped>, which Vue compiles to
+   `body[data-v-xxxxxxx]` — a selector that can never match, because <body>
+   never carries a scope attribute. The result was that `body{overflow:hidden}`
+   and `#app{height:100vh}` stayed in force while printing, clipping every
+   proxy sheet to a single page. */
+@media print {
+  html,
+  body {
+    overflow: visible !important;
+    height: auto !important;
+    min-height: 0 !important;
+    background: #fff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  #app {
+    width: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  /* Ask the browser to honour backgrounds/borders (crop marks, cut guides). */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
+
+/* ===== SCROLLBARS =====
+   Overlay-style: invisible until the user hovers the scrollable area. */
 * {
   scrollbar-width: thin;
   scrollbar-color: transparent transparent;
@@ -68,7 +308,6 @@ body {
   scrollbar-color: rgba(255, 255, 255, 0.18) transparent;
 }
 
-/* WebKit (Chrome, Edge, Safari) */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -79,10 +318,10 @@ body {
 }
 ::-webkit-scrollbar-thumb {
   background: transparent;
-  border-radius: 10px;
+  border-radius: var(--radius-pill);
   border: 2px solid transparent;
   background-clip: padding-box;
-  transition: background 0.2s ease;
+  transition: background var(--dur-base) var(--ease-out);
 }
 *:hover::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.18);

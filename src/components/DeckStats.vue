@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import { computed, ref, watch, onBeforeUnmount } from 'vue'
-import * as d3 from 'd3'
+// Import only what this chart uses. `import * as d3` pulled the whole 868KB
+// library into the initial bundle for four functions.
+import { select } from 'd3-selection'
+import { scaleBand, scaleLinear } from 'd3-scale'
+import { easeCubicOut } from 'd3-ease'
+import 'd3-transition'  // augments selection with .transition()
 import { useCardStore } from '../stores/cardStore'
 
 const cardStore = useCardStore()
@@ -30,19 +35,19 @@ function renderChart() {
   const innerHeight = CHART_HEIGHT - MARGIN.top - MARGIN.bottom
 
   // Scales
-  const x = d3.scaleBand()
+  const x = scaleBand()
     .domain(data.map(d => String(d.cost)))
     .range([0, innerWidth])
     .padding(BAR_PADDING)
 
-  const y = d3.scaleLinear()
+  const y = scaleLinear()
     .domain([0, Math.max(...data.map(d => d.count), 1)])
     .range([innerHeight, 0])
 
   // Select or create SVG
-  let svg = d3.select(container).select<SVGSVGElement>('svg')
+  let svg = select(container).select<SVGSVGElement>('svg')
   if (svg.empty()) {
-    svg = d3.select(container).append('svg')
+    svg = select(container).append('svg')
     svg.append('g').attr('class', 'bars-group')
     svg.append('g').attr('class', 'labels-group')
     svg.append('g').attr('class', 'counts-group')
@@ -76,7 +81,7 @@ function renderChart() {
     .merge(bars)
     .transition()
     .duration(400)
-    .ease(d3.easeCubicOut)
+    .ease(easeCubicOut)
     .attr('x', d => x(String(d.cost)) ?? 0)
     .attr('width', x.bandwidth())
     .attr('y', d => d.count === 0 ? innerHeight : y(d.count))
@@ -113,7 +118,7 @@ function renderChart() {
     .merge(counts)
     .transition()
     .duration(400)
-    .ease(d3.easeCubicOut)
+    .ease(easeCubicOut)
     .attr('x', d => (x(String(d.cost)) ?? 0) + x.bandwidth() / 2)
     .attr('y', d => d.count === 0 ? innerHeight - 2 : y(d.count) - 4)
     .attr('opacity', d => d.count === 0 ? 0 : 1)

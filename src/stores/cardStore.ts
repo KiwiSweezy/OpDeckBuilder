@@ -1,6 +1,28 @@
 import { defineStore } from 'pinia'
+import { markRaw } from 'vue'
 import type { Card } from '../types/Card'
 import allCardsData from '../data/cards.json'
+
+/** The full card list, deliberately NOT reactive.
+ *
+ *  Card data is immutable after load, but living inside Pinia's `state()` meant
+ *  Vue deep-proxied all 4789 objects. `filteredCards` reads up to 8 properties
+ *  per card, so every keystroke and every filter toggle built and tore down a
+ *  dependency graph with tens of thousands of entries — measured at a 10x cost
+ *  (1.96ms vs 0.20ms per recompute) for reactivity we never use.
+ *
+ *  markRaw tells Vue to hand back the raw array untouched, so `cardStore.allCards`
+ *  keeps working for consumers while the proxy overhead disappears. */
+const ALL_CARDS = markRaw(allCardsData as Card[])
+
+/** id -> Card, so deck load / save / import stop doing O(n) scans of 4789 cards.
+ *  loadDeck alone was 51 linear scans (~4ms) per deck. */
+const CARD_BY_ID: ReadonlyMap<string, Card> = new Map(ALL_CARDS.map(c => [c.id, c]))
+
+/** Look up a card by exact id in O(1). */
+export function cardById(id: string): Card | undefined {
+  return CARD_BY_ID.get(id)
+}
 
 /** Strip print-variant suffixes so every printing of a card counts as the same card.
  *  _p1/_p2 = alt arts, _r1/_r2 = reprints (the ST31-ST36 starter decks are almost
@@ -106,7 +128,7 @@ function writeSavedDecks(decks: Record<string, string[]>) {
 
 export const useCardStore = defineStore('cards', {
   state: () => ({
-    allCards: allCardsData as Card[],
+    allCards: ALL_CARDS as Card[],
     searchQuery: '',
     selectedColors: [] as string[],     // max 2 (OPTCG rule: decks are 1-2 colors)
     selectedTypes: [] as string[],      // 'leader', 'character', 'event'
@@ -154,9 +176,9 @@ export const useCardStore = defineStore('cards', {
         : null
 
       const keywordPatterns: Record<string, RegExp> = hasKeywords ? {
-        searcher: /look at.*from the top of your deck/i,
-        removal: /k\.?o\.? (up to|all|one|1)\b|return up to \d.{0,80}of your opponent|return.{0,100}opponent.{0,100}(hand|deck)/i,
-        'anti-removal': /cannot be removed from the field|would (be )?(k\.?o.?ed?|leave|removed).{0,120}instead/i,
+        searcher: /look at.*from the top of your deck/,
+        removal: /k\.?o\.? (up to|all|one|1)\b|return up to \d.{0,80}of your opponent|return.{0,100}opponent.{0,100}(hand|deck)/,
+        'anti-removal': /cannot be removed from the field|would (be )?(k\.?o.?ed?|leave|removed).{0,120}instead/,
       } : {}
 
       const cards = state.allCards.filter(card => {
@@ -178,7 +200,9 @@ export const useCardStore = defineStore('cards', {
           const ability = abilityLowerFor(card)
           for (const kw of keywords) {
             const pattern = keywordPatterns[kw]
-            if (pattern ? !pattern.test(card.ability) : !ability.includes(kw)) return false
+            // Patterns test the cached lowercase text, so they need no /i flag
+            // and avoid re-reading card.ability once per card.
+            if (pattern ? !pattern.test(ability) : !ability.includes(kw)) return false
           }
         }
         // Search chips + live query
@@ -266,7 +290,7 @@ export const useCardStore = defineStore('cards', {
       const decks = readSavedDecks()
       return Object.entries(decks).map(([name, ids]) => {
         const leaderCard = ids
-          .map(id => state.allCards.find(c => c.id === id))
+          .map(id => CARD_BY_ID.get(id))
           .find(c => c?.type === 'leader')
         return {
           name,
@@ -458,7 +482,7 @@ export const useCardStore = defineStore('cards', {
           .replace(/\s+/g, '')
 
       const cardsByNormId = new Map<string, Card>()
-      for (const c of this.allCards) {
+      for (const c of ALL_CARDS) {
         cardsByNormId.set(normalize(c.id), c)
       }
 
@@ -514,7 +538,7 @@ export const useCardStore = defineStore('cards', {
 
       const newDeck: Card[] = []
       for (const id of ids) {
-        const card = this.allCards.find(c => c.id === id)
+        const card = CARD_BY_ID.get(id)
         if (card) newDeck.push(card)
       }
 
