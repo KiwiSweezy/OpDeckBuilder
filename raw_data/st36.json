@@ -1,0 +1,377 @@
+[
+  {
+    "id": "OP10-099_p2",
+    "code": "OP10-099",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Eustass\"Captain\"Kid",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP10-099_p2.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP10-099_p2.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "5000",
+    "counter": "-",
+    "color": "Yellow",
+    "family": "Supernovas/Kid Pirates",
+    "ability": "[End of Your Turn] You may turn 1 card from the top of your Life cards face-up: Set up to 1 of your {Supernovas} type Characters with a cost of 3 to 8 as active. That Character gains [Blocker] until the end of your opponent's next turn.",
+    "trigger": "",
+    "set": {
+      "name": "STARTER DECK -YELLOW Eustass\"Captain\"Kid- [ST-36]"
+    }
+  },
+  {
+    "id": "OP10-101_r1",
+    "code": "OP10-101",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Urouge",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP10-101_r1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP10-101_r1.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "7000",
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Supernovas/Fallen Monk Pirates",
+    "ability": "-",
+    "trigger": "",
+    "set": {
+      "name": "STARTER DECK -YELLOW Eustass\"Captain\"Kid- [ST-36]"
+    }
+  },
+  {
+    "id": "OP10-103_r1",
+    "code": "OP10-103",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Capone\"Gang\"Bege",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP10-103_r1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP10-103_r1.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Ranged",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type04.png"
+    },
+    "power": "0",
+    "counter": "2000",
+    "color": "Yellow",
+    "family": "Supernovas/Firetank Pirates",
+    "ability": "[On Play] You may add 1 card from the top or bottom of your Life cards to your hand: Add up to 1 {Supernovas} type Character card from your hand to the top of your Life cards face-up.",
+    "trigger": "",
+    "set": {
+      "name": "STARTER DECK -YELLOW Eustass\"Captain\"Kid- [ST-36]"
+    }
+  },
+  {
+    "id": "OP10-109_r2",
+    "code": "OP10-109",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Basil Hawkins",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP10-109_r2.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP10-109_r2.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "5000",
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Supernovas/Hawkins Pirates",
+    "ability": "[On K.O.] Trash up to 1 card from the top of your opponent's Life cards.",
+    "trigger": "[Trigger] Draw 2 cards and trash 1 card from your hand.",
+    "set": {
+      "name": "STARTER DECK -YELLOW Eustass\"Captain\"Kid- [ST-36]"
+    }
+  },
+  {
+    "id": "OP10-111_r1",
+    "code": "OP10-111",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Monkey.D.Luffy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP10-111_r1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP10-111_r1.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "2000",
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Supernovas/Straw Hat Crew",
+    "ability": "[On Play] Look at 5 cards from the top of your deck; reveal up to 1 {Supernovas} type card other than [Monkey.D.Luffy] and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "",
+    "set": {
+      "name": "STARTER DECK -YELLOW Eustass\"Captain\"Kid- [ST-36]"
+    }
+  },
+  {
+    "id": "OP10-114_r2",
+    "code": "OP10-114",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "X.Drake",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP10-114_r2.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP10-114_r2.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "3000",
+    "counter": "2000",
+    "color": "Yellow",
+    "family": "Supernovas/Navy/Drake Pirates",
+    "ability": "[Activate: Main] You may rest this Character: If the number of your Life cards is equal to or less than the number of your opponent's Life cards, rest up to 1 of your opponent's Characters with a cost of 4 or less.",
+    "trigger": "",
+    "set": {
+      "name": "STARTER DECK -YELLOW Eustass\"Captain\"Kid- [ST-36]"
+    }
+  },
+  {
+    "id": "OP12-113_r1",
+    "code": "OP12-113",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Roronoa Zoro",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-113_r1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-113_r1.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "6000",
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Supernovas/Straw Hat Crew",
+    "ability": "[On K.O.] If your Leader has the {Supernovas} type, play up to 1 {Supernovas} type Character card with a cost of 4 or less from your hand rested.",
+    "trigger": "[Trigger] K.O. up to 1 of your opponent's Characters with a cost of 1 or less and add this card to your hand.",
+    "set": {
+      "name": "STARTER DECK -YELLOW Eustass\"Captain\"Kid- [ST-36]"
+    }
+  },
+  {
+    "id": "OP13-116_r1",
+    "code": "OP13-116",
+    "rarity": "UC",
+    "type": "EVENT",
+    "name": "The One Who Is the Most Free Is the Pirate King!!!",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP13-116_r1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP13-116_r1.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Yellow",
+    "family": "Supernovas/Straw Hat Crew",
+    "ability": "[Main] Look at 5 cards from the top of your deck; reveal up to 1 {Supernovas} type Character card and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "[Trigger] Activate this card's [Main] effect.",
+    "set": {
+      "name": "STARTER DECK -YELLOW Eustass\"Captain\"Kid- [ST-36]"
+    }
+  },
+  {
+    "id": "P-085_r2",
+    "code": "P-085",
+    "rarity": "P",
+    "type": "CHARACTER",
+    "name": "Jewelry Bonney",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/P-085_r2.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/P-085_r2.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "6000",
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Supernovas/Bonney Pirates",
+    "ability": "[On Play] If your Leader has the {Supernovas} type and the number of your Life cards is equal to or less than the number of your opponent's Life cards, add up to 1 of your opponent's Characters with a cost of 4 or less to the top or bottom of the owner's Life cards face-up.",
+    "trigger": "",
+    "set": {
+      "name": "STARTER DECK -YELLOW Eustass\"Captain\"Kid- [ST-36]"
+    }
+  },
+  {
+    "id": "P-088_r2",
+    "code": "P-088",
+    "rarity": "P",
+    "type": "CHARACTER",
+    "name": "Trafalgar Law",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/P-088_r2.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/P-088_r2.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "5000",
+    "counter": "2000",
+    "color": "Yellow",
+    "family": "Supernovas/Heart Pirates",
+    "ability": "-",
+    "trigger": "[Trigger] If your Leader has the {Supernovas} type and you and your opponent have a total of 5 or less Life cards, play this card.",
+    "set": {
+      "name": "STARTER DECK -YELLOW Eustass\"Captain\"Kid- [ST-36]"
+    }
+  },
+  {
+    "id": "ST36-001",
+    "code": "ST36-001",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Cavendish",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST36-001.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST36-001.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "3000",
+    "counter": "2000",
+    "color": "Yellow",
+    "family": "Dressrosa/Supernovas/Beautiful Pirates",
+    "ability": "[On K.O.] You may trash 1 card from your hand: Add up to 1 card from the top of your deck to the top of your Life cards.",
+    "trigger": "",
+    "set": {
+      "name": "STARTER DECK -YELLOW Eustass\"Captain\"Kid- [ST-36]"
+    }
+  },
+  {
+    "id": "ST36-002",
+    "code": "ST36-002",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Killer",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST36-002.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST36-002.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "6000",
+    "counter": "-",
+    "color": "Yellow",
+    "family": "Supernovas/Kid Pirates",
+    "ability": "[Your Turn] [On Play] If your Leader has the {Kid Pirates} type, add up to 1 card from the top of your deck to the top of your Life cards.",
+    "trigger": "[Trigger] If your opponent has 3 or less Life cards, play this card.",
+    "set": {
+      "name": "STARTER DECK -YELLOW Eustass\"Captain\"Kid- [ST-36]"
+    }
+  },
+  {
+    "id": "ST36-003",
+    "code": "ST36-003",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Scratchmen Apoo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST36-003.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST36-003.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Ranged",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type04.png"
+    },
+    "power": "4000",
+    "counter": "2000",
+    "color": "Yellow",
+    "family": "Supernovas/On-Air Pirates",
+    "ability": "-",
+    "trigger": "[Trigger] Draw 1 card and your {Supernovas} type Leader's base power becomes 7000 during this turn.",
+    "set": {
+      "name": "STARTER DECK -YELLOW Eustass\"Captain\"Kid- [ST-36]"
+    }
+  },
+  {
+    "id": "ST36-004",
+    "code": "ST36-004",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Bartolomeo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST36-004.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST36-004.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "2000",
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Dressrosa/Supernovas/Barto Club",
+    "ability": "[On Play] You may trash 1 {Supernovas} type card from your hand: Draw 2 cards.",
+    "trigger": "",
+    "set": {
+      "name": "STARTER DECK -YELLOW Eustass\"Captain\"Kid- [ST-36]"
+    }
+  },
+  {
+    "id": "ST36-005",
+    "code": "ST36-005",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Eustass\"Captain\"Kid",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST36-005.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST36-005.png"
+    },
+    "cost": "6",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "7000",
+    "counter": "-",
+    "color": "Yellow",
+    "family": "Supernovas/Kid Pirates",
+    "ability": "[On Your Opponent's Attack] [Once Per Turn] You may turn 1 card from the top or bottom of your Life cards face-down: Change the target of the attack to your [Eustass\"Captain\"Kid] with 5000 base power or more.[Activate: Main] [Once Per Turn] You may turn 1 card from the top or bottom of your Life cards face-up: Give up to 1 rested DON!! card to your Leader.",
+    "trigger": "",
+    "set": {
+      "name": "STARTER DECK -YELLOW Eustass\"Captain\"Kid- [ST-36]"
+    }
+  }
+]

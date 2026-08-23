@@ -22,7 +22,7 @@ function handleBackspace(e: KeyboardEvent) {
       <input
         v-model="cardStore.searchQuery"
         type="text"
-        :placeholder="cardStore.searchChips.length > 0 ? 'Add another filter...' : 'Search by name, ID, family, or ability...'"
+        :placeholder="cardStore.searchChips.length > 0 ? 'Add another filter...' : 'Search name, ID, set, attribute, type, or ability...'"
         class="search-input"
         @keydown.enter.prevent="handleEnter"
         @keydown.delete="handleBackspace"

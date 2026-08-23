@@ -1,0 +1,377 @@
+[
+  {
+    "id": "OP12-090_r1",
+    "code": "OP12-090",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Belo Betty",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-090_r1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-090_r1.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "4000",
+    "counter": "2000",
+    "color": "Black",
+    "family": "Revolutionary Army",
+    "ability": "[When Attacking] You may trash 2 cards from the top of your deck: Give up to 1 of your opponent's Characters −2 cost during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "STARTER DECK -RED/BLACK Sabo- [ST-35]"
+    }
+  },
+  {
+    "id": "OP12-093_r1",
+    "code": "OP12-093",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Morley",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-093_r1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-093_r1.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "5000",
+    "counter": "2000",
+    "color": "Black",
+    "family": "Giant/Revolutionary Army",
+    "ability": "If your Leader has the {Revolutionary Army} type, this Character gains +4 cost.",
+    "trigger": "",
+    "set": {
+      "name": "STARTER DECK -RED/BLACK Sabo- [ST-35]"
+    }
+  },
+  {
+    "id": "OP12-098_r1",
+    "code": "OP12-098",
+    "rarity": "UC",
+    "type": "EVENT",
+    "name": "Hair Removal Fist",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-098_r1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-098_r1.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Black",
+    "family": "Impel Down/Revolutionary Army",
+    "ability": "[Counter] Up to 1 of your Leader or Character cards gains +2000 power during this battle. Then, if you have a {Revolutionary Army} type Character with a cost of 8 or more, that card gains an additional +2000 power during this battle.",
+    "trigger": "[Trigger] Draw 1 card and trash 1 card from the top of your deck.",
+    "set": {
+      "name": "STARTER DECK -RED/BLACK Sabo- [ST-35]"
+    }
+  },
+  {
+    "id": "OP13-004_p2",
+    "code": "OP13-004",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Sabo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP13-004_p2.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP13-004_p2.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "5000",
+    "counter": "-",
+    "color": "Red/Black",
+    "family": "Dressrosa/Revolutionary Army",
+    "ability": "If you have 4 or more Life cards, give this Leader −1000 power.[DON!! x1] If you have a Character with a cost of 8 or more, your Leader and all of your Characters gain +1000 power.",
+    "trigger": "",
+    "set": {
+      "name": "STARTER DECK -RED/BLACK Sabo- [ST-35]"
+    }
+  },
+  {
+    "id": "OP13-005_r1",
+    "code": "OP13-005",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Inazuma",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP13-005_r1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP13-005_r1.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": "5000",
+    "counter": "2000",
+    "color": "Red",
+    "family": "Revolutionary Army",
+    "ability": "[On Play] Give up to 1 rested DON!! card to your Leader.",
+    "trigger": "",
+    "set": {
+      "name": "STARTER DECK -RED/BLACK Sabo- [ST-35]"
+    }
+  },
+  {
+    "id": "OP13-008_r1",
+    "code": "OP13-008",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Emporio.Ivankov",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP13-008_r1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP13-008_r1.png"
+    },
+    "cost": "2",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "3000",
+    "counter": "1000",
+    "color": "Red",
+    "family": "Revolutionary Army",
+    "ability": "If your {Revolutionary Army} type Character would be K.O.'d by your opponent's effect, you may trash this Character instead.",
+    "trigger": "",
+    "set": {
+      "name": "STARTER DECK -RED/BLACK Sabo- [ST-35]"
+    }
+  },
+  {
+    "id": "OP13-017_r1",
+    "code": "OP13-017",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Monkey.D.Dragon",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP13-017_r1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP13-017_r1.png"
+    },
+    "cost": "6",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "7000",
+    "counter": "1000",
+    "color": "Red",
+    "family": "Revolutionary Army",
+    "ability": "[Once Per Turn] If your {Revolutionary Army} type Character would be removed from the field by your opponent's effect, you may give this Character −2000 power during this turn instead.",
+    "trigger": "",
+    "set": {
+      "name": "STARTER DECK -RED/BLACK Sabo- [ST-35]"
+    }
+  },
+  {
+    "id": "OP13-019_p2",
+    "code": "OP13-019",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "But Ace Here Said You Deserved It!!",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP13-019_p2.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP13-019_p2.png"
+    },
+    "cost": "1",
+    "attribute": {
+      "name": "",
+      "image": ""
+    },
+    "power": "0",
+    "counter": "-",
+    "color": "Red",
+    "family": "Dressrosa/Revolutionary Army",
+    "ability": "[Main] You may rest 4 of your DON!! cards: Give up to 1 of your opponent's Characters −3000 power during this turn. Then, K.O. up to 1 of your opponent's Characters with 3000 power or less.[Counter] Your Leader gains +3000 power during this battle.",
+    "trigger": "",
+    "set": {
+      "name": "STARTER DECK -RED/BLACK Sabo- [ST-35]"
+    }
+  },
+  {
+    "id": "OP13-081_r1",
+    "code": "OP13-081",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Koala",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP13-081_r1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP13-081_r1.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "6000",
+    "counter": "1000",
+    "color": "Black",
+    "family": "Dressrosa/Revolutionary Army",
+    "ability": "If your Leader has the {Revolutionary Army} type, this Character gains +3 cost.[Activate: Main] [Once Per Turn] You may place 1 card from your trash at the bottom of your deck: Give up to 1 rested DON!! card to your Leader or 1 of your Characters.",
+    "trigger": "",
+    "set": {
+      "name": "STARTER DECK -RED/BLACK Sabo- [ST-35]"
+    }
+  },
+  {
+    "id": "P-105_r1",
+    "code": "P-105",
+    "rarity": "P",
+    "type": "CHARACTER",
+    "name": "Sabo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/P-105_r1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/P-105_r1.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "6000",
+    "counter": "-",
+    "color": "Black",
+    "family": "Revolutionary Army",
+    "ability": "If your Leader has the {Revolutionary Army} type, this Character gains [Blocker] and +4 cost.[On Play] You may add 1 card from the top or bottom of your Life cards to your hand: Give up to 1 rested DON!! card to your Leader or 1 of your Characters.",
+    "trigger": "",
+    "set": {
+      "name": "STARTER DECK -RED/BLACK Sabo- [ST-35]"
+    }
+  },
+  {
+    "id": "ST35-001",
+    "code": "ST35-001",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Hack",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST35-001.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST35-001.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "4000",
+    "counter": "1000",
+    "color": "Red",
+    "family": "Fish-Man/Dressrosa/Revolutionary Army",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)[On Play] K.O. up to 1 of your opponent's Characters with 2000 base power or less.",
+    "trigger": "",
+    "set": {
+      "name": "STARTER DECK -RED/BLACK Sabo- [ST-35]"
+    }
+  },
+  {
+    "id": "ST35-002",
+    "code": "ST35-002",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Lindbergh",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST35-002.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST35-002.png"
+    },
+    "cost": "4",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "4000",
+    "counter": "2000",
+    "color": "Red",
+    "family": "Minks/Revolutionary Army",
+    "ability": "[On Play] Give up to 1 of your opponent's Characters −3000 power during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "STARTER DECK -RED/BLACK Sabo- [ST-35]"
+    }
+  },
+  {
+    "id": "ST35-003",
+    "code": "ST35-003",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Karasu",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST35-003.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST35-003.png"
+    },
+    "cost": "3",
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": "4000",
+    "counter": "2000",
+    "color": "Black",
+    "family": "Revolutionary Army",
+    "ability": "[When Attacking] You may trash 2 cards from the top of your deck: If your opponent has 7 or more cards in their hand, your opponent trashes 1 card from their hand.",
+    "trigger": "",
+    "set": {
+      "name": "STARTER DECK -RED/BLACK Sabo- [ST-35]"
+    }
+  },
+  {
+    "id": "ST35-004",
+    "code": "ST35-004",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Koala",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST35-004.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST35-004.png"
+    },
+    "cost": "7",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "6000",
+    "counter": "1000",
+    "color": "Black",
+    "family": "Dressrosa/Revolutionary Army",
+    "ability": "This Character gains [Blocker] and +1 cost.[On Play] Give up to 1 rested DON!! card to your Leader. Then, play up to 1 Character card with 4000 power or less and the {Revolutionary Army} type from your hand or trash.",
+    "trigger": "",
+    "set": {
+      "name": "STARTER DECK -RED/BLACK Sabo- [ST-35]"
+    }
+  },
+  {
+    "id": "ST35-005",
+    "code": "ST35-005",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Bartholomew Kuma",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST35-005.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST35-005.png"
+    },
+    "cost": "5",
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": "5000",
+    "counter": "1000",
+    "color": "Black",
+    "family": "Revolutionary Army",
+    "ability": "This Character gains +3 cost.[On Play] Give up to 1 rested DON!! card to your Leader. Then, play up to 1 Character card with 4000 power or less and the {Revolutionary Army} type from your hand or trash.",
+    "trigger": "",
+    "set": {
+      "name": "STARTER DECK -RED/BLACK Sabo- [ST-35]"
+    }
+  }
+]

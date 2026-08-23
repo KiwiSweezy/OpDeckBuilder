@@ -2,9 +2,12 @@ import { defineStore } from 'pinia'
 import type { Card } from '../types/Card'
 import allCardsData from '../data/cards.json'
 
-/** Strip alt-art suffixes like _p1, _p2 etc. so variants count as the same card */
+/** Strip print-variant suffixes so every printing of a card counts as the same card.
+ *  _p1/_p2 = alt arts, _r1/_r2 = reprints (the ST31-ST36 starter decks are almost
+ *  entirely reprints, e.g. ST31's Usopp ships as "OP11-003_r1"). Both share the
+ *  4-copy limit with the original and export under the original's ID. */
 function baseId(id: string): string {
-  return id.replace(/_p\d+$/, '')
+  return id.replace(/_[pr]\d+$/, '')
 }
 
 /** Sets that rotated out of Standard format on 2026-04-01 (Block 1).
@@ -15,20 +18,37 @@ const ROTATED_SETS = new Set([
   'ST01', 'ST02', 'ST03', 'ST04', 'ST05', 'ST06', 'ST07', 'ST08', 'ST09',
 ])
 
+/** Products released after the 2026-04-01 rotation that reprint older cards.
+ *  Those reprints ship under the ORIGINAL card's ID (ST31's Nami is "OP01-016_p9"),
+ *  so the ID prefix alone would wrongly mark them rotated. A card printed in a
+ *  current starter deck is Standard-legal. Add new post-rotation products here. */
+const POST_ROTATION_SETS = new Set([
+  'ST31', 'ST32', 'ST33', 'ST34', 'ST35', 'ST36',
+])
+
 /** Returns the set prefix from a card ID (everything before the first dash). */
 function cardSet(id: string): string {
   const dash = id.indexOf('-')
   return dash === -1 ? id : id.slice(0, dash)
 }
 
+/** True when this printing is out of Standard (Block 1). Checks the product the
+ *  print actually came from before falling back to the card ID's set prefix. */
+function isRotated(card: Card): boolean {
+  if (POST_ROTATION_SETS.has(card.set)) return false
+  return ROTATED_SETS.has(cardSet(card.id))
+}
+
 /** Lazily-built lowercase search index for fast text matching.
- *  Maps card.id → "name id family ability" all lowercased and concatenated.
- *  Built once on first access since allCards never changes after load. */
+ *  Maps card.id → "name id set attribute family ability" lowercased and concatenated.
+ *  Built once on first access since allCards never changes after load.
+ *  Includes attribute so a free-text search for "wisdom" or "slash" works, and
+ *  set so "op17" pulls up a whole product. */
 const SEARCH_INDEX_CACHE = new Map<string, string>()
 function searchIndexFor(card: Card): string {
   let cached = SEARCH_INDEX_CACHE.get(card.id)
   if (cached === undefined) {
-    cached = `${card.name} ${card.id} ${card.family} ${card.ability}`.toLowerCase()
+    cached = `${card.name} ${card.id} ${card.set} ${card.attribute} ${card.family} ${card.ability}`.toLowerCase()
     SEARCH_INDEX_CACHE.set(card.id, cached)
   }
   return cached
@@ -152,7 +172,7 @@ export const useCardStore = defineStore('cards', {
         // Counter
         if (hasCounters && !counters.includes(card.counter)) return false
         // Hide rotated (Block 1)
-        if (hideRotated && ROTATED_SETS.has(cardSet(card.id))) return false
+        if (hideRotated && isRotated(card)) return false
         // Keywords
         if (hasKeywords) {
           const ability = abilityLowerFor(card)

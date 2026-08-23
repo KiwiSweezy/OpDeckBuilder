@@ -148,12 +148,13 @@ const cardKeywords = computed(() => {
               {{ copiedId === cardStore.selectedCard.id ? 'Copied!' : cardStore.selectedCard.id }}
             </button>
             ·
-            Cost {{ cardStore.selectedCard.cost }} ·
+            {{ cardStore.selectedCard.type === 'leader' ? 'Life' : 'Cost' }} {{ cardStore.selectedCard.cost }} ·
             Power {{ cardStore.selectedCard.power }} ·
             {{ cardStore.selectedCard.attribute }}
           </p>
           <p class="preview-details">
-            {{ cardStore.selectedCard.rarity.toUpperCase() }}<span v-if="cardStore.selectedCard.counter"> · Counter {{ cardStore.selectedCard.counter }}</span>
+            {{ cardStore.selectedCard.type.toUpperCase() }} ·
+            {{ cardStore.selectedCard.rarity.toUpperCase() }}<span v-if="cardStore.selectedCard.counter"> · Counter {{ cardStore.selectedCard.counter }}</span><span v-if="cardStore.selectedCard.set"> · {{ cardStore.selectedCard.set }}</span>
           </p>
           <p class="preview-family">{{ cardStore.selectedCard.family }}</p>
           <div v-if="cardKeywords.length" class="preview-keywords">
