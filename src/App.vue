@@ -41,16 +41,23 @@ function openShare() {
 --------------------------------------------------------------------------- */
 /* One pane flexes to fill the window and the other is a fixed-width rail;
    SIDE_* bounds the rail. Which pane is which is the user's call. */
-const SIDE_MIN = 300
+const SIDE_MIN = 260
 const SIDE_MAX = 760
-const SIDE_DEFAULT = 420
+
+/** The rail's share of the window, rather than a flat 420px.
+ *  On a 13" laptop (~1000px of CSS width) a fixed 420px rail ate 42% of the
+ *  screen; proportional keeps the split feeling the same at any size. */
+function defaultWidth(): number {
+  const w = typeof window === 'undefined' ? 1440 : window.innerWidth
+  return Math.round(Math.min(460, Math.max(300, w * 0.3)))
+}
 
 function readStoredWidth(): number {
   try {
     const v = Number(localStorage.getItem('op-deck-pane-width'))
     if (Number.isFinite(v) && v >= SIDE_MIN && v <= SIDE_MAX) return v
   } catch { /* ignore */ }
-  return SIDE_DEFAULT
+  return defaultWidth()
 }
 
 /** Width of whichever pane is currently the narrow rail. */
@@ -74,7 +81,7 @@ let activePointer: number | null = null
 
 function applyWidth() {
   frame = 0
-  const max = Math.min(SIDE_MAX, window.innerWidth - 420)
+  const max = Math.min(SIDE_MAX, window.innerWidth - Math.min(420, window.innerWidth * 0.34))
   // The divider always sits at the same boundary, but the rail is measured from
   // whichever edge it is anchored to — otherwise the drag runs backwards once
   // the deck takes the large pane.
@@ -115,11 +122,20 @@ function onResizeStart(e: PointerEvent) {
 
 /** Double-click the divider to snap back to the default width. */
 function resetWidth() {
-  sideWidth.value = SIDE_DEFAULT
-  try { localStorage.setItem('op-deck-pane-width', String(SIDE_DEFAULT)) } catch { /* ignore */ }
+  sideWidth.value = defaultWidth()
+  try { localStorage.setItem('op-deck-pane-width', String(sideWidth.value)) } catch { /* ignore */ }
 }
 
-onBeforeUnmount(endResize)
+function onShellResize() {
+  const max = Math.min(SIDE_MAX, window.innerWidth - Math.min(420, window.innerWidth * 0.34))
+  if (sideWidth.value > max) sideWidth.value = Math.max(SIDE_MIN, max)
+}
+window.addEventListener('resize', onShellResize)
+
+onBeforeUnmount(() => {
+  endResize()
+  window.removeEventListener('resize', onShellResize)
+})
 
 const shellStyle = computed(() => ({
   gridTemplateColumns: deckPrimary.value
@@ -279,6 +295,10 @@ const shellStyle = computed(() => ({
 /* ---- pool pane ---- */
 .pool-pane {
   grid-area: pool;
+  /* Lets the filter bar respond to this pane's width rather than the viewport;
+     the pane becomes a narrow rail whenever the deck is given the large pane. */
+  container-type: inline-size;
+  container-name: poolpane;
   display: flex;
   flex-direction: column;
   min-width: 0;

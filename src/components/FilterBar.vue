@@ -11,7 +11,7 @@
  * everything else lives behind popovers, so the whole thing is one row and never
  * scrolls, whatever the viewport height.
  */
-import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
+import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useCardStore } from '../stores/cardStore'
 
 const cardStore = useCardStore()
@@ -20,8 +20,24 @@ const cardStore = useCardStore()
 const openFacet = ref<string | null>(null)
 const barRef = ref<HTMLElement | null>(null)
 
-function toggleFacet(name: string) {
+/** Horizontal correction applied to a popover that would overflow the viewport. */
+const popEl = ref<HTMLElement | null>(null)
+const popShift = ref(0)
+const popStyle = computed(() =>
+  popShift.value ? { transform: `translateX(${popShift.value}px)` } : undefined
+)
+
+async function toggleFacet(name: string) {
   openFacet.value = openFacet.value === name ? null : name
+  popShift.value = 0
+  if (!openFacet.value) return
+  await nextTick()
+  const node = popEl.value
+  if (!node) return
+  const r = node.getBoundingClientRect()
+  const overflowRight = r.right - (window.innerWidth - 8)
+  if (overflowRight > 0) popShift.value = -overflowRight
+  else if (r.left < 8) popShift.value = 8 - r.left
 }
 
 function onDocPointerDown(e: PointerEvent) {
@@ -173,7 +189,7 @@ function handleBackspace(e: KeyboardEvent) {
           Type<span v-if="typeCount" class="badge">{{ typeCount }}</span>
           <svg class="chev" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m6 9 6 6 6-6" /></svg>
         </button>
-        <div v-if="openFacet === 'type'" class="pop">
+        <div v-if="openFacet === 'type'" ref="popEl" :style="popStyle" class="pop">
           <button v-for="t in TYPES" :key="t"
             :class="['opt', { on: cardStore.selectedTypes.includes(t) }]"
             @click="cardStore.toggleType(t)">{{ t }}</button>
@@ -186,7 +202,7 @@ function handleBackspace(e: KeyboardEvent) {
           Rarity<span v-if="rarityCount" class="badge">{{ rarityCount }}</span>
           <svg class="chev" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m6 9 6 6 6-6" /></svg>
         </button>
-        <div v-if="openFacet === 'rarity'" class="pop pop-grid">
+        <div v-if="openFacet === 'rarity'" ref="popEl" :style="popStyle" class="pop pop-grid">
           <button v-for="r in RARITIES" :key="r.value"
             :class="['opt', { on: cardStore.selectedRarities.includes(r.value) }]"
             @click="cardStore.toggleRarity(r.value)">{{ r.label }}</button>
@@ -199,7 +215,7 @@ function handleBackspace(e: KeyboardEvent) {
           Counter<span v-if="counterCount" class="badge">{{ counterCount }}</span>
           <svg class="chev" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m6 9 6 6 6-6" /></svg>
         </button>
-        <div v-if="openFacet === 'counter'" class="pop">
+        <div v-if="openFacet === 'counter'" ref="popEl" :style="popStyle" class="pop">
           <button :class="['opt', { on: cardStore.selectedCounters.includes(1000) }]"
             @click="cardStore.toggleCounter(1000)">1000</button>
           <button :class="['opt', { on: cardStore.selectedCounters.includes(2000) }]"
@@ -213,7 +229,7 @@ function handleBackspace(e: KeyboardEvent) {
           Keyword<span v-if="keywordCount" class="badge">{{ keywordCount }}</span>
           <svg class="chev" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m6 9 6 6 6-6" /></svg>
         </button>
-        <div v-if="openFacet === 'keyword'" class="pop pop-wide">
+        <div v-if="openFacet === 'keyword'" ref="popEl" :style="popStyle" class="pop pop-wide">
           <button v-for="k in KEYWORDS" :key="k.value"
             :class="['opt', { on: cardStore.selectedKeywords.includes(k.value) }]"
             @click="cardStore.toggleKeyword(k.value)">{{ k.label }}</button>
@@ -226,7 +242,7 @@ function handleBackspace(e: KeyboardEvent) {
           {{ sortLabel }}
           <svg class="chev" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m6 9 6 6 6-6" /></svg>
         </button>
-        <div v-if="openFacet === 'sort'" class="pop">
+        <div v-if="openFacet === 'sort'" ref="popEl" :style="popStyle" class="pop">
           <button :class="['opt', { on: cardStore.costSortDirection === '' }]"
             @click="cardStore.costSortDirection = ''">Default</button>
           <button :class="['opt', { on: cardStore.costSortDirection === 'asc' }]"
@@ -277,8 +293,8 @@ function handleBackspace(e: KeyboardEvent) {
   display: flex;
   align-items: center;
   gap: var(--space-3);
-  flex: 1 1 260px;
-  min-width: 200px;
+  flex: 1 1 200px;
+  min-width: 150px;
   max-width: 420px;
   height: 32px;
   padding: 0 var(--space-3) 0 var(--space-4);
@@ -310,7 +326,7 @@ function handleBackspace(e: KeyboardEvent) {
 }
 
 /* ---- colour swatches ---- */
-.colors { display: flex; gap: var(--space-2); }
+.colors { display: flex; flex-wrap: wrap; gap: var(--space-2); }
 .swatch {
   display: flex;
   align-items: center;
@@ -417,8 +433,10 @@ function handleBackspace(e: KeyboardEvent) {
 .pop-wide {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  min-width: 260px;
+  min-width: 240px;
 }
+/* Never let a popover exceed the window on a small screen. */
+.pop { max-width: calc(100vw - 16px); }
 @keyframes pop-in {
   from { opacity: 0; transform: translateY(-4px); }
   to { opacity: 1; transform: none; }
@@ -440,6 +458,18 @@ function handleBackspace(e: KeyboardEvent) {
 .opt:hover { background: var(--surface-hover); color: var(--text-strong); }
 .opt.on { background: var(--accent-quiet); color: var(--text-strong); }
 .pop-grid .opt { text-align: center; }
+
+/* Narrow pane (the card finder as a rail): drop the colour names and tighten
+   everything up. Six labelled swatches are ~390px of a 300px rail, which forced
+   the bar to wrap to 227px — a third of the screen height on a 13" laptop. */
+@container poolpane (max-width: 620px) {
+  .swatch-label { display: none; }
+  .swatch { padding: 0 var(--space-3); gap: 0; }
+  .swatch-dot { width: 11px; height: 11px; }
+  .search { flex: 1 1 100%; max-width: none; }
+  .divider { display: none; }
+  .facet-btn { padding: 0 var(--space-3); font-size: var(--text-2xs); }
+}
 
 /* ---- active filter chips ---- */
 .chip-row {

@@ -31,7 +31,6 @@ const priceText = computed(() =>
 
 /* ------------------------------- position -------------------------------- */
 
-const PANEL_W = 360
 const POS_KEY = 'op-preview-pos'
 const MARGIN = 12
 
@@ -53,9 +52,11 @@ function readStoredPos(): { x: number; y: number } | null {
 }
 
 function clampToViewport(x: number, y: number) {
+  // Measure rather than assume — the panel's size is viewport-relative now.
+  const w = el.value?.offsetWidth ?? 300
   const h = el.value?.offsetHeight ?? 520
   return {
-    x: Math.min(Math.max(MARGIN, x), Math.max(MARGIN, window.innerWidth - PANEL_W - MARGIN)),
+    x: Math.min(Math.max(MARGIN, x), Math.max(MARGIN, window.innerWidth - w - MARGIN)),
     y: Math.min(Math.max(MARGIN, y), Math.max(MARGIN, window.innerHeight - h - MARGIN)),
   }
 }
@@ -309,12 +310,17 @@ const abilityText = computed(() =>
 .preview {
   position: fixed;
   z-index: var(--z-float);
-  width: 360px;
+  /* Sized against the VIEWPORT, not fixed.
+     A card image is 1.4x taller than it is wide, so a fixed 360px panel came to
+     ~575px on a 13" laptop — 87% of the screen. Tying the width to the smaller
+     of the two viewport axes keeps the panel roughly a third of the width and
+     two thirds of the height everywhere. */
+  width: clamp(220px, min(24vw, 30vh), 340px);
   /* A FIXED height, not max-height. The panel docks against the bottom edge, so
      letting it size to content made its top edge — and therefore the drag
      handle — jump every time you hovered a card with a different amount of
      ability text. Overflow scrolls in .body instead. */
-  height: min(720px, calc(100vh - 88px));
+  height: min(700px, 72vh);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -388,9 +394,10 @@ const abilityText = computed(() =>
 .body {
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
-  padding: var(--space-4) var(--space-5) var(--space-5);
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4) var(--space-4);
   overflow-y: auto;
+  min-height: 0;
 }
 
 .head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-3); }
