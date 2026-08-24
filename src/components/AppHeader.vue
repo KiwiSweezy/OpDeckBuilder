@@ -180,7 +180,7 @@ const blingTitle = computed(() => {
     <!-- file actions -->
     <div class="menu-anchor" data-tour="import-export">
       <button class="ghost-btn" :aria-expanded="openMenu === 'file'" @click="toggleMenu('file')">
-        Deck
+        <span class="action-label">Deck</span>
         <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m6 9 6 6 6-6" /></svg>
       </button>
       <div v-if="openMenu === 'file'" class="menu menu-narrow">
@@ -235,7 +235,7 @@ const blingTitle = computed(() => {
         <circle cx="18" cy="5" r="3" /><circle cx="6" cy="12" r="3" /><circle cx="18" cy="19" r="3" />
         <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" /><line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
       </svg>
-      Share
+      <span class="action-label">Share</span>
     </button>
 
     <button class="ghost-btn" @click="emit('proxy')">
@@ -244,7 +244,7 @@ const blingTitle = computed(() => {
         <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
         <rect x="6" y="14" width="12" height="8" />
       </svg>
-      Proxy
+      <span class="action-label">Proxy</span>
     </button>
 
     <button
@@ -463,6 +463,24 @@ const blingTitle = computed(() => {
   font-weight: var(--weight-bold);
   text-align: center;
   line-height: 15px;
+}
+
+/* ---- narrow windows ----
+   Desktop starts at 768px (below that MobileLayout takes over), but the full
+   header needs ~880px. Shed the least load-bearing text first — the wordmark,
+   then the action labels, then the deck-name field — so the controls stay
+   reachable instead of being clipped off the right edge. */
+@media (max-width: 1100px) {
+  .brand-name { display: none; }
+}
+@media (max-width: 960px) {
+  .action-label { display: none; }
+  .ghost-btn { padding: 0 var(--space-3); }
+  .app-header { gap: var(--space-2); padding: 0 var(--space-4); }
+}
+@media (max-width: 860px) {
+  .deck-name { width: 104px; }
+  .count-leader { display: none; }
 }
 
 .status {
