@@ -164,6 +164,24 @@ function colorAbbrev(color: string): string {
   return color.split('/').map(c => COLOR_ABBREVS[c.trim()] ?? c[0]?.toUpperCase() ?? '').join('')
 }
 
+/** Pending hover-preview dismissal. Module-level so it never becomes reactive. */
+let previewClearTimer: ReturnType<typeof setTimeout> | undefined
+function cancelPreviewClear() {
+  if (previewClearTimer) {
+    clearTimeout(previewClearTimer)
+    previewClearTimer = undefined
+  }
+}
+
+/** True while the pointer is on the preview panel itself.
+ *
+ *  Checked when the dismissal timer fires rather than relying on the panel
+ *  cancelling it, because the browser emits `pointerenter` on the panel BEFORE
+ *  `mouseleave` on the pool it floats above — so a cancel-then-schedule pair
+ *  always ended with the dismissal re-armed, and the panel vanished the instant
+ *  you reached for it. A flag the timer consults is order-independent. */
+let previewHovered = false
+
 const STORAGE_KEY = 'op-saved-decks'
 const LAST_DECK_KEY = 'op-last-deck'
 
@@ -512,7 +530,40 @@ export const useCardStore = defineStore('cards', {
 
     /** Set the card shown in the preview panel */
     selectCard(card: Card) {
+      cancelPreviewClear()
       this.selectedCard = card
+    },
+
+    /** Dismiss the hover preview immediately. */
+    clearSelectedCard() {
+      cancelPreviewClear()
+      this.selectedCard = null
+    },
+
+    /** Dismiss the preview after a short grace period.
+     *
+     *  The delay exists so the preview can be grabbed: it's a fixed overlay
+     *  outside the pool in the DOM, so moving the pointer onto it fires
+     *  mouseleave on the pool and would otherwise dismiss the panel the instant
+     *  you reached for it. The panel cancels this on pointerenter. */
+    clearSelectedCardSoon(delay = 160) {
+      cancelPreviewClear()
+      previewClearTimer = setTimeout(() => {
+        previewClearTimer = undefined
+        if (previewHovered) return  // pointer is on the panel — keep it up
+        this.selectedCard = null
+      }, delay)
+    },
+
+    /** Cancel a pending dismissal (the pointer reached the panel). */
+    cancelClearSelectedCard() {
+      cancelPreviewClear()
+    },
+
+    /** Record whether the pointer is currently on the preview panel. */
+    setPreviewHovered(hovered: boolean) {
+      previewHovered = hovered
+      if (hovered) cancelPreviewClear()
     },
 
     /**

@@ -407,11 +407,13 @@ const blingTitle = computed(() => {
 .bling:hover:not(:disabled) { color: var(--text-strong); border-color: var(--border-strong); }
 .bling:disabled { opacity: 0.4; cursor: not-allowed; }
 .bling.level-1 {
+  --bling-badge: var(--info);
   color: var(--info);
   border-color: var(--info);
   background: color-mix(in srgb, var(--info) 14%, transparent);
 }
 .bling.level-2 {
+  --bling-badge: var(--warning);
   color: var(--warning);
   border-color: var(--warning);
   background: var(--warning-quiet);
@@ -422,7 +424,10 @@ const blingTitle = computed(() => {
   min-width: 15px;
   padding: 0 4px;
   border-radius: var(--radius-pill);
-  background: currentColor;
+  /* NOT `background: currentColor` — currentColor resolves against THIS
+     element's own `color`, which is the dark chip text, so the badge rendered
+     as a black box. Inherit the tier colour through a custom property instead. */
+  background: var(--bling-badge, var(--text-muted));
   color: var(--surface-canvas);
   font-size: 10px;
   font-weight: var(--weight-bold);

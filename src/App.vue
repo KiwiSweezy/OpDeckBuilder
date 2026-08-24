@@ -125,7 +125,7 @@ const shellStyle = computed(() => ({ gridTemplateColumns: `${deckWidth.value}px 
 
     <!-- LEFT: the deck being built -->
     <section class="deck-pane" data-tour="deck-area">
-      <div class="deck-scroll">
+      <div class="deck-scroll" @mouseleave="cardStore.clearSelectedCardSoon()">
         <DeckDisplay />
       </div>
       <div class="deck-stats-pane">
@@ -145,7 +145,7 @@ const shellStyle = computed(() => ({ gridTemplateColumns: `${deckWidth.value}px 
     <!-- RIGHT: the card pool, which now gets the room -->
     <section class="pool-pane">
       <FilterBar />
-      <div class="pool-scroll" data-tour="card-pool">
+      <div class="pool-scroll" data-tour="card-pool" @mouseleave="cardStore.clearSelectedCardSoon()">
         <CardGrid />
       </div>
     </section>

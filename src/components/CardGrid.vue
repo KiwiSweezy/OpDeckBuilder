@@ -269,6 +269,19 @@ function onPreview(card: Card) {
   }, HOVER_DELAY_MS)
 }
 
+/** Drop a queued hover when the pointer leaves the pool.
+ *
+ *  Without this, a debounced hover armed just before the pointer left could
+ *  still fire afterwards; selectCard cancels any pending dismissal, so the
+ *  preview would be resurrected with nothing left to dismiss it again and it
+ *  stayed on screen indefinitely. */
+function cancelPendingPreview() {
+  if (hoverTimer) {
+    clearTimeout(hoverTimer)
+    hoverTimer = undefined
+  }
+}
+
 /* -------------------------------- lifecycle ------------------------------- */
 
 let ro: ResizeObserver | null = null
@@ -317,7 +330,7 @@ watch(allCards, () => {
 </script>
 
 <template>
-  <div ref="rootEl" class="card-pool-grid">
+  <div ref="rootEl" class="card-pool-grid" @mouseleave="cancelPendingPreview">
     <div v-if="!cardStore.hasActiveFilters" class="no-filters">
       Select a color or type a search to browse cards
     </div>
