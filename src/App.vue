@@ -39,20 +39,33 @@ function openShare() {
    images. This coalesces to one write per animation frame and uses pointer
    capture so the drag survives the cursor leaving the handle.
 --------------------------------------------------------------------------- */
-const DECK_MIN = 300
-const DECK_MAX = 720
-const DECK_DEFAULT = 420
+/* One pane flexes to fill the window and the other is a fixed-width rail;
+   SIDE_* bounds the rail. Which pane is which is the user's call. */
+const SIDE_MIN = 300
+const SIDE_MAX = 760
+const SIDE_DEFAULT = 420
 
 function readStoredWidth(): number {
   try {
     const v = Number(localStorage.getItem('op-deck-pane-width'))
-    if (Number.isFinite(v) && v >= DECK_MIN && v <= DECK_MAX) return v
+    if (Number.isFinite(v) && v >= SIDE_MIN && v <= SIDE_MAX) return v
   } catch { /* ignore */ }
-  return DECK_DEFAULT
+  return SIDE_DEFAULT
 }
 
-const deckWidth = ref(readStoredWidth())
+/** Width of whichever pane is currently the narrow rail. */
+const sideWidth = ref(readStoredWidth())
 const isResizing = ref(false)
+
+/** true = the DECK gets the large pane and the card finder becomes the rail. */
+const deckPrimary = ref((() => {
+  try { return localStorage.getItem('op-deck-primary') === '1' } catch { return false }
+})())
+
+function togglePrimary() {
+  deckPrimary.value = !deckPrimary.value
+  try { localStorage.setItem('op-deck-primary', deckPrimary.value ? '1' : '0') } catch { /* ignore */ }
+}
 
 let frame = 0
 let latestX = 0
@@ -61,8 +74,12 @@ let activePointer: number | null = null
 
 function applyWidth() {
   frame = 0
-  const max = Math.min(DECK_MAX, window.innerWidth - 420)
-  deckWidth.value = Math.min(max, Math.max(DECK_MIN, latestX))
+  const max = Math.min(SIDE_MAX, window.innerWidth - 420)
+  // The divider always sits at the same boundary, but the rail is measured from
+  // whichever edge it is anchored to — otherwise the drag runs backwards once
+  // the deck takes the large pane.
+  const fromEdge = deckPrimary.value ? window.innerWidth - latestX : latestX
+  sideWidth.value = Math.min(max, Math.max(SIDE_MIN, fromEdge))
 }
 
 function onResizeMove(e: PointerEvent) {
@@ -81,7 +98,7 @@ function endResize() {
   }
   activeHandle = null
   activePointer = null
-  try { localStorage.setItem('op-deck-pane-width', String(deckWidth.value)) } catch { /* ignore */ }
+  try { localStorage.setItem('op-deck-pane-width', String(sideWidth.value)) } catch { /* ignore */ }
 }
 
 function onResizeStart(e: PointerEvent) {
@@ -98,13 +115,17 @@ function onResizeStart(e: PointerEvent) {
 
 /** Double-click the divider to snap back to the default width. */
 function resetWidth() {
-  deckWidth.value = DECK_DEFAULT
-  try { localStorage.setItem('op-deck-pane-width', String(DECK_DEFAULT)) } catch { /* ignore */ }
+  sideWidth.value = SIDE_DEFAULT
+  try { localStorage.setItem('op-deck-pane-width', String(SIDE_DEFAULT)) } catch { /* ignore */ }
 }
 
 onBeforeUnmount(endResize)
 
-const shellStyle = computed(() => ({ gridTemplateColumns: `${deckWidth.value}px 1fr` }))
+const shellStyle = computed(() => ({
+  gridTemplateColumns: deckPrimary.value
+    ? `1fr ${sideWidth.value}px`   // deck flexes, card finder is the rail
+    : `${sideWidth.value}px 1fr`,  // deck is the rail, card finder flexes
+}))
 </script>
 
 <template>
@@ -116,8 +137,10 @@ const shellStyle = computed(() => ({ gridTemplateColumns: `${deckWidth.value}px 
     @share="openShare"
   />
 
-  <div v-else class="shell" :class="{ resizing: isResizing }" :style="shellStyle">
+  <div v-else class="shell" :class="{ resizing: isResizing, 'deck-primary': deckPrimary }" :style="shellStyle">
     <AppHeader
+      :deck-primary="deckPrimary"
+      @swap="togglePrimary"
       @share="openShare"
       @proxy="currentView = 'proxy'"
       @tour="tourRef?.start()"
@@ -205,6 +228,7 @@ const shellStyle = computed(() => ({ gridTemplateColumns: `${deckWidth.value}px 
   border-right: 1px solid var(--border-subtle);
 }
 
+
 .deck-scroll {
   flex: 1;
   min-height: 0;
@@ -218,6 +242,7 @@ const shellStyle = computed(() => ({ gridTemplateColumns: `${deckWidth.value}px 
 .deck-stats-pane {
   flex-shrink: 0;
   max-height: 40%;
+  transition: max-height var(--dur-base) var(--ease-out);
   overflow-y: auto;
   padding: var(--space-4) var(--space-5);
   border-top: 1px solid var(--border-subtle);
@@ -260,6 +285,10 @@ const shellStyle = computed(() => ({ gridTemplateColumns: `${deckWidth.value}px 
   min-height: 0;
   background: var(--surface-canvas);
 }
+
+/* Given the large pane, the deck has room for the chart without crowding the
+   cards, so cap the stats strip lower. */
+.shell.deck-primary .deck-stats-pane { max-height: 30%; }
 
 .pool-scroll {
   flex: 1;

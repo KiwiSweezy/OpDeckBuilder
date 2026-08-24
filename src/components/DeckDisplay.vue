@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useCardStore } from '../stores/cardStore'
 import { getCardPriceUSD, getUsdToCadRate, getUsdToGbpRate, formatPrice } from '../utils/pricing'
 
@@ -30,17 +30,44 @@ function priceForCard(cardId: string): string | null {
   return formatPrice(p, cardStore.currency, fxRates.value)
 }
 
-/* Deck card resize. Tuned for the vertical deck rail: at the default 420px
-   rail width a 4-copy stack is ~123px, so three fit per row, and widening the
-   rail adds columns. The stack offsets scale with the card so the fanned-stack
-   visual holds across the 0.6-1.4 zoom range. */
-const BASE_CARD_W = 108
-const BASE_H_OFFSET = 5
-const BASE_V_OFFSET = 8
+/* Deck card sizing.
+   The base card width follows the pane instead of being a constant: handing the
+   deck the large pane is pointless if the cards stay rail-sized and leave most
+   of it empty. We aim for roughly six columns and clamp to a sane card size, so
+   a 420px rail keeps ~108px cards while a 1180px pane grows them to ~180px.
+   The user's zoom (0.6-1.4) still multiplies on top, and the stack offsets
+   scale with the card so the fanned-stack visual holds throughout. */
+const MIN_CARD_W = 108
+const MAX_CARD_W = 190
+const TARGET_COLUMNS = 6
+const COLUMN_GAP = 10
 
-const cardW = computed(() => Math.round(BASE_CARD_W * cardStore.deckCardScale))
-const hOffset = computed(() => BASE_H_OFFSET * cardStore.deckCardScale)
-const vOffset = computed(() => BASE_V_OFFSET * cardStore.deckCardScale)
+const rootEl = ref<HTMLElement | null>(null)
+const paneWidth = ref(0)
+
+let paneObserver: ResizeObserver | null = null
+onMounted(() => {
+  if (!rootEl.value) return
+  paneWidth.value = rootEl.value.clientWidth
+  paneObserver = new ResizeObserver(() => {
+    if (rootEl.value) paneWidth.value = rootEl.value.clientWidth
+  })
+  paneObserver.observe(rootEl.value)
+})
+onBeforeUnmount(() => { paneObserver?.disconnect(); paneObserver = null })
+
+const baseCardW = computed(() => {
+  const w = paneWidth.value
+  if (!w) return MIN_CARD_W
+  const fit = Math.floor(w / TARGET_COLUMNS) - COLUMN_GAP
+  return Math.max(MIN_CARD_W, Math.min(MAX_CARD_W, fit))
+})
+
+/* Offsets stay proportional to the card so the fan reads the same at any size. */
+const cardW = computed(() => Math.round(baseCardW.value * cardStore.deckCardScale))
+const offsetScale = computed(() => (cardW.value / MIN_CARD_W))
+const hOffset = computed(() => +(5 * offsetScale.value).toFixed(2))
+const vOffset = computed(() => +(8 * offsetScale.value).toFixed(2))
 
 /* CSS custom properties consumed by the scoped stylesheet — bound to one
    element so a single style mutation re-flows every card in the deck. */
@@ -112,7 +139,7 @@ const nonLeaderGroups = computed(() => {
 </script>
 
 <template>
-  <div class="deck-display" :style="deckSizeStyle">
+  <div ref="rootEl" class="deck-display" :style="deckSizeStyle">
     <div class="deck-display-header">
       <span class="deck-title">Deck</span>
 

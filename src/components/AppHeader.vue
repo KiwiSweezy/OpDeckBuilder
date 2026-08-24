@@ -15,7 +15,14 @@ import { useCardStore } from '../stores/cardStore'
 import { useDeckTotal } from '../composables/useDeckTotal'
 import { copyToClipboard } from '../utils/clipboard'
 
-const emit = defineEmits<{ share: []; proxy: []; tour: [] }>()
+const props = defineProps<{ deckPrimary?: boolean }>()
+const emit = defineEmits<{ swap: []; share: []; proxy: []; tour: [] }>()
+
+const swapTitle = computed(() =>
+  props.deckPrimary
+    ? 'Give the card finder the larger pane'
+    : 'Give the deck the larger pane'
+)
 
 const cardStore = useCardStore()
 const deckTotal = useDeckTotal()
@@ -240,6 +247,21 @@ const blingTitle = computed(() => {
       Proxy
     </button>
 
+    <button
+      class="ghost-btn icon-only"
+      :class="{ flipped: props.deckPrimary }"
+      :title="swapTitle"
+      :aria-pressed="!!props.deckPrimary"
+      @click="emit('swap')"
+    >
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2.5" y="5" width="7" height="14" rx="1.5" />
+        <rect x="13" y="5" width="8.5" height="14" rx="1.5" />
+        <path d="M11.25 10.5v3" />
+      </svg>
+    </button>
+
     <button class="icon-btn round" title="Take the tour" @click="emit('tour')">?</button>
 
     <!-- overwrite confirm -->
@@ -329,6 +351,14 @@ const blingTitle = computed(() => {
   border-color: var(--border-strong);
 }
 .ghost-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.ghost-btn.icon-only { padding: 0 var(--space-3); }
+/* Mirror the glyph so it reads as "put it back" once the panes are flipped. */
+.ghost-btn.icon-only svg { transition: transform var(--dur-base) var(--ease-out); }
+.ghost-btn.icon-only.flipped svg { transform: scaleX(-1); }
+.ghost-btn.icon-only.flipped {
+  color: var(--text-strong);
+  border-color: var(--border-strong);
+}
 .ghost-btn.danger { color: var(--danger); border-color: var(--danger); }
 
 .icon-btn {
